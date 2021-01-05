@@ -1,0 +1,11 @@
+<div class="admin-home-content-page">
+    <div class="wrapper-menu">
+        <button mat-raised-button class="menu" [routerLink]="'/main/home_content/pageslide'" [class.active]="routeLinkSlide.isActive" routerLinkActive
+        #routeLinkSlide="routerLinkActive">ภาพไลด์</button>
+        <button mat-raised-button class="menu" [routerLink]="'/main/home_content/pagevideo'" [class.active]="routeLinkVideo.isActive" routerLinkActive
+        #routeLinkVideo="routerLinkActive">วิดีโอ</button> 
+    </div>
+    <div class="wrapper-page">
+        <router-outlet></router-outlet>
+    </div>
+</div>

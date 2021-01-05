@@ -1,0 +1,102 @@
+<div class="admin-tag-page">
+    <mat-drawer-container class="example-container" [hasBackdrop]="true">
+        <mat-drawer #drawer style="width: 100%;" [mode]="'over'" [position]="'end'" [disableClose]="true">
+            <div class="wrapper-preview-form">
+                <div class="wrapper-preview">
+                    <div class="wrapper-content-page">
+                        <div class="newcon-content-page-img" [ngStyle]="{'background-image': 'url('+dataForm.coverImage+')'}">
+                        </div>
+                        <div class="newcon-content-page">
+                            <div class="newcon-content-code">
+                                <div class="newcon-content-code-left">
+                                    <div class="newcon-content-code-left-number">
+                                        <label>{{dataForm.title}}</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="newcon-content-page-layout-div-video">
+                                <ng-container *ngIf="fieldRadios[0].fieldSelect === 'videoUrl'; else elsePreviewImage">
+                                    <admin-video-view [videoForm]="videoForm" [url]="dataForm.videoUrl"></admin-video-view>
+                                </ng-container>
+                                <ng-template #elsePreviewImage>
+                                    <img src="{{dataForm.imageUrl}}" alt="" class="newcon-content-page-layout-video">
+                                </ng-template>
+                            </div>
+                            <div class="newcon-content-page-layout-rich-content"> 
+                                <span [innerHTML]="dataForm.content"></span>
+                            </div>
+                        </div>
+
+                        <div class="newcon-content-page-layout-bottom">
+                            <div class="newcon-content-page-layout-bottom-div">
+                                <div class="newcon-content-page-layout-bottom-left">
+                                    <div class="newcon-content-page-layout-bottom-left-head">
+                                        ลิงค์ภายนอก :
+                                    </div>
+                                </div>
+                                <div class="newcon-content-page-layout-bottom-right">
+                                    <div class="newcon-content-page-layout-bottom-right-external-video">
+                                        <a [href]="dataForm.link" target="_blank" class="newcon-content-page-layout-bottom-right-external-video">
+                                            {{dataForm.link ? dataForm.link : '-'}}
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="newcon-content-page-layout-bottom-div">
+                                <div class="newcon-content-page-layout-bottom-left">
+                                    <div class="newcon-content-page-layout-bottom-left-head">
+                                        แชร์ :
+                                    </div>
+                                </div>
+                                <div class="newcon-content-page-layout-bottom-right">
+                                    <div class="newcon-content-page-layout-bottom-right-share">
+                                        <a target="_blank" class="share">
+                                            <img src="https://image.flaticon.com/icons/svg/145/145802.svg" alt="Twitter icon" class="icon">
+                                        </a>
+                                        <a target="_blank" class="share">
+                                            <img src="https://image.flaticon.com/icons/svg/145/145812.svg" alt="Twitter icon" class="icon">
+                                        </a>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="newcon-content-page-layout-bottom-div">
+                                <div class="newcon-content-page-layout-bottom-left">
+                                    <div class="newcon-content-page-layout-bottom-left-head">
+                                        ผู้สร้าง :
+                                    </div>
+                                </div>
+                                <div class="newcon-content-page-layout-bottom-right">
+                                    <div class="newcon-content-page-layout-bottom-right-create">
+                                        -
+                                        <!-- <newcon-button [text]="blah">
+                                                </newcon-button> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="newcon-content-page-layout-bottom-div tag-references">
+                                <div class="newcon-content-page-layout-bottom-left">
+                                    <div class="newcon-content-page-layout-bottom-left-head">
+                                        อ้างอิง :
+                                    </div>
+                                </div>
+                                <div class="newcon-content-page-layout-bottom-right">
+                                    <div class="newcon-content-page-layout-bottom-right-References">
+                                        -
+                                        <!-- <newcon-button [text]="blahh"></newcon-button> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <admin-form-component [data]="dataForm" [fieldRadios]="fieldRadios" [fields]="fields" [title]="'บทความ'" (close)="clickCloseDrawer()" (save)="clickSave()"></admin-form-component>
+            </div>
+        </mat-drawer>
+        <mat-drawer-content>
+            <div class="main-content">
+                <admin-table-component #table [facade]="contentFacade" [relation]="['tagId']" [facade]="contentFacade" [title]="'บทความ'" [fieldTable]="fieldTable" [actions]="actions" (create)="clickCreateForm()" (edit)="clickEditForm($event)" (delete)="clickDelete($event)"></admin-table-component>
+            </div>
+        </mat-drawer-content>
+    </mat-drawer-container>
+</div>

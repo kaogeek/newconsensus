@@ -1,0 +1,60 @@
+.proposal-profile {
+    display: flex;
+    position: relative;
+    align-items: center;
+    box-shadow: 0px 5px 20px 0px $shadow-vote-vard;
+    &:hover {
+        box-shadow: 0px 5px 20px 0px $shadow-vote-vard-hover;
+    }
+    >.avatar {
+        margin: 0 10pt;
+        width: 35pt;
+        height: 35pt;
+        border-radius: 50%;
+        border: 1px solid $bg-color1;
+    }
+    >.wrapper-profile-all {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        >.wrapper-profile-proposal {
+            width: calc(100% - 75pt);
+            padding-right: 15pt;
+            >.wrapper-proposal {
+                display: flex;
+                @include font-size-8-400;
+                margin-bottom: 10pt;
+                word-break: break-word;
+            }
+            >.wrapper-profile {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                @include font-size-8-400;
+                span {
+                    display: flex;
+                    align-items: center;
+                    >.profile-name {
+                        margin-right: 10pt;
+                        color: $color-7;
+                    }
+                    >.comment-created {
+                        @include font-size-8-400;
+                        color: $secondary;
+                    }
+                }
+            }
+        }
+        >.wrapper-proposal-support {
+            margin-right: 15pt;
+            supporter-bar {
+                >.supporter-bar {
+                    height: auto !important;
+                    padding-top: 10pt;
+                }
+            }
+        }
+    }
+}

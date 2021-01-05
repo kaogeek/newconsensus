@@ -1,0 +1,22 @@
+<div class="wrapper-menu-top-div">
+    <i class="material-icons hamburger" (click)="clickMenu()">
+            menu
+        </i>
+    <div class="wrapper-menu-top-list" [class.active]="isMenu">
+        <i class="material-icons close" (click)="clickMenu()">
+                close
+            </i>
+        <div class="div-logo">
+            <a class="menu-logo" *ngFor="let partner of partners" href="{{partner.link}}" target="_blank">
+                <img src="{{partner.logoUrl}}" alt="">
+            </a>
+        </div>
+        <nav mat-tab-nav-bar [backgroundColor]="background"> 
+            <ng-container *ngFor="let link of links">
+                <a mat-tab-link *ngIf="isShowMenu(link) && isShowMenu2(link)" [routerLink]="link.link" [active]="getLinkActive(link.link)" (click)="clickMenu()">
+                    {{link.label}}
+                </a> 
+            </ng-container>
+        </nav>
+    </div>
+</div>

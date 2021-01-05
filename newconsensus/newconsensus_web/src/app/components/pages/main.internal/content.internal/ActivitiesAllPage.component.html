@@ -1,0 +1,80 @@
+<div class="newcon-activities-all-page">
+    <div class="activities-body1">
+        <div class="wrapper-header-content">
+            <div class="left">
+                <div class="head">
+                    <div class="title">
+                        ข่าวสารและกิจกรรม
+                    </div>
+                    <div class="tagline">
+                        ข่าวสารและกิจกรรมล่าสุดของเว็บ
+                        <br> ความรู้คืออาวุธที่ทรงพลัง
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="swiper-slider-cop">
+                    <div class="swiper-button-prev2">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                            id="Capa_1" x="0px" y="0px" viewBox="0 0 477.175 477.175"
+                            style="enable-background:new 0 0 477.175 477.175;" xml:space="preserve" width="512"
+                            height="512" class="prev">
+                            <g>
+                                <g>
+                                    <path
+                                        d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5   c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z   "
+                                        data-original="#000000" class=""></path>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="swiper-button-next2">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+                            id="Capa_1" x="0px" y="0px" viewBox="0 0 477.175 477.175"
+                            style="enable-background:new 0 0 477.175 477.175;" xml:space="preserve" width="512"
+                            height="512" class="next">
+                            <g>
+                                <g>
+                                    <path
+                                        d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5   c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z   "
+                                        data-original="#000000" class="" style="fill:#FFFFFF" data-old_color="#000000">
+                                    </path>
+                                </g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <newcon-swiper-slider [data]="swipers" class="wrapper-swiper-slide"></newcon-swiper-slider>
+    </div>
+    <!-- ----------------------------------------------------- -->
+    <div class="activities-body2">
+        <div class="wrapper-header-content">
+            <div class="head-bottom">
+                <div class="title">
+                    ข่าวสารและกิจกรรม
+                </div>
+                <div class="tagline">
+                    ข่าวสารและกิจกรรมล่าสุดของเว็บ
+                    <br> ความรู้คืออาวุธที่ทรงพลัง
+                </div>
+            </div>
+        </div>
+        <div id="news-body">
+            <ng-container *ngIf="resActivityNews.length > 0; else elseNews">
+                <content-card *ngFor="let activityNews of resActivityNews" [images]="activityNews.coverImageUrl"
+                    [title]="activityNews.title" [content]="activityNews.description" [width]="'100%'" [height]="''"
+                    [colorLink]="'rgba(38,128,235,1)'" [link]="'/main/content/activities/'+activityNews.id"
+                    [textLink]="'อ่านต่อ...'" [create]="activityNews.createdDate | date:'dd/MM/yyyy hh:mm:ss'" [isAllpost]="true">
+                </content-card>
+            </ng-container>
+            <ng-template #elseNews>
+                <div class="wrapper-center-none-list-content"
+                    [ngStyle]="{'height': getHeightNoneListNews()}">
+                    ไม่พบข้อมูลข่าวสารและกิจกรรม
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</div>

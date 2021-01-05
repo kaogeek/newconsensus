@@ -1,0 +1,5 @@
+<div class="room-button" [ngClass]="class" [routerLink]="link"
+ routerLinkActive #rla="routerLinkActive" [class.active]="isActive(rla.isActive)"
+ [ngStyle]="{'background-color': bgColor, 'color': color, 'width': width}">
+    <span class="room-button-text">{{text}}</span>
+</div>

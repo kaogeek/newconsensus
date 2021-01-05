@@ -1,0 +1,121 @@
+.newcon-debate-comment-page {
+    min-height: calc(100vh - 65pt - 50pt - 34pt);
+    @include font-size-9-200;
+    height: auto;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    .debate-comment-body {
+        width: 91%;
+        padding: 30pt 0pt 30pt 0pt;
+        display: inherit;
+        .grid1 {
+            width: 30%;
+            padding: 0pt 0pt 0pt 25pt;
+            add-debate {
+                display: flex;
+                padding-left: 25pt;
+            }
+            .grid1-text {
+                padding: 25pt 0pt 0pt 25pt;
+                h3 {
+                    margin: 0;
+                }
+                h5 {
+                    margin: 0;
+                    color: #8e8e8e;
+                }
+            }
+            .grid1-comment {
+                padding: 20pt 0pt 0pt 25pt;
+                .add-debate {
+                    margin-bottom: 25pt;
+                }
+                .topic-profile {
+                    margin-top: 10pt;
+                    .wrapper-profile-topic-left-div {
+                        display: block;
+                        .comment-created {
+                            text-align: left;
+                        }
+                    }
+                }
+            }
+        }
+        .grid2 {
+            width: 70%;
+            background-color: rgb(238, 238, 238);
+            .grid2-outlet {
+                padding: 15pt;
+                .display {
+                    display: none;
+                    margin-bottom: 15pt;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $xxlarge) {
+    .newcon-debate-comment-page {
+        min-height: calc(100vh - 60pt - 45pt - 33pt);
+    }
+}
+
+@media (max-width: $xlarge) {
+    .newcon-debate-comment-page {
+        min-height: calc(100vh - 55pt - 40pt - 32pt);
+
+        .debate-comment-body {
+            .grid1 {
+                width: 0%;
+                display: none;
+                .grid1-text {
+                    h1 {}
+                    h3 {}
+                }
+                .grid1-comment {}
+            }
+            .grid2 {
+                width: 100%;
+                .grid2-outlet {
+                    padding: 10pt;
+                    .display {
+                        display: flex;
+                        cursor: pointer;
+                        width: 100% !important;
+                        height: 50pt !important;
+                        transition: 0.5s;
+                        // &:hover {
+                        //     transition: 0.5s;
+                        //     background-color: #1977e9 !important;
+                        //     transform: scale(1.06);
+                        //     -webkit-transform: scale(1.06);
+                        //     -moz-transform: scale(1.06);
+                        //     -ms-transform: scale(1.06);
+                        //     -o-transform: scale(1.06);
+                        // }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $large) {
+    .newcon-debate-comment-page {
+        min-height: calc(100vh - 50pt - 40pt - 31pt);
+    }
+}
+
+@media (max-width: $medium) {
+    .newcon-debate-comment-page {
+        min-height: calc(100vh - 40pt - 35pt - 60pt);
+    }
+}
+
+@media (max-width: $small) {
+    .newcon-debate-comment-page {
+        min-height: calc(100vh - 40pt - 35pt - 55pt);
+    }
+}

@@ -1,0 +1,80 @@
+<div class="wrapper-breadcrumb">
+    <a [routerLink]="'/main/debate'">บอร์ดพูดคุย</a> >
+    <a [routerLink]="'/main/debate/'+mode" [queryParams]="{page: page}">{{getTopicHeaderLabel()}}</a> >
+    <span>{{debateName}}</span>
+</div>
+<content *ngIf="linkUrl" [pageUser]="debate.pageUser" [facebookLink]="linkUrl" [createdBy]="(debate === undefined) ? '-' : debate.createdBy" [title]="(debate === undefined) ? '-' : debate.title" [content]="(debate === undefined) ? '-' : debate.content"
+    [user]="(debate === undefined) ? '-' : (debate.pageUser === undefined || debate.pageUser === null) ? debate.createdByUsername : debate.pageUser.displayName" [isUserLike]="debate.isUserLike" [likeCount]="(debate === undefined) ? 0 : debate.likeCount" [dislikeCount]="(debate === undefined) ? 0 : debate.dislikeCount"
+    (likeClickedEvent)="likeBtnClicked()" (dislikeClickedEvent)="dislikeBtnClicked()">
+</content>
+
+<div class="newcon-post-page" *ngIf="isLogin()">
+    <ckeditor style="width: 100%;height: 80pt;" [config]="{ toolbar: [] }" matInput [editor]="Editor" [ngModel]="(debateComment ? debateComment : '')" (ngModelChange)="debateComment=$event">
+    </ckeditor>
+    <br>
+    <newcon-button-save style="margin: 15pt;" [isLoading]="isSending" [text]="'ส่งข้อมูล'" [class]="'comment-button'" (click)="createDebateComment()"></newcon-button-save>
+</div>
+
+
+<div *ngFor="let item of debateComments; let i = index;" class="newcon-post-comment-page">
+    <div class="post-comment-item">
+        <div class="wrapper-profile-comment">
+            <div class="wrapper-profile">
+                <div class="profile">
+                    <img class="avatar" src="{{!pageUserInfo.getUserImage(item.pageUser) ? '../../../assets/components/pages/icons8-female-profile-128.png' : pageUserInfo.getUserImage(item.pageUser)}}" alt="">
+                    <div class="profile-name">
+                        {{(item.pageUser === undefined || item.pageUser === null) ? item.createdByUsername : item.pageUser.displayName}}
+                    </div>
+                </div>
+                <div class="detail">
+                    <div class="comment-created">
+                        {{item.createdDate | date:'dd/MM/yyyy HH:mm:ss'}}
+                    </div>
+                    <div class="edit" (click)="showEditCommentDialog(item, i)" *ngIf="isLogin() && isShowAction(item.createdBy)">
+                        <i class="material-icons icon icon-edit"> edit </i>
+                    </div>
+                    <div class="delete" (click)="showDeleteCommentDialog(item.id, i)" *ngIf="isLogin() && isShowAction(item.createdBy)">
+                        <i class="material-icons icon icon-delete"> delete </i>
+                    </div>
+                </div>
+            </div>
+            <div [innerHTML]="item.comment" class="wrapper-comment"></div>
+        </div>
+        <div class="wrapper-like-dislike user-select-none">
+            <div class="wrapper-action">
+                <span [style.opacity]="!isLogin() || item.isUserLike === undefined || item.isUserLike === false ? '0.3' : '1'" [style.pointer-events]="!isLogin() ? 'none' : 'inherit'" class="btn-like">
+                    <div class="icon" (click)="likeDebate(item.id,i)">
+                        <svg id="Bold" enable-background="new 0 0 24 24" height="15pt" viewBox="0 0 24 24" width="15pt"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="m1.75 23h2.5c.965 0 1.75-.785 1.75-1.75v-11.5c0-.965-.785-1.75-1.75-1.75h-2.5c-.965 0-1.75.785-1.75 1.75v11.5c0 .965.785 1.75 1.75 1.75z" />
+                            <path
+                                d="m12.781.75c-1 0-1.5.5-1.5 3 0 2.376-2.301 4.288-3.781 5.273v12.388c1.601.741 4.806 1.839 9.781 1.839h1.6c1.95 0 3.61-1.4 3.94-3.32l1.12-6.5c.42-2.45-1.46-4.68-3.94-4.68h-4.72s.75-1.5.75-4c0-3-2.25-4-3.25-4z" />
+                        </svg>
+                    </div>
+                    <div class="wrapper-total">
+                        <span
+                            class="like-total">{{(item.likeCount === undefined) ? 0 : item.likeCount | shortNumber}}</span>
+            </div>
+            </span>
+            <span [style.opacity]="!isLogin() || item.isUserLike === undefined || item.isUserLike === true ? '0.3' : '1'" [style.pointer-events]="!isLogin() ? 'none' : 'inherit'" class="btn-dislike">
+                    <div class="icon" (click)="dislikeDebate(item.id,i)">
+                        <svg id="Bold" enable-background="new 0 0 24 24" height="15pt" viewBox="0 0 24 24" width="15pt"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="m1.75 23h2.5c.965 0 1.75-.785 1.75-1.75v-11.5c0-.965-.785-1.75-1.75-1.75h-2.5c-.965 0-1.75.785-1.75 1.75v11.5c0 .965.785 1.75 1.75 1.75z" />
+                            <path
+                                d="m12.781.75c-1 0-1.5.5-1.5 3 0 2.376-2.301 4.288-3.781 5.273v12.388c1.601.741 4.806 1.839 9.781 1.839h1.6c1.95 0 3.61-1.4 3.94-3.32l1.12-6.5c.42-2.45-1.46-4.68-3.94-4.68h-4.72s.75-1.5.75-4c0-3-2.25-4-3.25-4z" />
+                        </svg>
+                    </div>
+                    <div class="wrapper-total">
+                        <span
+                            class="dislike-total">{{(item.dislikeCount === undefined) ? 0 : item.dislikeCount | shortNumber}}</span>
+        </div>
+        </span>
+    </div>
+</div>
+</div>
+<newcon-button-load-more [ngStyle]="{'margin-top': isLoadingMore || isShowLoadMore ? '15px' : '0'}" [isLoadingMore]="isLoadingMore" [isShowLoadMore]="isShowLoadMore" (clickLoadMore)="loadNextAllComment()">
+</newcon-button-load-more>
+</div>

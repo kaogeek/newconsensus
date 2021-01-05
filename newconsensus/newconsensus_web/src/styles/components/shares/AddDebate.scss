@@ -1,0 +1,55 @@
+.add-debate {
+  display: flex;
+  position: relative;
+  align-items: center;
+  box-shadow: 0px 1px 3px 0px $shadow-vote-vard;
+  transition: 0.3s;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    transition: 0.3s;
+    box-shadow: 0px 1px 6px 0px $shadow-vote-vard-hover;
+  }
+
+  &:active {
+    background: $shadow-vote-vard !important;
+  }
+
+  > .wrapper-add-debate {
+    width: 100%;
+    padding-right: 15pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    > .wrapper-topic {
+      display: flex;
+      @include font-size-6-500;
+      margin-bottom: 10pt;
+      > .icon-fire {
+        width: 25pt;
+      }
+    }
+    > .wrapper-profile {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @include font-size-8-300;
+      span {
+        display: flex;
+        align-items: center;
+        > .profile-name {
+          margin-right: 10pt;
+          color: $back;
+
+          &::selection {
+            background: transparent;
+          }
+        }
+      }
+    }
+  }
+}

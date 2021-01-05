@@ -1,0 +1,260 @@
+<div class="newcon-content-main-page">
+    <div class="newcon-content-main-page-body">
+        <div class="content-1">
+            <div class="content-1-top">
+                <div class="content-1-top-left">
+                    <div class="head">
+                        <div class="head-head">
+                            ข่าวสารและกิจกรรมล่าสุด
+                        </div>
+                        <div class="head-content">
+                            ข่าวสารและกิจกรรมล่าสุดของเว็บ
+                            <br> ความรู้คืออาวุธที่ทรงพลัง
+                        </div>
+                    </div>
+                </div>
+                <div class="content-1-top-right">
+                    <div class="swiper-slider-cop">
+                        <div class="swiper-button-prev2">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 477.175 477.175" style="enable-background:new 0 0 477.175 477.175;" xml:space="preserve" width="512" height="512"
+                                class="prev">
+                                <g>
+                                    <g>
+                                        <path
+                                            d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5   c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z   "
+                                            data-original="#000000" class=""></path>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="swiper-button-next2">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 477.175 477.175" style="enable-background:new 0 0 477.175 477.175;" xml:space="preserve" width="512" height="512"
+                                class="next">
+                                <g>
+                                    <g>
+                                        <path
+                                            d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5   c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z   "
+                                            data-original="#000000" class="" style="fill:#FFFFFF"
+                                            data-old_color="#000000"></path>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-1-body" id="content-1-body">
+                <ng-container *ngIf="coverImage.length > 0; else newsandactivities">
+                    <div class="swiper-container" *ngIf="coverImage !== undefined && coverImage.length > 0" [swiper]="config2">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide" *ngFor="let images of coverImage">
+                                <a [routerLink]="'/main/content/activities/'+images.id">
+                                    <img src="{{images.image}}" alt="" class="img-vote">
+                                    <div class="content">
+                                        <div class="content-head">
+                                            <div class="content-head-top">
+                                                {{images.title}}
+                                            </div>
+                                            <div class="content-data">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <newcon-button class="wrapper-link-all" [text]="'ดูข่าวสารและกิจกรรมทั้งหมด'" [link]="'/main/content/activities'" [bgColor]="'#279d90'"></newcon-button>
+                </ng-container>
+                <ng-template #newsandactivities>
+                    <div class="wrapper-center-none-list-content" [ngStyle]="{'height': getHeightNoneListInternewsandactivities()}">
+                        ไม่พบข้อมูลข่าวสารและกิจกรรม
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+        <div class="content-2">
+            <div class="content-2-top">
+                <div class="head">
+                    <div class="head-head">
+                        คอนเทนต์ล่าสุด
+                    </div>
+                    <div class="head-content">
+                        มาร่วมกันแสดงความคิดเห็นต่อรัฐธรรมนูญ ๒๕๖๐
+                    </div>
+                </div>
+            </div>
+            <div class="content-2-body" [ngStyle]="{'margin-top' : contentData.length > 0 ? '-15px' : '0px'}">
+                <div class="content-2-body-left" id="content2bodyleft">
+                    <ng-container *ngIf="contentData.length > 0; else contentDataleft">
+                        <content-card [images]="contentData[0].coverImage" [title]="contentData[0].title" *ngIf="contentData.length > 0" [content]="contentData[0].description" [width]="''" [height]="''" [colorLink]="'rgba(38,128,235,1)'" [isImageHeader]="true" [isAllpost]="true"
+                            [class]="'newcon-interview-content'" [function]="'setParamAllpost()'" [link]="'/main/content/postpage/'+contentData[0].id+'-'+contentData[0].title" [textLink]="'อ่านต่อ...'" [create]="contentData[0].createdDate | date:'dd/MM/yyyy hh:mm:ss'">
+                        </content-card>
+                    </ng-container>
+                    <ng-template #contentDataleft>
+                        <div class="wrapper-center-none-list-content" [ngStyle]="{'height': getHeightNoneListInterViewcontentDataleft()}">
+                            ไม่พบข้อมูลคอนเทนต์ล่าสุด
+                        </div>
+                    </ng-template>
+                </div>
+                <div class="content-2-body-right" id="content2bodyright">
+                    <ng-container *ngIf="contentData.length > 0; else contentDataright">
+                        <content-card [images]="result.coverImage" *ngFor="let result of contentData | slice:1; let i = index;" [title]="result.title" [link]="'/main/content/postpage/'+result.id+'-'+result.title" [content]="result.description" [isAllpost]="true" [width]="'100%'"
+                            [height]="''" [colorLink]="'rgba(38,128,235,1)'" [class]="'newcon-interview-content'" [textLink]="'อ่านต่อ...'" [create]="result.createdDate | date:'dd/MM/yyyy hh:mm:ss'">
+                        </content-card>
+                    </ng-container>
+                    <ng-template #contentDataright>
+                        <div class="wrapper-center-none-list-content" [ngStyle]="{'height': getHeightNoneListInterViewcontentDataright()}">
+                            ไม่พบข้อมูลคอนเทนต์ล่าสุด
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+            <newcon-button class="all-content" *ngIf="contentData.length > 0" [text]="'ดูคอนเทนต์ทั้งหมด'" [link]="'/main/content/list'" [param]="{mode: 'all'}" [bgColor]="'#279d90'"></newcon-button>
+        </div>
+        <div *ngIf="isShowclip" class="div-content-3">
+            <div class="content-3">
+                <div class="content-3-top">
+                    <div class="head">
+                        <div class="head-head">
+                            คลิปอื่นๆ
+                        </div>
+                        <div class="head-content">
+                            มาร่วมกันแสดงความคิดเห็นต่อรัฐธรรมนูญ ๒๕๖๐
+                        </div>
+                    </div>
+                </div>
+                <div class="content-3-body" id="content-3-body">
+                    <ng-container *ngIf="mainVideo.length > 0; else elseVideo">
+                        <gallery id="mixedExample" [thumbTemplate]="thumbTemplate" [itemTemplate]="itemTemplate">
+                        </gallery>
+
+                        <!-- Add custom template to thumbnails -->
+                        <ng-template #thumbTemplate let-type="type">
+                            <span *ngIf="type === 'youtube'" class="item-type">
+                                <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                            </span>
+                            <span *ngIf="type === 'video'" class="item-type">
+                                <i class="fa fa-video-camera" aria-hidden="true"></i>
+                            </span>
+                        </ng-template>
+
+                        <!-- Add custom template to image items -->
+                        <ng-template #itemTemplate let-index="index" let-type="type" let-data="data" let-currIndex="currIndex">
+                            <span *ngIf="type === 'image' && index === currIndex" [@slideAnimation] class="item-text">
+                                {{data?.title}}
+                            </span>
+                        </ng-template>
+                    </ng-container>
+                    <ng-template #elseVideo>
+                        <div class="wrapper-center-none-list-content" [ngStyle]="{'height': getHeightNoneListVideo()}">
+                            ไม่พบข้อมูลคลิปอื่นๆ
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="isShowinterview || isShowarchive" class="content-4">
+            <div class="div-content-4">
+                <div *ngIf="isShowinterview" class="div-content-4-left">
+                    <div class="newcon-interview-article-left-top">
+                        <div class="newcon-interview-article-left-head">
+                            บทสัมภาษณ์
+                        </div>
+                        <div class="newcon-interview-article-left-content">
+                            มาร่วมกันแสดงความคิดเห็นต่อรัฐธรรมนูญ ๒๕๖๐
+                        </div>
+                    </div>
+                    <div id="contentInterview">
+                        <ng-container *ngIf="contentInterview.length > 0; else elseInterview1">
+                            <content-card [images]="interview.cover_image" [title]="interview.title" *ngFor="let interview of contentInterview" [isArticle]="true" [content]="interview.description" [width]="'100%'" [height]="''" [colorLink]="'rgba(38,128,235,1)'" [class]="'newcon-interview-content'"
+                                [link]="'/main/content/postpage/'+interview.id+'-'+interview.title" [textLink]="'อ่านต่อ...'" [create]="interview.created_date | date:'dd/MM/yyyy hh:mm:ss'">
+                            </content-card>
+                        </ng-container>
+                        <ng-template #elseInterview1>
+                            <div class="wrapper-center-none-list-content" [ngStyle]="{'height': getHeightNoneListInterView()}">
+                                ไม่พบข้อมูลบทสัมภาษณ์
+                            </div>
+                        </ng-template>
+                    </div>
+                </div>
+                <div *ngIf="isShowarchive" class="div-content-4-right">
+                    <div class="newcon-interview-article-right-top">
+                        <div class="newcon-interview-article-right-head">
+                            บทความ
+                        </div>
+                        <div class="newcon-interview-article-right-content">
+                            มาร่วมกันแสดงความคิดเห็นต่อรัฐธรรมนูญ ๒๕๖๐
+                        </div>
+                    </div>
+                    <div id="contentArticles">
+                        <ng-container *ngIf="contentArticles.length > 0; else elseArticles1">
+                            <content-card [images]="content.cover_image" [title]="content.title" [isContent]="true" *ngFor="let content of contentArticles" [content]="content.description" [width]="'100%'" [height]="''" [colorLink]="'rgba(38,128,235,1)'" [class]="'newcon-article-content'"
+                                [link]="'/main/content/postpage/'+content.id+'-'+content.title" [textLink]="'อ่านต่อ...'" [create]="content.created_date | date:'dd/MM/yyyy hh:mm:ss'">
+                            </content-card>
+                        </ng-container>
+                        <ng-template #elseArticles1>
+                            <div class="wrapper-center-none-list-content" [ngStyle]="{'height': getHeightNoneListArticles()}">
+                                ไม่พบข้อมูลบทความ
+                            </div>
+                        </ng-template>
+                    </div>
+                </div>
+
+                <mat-tab-group animationDuration="0ms" mat-align-tabs="center">
+                    <mat-tab *ngIf="isShowinterview" label="บทสัมภาษณ์">
+                        <div class="newcon-interview-article-left-top">
+                            <div class="newcon-interview-article-left-head">
+                                บทสัมภาษณ์
+                            </div>
+                            <div class="newcon-interview-article-left-content">
+                                มาร่วมกันแสดงความคิดเห็นต่อรัฐธรรมนูญ ๒๕๖๐
+                            </div>
+                        </div>
+                        <ng-container *ngIf="contentInterview.length > 0; else elseInterview2">
+                            <content-card [images]="interview.cover_image" [title]="interview.title" *ngFor="let interview of contentInterview" [content]="interview.description" [width]="'100%'" [height]="''" [colorLink]="'rgba(38,128,235,1)'" [class]="'newcon-interview-content'"
+                                [link]="'/main/content/postpage/'+interview.id+'-'+interview.title" [textLink]="'อ่านต่อ...'" [create]="interview.created_date | date:'dd/MM/yyyy hh:mm:ss'" [isAllpost]="true">
+                            </content-card>
+                        </ng-container>
+                        <ng-template #elseInterview2>
+                            <div class="wrapper-center-none-list-content">
+                                ไม่พบข้อมูลบทสัมภาษณ์
+                            </div>
+                        </ng-template>
+                        <newcon-button class="wrapper-link-more" *ngIf="contentInterview.length > 0" [text]="'ดูบทสัมภาษณ์ทั้งหมด'" [link]="'/main/content/list'" [param]="{mode: 'interview'}" [bgColor]="'#279d90'"></newcon-button>
+                    </mat-tab>
+                    <mat-tab *ngIf="isShowarchive" label="บทความ">
+                        <div class="newcon-interview-article-right-top">
+                            <div class="newcon-interview-article-right-head">
+                                บทความ
+                            </div>
+                            <div class="newcon-interview-article-right-content">
+                                มาร่วมกันแสดงความคิดเห็นต่อรัฐธรรมนูญ ๒๕๖๐
+                            </div>
+                        </div>
+                        <ng-container *ngIf="contentArticles.length > 0; else elseArticles2">
+                            <content-card [images]="content.cover_image" [title]="content.title" *ngFor="let content of contentArticles" [content]="content.description" [width]="'100%'" [height]="''" [colorLink]="'rgba(38,128,235,1)'" [class]="'newcon-article-content'" [link]="'/main/content/postpage/'+content.id+'-'+content.title"
+                                [textLink]="'อ่านต่อ...'" [create]="content.created_date | date:'dd/MM/yyyy hh:mm:ss'" [isAllpost]="true">
+                            </content-card>
+                        </ng-container>
+                        <ng-template #elseArticles2>
+                            <div class="wrapper-center-none-list-content">
+                                ไม่พบข้อมูลบทความ
+                            </div>
+                        </ng-template>
+                        <newcon-button class="wrapper-link-more" *ngIf="contentArticles.length > 0" [text]="'ดูบทความทั้งหมด'" [link]="'/main/content/list'" [param]="{mode: 'articles'}" [bgColor]="'#279d90'"></newcon-button>
+                    </mat-tab>
+                </mat-tab-group>
+            </div>
+            <div class="more">
+                <div *ngIf="isShowinterview" class="more-left">
+                    <newcon-button class="wrapper-link-more" *ngIf="contentInterview.length > 0" [text]="'ดูบทสัมภาษณ์ทั้งหมด'" [link]="'/main/content/list'" [param]="{mode: 'interview'}" [bgColor]="'#279d90'">
+                    </newcon-button>
+                </div>
+                <div *ngIf="isShowarchive" class="more-right">
+                    <newcon-button class="wrapper-link-more" *ngIf="contentArticles.length > 0" [text]="'ดูบทความทั้งหมด'" [link]="'/main/content/list'" [param]="{mode: 'articles'}" [bgColor]="'#279d90'"></newcon-button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

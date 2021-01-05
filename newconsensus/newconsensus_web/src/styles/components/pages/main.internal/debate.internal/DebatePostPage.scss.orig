@@ -1,0 +1,248 @@
+.newcon-post-page {
+    width: 100%;
+    height: 140pt;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    border: 1px dashed #d0d0d0;
+    >.example-form {
+        width: 95%;
+        height: 100%;
+        >.example-full-width {
+            @include font-size-8-200;
+            width: 100%;
+            height: 100%;
+            >.input-text {
+                height: 125pt;
+                width: 90%;
+                padding-left: 5%;
+            }
+        }
+    }
+    .comment-button {
+        width: 50pt;
+        text-align: center;
+        background-color: #2680eb !important;
+        border-radius: 3px !important;
+    }
+    .mat-form-field-appearance-legacy .mat-form-field-underline {
+        display: none;
+    }
+    .mat-form-field-appearance-legacy .mat-form-field-label {
+        display: none !important;
+    }
+}
+
+<<<<<<< mine
+.comment-item-2 {
+    display: flex;
+    position: relative;
+    box-shadow: 0px 5px 20px 0px $shadow-vote-vard;
+    &:hover {
+        box-shadow: 0px 5px 20px 0px $shadow-vote-vard-hover;
+    }
+    >.wrapper-profile-comment {
+        width: calc(100% - 100pt);
+        height: 100%;
+        border-right: 0.7px solid #e8e9ea;
+        >.wrapper-comment {
+            padding: 10pt;
+            width: calc(100% - 20pt);
+            height: calc(100% - 70pt);
+            border-bottom: 0.7px solid #e8e9ea;
+            @include font-size-9-200;
+=======
+.newcon-post-comment-page {
+    >.post-comment-item {
+        display: flex;
+        position: relative;
+        height: auto;
+        box-shadow: 0px 5px 20px 0px $shadow-vote-vard;
+        &:hover {
+            box-shadow: 0px 5px 20px 0px $shadow-vote-vard-hover;
+>>>>>>> theirs
+        }
+<<<<<<< mine
+        >.wrapper-profile {
+            display: flex;
+            width: 100%;
+            height: 50pt;
+            align-items: center;
+            @include font-size-8-400;
+            >.avatar {
+                margin: 0 10pt;
+                width: 35pt;
+                height: 35pt;
+                border-radius: 50%;
+            }
+            >.profile-name {
+                margin-right: 10pt;
+                color: $color-7;
+            }
+            >.comment-created {
+                @include font-size-9-400;
+                color: $secondary;
+            }
+        }
+    }
+    >.wrapper-like-dislike {
+        width: 100pt;
+        height: auto;
+        >.wrapper-action {
+            display: flex;
+            width: 100%;
+            height: 80pt;
+            @include font-size-9-400;
+            border-bottom: 0.7px solid #e8e9ea;
+            >.btn-like {
+                display: flex;
+                width: 50%;
+                height: 100%;
+                align-items: center;
+                justify-content: center;
+                fill: $primary;
+                cursor: pointer;
+
+                &:hover{
+                    background: $shadow-vote-vard;
+                }
+
+                &::selection{
+                    background: transparent;
+                }
+=======
+        >.wrapper-profile-comment {
+            width: calc(100% - 100pt);
+            height: 100%;
+            border-right: 0.7px solid #e8e9ea;
+            >.wrapper-comment {
+                padding: 10pt;
+                width: calc(100% - 20pt);
+                height: calc(100% - 70pt);
+                @include font-size-9-200;
+                border-bottom: 0.7px solid #e8e9ea !important;
+>>>>>>> theirs
+            }
+            >.wrapper-profile {
+                display: flex;
+                width: 100%;
+                height: 50pt;
+                align-items: center;
+<<<<<<< mine
+                justify-content: center;
+                transform: rotate(180deg);
+                fill: $danger;
+                cursor: pointer;
+
+                &:hover{
+                    background: $shadow-vote-vard;
+                }
+
+                &::selection{
+                    background: transparent;
+                }
+=======
+                border-bottom: 0.7px solid #e8e9ea !important;
+                @include font-size-8-400;
+                position: relative;
+                >.avatar {
+                    margin: 0 10pt 0 20pt;
+                    width: 35pt;
+                    height: 35pt;
+                    border-radius: 50%;
+                }
+                >.profile-name {
+                    margin-right: 10pt;
+                    color: $color-7;
+                }
+                >.comment-created {
+                    @include font-size-9-400;
+                    color: $secondary;
+                }
+                >.edit {
+                    background-color: black;
+                }
+>>>>>>> theirs
+            }
+        }
+        >.wrapper-like-dislike {
+            width: 100pt;
+            height: 100%;
+            display: flex;
+            flex-direction: column-reverse;
+            >.wrapper-action {
+                display: flex;
+<<<<<<< mine
+                width: 50%;
+                height: 100%;
+                align-items: center;
+                justify-content: center;
+                color: $primary;
+
+                &::selection{
+                    background: transparent;
+                }
+=======
+                width: 100%;
+                height: calc(100% - 50pt);
+                border-bottom: 0px solid #e8e9ea !important;
+                @include font-size-9-400;
+                >.btn-like {
+                    display: flex;
+                    width: 50%;
+                    height: 100%;
+                    align-items: center;
+                    justify-content: center;
+                    fill: $primary;
+                    cursor: pointer;
+                }
+                >.btn-dislike {
+                    display: flex;
+                    width: 50%;
+                    height: 100%;
+                    align-items: center;
+                    justify-content: center;
+                    transform: rotate(180deg);
+                    fill: $danger;
+                    cursor: pointer;
+                }
+>>>>>>> theirs
+            }
+            >.wrapper-total {
+                display: flex;
+<<<<<<< mine
+                width: 50%;
+                height: 100%;
+                align-items: center;
+                justify-content: center;
+                color: $danger;
+
+                &::selection{
+                    background: transparent;
+                }
+=======
+                width: 100%;
+                height: 50pt;
+                @include font-size-8-400;
+                >.like-total {
+                    display: flex;
+                    width: 50%;
+                    height: 100%;
+                    align-items: center;
+                    justify-content: center;
+                    color: $primary;
+                }
+                >.dislike-total {
+                    display: flex;
+                    width: 50%;
+                    height: 100%;
+                    align-items: center;
+                    justify-content: center;
+                    color: $danger;
+                }
+>>>>>>> theirs
+            }
+        }
+    }
+}

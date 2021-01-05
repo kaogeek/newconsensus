@@ -1,0 +1,51 @@
+.supporter-bar {
+  position: relative;
+  width: 180pt;
+  height: 22pt;
+  mat-progress-bar {
+    width: 100%;
+    height: 100%;
+    border-radius: 25pt;
+  }
+  > .label-support {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    color: #fff;
+    @include font-size-8-400;
+  }
+}
+
+@media (max-width: $xxlarge) {
+  .supporter-bar {
+    width: 180pt; 
+  }
+}
+
+@media (max-width: $xlarge) {
+  .supporter-bar {
+    width: 180pt; 
+  }
+}
+
+@media (max-width: $large) {
+  .supporter-bar {
+    width: 180pt; 
+  }
+}
+
+@media (max-width: $medium) {
+  .supporter-bar {
+    width: 180pt; 
+  }
+}
+
+@media (max-width: $small) {
+  .supporter-bar {
+    width: 100pt; 
+  }
+}

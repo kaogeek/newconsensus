@@ -1,0 +1,37 @@
+<div class="body">
+
+    <div class="all">
+        <div class="autpost">
+            <div style="padding-top: 30px;">
+                <h1 class="wrapper-breadcrumb">
+                    <a [routerLink]="'/main/proposal'">ข้อเสนอรัฐธรรมนูญ</a>
+                    <ng-container *ngIf="roomIdName">
+                        >
+                        <a [routerLink]="'/main/proposal/room/'+roomIdName">{{roomName}}</a>
+                    </ng-container>
+                    >
+                    <span>{{getTopicHeaderLabel()}}</span>
+                </h1>
+                <h4 style="width: 100%">มาร่วมกันแสดงความคิดเห็นต่อรัฐธรรมนูญ ๒๕๖๐</h4>
+            </div>
+            <div style="height:auto;margin-top:30px;">
+                <ng-container *ngIf="proposal.length > 0; else elseTemplate">
+                    <topic-profile [pageUser]="item.pageUser" style="margin: 0px 15px;" [link]="roomIdName ? '/main/proposal/room/'+roomIdName+'/comment/post/'+item.id+'-'+item.title : '/main/proposal/room/comment/post/'+item.id+'-'+item.title" [param]="{mode: mode, page: p, room: roomId}"
+                        [name]="(item.pageUser === undefined || item.pageUser === null) ?  item.createdByUsername : item.pageUser.displayName" *ngFor="let item of proposal | paginate: { id: 'server', itemsPerPage: searchLimit, currentPage: p, totalItems: total }"
+                        [topic]="item.title" [hot]="item.hotScore > showHot" [create]="item.createdDate | date:'dd/MM/yyyy hh:mm:ss'" [countComment]="item.commentCount"></topic-profile><br>
+                </ng-container>
+                <ng-template #elseTemplate>
+                    <div class="wrapper-center-none-list-content">
+                        ไม่พบข้อมูลข้อเสนอ
+                    </div>
+                </ng-template>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="has-text-centered" style="margin: auto;">
+        <newcon-pagination-comment (pageChange)="getDebate($event)" [itemsPerPage]="searchLimit" [currentPage]="p"></newcon-pagination-comment>
+        <!-- <pagination-controls (pageChange)="getDebate($event)" id="server"></pagination-controls> -->
+    </div>
+</div>

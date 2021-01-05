@@ -1,0 +1,40 @@
+<div class="newcon-proposal-comment-page">
+    <div class="body">
+        <div class="grid2">
+            <div style="width: 100%;">
+                <!-- <ng-container *ngIf="isBtnCreate()">
+                    <ng-container *ngIf="isLogin(); else elseGrid2">
+                        <add-debate [link]="'/main/proposal/comment/create'" [name]="' + สร้างข้อเสนอ'"></add-debate>
+                    </ng-container>
+                    <ng-template #elseGrid2>
+                        <add-debate (click)="clickIsLogin()" [name]="' + สร้างข้อเสนอ'"></add-debate>
+                    </ng-template>
+                </ng-container> -->
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+        <div class="grid1">
+            <ng-container *ngIf="isBtnCreate()">
+                <ng-container *ngIf="isLogin(); else elseGrid1">
+                    <add-debate (click)="clickUrl()" [name]="' + สร้างข้อเสนอ'"></add-debate>
+                    <br>
+                </ng-container>
+                <ng-template #elseGrid1>
+                    <add-debate (click)="clickIsLogin()" [name]="' + สร้างข้อเสนอ'"></add-debate><br>
+                </ng-template>
+            </ng-container>
+            <!-- <h3>{{getTopicHeaderLabel()}}</h3> -->
+            <h3>ข้อเสนออื่น ๆ ที่เกี่ยวข้อง</h3>
+            <h5>มาช่วยกันแก้ มาช่วยกันสร้าง เพื่อความเป็นประชาธิปไตรที่แท้จริง</h5>
+            <br>
+            <div class="content">
+                <topic-profile [id]="item.id" [pageUser]="item.pageUser" [width]="'100%'" [link]="roomIdName ? '/main/proposal/room/'+roomIdName+'/comment/post/'+item.id+'-'+item.title : '/main/proposal/comment/post/'+item.id+'-'+item.title" [param]="{mode: mode, room: roomId}"
+                    [topic]="item.title" [name]="(item.pageUser) ? item.pageUser.displayName : '-'" [hot]="item.hotScore > showHot" [countComment]="item.commentCount" [create]="item.createdDate | date:'dd/MM/yyyy hh:mm:ss'" *ngFor="let item of newTopicList">
+                </topic-profile>
+                <br>
+                <!-- <div *ngIf="newTopicList.length > 10;" class="button-more" [ngStyle]="{'color': '#FFFFFF' , 'background' : '#279d90'}" (click)="loadNextAllProposel()">
+                    ดูเพิ่มเติม</div> -->
+            </div>
+        </div>
+    </div>
+</div>

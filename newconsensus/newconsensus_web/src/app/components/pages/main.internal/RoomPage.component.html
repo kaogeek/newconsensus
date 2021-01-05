@@ -1,0 +1,38 @@
+<script>
+    $(document).ready(function() {
+        if (!$.browser.webkit) {}
+    });
+</script>
+<div class="newcon-room-page" id="test001">
+    <div class="newcon-room-head">
+        <div class="newcon-room-head-content">
+            <div class="newcon-room-head-content-one">
+
+            </div>
+            <div class="newcon-room-head-content-two">
+                มาร่วมกันสร้างข้อเสนอรัฐธรรมนูญ
+            </div>
+            <div class="newcon-room-head-content-two" style="display: flex;flex-direction: column;align-items: flex-end;">
+                <ng-container *ngIf="isLogin(); else elseTemplate">
+                    <newcon-button style="padding: 0% 4%;" [link]="'/main/proposal/comment/create'" [bgColor]="'#407cff'" [text]="' + สร้างข้อเสนอ'" [class]="'bottom-debate'"></newcon-button>
+                </ng-container>
+                <ng-template #elseTemplate>
+                    <newcon-button style="padding: 0% 4%;" (click)="clickIsLogin()" [bgColor]="'#279d90'" [text]="' + สร้างข้อเสนอ'" [class]="'bottom-debate'"></newcon-button>
+                </ng-template>
+            </div>
+        </div>
+        <img class="img-room-top" src="../../../../assets/components/pages/DebatePage/proposal.png">
+    </div>
+    <div class="body">
+        <div [class.is-show-rooms]="isShowRooms()" class="top-menu-room user-select-none" id="style-1">
+            <room-button [class]="'box'" style="display: flex; margin: 10pt 10pt;border-radius: 8px;" [text]="'ห้องทั้งหมด'" [link]="'/main/proposal'"></room-button><br>
+            <room-button id="room" style="display: flex; margin: 10pt 10pt;background-color: white;border-radius: 8px;" *ngFor="let room of roomList" [text]="room.name" [bgColor]="room.color" [crColor]="room.color" [count]="room.count" [link]="'/main/proposal/room/'+room.id+'-'+room.name"></room-button><br>
+        </div>
+        <div class="top-menu-room" [class.is-show-rooms]="isShowRooms()" id="style-2"></div>
+        <div [class.is-show-rooms]="isShowRooms()" class="top-menu-room-device user-select-none" id="style-1" style="margin: 10px 0px;">
+            <room-button [class]="'box'" [text]="'ห้องทั้งหมด'" [link]="'/main/proposal'"></room-button><br>
+            <room-button [class]="'box'" *ngFor="let room of roomList" [text]="room.name" [bgColor]="room.color" [crColor]="room.color" [count]="room.count" [link]="'/main/proposal/room/'+room.id+'-'+room.name"></room-button><br>
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+</div>

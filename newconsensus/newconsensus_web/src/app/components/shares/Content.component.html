@@ -1,0 +1,97 @@
+<div style="position: relative;" class="debate-content-page" [ngStyle]="{'background-color': bgContent, 'width': width, 'height': height}"
+    [ngClass]="class">
+    <div class="debate-content-page-comment">
+        <div class="debate-content-page-comment-title">
+            <span class="title">{{title}}</span>
+        </div>
+        <div class="debate-content-page-comment-content">
+            <span [innerHTML]="content" class="content"></span>
+        </div>
+    </div>
+    <div class="line"></div>
+    <div class="debate-content-page-share">
+        <div class="debate-content-page-share-title">
+            <span class="title">แชร์ :</span>
+        </div>
+        <div class="debate-content-page-share-content">
+            <a *ngIf="facebookLink" href="{{facebookLink}}" target="_blank" class="share">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="38" height="38" viewBox="0 0 226 226">
+                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <path d="M0,226v-226h226v226z"></path>
+                        <g>
+                            <path d="M113,23.54167c-49.40647,0 -89.45833,40.05186 -89.45833,89.45833c0,49.40647 40.05186,89.45833 89.45833,89.45833c49.40647,0 89.45833,-40.05186 89.45833,-89.45833c0,-49.40647 -40.05186,-89.45833 -89.45833,-89.45833z"
+                                style="fill: #3b5998;"></path>
+                            <path d="M125.10983,136.71117h23.15087l3.63483,-23.51812h-26.79042v-12.85375c0,-9.76979 3.19225,-18.43312 12.33113,-18.43312h14.68529v-20.52362c-2.58017,-0.34842 -8.03713,-1.11117 -18.34838,-1.11117c-21.53121,0 -34.15425,11.37062 -34.15425,37.27587v15.64579h-22.13388v23.51813h22.13388v64.64071c4.38346,0.65917 8.82342,1.10646 13.38108,1.10646c4.11979,0 8.14071,-0.37667 12.10983,-0.91342z"
+                                fill="#ffffff"></path>
+                        </g>
+                    </g>
+                </svg>
+            </a>
+            <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button share" data-show-count="false" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="38" height="38" viewBox="0 0 172 172" style=" fill:#000000;">
+                    <g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                        stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                        style="mix-blend-mode: normal">
+                        <path d="M0,172v-172h172v172z" fill="none"></path>
+                        <g>
+                            <path d="M86,14.33333c-39.58041,0 -71.66667,32.08626 -71.66667,71.66667c0,39.58041 32.08626,71.66667 71.66667,71.66667c39.58041,0 71.66667,-32.08626 71.66667,-71.66667c0,-39.58041 -32.08626,-71.66667 -71.66667,-71.66667z"
+                                fill="#3498db"></path>
+                            <path d="M129,61.34667c-3.1605,1.40108 -7.16308,2.71617 -10.75,3.15333c3.64783,-2.16433 9.43492,-6.67217 10.75,-10.75c-3.40775,2.00308 -9.57108,4.14233 -13.59158,4.91633c-3.21067,-3.40417 -7.79017,-4.91633 -12.86417,-4.91633c-9.74667,0 -16.54425,8.25958 -16.54425,17.91667v7.16667c-14.33333,0 -28.30833,-10.91842 -37.00508,-21.5c-1.53008,2.58358 -2.39008,5.60792 -2.39008,8.80425c0,6.51808 5.98775,13.13292 10.7285,16.27908c-2.89175,-0.08958 -8.36708,-2.29692 -10.75,-3.58333c0,0.05733 0,0.129 0,0.20425c0,8.48175 5.95192,14.24017 14.018,15.8455c-1.47275,0.40492 -3.268,1.86692 -10.17667,1.86692c2.24317,6.93375 13.51992,10.5995 21.242,10.75c-6.0415,4.68342 -16.813,7.16667 -25.08333,7.16667c-1.42975,0 -2.20375,0.07883 -3.58333,-0.08242c7.8045,4.945 18.705,7.24908 28.66667,7.24908c32.45425,0 50.16667,-24.7895 50.16667,-47.90917c0,-0.75967 -0.02508,-3.30383 -0.0645,-4.04917c3.46867,-2.44383 4.87333,-5.00233 7.23117,-8.52833"
+                                fill="#ffffff"></path>
+                        </g>
+                    </g>
+                </svg>
+            </a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+    </div>
+    <div class="line"></div>
+    <div class="debate-content-page-user">
+        <div class="debate-content-page-user-title">
+            <span class="title">ผู้สร้าง :</span>
+        </div>
+        <div class="debate-content-page-user-content">
+
+            <span class="content">
+                <img class="avatar" src="{{!pageUserInfo.getUserImage(pageUser) ? '../../../assets/components/pages/icons8-female-profile-128.png' : pageUserInfo.getUserImage(pageUser)}}"
+                    alt="">
+                <span class="user-name">{{user}}</span></span>
+            <div style="margin-left: 20px;" class="edit" [routerLink]="'/main/profile/debateuser'" *ngIf="isLogin() && isShowAction(createdBy)">
+                <i class="material-icons icon icon-edit"> edit </i>
+            </div>
+        </div>
+    </div>
+    <div class="line"></div>
+    <div class="debate-content-page-like-dislike">
+        <div class="wrapper-like-dislike user-select-none">
+            <div class="wrapper-action">
+                <div class="like-dislike" [style.opacity]="!isLogin() || isUserLike === undefined || isUserLike === false ? '0.3' : '1'" (click)="likeDebate()" style="border-right: solid 0.1px #ececec;">
+                    <span [style.pointer-events]="!isLogin() ? 'none' : 'inherit'" class="btn-like">
+                        <svg id="Bold" enable-background="new 0 0 24 24" height="15pt" viewBox="0 0 24 24" width="15pt" xmlns="http://www.w3.org/2000/svg">
+                            <path d="m1.75 23h2.5c.965 0 1.75-.785 1.75-1.75v-11.5c0-.965-.785-1.75-1.75-1.75h-2.5c-.965 0-1.75.785-1.75 1.75v11.5c0 .965.785 1.75 1.75 1.75z"
+                            />
+                            <path d="m12.781.75c-1 0-1.5.5-1.5 3 0 2.376-2.301 4.288-3.781 5.273v12.388c1.601.741 4.806 1.839 9.781 1.839h1.6c1.95 0 3.61-1.4 3.94-3.32l1.12-6.5c.42-2.45-1.46-4.68-3.94-4.68h-4.72s.75-1.5.75-4c0-3-2.25-4-3.25-4z"
+                            />
+                        </svg>
+                    </span>
+                    <span class="like-total">{{likeCount | shortNumber}} ถูกใจ</span>
+                </div>
+                <div class="like-dislike" [style.opacity]="!isLogin() || isUserLike === undefined || isUserLike === true ? '0.3' : '1'" (click)="dislikeDebate()">
+                    <span [style.pointer-events]="!isLogin() ? 'none' : 'inherit'" class="btn-dislike">
+                        <svg id="Bold" enable-background="new 0 0 24 24" height="15pt" viewBox="0 0 24 24" width="15pt" xmlns="http://www.w3.org/2000/svg">
+                            <path d="m1.75 23h2.5c.965 0 1.75-.785 1.75-1.75v-11.5c0-.965-.785-1.75-1.75-1.75h-2.5c-.965 0-1.75.785-1.75 1.75v11.5c0 .965.785 1.75 1.75 1.75z"
+                            />
+                            <path d="m12.781.75c-1 0-1.5.5-1.5 3 0 2.376-2.301 4.288-3.781 5.273v12.388c1.601.741 4.806 1.839 9.781 1.839h1.6c1.95 0 3.61-1.4 3.94-3.32l1.12-6.5c.42-2.45-1.46-4.68-3.94-4.68h-4.72s.75-1.5.75-4c0-3-2.25-4-3.25-4z"
+                            />
+                        </svg>
+                    </span>
+                    <span class="dislike-total">{{dislikeCount | shortNumber}} ไม่ถูกใจ</span>
+                </div>
+            </div>
+            <div class="wrapper-total">
+            </div>
+        </div>
+    </div>
+</div>

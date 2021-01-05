@@ -1,0 +1,20 @@
+<div class="newcon-main-page" id="menubottom" (scroll)="scrollTop()" (scroll)="roomSticky()">
+    <!-- check authen -->
+    <authen-check-page></authen-check-page>
+    <!-- header Start -->
+    <newcon-header-top class="user-select-none" [menutopprofile]="isprofile"></newcon-header-top>
+    <newcon-header-bottom class="user-select-none"></newcon-header-bottom>
+    <div class="div-top" id="div-top" (click)="clicktotop()" *ngIf="isdivtop">
+        <i class="material-icons to-top">
+            keyboard_arrow_up
+        </i>
+    </div>
+    <!-- header End -->
+
+    <!-- contents -->
+    <div class="wrapper-content-page"> 
+        <router-outlet></router-outlet>
+    </div>
+    <!-- footer -->
+    <newcon-footer></newcon-footer>
+</div>

@@ -1,0 +1,20 @@
+<ng-container *ngIf="link; else elseTemplate">
+    <ng-container *ngIf="!isNewTab; else elseTemplate">
+        <a class="newcon-button" [class.radius]="isRadius" [class.disable]="isDisable" [ngStyle]="{'background-color': bgColor, 'color': color}"
+            [ngClass]="class" matRipple [routerLink]="link" [queryParams]="param">
+            {{text}}
+        </a>
+    </ng-container>
+    <ng-template #elseTemplate>
+        <a class="newcon-button" [class.radius]="isRadius" [class.disable]="isDisable" [ngStyle]="{'background-color': bgColor, 'color': color}"
+            [ngClass]="class" matRipple [routerLink]="link" [queryParams]="param" target="_blank">
+            {{text}}
+        </a>
+    </ng-template>
+</ng-container>
+<ng-template #elseTemplate>
+    <div class="newcon-button" [class.radius]="isRadius" [class.disable]="isDisable" [ngStyle]="{'background-color': bgColor, 'color': color}"
+        [ngClass]="class" matRipple>
+        {{text}}
+    </div>
+</ng-template>

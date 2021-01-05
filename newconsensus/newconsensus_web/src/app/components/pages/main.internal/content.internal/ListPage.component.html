@@ -1,0 +1,45 @@
+<div class="list-all-page">
+    <div class="list-all-page-div">
+        <div class="list-all-top">
+            <div class="head">
+                <ng-container *ngIf="mode === 'interview'">
+                    บทสัมภาษณ์ทั้งหมด
+                </ng-container>
+                <ng-container *ngIf="mode === 'articles'">
+                    บทความทั้งหมด
+                </ng-container>
+                <ng-container *ngIf="mode === 'all'">
+                    บทสัมภาษณ์ และบทความทั้งหมด
+                </ng-container>
+            </div>
+            <div class="content">
+                มาร่วมกันแสดงความคิดเห็นต่อรัฐธรรมนูญ ๒๕๖๐
+            </div>
+        </div>
+        <div class="list-all-body">
+            <ng-container *ngIf="resList.length > 0; else elseTemplate">
+                <div class="list-items" *ngFor="let data of resList">
+                    <content-card [images]="data.pageImages.image_url" [title]="data.title" [content]="data.description" [width]="'100%'" [height]="''" [colorLink]="'rgba(38,128,235,1)'" [class]="'newcon-interview-content'" [link]="'/main/content/postpage/'+data.id+'-'+data.title"
+                        [textLink]="'อ่านต่อ...'" [isAll]="true" [create]="data.created_date | date:'dd/MM/yyyy hh:mm:ss'">
+                    </content-card>
+                </div>
+            </ng-container>
+            <ng-template #elseTemplate>
+                <div class="wrapper-center-none-list-content">
+                    ไม่พบข้อมูล
+                    <ng-container *ngIf="mode === 'interview'">
+                        บทสัมภาษณ์ทั้งหมด
+                    </ng-container>
+                    <ng-container *ngIf="mode === 'articles'">
+                        บทความทั้งหมด
+                    </ng-container>
+                    <ng-container *ngIf="mode === 'all'">
+                        บทสัมภาษณ์ และบทความทั้งหมด
+                    </ng-container>
+                </div>
+            </ng-template>
+        </div>
+        <mat-paginator #paginator [length]="(resList.length)" [pageSize]="pageSize" [hidePageSize]="true">
+        </mat-paginator>
+    </div>
+</div>

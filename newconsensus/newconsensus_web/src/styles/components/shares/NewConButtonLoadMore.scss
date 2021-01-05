@@ -1,0 +1,43 @@
+newcon-button-load-more {
+    display: flex;
+    width: 100%;    
+    position: relative;    
+    justify-content: center;    
+    align-items: center;
+    .newcon-button-load-more {
+        padding: 5pt 20pt;
+        cursor: pointer;
+        @include font-size-8-200;
+        border-radius: 7pt;
+        opacity: 0.95;
+        transform: scale(1, 1);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #FFFFFF;
+        background-color: $baendcolor;
+        height: 20pt;
+        width: 70pt; 
+        &:active {
+            transform: scale(0.98, 0.98);
+        }
+        &:hover {
+            opacity: 1;
+        }
+        &:focus {
+            outline: none;
+        }
+        &::selection {
+            background: transparent;
+        }
+    }
+    .loading-more {
+        width: 50px !important;
+        height: 50px !important; 
+        svg {
+            width: 50px !important;
+            height: 50px !important;
+        }
+    }
+}
+

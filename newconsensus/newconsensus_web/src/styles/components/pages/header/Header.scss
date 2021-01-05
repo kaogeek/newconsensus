@@ -1,0 +1,1203 @@
+.cdk-overlay-container {
+  > .cdk-overlay-backdrop,
+  > .cdk-overlay-transparent-backdrop,
+  > .cdk-overlay-backdrop-showing {
+  }
+  > .cdk-overlay-connected-position-bounding-box {
+    > .cdk-overlay-pane {
+      > .div-profile {
+        max-width: unset;
+        max-height: unset;
+        min-height: unset;
+        background: transparent;
+        z-index: 9999;
+        box-shadow: unset;
+        &:before {
+          font-size: 26pt;
+          display: block;
+          width: 0;
+          height: 0;
+          content: "";
+          pointer-events: none;
+          position: absolute;
+          top: 0px;
+          border-right: 15px solid transparent;
+          border-bottom: 15px solid #ccc;
+          border-left: 15px solid transparent;
+          right: 10pt;
+        }
+        > .mat-menu-content {
+          padding-top: 0px;
+          padding-bottom: 0px;
+          background: $white;
+          margin-top: 10pt;
+          border: 1px solid #ccc;
+          border-color: rgba(0, 0, 0, 0.2);
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+          border-radius: 8px;
+          > .popup-setting-profile {
+            width: 265pt;
+            height: auto;
+            > .popup-setting-profile-top {
+              padding: 15pt 12pt;
+              border-bottom: 1px solid #e3e9ed;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              > .image-profile-dropdown {
+                width: 60pt;
+                height: 60pt;
+                border-radius: 50%;
+                margin-bottom: 5pt;
+              }
+              > .popup-setting-profile-top-div {
+                text-align: center;
+                > .profile-name {
+                  display: block;
+                  @include font-size-8-300;
+                }
+                > .profile-email {
+                  display: block;
+                  @include font-size-9-200;
+                }
+                newcon-button {
+                  > .manage-accounts {
+                    width: 70pt;
+                    margin-top: 12pt;
+                    margin-left: auto;
+                    margin-right: auto;
+                    padding-left: 10pt;
+                    padding-right: 10pt;
+                    border: 1px solid #dadce0;
+                    background: $white !important;
+                    color: $back !important;
+                    &:hover {
+                      background-color: #f7f8f8 !important;
+                    }
+                    &:focus {
+                      outline: none;
+                    }
+                  }
+                }
+              }
+            }
+            > .popup-setting-profile-bottom {
+              padding: 15pt 12pt;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              newcon-button {
+                > .manage-logout {
+                  width: 110pt;
+                  text-align: center;
+                  margin-left: auto;
+                  margin-right: auto;
+                  border-radius: 5pt;
+                  opacity: 0.95;
+                  &:hover {
+                    opacity: 1;
+                  }
+                  &:focus {
+                    outline: none;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+newcon-header-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 65pt;
+  background-color: $white;
+  top: 0;
+  z-index: 100;
+  > .container-logo {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    > .wrapper-show-vote-total {
+      line-height: 1.2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      > .label {
+        color: $color-7;
+        @include font-size-10-400;
+      }
+      > .vote-total {
+        display: flex;
+        @include font-size-7-400;
+      }
+    }
+    > .scroll-logo {
+      overflow-x: auto;
+      overflow-y: hidden;
+      display: flex;
+      scrollbar-color: $baendcolor $white;
+      scrollbar-width: thin;
+      scroll-behavior: smooth;
+      > .menu-logo {
+        height: 35pt;
+        margin-left: 25pt;
+        cursor: pointer;
+        margin-top: 5pt;
+        margin-bottom: 5pt;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+          position: relative;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+  > .wrapper-account {
+    display: flex;
+    position: fixed;
+    justify-content: center;
+    align-content: center;
+    right: 35px;
+    max-width: 150pt;
+    height: 36pt;
+    width: auto;
+    z-index: 99;
+    > .wrapper-account-profile {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      > .image-profile {
+        width: 36pt;
+        height: 36pt;
+        padding: 3pt;
+        background: transparent;
+        border-radius: 50%;
+        cursor: pointer;
+        position: relative;
+        z-index: 9999;
+        &:hover {
+          background: rgba(60, 64, 67, 0.1);
+        }
+        &.active {
+          background-color: rgba(95, 99, 104, 0.24);
+        }
+      }
+    }
+    > .butt-div-log {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      newcon-button {
+        > .newcon-button {
+          outline: none;
+        }
+      }
+    }
+  }
+  > .scroll-profile {
+    position: fixed !important;
+    top: 0 !important;
+    z-index: 100 !important;
+    height: 50pt !important;
+    > .wrapper-account-profile {
+      > .image-profile {
+        &:hover {
+          background: rgba(240, 240, 240, 0.1);
+        }
+        &.active {
+          background-color: rgba(228, 228, 228, 0.2);
+        }
+      }
+    }
+    > .butt-div-log {
+      newcon-button {
+        > .manage-logout-scroll {
+          background: $white !important;
+          color: $back !important;
+        }
+      }
+    }
+  }
+}
+
+newcon-header-bottom {
+  display: block;
+  position: sticky;
+  width: 100%;
+  background-color: $baendcolor;
+  top: 0;
+  z-index: 99;
+  > .wrapper-menu-top-div {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    height: 50pt;
+    box-shadow: 0px 4px 12px -7px #1b1717;
+    > .hamburger {
+      position: absolute;
+      top: 0;
+      left: 10pt;
+      right: 0;
+      bottom: 0;
+      width: 50pt;
+      height: 50pt;
+      color: $white;
+      cursor: pointer;
+      font-size: 28pt;
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+    > .wrapper-menu-top-list {
+      display: flex;
+      > .close {
+        display: none;
+      }
+      > .div-logo {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        display: none;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        overflow-x: auto;
+        overflow-y: hidden;
+        margin: 10pt 0;
+        > .menu-logo {
+          height: 35pt;
+          margin-left: 25pt;
+          cursor: pointer;
+          margin-top: 5pt;
+          margin-bottom: 5pt;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          img {
+            position: relative;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+      .mat-tab-header-pagination-before,
+      .mat-tab-header-pagination-after {
+        display: none;
+      }
+      .mat-tab-links {
+        height: 100%;
+      }
+      .mat-tab-link {
+        height: auto;
+        color: $white;
+        opacity: 1;
+        @include font-size-9-400;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+      .mat-ink-bar {
+        height: 5px;
+        background: $color-2; 
+      }
+    }
+  }
+}
+
+@media (max-width: $xxlarge) {
+  .cdk-overlay-container {
+    > .cdk-overlay-backdrop,
+    > .cdk-overlay-transparent-backdrop,
+    > .cdk-overlay-backdrop-showing {
+    }
+    > .cdk-overlay-connected-position-bounding-box {
+      > .cdk-overlay-pane {
+        > .div-profile {
+          &:before {
+          }
+          > .mat-menu-content {
+            margin-top: 11pt;
+            > .popup-setting-profile {
+              width: 255pt;
+              > .popup-setting-profile-top {
+                > .image-profile-dropdown {
+                  width: 56pt;
+                  height: 56pt;
+                }
+                > .popup-setting-profile-top-div {
+                  > .profile-name {
+                  }
+                  > .profile-email {
+                  }
+                  newcon-button {
+                    > .manage-accounts {
+                      &:hover {
+                      }
+                      &:focus {
+                      }
+                    }
+                  }
+                }
+              }
+              > .popup-setting-profile-bottom {
+                newcon-button {
+                  > .manage-logout {
+                    width: 100pt;
+                    &:hover {
+                    }
+                    &:focus {
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  newcon-header-top {
+    height: 60pt;
+    > .container-logo {
+      max-width: 760px;
+      > .wrapper-show-vote-total {
+        > .label {
+        }
+        > .vote-total {
+        }
+      }
+      > .scroll-logo {
+        > .menu-logo {
+          margin-left: 23pt;
+          img {
+          }
+        }
+      }
+    }
+    > .wrapper-account {
+      right: 33px;
+      > .wrapper-account-profile {
+        > .image-profile {
+          width: 36pt;
+          height: 36pt;
+          padding: 3pt;
+          background: transparent;
+          border-radius: 50%;
+          cursor: pointer;
+          &:hover {
+          }
+          &:focus {
+          }
+        }
+      }
+      > .butt-div-log {
+        newcon-button {
+          > .newcon-button {
+          }
+        }
+      }
+    }
+    > .scroll-profile {
+      height: 45pt !important;
+      > .wrapper-account-profile {
+        > .image-profile {
+          &:hover {
+          }
+          &.active {
+          }
+        }
+      }
+      > .butt-div-log {
+        newcon-button {
+          > .manage-logout-scroll {
+          }
+        }
+      }
+    }
+  }
+  newcon-header-bottom {
+    > .wrapper-menu-top-div {
+      height: 45pt;
+      > .hamburger {
+        left: 7pt;
+        width: 45pt;
+        height: 45pt;
+      }
+      > .wrapper-menu-top-list {
+        > .close {
+        }
+        > .div-logo {
+          > .menu-logo {
+          }
+        }
+        .mat-tab-header-pagination-before,
+        .mat-tab-header-pagination-after {
+        }
+        .mat-tab-links {
+        }
+        .mat-tab-link {
+          &:hover {
+          }
+        }
+        .mat-tab-label-active {
+        }
+        .mat-ink-bar {
+        }
+      }
+      > .active {
+      }
+    }
+  }
+}
+
+@media (max-width: $xlarge) {
+  .cdk-overlay-container {
+    > .cdk-overlay-backdrop,
+    > .cdk-overlay-transparent-backdrop,
+    > .cdk-overlay-backdrop-showing {
+    }
+    > .cdk-overlay-connected-position-bounding-box {
+      > .cdk-overlay-pane {
+        > .div-profile {
+          &:before {
+            border-right: 13px solid transparent;
+            border-bottom: 13px solid #ccc;
+            border-left: 13px solid transparent;
+          }
+          > .mat-menu-content {
+            margin-top: 9pt;
+            > .popup-setting-profile {
+              width: 250pt;
+              > .popup-setting-profile-top {
+                > .image-profile-dropdown {
+                  width: 52pt;
+                  height: 52pt;
+                }
+                > .popup-setting-profile-top-div {
+                  > .profile-name {
+                  }
+                  > .profile-email {
+                  }
+                  newcon-button {
+                    > .manage-accounts {
+                      &:hover {
+                      }
+                      &:focus {
+                      }
+                    }
+                  }
+                }
+              }
+              > .popup-setting-profile-bottom {
+                newcon-button {
+                  > .manage-logout {
+                    &:hover {
+                    }
+                    &:focus {
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  newcon-header-top {
+    height: 55pt;
+    > .container-logo {
+      max-width: 600px;
+      > .wrapper-show-vote-total {
+        line-height: 1.1;
+        > .label {
+        }
+        > .vote-total {
+        }
+      }
+      > .scroll-logo {
+        > .menu-logo {
+          margin-left: 21pt;
+          img {
+          }
+        }
+      }
+    }
+    > .wrapper-account {
+      right: 31px;
+      height: 34pt;
+      > .wrapper-account-profile {
+        > .image-profile {
+          width: 30pt;
+          height: 30pt;
+          &:hover {
+          }
+          &:focus {
+          }
+        }
+      }
+      > .butt-div-log {
+        newcon-button {
+          > .newcon-button {
+          }
+        }
+      }
+    }
+    > .scroll-profile {
+      height: 40pt !important;
+      > .wrapper-account-profile {
+        > .image-profile {
+          &:hover {
+          }
+          &.active {
+          }
+        }
+      }
+      > .butt-div-log {
+        newcon-button {
+          > .manage-logout-scroll {
+          }
+        }
+      }
+    }
+  }
+  newcon-header-bottom {
+    > .wrapper-menu-top-div {
+      height: 40pt;
+      > .hamburger {
+        left: 5pt;
+        width: 40pt;
+        height: 40pt;
+      }
+      > .wrapper-menu-top-list {
+        > .close {
+        }
+        > .div-logo {
+          > .menu-logo {
+          }
+        }
+        .mat-tab-header-pagination-before,
+        .mat-tab-header-pagination-after {
+        }
+        .mat-tab-links {
+        }
+        .mat-tab-link {
+          &:hover {
+          }
+        }
+        .mat-tab-label-active {
+        }
+        .mat-ink-bar {
+        }
+      }
+      > .active {
+      }
+    }
+  }
+}
+
+@media (max-width: $large + 50px) {
+  .cdk-overlay-container {
+    > .cdk-overlay-backdrop,
+    > .cdk-overlay-transparent-backdrop,
+    > .cdk-overlay-backdrop-showing {
+    }
+    > .cdk-overlay-connected-position-bounding-box {
+      > .cdk-overlay-pane {
+        > .div-profile {
+          &:before {
+          }
+          > .mat-menu-content {
+            > .popup-setting-profile {
+              > .popup-setting-profile-top {
+                > .image-profile-dropdown {
+                }
+                > .popup-setting-profile-top-div {
+                  > .profile-name {
+                  }
+                  > .profile-email {
+                  }
+                  newcon-button {
+                    > .manage-accounts {
+                      &:hover {
+                      }
+                      &:focus {
+                      }
+                    }
+                  }
+                }
+              }
+              > .popup-setting-profile-bottom {
+                newcon-button {
+                  > .manage-logout {
+                    &:hover {
+                    }
+                    &:focus {
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  newcon-header-top {
+    width: calc(100% - 30pt);
+    padding: 0 15pt;
+    justify-content: space-between;
+    > .container-logo {
+      max-width: unset;
+      width: 100%;
+      justify-content: flex-start;
+      > .wrapper-show-vote-total {
+        > .label {
+        }
+        > .vote-total {
+        }
+      }
+      > .scroll-logo {
+        > .menu-logo {
+          padding: 0 10pt;
+          display: none;
+          img {
+          }
+        }
+      }
+    }
+    > .wrapper-account {
+      right: 29px;
+      > .wrapper-account-profile {
+        > .image-profile {
+          &:hover {
+          }
+          &:focus {
+          }
+        }
+      }
+      > .butt-div-log {
+        newcon-button {
+          > .newcon-button {
+          }
+        }
+      }
+    }
+    > .scroll-profile {
+      > .wrapper-account-profile {
+        > .image-profile {
+          &:hover {
+          }
+          &.active {
+          }
+        }
+      }
+      > .butt-div-log {
+        newcon-button {
+          > .manage-logout-scroll {
+          }
+        }
+      }
+    }
+  }
+  newcon-header-bottom {
+    > .wrapper-menu-top-div {
+      > .hamburger {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      > .wrapper-menu-top-list {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: white;
+        z-index: 9999;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        overflow-y: auto;
+        transform: translateX(-100vw);
+        opacity: 0;
+        transition: transform 0s, opacity 0s;
+        > .close {
+          display: block;
+          margin-top: 3pt;
+          margin-right: 3pt;
+          margin-left: auto;
+          color: $back;
+          font-size: 20pt;
+          cursor: pointer;
+        }
+        > .div-logo {
+          display: flex;
+          > .menu-logo {
+            margin: 0 4pt;
+            img {
+            }
+          }
+        }
+        .mat-tab-header-pagination-before,
+        .mat-tab-header-pagination-after {
+        }
+        .mat-tab-links {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: center;
+          padding: 10pt;
+        }
+        .mat-tab-link {
+          height: 36pt;
+          color: $back;
+          &:hover {
+          }
+        }
+        .mat-tab-label-active {
+          border-bottom: 4px solid $color-2;
+        }
+        .mat-ink-bar {
+          height: 4px;
+          display: none;
+        }
+      }
+      > .active {
+        transform: translateX(0vw);
+        opacity: 1;
+        transition: transform 0s, opacity 0s;
+      }
+    }
+  }
+}
+
+@media (max-width: $large) {
+  .cdk-overlay-container {
+    > .cdk-overlay-backdrop,
+    > .cdk-overlay-transparent-backdrop,
+    > .cdk-overlay-backdrop-showing {
+    }
+    > .cdk-overlay-connected-position-bounding-box {
+      > .cdk-overlay-pane {
+        > .div-profile &:before {
+        }
+        > .mat-menu-content {
+          > .popup-setting-profile {
+            width: 245pt;
+            > .popup-setting-profile-top {
+              padding: 13pt 10pt;
+              > .image-profile-dropdown {
+              }
+              > .popup-setting-profile-top-div {
+                > .profile-name {
+                }
+                > .profile-email {
+                }
+                newcon-button {
+                  > .manage-accounts {
+                    &:hover {
+                    }
+                    &:focus {
+                    }
+                  }
+                }
+              }
+            }
+            > .popup-setting-profile-bottom {
+              padding: 13pt 10pt;
+              newcon-button {
+                > .manage-logout {
+                  &:hover {
+                  }
+                  &:focus {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  newcon-header-top {
+    height: 50pt;
+    > .container-logo {
+      > .wrapper-show-vote-total {
+        > .label {
+        }
+        > .vote-total {
+        }
+      }
+      > .scroll-logo {
+        > .menu-logo {
+          img {
+          }
+        }
+      }
+    }
+    > .wrapper-account {
+      right: 27px;
+      > .wrapper-account-profile {
+        > .image-profile {
+          &:hover {
+          }
+          &:focus {
+          }
+        }
+      }
+      > .butt-div-log {
+        newcon-button {
+          > .newcon-button {
+          }
+        }
+      }
+    }
+    > .scroll-profile {
+      > .wrapper-account-profile {
+        > .image-profile {
+          &:hover {
+          }
+          &.active {
+          }
+        }
+      }
+      > .butt-div-log {
+        newcon-button {
+          > .manage-logout-scroll {
+          }
+        }
+      }
+    }
+  }
+  newcon-header-bottom {
+    > .wrapper-menu-top-div {
+      > .hamburger {
+      }
+      > .wrapper-menu-top-list {
+        transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+        > .close {
+        }
+        > .div-logo {
+          > .menu-logo {
+          }
+        }
+        .mat-tab-header-pagination-before,
+        .mat-tab-header-pagination-after {
+        }
+        .mat-tab-links {
+        }
+        .mat-tab-link {
+          &:hover {
+          }
+        }
+        .mat-tab-label-active {
+        }
+        .mat-ink-bar {
+        }
+      }
+      > .active {
+        transition: transform 0.5s ease-in, opacity 0.2s ease-in;
+      }
+    }
+  }
+}
+
+@media (max-width: $medium) {
+  .cdk-overlay-container {
+    > .cdk-overlay-backdrop,
+    > .cdk-overlay-transparent-backdrop,
+    > .cdk-overlay-backdrop-showing {
+    }
+    > .cdk-overlay-connected-position-bounding-box {
+      > .cdk-overlay-pane {
+        > .div-profile {
+          &:before {
+            border-right: 13px solid transparent;
+            border-bottom: 13px solid #ccc;
+            border-left: 13px solid transparent;
+            right: 8pt;
+          }
+          > .mat-menu-content {
+            > .popup-setting-profile {
+              width: 220pt;
+              > .popup-setting-profile-top {
+                padding: 10pt;
+                > .image-profile-dropdown {
+                }
+                > .popup-setting-profile-top-div {
+                  > .profile-name {
+                  }
+                  > .profile-email {
+                  }
+                  newcon-button {
+                    > .manage-accounts {
+                      width: 60pt;
+                      &:hover {
+                      }
+                      &:focus {
+                      }
+                    }
+                  }
+                }
+              }
+              > .popup-setting-profile-bottom {
+                padding: 10pt;
+                newcon-button {
+                  > .manage-logout {
+                    width: 80pt;
+                    &:hover {
+                    }
+                    &:focus {
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  newcon-header-top {
+    width: calc(100% - 20pt);
+    height: 40pt;
+    padding: 0 10pt;
+    > .container-logo {
+      > .wrapper-show-vote-total {
+        > .label {
+        }
+        > .vote-total {
+        }
+      }
+      > .scroll-logo {
+        > .menu-logo {
+          img {
+          }
+        }
+      }
+    }
+    > .wrapper-account {
+      right: 20px;
+      height: 29pt;
+      > .wrapper-account-profile {
+        > .image-profile {
+          width: 25pt;
+          height: 25pt;
+          &:hover {
+          }
+          &:focus {
+          }
+        }
+      }
+      > .butt-div-log {
+        newcon-button {
+          > .newcon-button {
+            padding: 5pt 17pt;
+          }
+        }
+      }
+    }
+    > .scroll-profile {
+      height: 35pt !important;
+      > .wrapper-account-profile {
+        > .image-profile {
+          &:hover {
+          }
+          &.active {
+          }
+        }
+      }
+      > .butt-div-log {
+        newcon-button {
+          > .manage-logout-scroll {
+          }
+        }
+      }
+    }
+  }
+  newcon-header-bottom {
+    > .wrapper-menu-top-div {
+      height: 35pt;
+      > .hamburger {
+        width: 35pt;
+        height: 35pt;
+      }
+      > .wrapper-menu-top-list {
+        > .close {
+        }
+        > .div-logo {
+          margin: 15pt 0;
+          padding: 30pt 0;
+          > .menu-logo {
+            margin: 0 3pt;
+            img {
+            }
+          }
+        }
+        .mat-tab-header-pagination-before,
+        .mat-tab-header-pagination-after {
+        }
+        .mat-tab-links {
+        }
+        .mat-tab-link {
+          &:hover {
+          }
+        }
+        .mat-tab-label-active {
+        }
+        .mat-ink-bar {
+        }
+      }
+      > .active {
+      }
+    }
+  }
+}
+
+@media (max-width: $small) {
+  .cdk-overlay-container {
+    > .cdk-overlay-backdrop,
+    > .cdk-overlay-transparent-backdrop,
+    > .cdk-overlay-backdrop-showing {
+    }
+    > .cdk-overlay-connected-position-bounding-box {
+      > .cdk-overlay-pane {
+        > .div-profile {
+          &:before {
+          }
+          > .mat-menu-content {
+            > .popup-setting-profile {
+              width: 200pt;
+              > .popup-setting-profile-top {
+                > .image-profile-dropdown {
+                }
+                > .popup-setting-profile-top-div {
+                  > .profile-name {
+                  }
+                  > .profile-email {
+                  }
+                  newcon-button {
+                    > .manage-accounts {
+                      &:hover {
+                      }
+                      &:focus {
+                      }
+                    }
+                  }
+                }
+              }
+              > .popup-setting-profile-bottom {
+                newcon-button {
+                  > .manage-logout {
+                    &:hover {
+                    }
+                    &:focus {
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  newcon-header-top {
+    > .wrapper-show-vote-total {
+      > .label {
+      }
+      > .vote-total {
+      }
+    }
+    > .menu-logo {
+    }
+    > .wrapper-account {
+      right: 7px;
+      > .wrapper-account-profile {
+        > .image-profile {
+          &:hover {
+          }
+          &:focus {
+          }
+        }
+      }
+      > .butt-div-log {
+        newcon-button {
+          > .newcon-button {
+            padding: 5pt 15pt;
+          }
+        }
+      }
+    }
+    > .scroll-profile {
+      > .wrapper-account-profile {
+        > .image-profile {
+          &:hover {
+          }
+          &.active {
+          }
+        }
+      }
+      > .butt-div-log {
+        newcon-button {
+          > .manage-logout-scroll {
+          }
+        }
+      }
+    }
+  }
+  newcon-header-bottom {
+    > .wrapper-menu-top-div {
+      > .hamburger {
+      }
+      > .wrapper-menu-top-list {
+        > .close {
+        }
+        > .div-logo {
+          margin: 10pt 0;
+          padding: 0;
+          > .menu-logo {
+            img {
+            }
+          }
+        }
+        .mat-tab-header-pagination-before,
+        .mat-tab-header-pagination-after {
+        }
+        .mat-tab-links {
+        }
+        .mat-tab-link {
+          &:hover {
+          }
+        }
+        .mat-tab-label-active {
+        }
+        .mat-ink-bar {
+        }
+      }
+      > .active {
+      }
+    }
+  }
+}

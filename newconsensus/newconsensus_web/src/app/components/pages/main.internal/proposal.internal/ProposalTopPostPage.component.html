@@ -1,0 +1,141 @@
+<div class="newcon-proposal-top-page">
+
+    <div class="body">
+        <div class="comment">
+            <div class="left" style="margin-right: 1%;">
+                <div>
+                    <h1 style="width: 100%">ข้อเสนอยอดนิยม</h1>
+                    <h4 style="width: 100%">มาร่วมกันแสดงความคิดเห็นต่อรัฐธรรมนูญ ๒๕๖๐</h4>
+                </div>
+                <div style="height:auto;margin-top:30px ;">
+                    <ng-container *ngIf="hotTopicList.length > 0; else elseTemplate">
+                        <topic-profile [pageUser]="item.pageUser" style="margin: 0px 10px;" [link]="roomIdName ? '/main/proposal/room/'+roomIdName+'/comment/post/'+item.id+'-'+item.title : '/main/proposal/comment/post/'+item.id+'-'+item.title" [param]="{mode: 'hot', room: roomId}"
+                            [topic]="item.title" [name]="(item.pageUser) ? item.pageUser.displayName : '-'" [countComment]="item.commentCount" [hot]="item.hotScore > showHot" [create]="item.createdDate | date:'dd/MM/yyyy hh:mm:ss'" *ngFor="let item of hotTopicList">
+                        </topic-profile><br>
+                        <newcon-button class="btn-list-proposal" [link]="roomIdName ? '/main/proposal/room/'+roomIdName+'/hot' : '/main/proposal/hot'" [text]="'ดูข้อเสนอยอดนิยมเพิ่มเติม'" [param]="{page:1}"></newcon-button>
+                    </ng-container>
+                    <ng-template #elseTemplate>
+                        <div class="wrapper-center-none-list-content">
+                            ไม่พบข้อมูลข้อเสนอ
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+            <div class="right" style="margin-left: 1%;">
+                <div>
+                    <h1 style="width: 100%">ข้อเสนอแนะนำ</h1>
+                    <h4 style="width: 100%">มาร่วมกันแสดงความคิดเห็นต่อรัฐธรรมนูญ ๒๕๖๐</h4>
+                </div>
+                <div style="height:auto ;margin-top:30px ;">
+                    <ng-container *ngIf="newTopicList.length > 0; else elseTemplate">
+                        <topic-profile [pageUser]="item.pageUser" style="margin: 0px 10px;" [link]="roomIdName ? '/main/proposal/room/'+roomIdName+'/comment/post/'+item.id+'-'+item.title : '/main/proposal/comment/post/'+item.id+'-'+item.title" [param]="{mode: 'suggest', room: roomId}"
+                            [topic]="item.title" [name]="(item.pageUser) ? item.pageUser.displayName : '-'" [countComment]="item.commentCount" [hot]="item.hotScore > showHot" [create]="item.createdDate | date:'dd/MM/yyyy hh:mm:ss'" *ngFor="let item of newTopicList">
+                        </topic-profile><br>
+                        <newcon-button class="btn-list-proposal" [link]="roomIdName ? '/main/proposal/room/'+roomIdName+'/suggest' : '/main/proposal/suggest'" [text]="'ดูข้อเสนอแนะนำเพิ่มเติม'" [param]="{page:1}"></newcon-button>
+                    </ng-container>
+                    <ng-template #elseTemplate>
+                        <div class="wrapper-center-none-list-content">
+                            ไม่พบข้อมูลข้อเสนอ
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="all">
+            <div class="autpost">
+                <div>
+                    <h1 style="width: 100%">ข้อเสนอทั้งหมด</h1>
+                    <h4 style="width: 100%">มาร่วมกันแสดงความคิดเห็นต่อรัฐธรรมนูญ ๒๕๖๐</h4>
+                </div>
+                <div style="height:auto;margin-top:30px ;">
+                    <ng-container *ngIf="allTopicList.length > 0; else elseTemplate">
+                        <topic-profile [pageUser]="item.pageUser" style="margin: 0px 10px;" [width]="'100%'" [link]="roomIdName ? '/main/proposal/room/'+roomIdName+'/comment/post/'+item.id+'-'+item.title : '/main/proposal/comment/post/'+item.id+'-'+item.title" [param]="{mode: 'all', room: roomId}"
+                            [topic]="item.title" [name]="(item.pageUser) ? item.pageUser.displayName : '-'" [countComment]="item.commentCount" [hot]="item.hotScore > showHot" [create]="item.createdDate | date:'dd/MM/yyyy hh:mm:ss'" *ngFor="let item of allTopicList">
+                        </topic-profile><br>
+                        <newcon-button class="btn-list-proposal" [link]="roomIdName ? '/main/proposal/room/'+roomIdName+'/list' : '/main/proposal/list'" [text]="'ดูข้อเสนอทั้งหมด'" [param]="{page:1}"></newcon-button>
+                    </ng-container>
+                    <ng-template #elseTemplate>
+                        <div class="wrapper-center-none-list-content">
+                            ไม่พบข้อมูลข้อเสนอ
+                        </div>
+                    </ng-template>
+                </div>
+                <br>
+            </div>
+        </div>
+
+        <div class="proposal-tab">
+            <mat-tab-group>
+                <mat-tab label="ยอดนิยม">
+                    <div class="left" style="margin-right: 1%;">
+                        <div>
+                            <h1 style="width: 100%">ข้อเสนอยอดนิยม</h1>
+                            <h4 style="width: 100%">มาร่วมกันแสดงความคิดเห็นต่อรัฐธรรมนูญ ๒๕๖๐</h4>
+                        </div>
+                        <div style="height:auto;margin-top:30px ;">
+                            <ng-container *ngIf="hotTopicList.length > 0; else elseTemplate">
+                                <!-- <topic-profile [pageUser]="item.pageUser" style="margin: 0px 10px;" [link]="'/main/proposal/comment/post/'+item.id+'-'+item.title" -->
+                                <topic-profile [pageUser]="item.pageUser" style="margin: 0px 10px;" [link]="roomIdName ? '/main/proposal/room/'+roomIdName+'/comment/post/'+item.id+'-'+item.title : '/main/proposal/comment/post/'+item.id+'-'+item.title" [param]="{mode: 'hot', room: roomId}"
+                                    [topic]="item.title" [name]="(item.pageUser) ? item.pageUser.displayName : '-'" [countComment]="item.commentCount" [hot]="item.hotScore > showHot" [create]="item.createdDate | date:'dd/MM/yyyy hh:mm:ss'" *ngFor="let item of hotTopicList"></topic-profile><br>
+                                <newcon-button class="btn-list-proposal" [link]="roomIdName ? '/main/proposal/room/'+roomIdName+'/hot' : '/main/proposal/hot'" [text]="'ดูข้อเสนอยอดนิยมเพิ่มเติม'" [param]="{page:1}"></newcon-button>
+                            </ng-container>
+                            <ng-template #elseTemplate>
+                                <div class="wrapper-center-none-list-content">
+                                    ไม่พบข้อมูลข้อเสนอ
+                                </div>
+                            </ng-template>
+                        </div>
+                        <br>
+                    </div>
+                </mat-tab>
+                <mat-tab label="แนะนำ">
+                    <div class="right" style="margin-left: 1%;">
+                        <div>
+                            <h1 style="width: 100%">ข้อเสนอแนะนำ</h1>
+                            <h4 style="width: 100%">มาร่วมกันแสดงความคิดเห็นต่อรัฐธรรมนูญ ๒๕๖๐</h4>
+                        </div>
+                        <div style="height:auto ;margin-top:30px ;">
+                            <ng-container *ngIf="newTopicList.length > 0; else elseTemplate">
+                                <topic-profile [pageUser]="item.pageUser" style="margin: 0px 10px;" [link]="roomIdName ? '/main/proposal/room/'+roomIdName+'/comment/post/'+item.id+'-'+item.title : '/main/proposal/comment/post/'+item.id+'-'+item.title" [param]="{mode: 'suggest', room: roomId}"
+                                    [topic]="item.title" [name]="(item.pageUser) ? item.pageUser.displayName : '-'" [countComment]="item.commentCount" [hot]="item.hotScore > showHot" [create]="item.createdDate | date:'dd/MM/yyyy hh:mm:ss'" *ngFor="let item of newTopicList"></topic-profile><br>
+                                <newcon-button class="btn-list-proposal" [link]="roomIdName ? '/main/proposal/room/'+roomIdName+'/suggest' : '/main/proposal/suggest'" [text]="'ดูข้อเสนอแนะนำเพิ่มเติม'" [param]="{page:1}"></newcon-button>
+                            </ng-container>
+                            <ng-template #elseTemplate>
+                                <div class="wrapper-center-none-list-content">
+                                    ไม่พบข้อมูลข้อเสนอ
+                                </div>
+                            </ng-template>
+                        </div>
+                        <br>
+                    </div>
+                </mat-tab>
+                <mat-tab label="ทั้งหมด">
+
+                    <div class="autpost">
+                        <div>
+                            <h1 style="width: 100%">ข้อเสนอทั้งหมด</h1>
+                            <h4 style="width: 100%">มาร่วมกันแสดงความคิดเห็นต่อรัฐธรรมนูญ ๒๕๖๐</h4>
+                        </div>
+                        <div style="height:auto;margin-top:30px ;">
+                            <ng-container *ngIf="allTopicList.length > 0; else elseTemplate">
+                                <topic-profile [pageUser]="item.pageUser" style="margin: 0px 10px;" [width]="'100%'" [link]="roomIdName ? '/main/proposal/room/'+roomIdName+'/comment/post/'+item.id+'-'+item.title : '/main/proposal/comment/post/'+item.id+'-'+item.title" [param]="{mode: 'all', room: roomId}"
+                                    [topic]="item.title" [name]="(item.pageUser) ? item.pageUser.displayName : '-'" [countComment]="item.commentCount" [hot]="item.hotScore > showHot" [create]="item.createdDate | date:'dd/MM/yyyy hh:mm:ss'" *ngFor="let item of allTopicList"></topic-profile><br>
+                                <newcon-button class="btn-list-proposal" [link]="roomIdName ? '/main/proposal/room/'+roomIdName+'/list' : '/main/proposal/list'" [text]="'ดูข้อเสนอทั้งหมด'" [param]="{page:1}"></newcon-button>
+                            </ng-container>
+                            <ng-template #elseTemplate>
+                                <div class="wrapper-center-none-list-content">
+                                    ไม่พบข้อมูลข้อเสนอ
+                                </div>
+                            </ng-template>
+                        </div>
+                        <br>
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+
+
+    </div>
+</div>

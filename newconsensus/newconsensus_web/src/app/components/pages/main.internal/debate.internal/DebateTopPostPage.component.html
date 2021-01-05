@@ -1,0 +1,151 @@
+<div class="newcon-debate-page">
+    <div class="newcon-vote-head">
+        <div class="newcon-vote-head-content">
+            <div class="newcon-vote-head-content-one">
+                เปิดอิสระในการแสดงความคิดเห็น
+            </div>
+            <div class="newcon-vote-head-content-two">
+                รับฟังความคิดเห็นรัฐธรรมนูญ ๒๕๖๐
+            </div>
+            <div class="newcon-vote-head-content-two" style="display: flex;flex-direction: column;align-items: center;">
+                <ng-container *ngIf="isLogin(); else elseIsLogin">
+                    <newcon-button [link]="'/main/debate/comment/create'" [bgColor]="'#407cff'" [text]="' + สร้างกระทู้พูดคุย'" [class]="'bottom-debate'"></newcon-button>
+                </ng-container>
+                <ng-template #elseIsLogin>
+                    <newcon-button (click)="clickIsLogin()" [bgColor]="'#407cff'" [text]="' + สร้างกระทู้พูดคุย'" [class]="'bottom-debate'"></newcon-button>
+                </ng-template>
+            </div>
+        </div>
+        <img src="../../../../assets/components/pages/DebatePage/debate.png" alt="" class="img-vote-top">
+    </div>
+    <div class="body">
+        <div class="comment">
+            <div class="left" style="margin-right: 1%;">
+                <div>
+                    <h1 style="width: 100%">กระทู้พูดคุยยอดนิยม</h1>
+                    <h4 style="width: 100%">มาร่วมกันแสดงความคิดเห็นต่อรัฐธรรมนูญ ๒๕๖๐</h4>
+                </div>
+                <div style="height:auto;margin-top:30px;">
+                    <ng-container *ngIf="hotDebate.length > 0; else elseTemplate">
+                        <topic-profile [pageUser]="item.pageUser" style="margin: 0px 15px;" [link]="'/main/debate/comment/post/'+item.id+'-'+item.title" [param]="{mode: 'hot'}" *ngFor="let item of hotDebate" [name]="(item.pageUser === undefined || item.pageUser === null) ?  item.createdByUsername : item.pageUser.displayName"
+                            [topic]="item.title" [hot]="item.hotScore > showHot" [create]="item.createdDate | date:'dd/MM/yyyy hh:mm:ss'" [countComment]="item.commentCount"></topic-profile><br>
+                        <newcon-button class="btn-list-debate" [link]="'/main/debate/hot'" [text]="'ดูกระทู้ยอดนิยมเพิ่มเติม'" [param]="{page:1}"></newcon-button>
+                    </ng-container>
+                    <ng-template #elseTemplate>
+                        <div class="wrapper-center-none-list-content">
+                            ไม่พบข้อมูลกระทู้พูดคุย
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+            <div class="right" style="margin-left: 1%;">
+                <div>
+                    <h1 style="width: 100%">กระทู้พูดคุยแนะนำ</h1>
+                    <h4 style="width: 100%">มาร่วมกันแสดงความคิดเห็นต่อรัฐธรรมนูญ ๒๕๖๐</h4>
+                </div>
+                <div style="height:auto;margin-top:30px;">
+                    <ng-container *ngIf="newDebate.length > 0; else elseTemplate">
+                        <topic-profile [pageUser]="item.pageUser" style="margin: 0px 15px;" [link]="'/main/debate/comment/post/'+item.id+'-'+item.title" [param]="{mode: 'suggest'}" *ngFor="let item of newDebate" [id]="item.id" [name]="(item.pageUser === undefined || item.pageUser === null) ?  item.createdByUsername : item.pageUser.displayName"
+                            [topic]="item.title" [hot]="item.hotScore > showHot" [create]="item.createdDate | date:'dd/MM/yyyy hh:mm:ss'" [countComment]="item.commentCount"></topic-profile><br>
+                        <newcon-button class="btn-list-debate" [link]="'/main/debate/suggest'" [text]="'ดูกระทู้แนะนำเพิ่มเติม'" [param]="{page:1}"></newcon-button>
+                    </ng-container>
+                    <ng-template #elseTemplate>
+                        <div class="wrapper-center-none-list-content">
+                            ไม่พบข้อมูลกระทู้พูดคุย
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="all">
+            <div class="autpost">
+                <div style="padding-top: 30px;">
+                    <h1 style="width: 100%">กระทู้พูดคุยทั้งหมด</h1>
+                    <h4 style="width: 100%">มาร่วมกันแสดงความคิดเห็นต่อรัฐธรรมนูญ ๒๕๖๐</h4>
+                </div>
+                <div style="height:auto;margin-top:30px;">
+                    <ng-container *ngIf="debate.length > 0; else elseTemplate">
+                        <topic-profile [pageUser]="item.pageUser" style="margin: 0px 15px;" [link]="'/main/debate/comment/post/'+item.id+'-'+item.title" [param]="{mode: 'all'}" *ngFor="let item of debate" [name]="(item.pageUser === undefined || item.pageUser === null) ?  item.createdByUsername : item.pageUser.displayName"
+                            [topic]="item.title" [create]="item.createdDate | date:'dd/MM/yyyy hh:mm:ss'" [hot]="item.hotScore > showHot" [countComment]="item.commentCount"></topic-profile><br>
+                        <newcon-button class="btn-list-debate" [link]="'/main/debate/list'" [text]="'ดูกระทู้ทั้งหมด'" [param]="{page:1}"></newcon-button>
+                    </ng-container>
+                    <ng-template #elseTemplate>
+                        <div class="wrapper-center-none-list-content">
+                            ไม่พบข้อมูลกระทู้พูดคุย
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="debat-tab">
+            <mat-tab-group>
+                <mat-tab label="กระทู้ใหม่">
+                    <div class="right">
+                        <div>
+                            <h1 style="width: 100%">กระทู้พูดคุยใหม่</h1>
+                            <h4 style="width: 100%">มาร่วมกันแสดงความคิดเห็นต่อรัฐธรรมนูญ ๒๕๖๐</h4>
+                        </div>
+                        <div style="height:auto;margin-top:30px;">
+                            <ng-container *ngIf="hotDebate.length > 0; else elseTemplate">
+                                <topic-profile [pageUser]="item.pageUser" style="margin: 0px 15px;" [link]="'/main/debate/comment/post/'+item.id+'-'+item.title" [param]="{mode: 'suggest'}" *ngFor="let item of newDebate" [id]="item.id" [name]="(item.pageUser === undefined || item.pageUser === null) ?  item.createdByUsername : item.pageUser.displayName"
+                                    [topic]="item.title" [create]="item.createdDate | date:'dd/MM/yyyy hh:mm:ss'" [countComment]="item.commentCount" [hot]="item.hotScore > showHot"></topic-profile><br>
+                                <newcon-button class="btn-list-debate" [link]="'/main/debate/suggest'" [text]="'ดูกระทู้แนะนำเพิ่มเติม'" [param]="{page:1}"></newcon-button>
+                            </ng-container>
+                            <ng-template #elseTemplate>
+                                <div class="wrapper-center-none-list-content">
+                                    ไม่พบข้อมูลกระทู้พูดคุย
+                                </div>
+                            </ng-template>
+                        </div>
+                    </div>
+                </mat-tab>
+                <mat-tab label="ยอดนิยม">
+                    <div class="left">
+                        <div>
+                            <h1 style="width: 100%">กระทู้พูดคุยยอดนิยม</h1>
+                            <h4 style="width: 100%">มาร่วมกันแสดงความคิดเห็นต่อรัฐธรรมนูญ ๒๕๖๐</h4>
+                        </div>
+                        <div style="height:auto;margin-top:30px;">
+                            <ng-container *ngIf="hotDebate.length > 0; else elseTemplate">
+                                <topic-profile [pageUser]="item.pageUser" style="margin: 0px 15px;" [link]="'/main/debate/comment/post/'+item.id+'-'+item.title" [param]="{mode: 'hot'}" *ngFor="let item of hotDebate" [name]="(item.pageUser === undefined || item.pageUser === null) ?  item.createdByUsername : item.pageUser.displayName"
+                                    [topic]="item.title" [create]="item.createdDate | date:'dd/MM/yyyy hh:mm:ss'" [countComment]="item.commentCount" [hot]="item.hotScore > showHot"></topic-profile><br>
+                                <newcon-button class="btn-list-debate" [link]="'/main/debate/hot'" [text]="'ดูกระทู้ยอดนิยมเพิ่มเติม'" [param]="{page:1}"></newcon-button>
+                            </ng-container>
+                            <ng-template #elseTemplate>
+                                <div class="wrapper-center-none-list-content">
+                                    ไม่พบข้อมูลกระทู้พูดคุย
+                                </div>
+                            </ng-template>
+                        </div>
+                    </div>
+                </mat-tab>
+                <mat-tab label="กระทู้ทั้งหมด">
+                    <div class="autpost">
+                        <div>
+                            <h1 style="width: 100%">กระทู้พูดคุยทั้งหมด</h1>
+                            <h4 style="width: 100%">มาร่วมกันแสดงความคิดเห็นต่อรัฐธรรมนูญ ๒๕๖๐</h4>
+                        </div>
+                        <div style="height:auto;margin-top:30px;">
+                            <ng-container *ngIf="debate.length > 0; else elseTemplate">
+                                <topic-profile [pageUser]="item.pageUser" style="margin: 0px 15px;" [link]="'/main/debate/comment/post/'+item.id+'-'+item.title" [param]="{mode: 'all'}" *ngFor="let item of debate" [name]="(item.pageUser === undefined || item.pageUser === null) ?  item.createdByUsername : item.pageUser.displayName"
+                                    [topic]="item.title" [create]="item.createdDate | date:'dd/MM/yyyy hh:mm:ss'" [countComment]="item.commentCount" [hot]="item.hotScore > showHot"></topic-profile><br>
+                                <newcon-button class="btn-list-debate" [link]="'/main/debate/list'" [text]="'ดูกระทู้ทั้งหมด'" [param]="{page:1}"></newcon-button>
+                            </ng-container>
+                            <ng-template #elseTemplate>
+                                <div class="wrapper-center-none-list-content">
+                                    ไม่พบข้อมูลกระทู้พูดคุย
+                                </div>
+                            </ng-template>
+                        </div>
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+        <br>
+    </div>
+</div>

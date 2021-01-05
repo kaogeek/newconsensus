@@ -1,0 +1,42 @@
+<div class="newcon-debate-comment-page">
+    <div class="debate-comment-body">
+        <div class="grid2">
+            <div class="grid2-outlet">
+                <ng-container *ngIf="isBtnCreate()">
+                    <ng-container *ngIf="isLogin(); else elseGrid2">
+                        <add-debate class="display" [link]="'/main/debate/comment/create'" [name]="' + สร้างกระทู้พูดคุย'">
+                        </add-debate>
+                    </ng-container>
+                    <ng-template #elseGrid2>
+                        <add-debate class="display" (click)="clickIsLogin()" [name]="' + สร้างกระทู้พูดคุย'">
+                        </add-debate>
+                    </ng-template>
+                </ng-container>
+                <router-outlet></router-outlet>
+            </div>
+        </div>
+        <div class="grid1">
+            <ng-container *ngIf="isBtnCreate()">
+                <ng-container *ngIf="isLogin(); else elseGrid1">
+                    <add-debate [link]="'/main/debate/comment/create'" [name]="' + สร้างกระทู้พูดคุย'">
+                    </add-debate>
+                </ng-container>
+                <ng-template #elseGrid1>
+                    <add-debate (click)="clickIsLogin()" [name]="' + สร้างกระทู้พูดคุย'">
+                    </add-debate>
+                </ng-template>
+            </ng-container>
+            <div class="grid1-text">
+                <!-- <h3>{{getTopicHeaderLabel()}}</h3> -->
+                <h3>กระทู้อื่น ๆ ที่เกี่ยวข้อง</h3>
+                <h5>มาช่วยกันแก้ มาช่วยกันสร้าง เพื่อความเป็นประชาธิปไตรที่แท้จริง</h5>
+            </div>
+            <div style="height: 10pt;" *ngIf="isLogin()"></div>
+            <div class="grid1-comment">
+                <topic-profile [id]="item.id" [pageUser]="item.pageUser" [link]="'/main/debate/comment/post/'+item.id+'-'+item.title" *ngFor="let item of debate" [param]="{mode: mode, page: page}" [name]="(item.pageUser) ? item.pageUser.displayName : '-'" [topic]="item.title"
+                    [create]="item.createdDate | date:'dd/MM/yyyy HH:mm:ss'" [countComment]="item.commentCount" [hot]="item.hotScore > showHot"></topic-profile>
+                <div *ngIf="debate.length > 10;" id="searchbt" class="button-more" [ngStyle]="{'color': '#FFFFFF' , 'background' : '#279d90'}" (click)="loadNextAllDebate()">{{isHotTopic() ? 'รีโหลดข้อมูล' : 'ดูเพิ่มเติม'}}</div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,365 @@
+.debate-content-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    >.debate-content-page-comment {
+        width: 90%;
+        padding: 10pt 0pt 10pt 0pt;
+        .debate-content-page-comment-title {
+            padding: 10pt 0pt 10pt 0pt;
+            display: flex;
+            align-items: center;
+            .title {
+                word-break: break-word;
+                @include font-size-6-300;
+            }
+        }
+        .debate-content-page-comment-content {
+            padding: 10pt 0pt 10pt 0pt;
+            .content {
+                word-break: break-word;
+                @include font-size-9-200;
+            }
+        }
+    }
+    >.debate-content-page-share {
+        width: 90%;
+        padding: 10pt 0pt 10pt 0pt;
+        display: flex;
+        .debate-content-page-share-title {
+            width: 100pt;
+            display: flex;
+            align-items: center;
+        }
+        .debate-content-page-share-content {
+            width: 80%;
+            display: flex;
+            align-items: center;
+        }
+    }
+    >.debate-content-page-user {
+        width: 90%;
+        padding: 10pt 0pt 10pt 0pt;
+        display: flex;
+        .debate-content-page-user-title {
+            width: 100pt;
+            display: flex;
+            align-items: center;
+        }
+        .debate-content-page-user-content {
+            width: 80%;
+            display: flex;
+            align-items: center;
+            .content {
+                display: flex;
+                align-items: center;
+                .avatar {
+                    width: 35pt;
+                    height: 35pt;
+                    border-radius: 50%;
+                    margin-right: 5pt;
+                    border: 1px solid $bg-color1;
+                }
+                .user-name {
+                    @include font-size-8-300;
+                    color: $color-7;
+                    word-break: break-word;
+                }
+            }
+            >.edit {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                height: 50%;
+                width: 20pt;
+                right: 0px;
+                top: 0px;
+                color: #8d969e;
+                cursor: pointer;
+                transition: 0.3s;
+                &:hover {
+                    color: #2680eb !important;
+                    transition: 0.3s;
+                    transform: scale(1.12);
+                    -webkit-transform: scale(1.12);
+                    -moz-transform: scale(1.12);
+                    -ms-transform: scale(1.12);
+                    -o-transform: scale(1.12);
+                }
+            }
+        }
+    }
+    .debate-content-page-like-dislike {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        .wrapper-like-dislike {
+            width: auto;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-items: center;
+            .wrapper-action {
+                display: flex;
+                width: 100%;
+                height: 50pt;
+                justify-content: center;
+                @include font-size-9-400;
+                .like-dislike {
+                    width: 50%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100%;
+                    cursor: pointer;
+                    &:hover {
+                        background: $bg-color2;
+                    }
+                    .btn-like {
+                        display: flex;
+                        height: 30pt;
+                        align-items: center;
+                        justify-content: center;
+                        fill: $primary;
+                        cursor: pointer;
+                    }
+                    .btn-dislike {
+                        display: flex;
+                        height: 30pt;
+                        align-items: center;
+                        justify-content: center;
+                        transform: rotate(180deg);
+                        fill: $danger;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+        .like-total {
+            margin-left: 10pt;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $primary;
+        }
+        .dislike-total {
+            margin-left: 10pt;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $danger;
+        }
+    }
+}
+
+@media (max-width: $xxlarge) {
+    .debate-content-page {
+        >.debate-content-page-comment {
+            .debate-content-page-comment-title {
+                .title {}
+            }
+            .debate-content-page-comment-content {
+                .content {}
+            }
+        }
+        >.debate-content-page-share {
+            .debate-content-page-share-title {
+                width: 100pt;
+            }
+            .debate-content-page-share-content {}
+        }
+        >.debate-content-page-user {
+            .debate-content-page-user-title {
+                width: 100pt;
+            }
+            .debate-content-page-user-content {
+                .content {
+                    .avatar {}
+                    .user-name {}
+                }
+            }
+        }
+        .debate-content-page-like-dislike {
+            .wrapper-like-dislike {
+                .wrapper-action {
+                    .like-dislike {
+                        .btn-like {}
+                        .btn-dislike {}
+                    }
+                }
+            }
+            .like-total {}
+            .dislike-total {}
+        }
+    }
+}
+
+@media (max-width: $xlarge) {
+    .debate-content-page {
+        >.debate-content-page-comment {
+            .debate-content-page-comment-title {
+                .title {}
+            }
+            .debate-content-page-comment-content {
+                .content {}
+            }
+        }
+        >.debate-content-page-share {
+            .debate-content-page-share-title {
+                width: 80pt;
+            }
+            .debate-content-page-share-content {}
+        }
+        >.debate-content-page-user {
+            .debate-content-page-user-title {
+                width: 80pt;
+            }
+            .debate-content-page-user-content {
+                .content {
+                    .avatar {}
+                    .user-name {}
+                }
+            }
+        }
+        .debate-content-page-like-dislike {
+            .wrapper-like-dislike {
+                .wrapper-action {
+                    .like-dislike {
+                        .btn-like {}
+                        .btn-dislike {}
+                    }
+                }
+            }
+            .like-total {}
+            .dislike-total {}
+        }
+    }
+}
+
+@media (max-width: $large) {
+    .debate-content-page {
+        >.debate-content-page-comment {
+            .debate-content-page-comment-title {
+                .title {}
+            }
+            .debate-content-page-comment-content {
+                .content {}
+            }
+        }
+        >.debate-content-page-share {
+            .debate-content-page-share-title {
+                width: 70pt;
+            }
+            .debate-content-page-share-content {}
+        }
+        >.debate-content-page-user {
+            .debate-content-page-user-title {
+                width: 70pt;
+            }
+            .debate-content-page-user-content {
+                .content {
+                    .avatar {}
+                    .user-name {}
+                }
+            }
+        }
+        .debate-content-page-like-dislike {
+            .wrapper-like-dislike {
+                .wrapper-action {
+                    .like-dislike {
+                        .btn-like {}
+                        .btn-dislike {}
+                    }
+                }
+            }
+            .like-total {}
+            .dislike-total {}
+        }
+    }
+}
+
+@media (max-width: $medium) {
+    .debate-content-page {
+        >.debate-content-page-comment {
+            .debate-content-page-comment-title {
+                .title {}
+            }
+            .debate-content-page-comment-content {
+                .content {}
+            }
+        }
+        >.debate-content-page-share {
+            .debate-content-page-share-title {
+                width: 60pt;
+            }
+            .debate-content-page-share-content {}
+        }
+        >.debate-content-page-user {
+            .debate-content-page-user-title {
+                width: 60pt;
+            }
+            .debate-content-page-user-content {
+                .content {
+                    .avatar {}
+                    .user-name {}
+                }
+            }
+        }
+        .debate-content-page-like-dislike {
+            .wrapper-like-dislike {
+                .wrapper-action {
+                    .like-dislike {
+                        .btn-like {}
+                        .btn-dislike {}
+                    }
+                }
+            }
+            .like-total {}
+            .dislike-total {}
+        }
+    }
+}
+
+@media (max-width: $small) {
+    .debate-content-page {
+        >.debate-content-page-comment {
+            .debate-content-page-comment-title {
+                .title {}
+            }
+            .debate-content-page-comment-content {
+                .content {}
+            }
+        }
+        >.debate-content-page-share {
+            .debate-content-page-share-title {
+                width: 60pt;
+            }
+            .debate-content-page-share-content {}
+        }
+        >.debate-content-page-user {
+            .debate-content-page-user-title {
+                width: 60pt;
+            }
+            .debate-content-page-user-content {
+                .content {
+                    .avatar {}
+                    .user-name {}
+                }
+            }
+        }
+        .debate-content-page-like-dislike {
+            .wrapper-like-dislike {
+                .wrapper-action {
+                    .like-dislike {
+                        .btn-like {}
+                        .btn-dislike {}
+                    }
+                }
+            }
+            .like-total {}
+            .dislike-total {}
+        }
+    }
+}

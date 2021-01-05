@@ -1,0 +1,13 @@
+<div [formGroup]="careerForm">
+    <mat-form-field>
+        <input type="text" matInput placeholder="" [formControl]="careerForm" required
+            [matAutocomplete]="auto">
+        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+            <!-- <mat-optgroup *ngFor="let group of careerGroupOptions | async"> -->
+                <mat-option *ngFor="let option of careerGroupOptions | async" [value]="option">
+                    {{option.name}}
+                </mat-option>
+            <!-- </mat-optgroup> -->
+        </mat-autocomplete>
+    </mat-form-field>
+</div>

@@ -1,0 +1,34 @@
+<div class="newcon-proprsal-user-page">
+    <div class="proprsal-me" [ngStyle]="{'display': dataEditProposal ? 'none' : 'block'}">
+        <div class="proprsal-head">
+            ข้อเสนอของฉันที่ถูกอนุมัติแล้ว
+        </div>
+        <div class="proprsal-body">
+            <newcon-paginator-card [isLoading]="isLoadingProposal" [data]="resProposal" (loadMore)="searchProposals()" [pageSize]="pageSize" [isProposalLink]="true" [pageSizeOptions]="pageSizeOptions" [hidePageSize]="true" [isEdit]="false"></newcon-paginator-card>
+        </div>
+    </div>
+
+    <div class="proprsal-me" [ngStyle]="{'display': dataEditProposal ? 'none' : 'block'}">
+        <div class="proprsal-head">
+            ข้อเสนอของฉันที่ยังไม่ถูกอนุมัติ
+        </div>
+        <div class="proprsal-body">
+            <newcon-paginator-card [isLoading]="isLoadingProposal" [data]="resProposalUnApprove" (loadMore)="searchProposalUnapprove()" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" [hidePageSize]="true" (clickEditCard)="editCardProposal($event)" [isEdit]="isShowProposalEditIcon"></newcon-paginator-card>
+        </div>
+    </div>
+
+    <div class="proprsal-all" [ngStyle]="{'display': dataEditProposal ? 'none' : 'block'}">
+        <div class="proprsal-head">
+            คอมเม้นข้อเสนออื่นๆ
+        </div>
+        <div class="proprsal-body">
+            <newcon-paginator-card-comment [typeLink]="'proposal'" [isLoading]="isLoadingProposal" [image]="userImage" [data]="resProposalComment" (clickEditCardComment)="editCardProposalComment($event)" (loadMoreComment)="searchProposalComment()" (clickDeleteCardComment)="deleteCardProposalComment($event)"
+                [hidePageSize]="true" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions">
+            </newcon-paginator-card-comment>
+        </div>
+    </div>
+
+    <ng-container *ngIf="dataEditProposal">
+        <newcon-user-proposal-edit [data]="dataEditProposal" (closeEditProposal)="clearCardProposal($event)" (clickEditProposal)="saveCardProposal($event)"></newcon-user-proposal-edit>
+    </ng-container>
+</div>

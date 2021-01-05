@@ -1,0 +1,23 @@
+<div class="vote-content-card" [ngStyle]="{'background-color': bgcontents, 'width': width, 'height': height , 'flex-direction': flex }" [ngClass]="class">
+    <div class="vote-content-card-img">
+        <div class="vote-content-card-img-back">
+
+        </div>
+        <img [ngStyle]="{'width': imgWidth}" class="img-vote-content-card" [src]="imgLink" alt="">
+    </div>
+    <div [ngStyle]="{'display': displayFull}" class="wrapper-vote-content-card">
+        <div class="wrapper-vote-content-card-content">
+            <div class="title-vote-content-card" [ngStyle]="{'color': colorTitle}">{{title}}</div>
+            <div class="content-vote-content-card" [ngStyle]="{'color': colorcontents}">{{content}}</div>
+        </div>
+        <div class="footer-vote-content-card">
+            <a href="{{link}}" [ngStyle]="{'color': colorLink}">{{textLink}}</a>
+        </div>
+    </div>
+    <div [ngStyle]="{'display': displayHide}" class="wrapper-vote-content-card">
+        <div class="wrapper-vote-content-card-content">
+            <div class="title-vote-content-card" [ngStyle]="{'color': colorTitle}">{{title}}</div>
+            <div class="content-vote-content-card" [ngStyle]="{'color': colorcontents}">{{date}}</div>
+        </div>
+    </div>
+</div>

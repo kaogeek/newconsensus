@@ -1,0 +1,6 @@
+<div class="admin-config-page">
+    <div class="main-content">
+        <admin-table-component #table [fieldSearch]="fieldSearch" [facade]="pageUserFacade" [title]="'ผู้ใช้งาน'" [fieldTable]="fieldTable" [actions]="actions"
+        (ban)="clickBan($event)" (official)="clickOfficial($event)"></admin-table-component>
+    </div>
+</div>

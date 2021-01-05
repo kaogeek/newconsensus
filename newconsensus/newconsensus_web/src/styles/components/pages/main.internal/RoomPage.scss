@@ -1,0 +1,244 @@
+.newcon-room-page {
+    position: relative;
+    h1 {
+        font-weight: 400;
+        @include font-size-8-300;
+    }
+    >.newcon-room-head {
+        display: flex;
+        position: relative;
+        width: 100%;
+        height: 240pt;
+        justify-content: flex-end;
+        align-items: center;
+        >.newcon-room-head-content {
+            z-index: 1;
+            text-align: right;
+            padding-right: 10%;
+            color: #313f40;
+            >.newcon-room-head-content-one {
+                @include font-size-8-400;
+            }
+            >.newcon-room-head-content-two {
+                @include font-size-6-400;
+            }
+        }
+        >.img-room-top {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+        }
+        .bottom-debate {
+            background-color: rgb(49, 63, 64);
+            color: rgb(255, 255, 255);
+            width: 100%;
+            padding: 10pt;
+            border-radius: 10px;
+            margin-top: 20%;
+            text-align: center !important;
+        }
+    }
+    .body {
+        padding: 2% 4%;
+        display: flex;
+        flex-direction: column;
+        .is-show-rooms {
+            display: none !important;
+        }
+        >.top-menu-room {
+            display: flex;
+            overflow: auto;
+            scrollbar-width: thin;
+            scroll-behavior: smooth;
+            >.box {
+                position: relative;
+                width: 160pt;
+                height: 80pt;
+                padding: 10pt;
+                background-color: #dacbfb;
+                border-radius: 10px;
+                @include font-size-8-200;
+                margin: 10px 10px;
+                cursor: pointer;
+                >.cr {
+                    width: 30px;
+                    height: 30px;
+                    background-color: #948ba9;
+                    border: white 2px solid;
+                    color: white;
+                    text-align: center;
+                    position: absolute;
+                    top: -12%;
+                    right: -3%;
+                }
+                >a {
+                    position: absolute;
+                    bottom: 10%;
+                    left: 10%;
+                    color: white;
+                }
+            }
+        }
+        >.top-menu-room-device {
+            display: none;
+            overflow: auto;
+            scrollbar-width: thin;
+            scroll-behavior: smooth;
+            >.box {
+                position: relative;
+                width: 160pt;
+                height: 80pt;
+                padding: 10pt;
+                background-color: #dacbfb;
+                border-radius: 10px;
+                @include font-size-8-200;
+                margin: 10px 10px;
+                cursor: pointer;
+                >.cr {
+                    width: 30px;
+                    height: 30px;
+                    background-color: #948ba9;
+                    border: white 2px solid;
+                    color: white;
+                    text-align: center;
+                    position: absolute;
+                    top: -12%;
+                    right: -3%;
+                }
+                >a {
+                    position: absolute;
+                    bottom: 10%;
+                    left: 10%;
+                    color: white;
+                }
+            }
+        }
+    }
+    .horizontal-scroll-wrapper {
+        position: absolute;
+        display: block;
+        top: 0;
+        left: 0;
+        width: 80px;
+        max-height: 500px;
+        margin: 0;
+        background: #abc;
+        overflow-y: auto;
+        overflow-x: hidden;
+        transform: rotate(-90deg) translateY(-80px);
+        transform-origin: right top;
+    }
+    .horizontal-scroll-wrapper>div {
+        display: block;
+        padding: 5px;
+        background: #cab;
+        transform: rotate(90deg);
+        transform-origin: right top;
+    }
+    .squares {
+        padding: 60px 0 0 0;
+    }
+    .squares>div {
+        width: 60px;
+        height: 60px;
+        margin: 10px;
+    }
+    .display {
+        display: none !important;
+    }
+}
+
+.custom-pagination {
+    @include font-size-9-400;
+}
+
+.custom-pagination {
+    >div {
+        @include font-size-9-400;
+    }
+}
+
+@media (max-width: $xlarge) {
+    .newcon-room-page {
+        >.newcon-room-head {
+            height: 200pt;
+        }
+        .body {
+            >.top-menu-room {
+                display: none;
+            }
+            >.top-menu-room-device {
+                display: flex;
+                .box {
+                    position: relative;
+                    width: 80pt;
+                    height: 30pt;
+                    padding: 10pt;
+                    border-radius: 10px;
+                    @include font-size-8-200;
+                    margin: 10px 10px;
+                    cursor: pointer;
+                    .cr {
+                        width: 30px;
+                        height: 30px;
+                        background-color: #948ba9;
+                        border: white 2px solid;
+                        color: white;
+                        text-align: center;
+                        position: absolute;
+                        top: -12%;
+                        right: -3%;
+                    }
+                    a {
+                        position: absolute;
+                        bottom: 10%;
+                        left: 10%;
+                        color: white;
+                    }
+                }
+            }
+        }
+         ::-webkit-scrollbar {
+            width: 0px;
+            height: 4px;
+        }
+         ::-webkit-scrollbar-button {
+            width: 2px;
+            height: 2px;
+        }
+    }
+}
+
+@media (max-width: $large) {
+    .newcon-room-page {
+        .body {
+            padding: 2%;
+        }
+        >.newcon-room-head {
+            height: 200pt;
+        }
+    }
+}
+
+@media (max-width: $medium) {
+    .newcon-room-page {
+        .body {
+            padding: 2%;
+        }
+        >.newcon-room-head {
+            height: 175pt;
+        }
+    }
+}
+
+@media (max-width: $small) {
+    .newcon-room-page {
+        .body {
+            padding: 2%;
+        }
+        >.newcon-room-head {
+            height: 160pt;
+        }
+    }
+}

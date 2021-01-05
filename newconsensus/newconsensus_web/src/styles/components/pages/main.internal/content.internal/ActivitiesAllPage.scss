@@ -1,0 +1,363 @@
+.newcon-activities-all-page {
+  position: relative;
+  width: 100%;
+  background: $bg-color1;
+
+  > .activities-body1{
+    padding-top: 60pt;
+  }
+
+  > .activities-body2{
+    padding-top: 60pt;
+    padding-bottom: 60pt;
+  }
+
+  > .activities-body1 , > .activities-body2 {
+    width: calc(91% - 10pt);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 5pt;
+    padding-right: 5pt;
+
+    > .wrapper-header-content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-content: center;
+      margin-bottom: 10pt;
+
+      > .left {
+        > .head {
+          > .title {
+            @include font-size-7-400;
+          }
+
+          > .tagline {
+            margin-top: 1pt;
+            @include font-size-9-200;
+            min-height: 40px;
+            color: $color-11;
+          }
+        }
+      }
+
+      > .right {
+        > .swiper-slider-cop {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          > .swiper-button-prev2 {
+            position: static;
+            margin-top: 0;
+            width: 24pt;
+            height: 24pt;
+            background: $white !important;
+            color: $back;
+            border-radius: 50pt;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 3pt;
+            cursor: pointer;
+            &:focus {
+              outline: none;
+            }
+            > .prev {
+              width: 12pt;
+              height: 12pt;
+              transform: rotate(-180deg);
+            }
+          }
+          > .swiper-button-next2 {
+            position: static;
+            margin-top: 0;
+            width: 24pt;
+            height: 24pt;
+            background: $color-1 !important;
+            color: $white;
+            border-radius: 50pt;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 3pt;
+            cursor: pointer;
+            &:focus {
+              outline: none;
+            }
+            > .next {
+              width: 12pt;
+              height: 12pt;
+            }
+          }
+        }
+      }
+
+      > .head-bottom {
+        > .title {
+          @include font-size-7-400;
+        }
+
+        > .tagline {
+          margin-top: 5pt;
+          @include font-size-9-200;
+          min-height: 40px;
+          color: $color-11;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $xxlarge) {
+  .newcon-activities-all-page {
+
+    > .activities-body1{
+      padding-top: 40pt;
+    }
+  
+    > .activities-body2{
+      padding-top: 640pt;
+      padding-bottom: 40pt;
+    }
+    > .activities-body1 , > .activities-body2 {
+      width: calc(92% - 10pt);
+
+      > .wrapper-header-content {
+
+        > .left {
+          > .head {
+            > .title {
+            }
+
+            > .tagline {
+            }
+          }
+        }
+
+        > .right {
+          > .swiper-slider-cop {
+            > .swiper-button-prev2 {
+              &:focus {
+              }
+              > .prev {
+              }
+            }
+            > .swiper-button-next2 {
+              &:focus {
+              }
+              > .next {
+              }
+            }
+          }
+        }
+
+        > .head-bottom {
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $xlarge) {
+  .newcon-activities-all-page {
+
+    > .activities-body1{
+      padding-top: 35pt;
+    }
+  
+    > .activities-body2{
+      padding-top: 35pt;
+      padding-bottom: 35pt;
+    }
+
+    > .activities-body1 , > .activities-body2 {
+      width: calc(93% - 10pt);
+
+      > .wrapper-header-content {
+
+        > .left {
+          > .head {
+            > .title {
+            }
+
+            > .tagline {
+            }
+          }
+        }
+
+        > .right {
+          > .swiper-slider-cop {
+            > .swiper-button-prev2 {
+              &:focus {
+              }
+              > .prev {
+              }
+            }
+            > .swiper-button-next2 {
+              &:focus {
+              }
+              > .next {
+              }
+            }
+          }
+        }
+
+        >.head-bottom{
+
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $large) {
+  .newcon-activities-all-page {
+
+    > .activities-body1{
+
+    }
+  
+    > .activities-body2{
+
+    }
+
+    > .activities-body1 , > .activities-body2 {
+      width: calc(94% - 10pt);
+
+      > .wrapper-header-content {
+
+        > .left {
+          > .head {
+            > .title {
+            }
+
+            > .tagline {
+            }
+          }
+        }
+
+        > .right {
+          > .swiper-slider-cop {
+            > .swiper-button-prev2 {
+              &:focus {
+              }
+              > .prev {
+              }
+            }
+            > .swiper-button-next2 {
+              &:focus {
+              }
+              > .next {
+              }
+            }
+          }
+        }
+
+        >.head-bottom{
+
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $medium) {
+  .newcon-activities-all-page {
+
+    > .activities-body1{
+
+    }
+  
+    > .activities-body2{
+
+    }
+
+    > .activities-body1 , > .activities-body2 {
+      width: calc(95% - 10pt);
+
+      > .wrapper-header-content {
+
+        > .left {
+          > .head {
+            > .title {
+            }
+
+            > .tagline {
+            }
+          }
+        }
+
+        > .right {
+          > .swiper-slider-cop {
+            > .swiper-button-prev2 {
+              &:focus {
+              }
+              > .prev {
+              }
+            }
+            > .swiper-button-next2 {
+              &:focus {
+              }
+              > .next {
+              }
+            }
+          }
+        }
+
+        >.head-bottom{
+
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $small) {
+  .newcon-activities-all-page {
+
+    > .activities-body1{
+
+    }
+  
+    > .activities-body2{
+
+    }
+    
+    > .activities-body1 , > .activities-body2 {
+      width: calc(96% - 10pt);
+
+      > .wrapper-header-content {
+        > .left {
+          > .head {
+            > .title {
+            }
+
+            > .tagline {
+            }
+          }
+        }
+
+        > .right {
+          > .swiper-slider-cop {
+            > .swiper-button-prev2 {
+              &:focus {
+              }
+              > .prev {
+              }
+            }
+            > .swiper-button-next2 {
+              &:focus {
+              }
+              > .next {
+              }
+            }
+          }
+        }
+
+        >.head-bottom{
+
+        }
+      }
+    }
+  }
+}

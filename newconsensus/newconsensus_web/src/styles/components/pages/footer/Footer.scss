@@ -1,0 +1,279 @@
+.footer {
+  position: relative;
+  background-color: $baendcolor;
+  width: 100%;
+  height: 34pt;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  > .menu {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+
+    > .wrapper-footer-read-policy {
+      @include font-size-9-300;
+      color: white;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: calc(100% - 170pt);
+      padding-left: 170pt;
+    }
+
+    > .social {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      width: 170pt;
+      min-width: 170pt;
+
+      > .wrapper-footer-title {
+        @include font-size-9-300;
+        color: white;
+        margin-right: 6pt;
+      }
+
+      > .social-menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        > .div-svg {
+          cursor: pointer;
+          border-radius: 5pt;
+          width: calc(18pt - 4pt);
+          height: calc(18pt - 4pt);
+          border: 1pt solid $white;
+          margin-left: 2pt;
+          margin-right: 2pt;
+          padding: 2pt;
+
+          &:hover {
+            background: $white;
+
+            > svg {
+              fill: $back !important;
+
+              > g > g {
+                fill: $back !important;
+              }
+            }
+          }
+
+          > svg {
+            width: 100%;
+            height: 100%;
+            fill: $white !important;
+
+            > g {
+              > g {
+                fill: $white !important;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $xxlarge) {
+  .footer {
+    height: 33pt;
+
+    > .menu {
+      > .wrapper-footer-read-policy {
+        width: calc(100% - 160pt);
+        padding-left: 160pt;
+      }
+
+      > .social {
+        width: 160pt;
+        min-width: 160pt;
+
+        > .wrapper-footer-title {
+        }
+
+        > .social-menu {
+          > .div-svg {
+            &:hover {
+              > svg {
+                > g > g {
+                }
+              }
+            }
+
+            > svg {
+              > g {
+                > g {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $xlarge) {
+  .footer {
+    height: 32pt;
+
+    > .menu {
+      > .wrapper-footer-read-policy {
+        width: calc(100% - 150pt);
+        padding-left: 150pt;
+      }
+
+      > .social {
+        width: 150pt;
+        min-width: 150pt;
+
+        > .wrapper-footer-title {
+        }
+
+        > .social-menu {
+          > .div-svg {
+            &:hover {
+              > svg {
+                > g > g {
+                }
+              }
+            }
+
+            > svg {
+              > g {
+                > g {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $large) {
+  .footer {
+    height: 31pt;
+
+    > .menu {
+      > .wrapper-footer-read-policy {
+      }
+
+      > .social {
+        > .wrapper-footer-title {
+        }
+
+        > .social-menu {
+          > .div-svg {
+            &:hover {
+              > svg {
+                > g > g {
+                }
+              }
+            }
+
+            > svg {
+              > g {
+                > g {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $medium) {
+  .footer {
+    height: 60pt;
+
+    > .menu {
+      flex-direction: column;
+
+      > .wrapper-footer-read-policy {
+          width: 100%;
+          padding-left: 0;
+      }
+
+      > .social {
+        margin-top: 5pt;
+        justify-content: center;
+
+        > .wrapper-footer-title {
+        }
+
+        > .social-menu {
+          > .div-svg {
+            &:hover {
+              > svg {
+                > g > g {
+                }
+              }
+            }
+
+            > svg {
+              > g {
+                > g {
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $small) {
+    .footer {
+      height: 55pt;
+  
+      > .menu {
+  
+        > .wrapper-footer-read-policy {
+
+        }
+  
+        > .social {
+          
+          > .wrapper-footer-title {
+          }
+  
+          > .social-menu {
+            > .div-svg {
+              &:hover {
+                > svg {
+                  > g > g {
+                  }
+                }
+              }
+  
+              > svg {
+                > g {
+                  > g {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }

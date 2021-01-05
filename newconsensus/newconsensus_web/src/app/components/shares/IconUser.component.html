@@ -1,0 +1,5 @@
+<div [ngClass]="class" class="newcon-icon-user" matTooltip="{{pageUser.level}}" matTooltipClass="tooltip"
+[matTooltipPosition]="'above'" *ngIf="pageUser !== null && pageUser !== undefined">
+    <img class="avatar" src="{{!pageUserInfo.getUserImage(pageUser) ? '../../../assets/components/pages/icons8-female-profile-128.png' : pageUserInfo.getUserImage(pageUser)}}" alt=""> 
+</div>
+ 

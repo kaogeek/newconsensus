@@ -1,0 +1,55 @@
+<div class="comment-vote-item" *ngIf="showAppove" [ngStyle]="{'background-color': bgColor, 'width': width, 'height': height}" [ngClass]="class" [class.click-see-more]="isSeeMore">
+    <div class="comment-vote-item-profile">
+        <div class="comment-vote-item-profile-div">
+            <img class="avatar" src="{{!pageUserInfo.getUserImage(pageUser) ? '../../../assets/components/pages/icons8-female-profile-128.png' : pageUserInfo.getUserImage(pageUser)}}" alt="">
+            <div class="profile-name">
+                {{createdName}}
+            </div>
+        </div>
+        <div class="div-delete">
+            <i class="material-icons delete" *ngIf="showSubMenu" (click)="deleteActionClicked(voteId,voteCommentId)">
+                delete
+            </i>
+        </div>
+    </div>
+    <div class="comment-vote-item-content">
+        <div class="comment-vote-item-content-left">
+            <div class="comment-vote-item-content-left-content">
+                <ng-container *ngIf="(!isWordCountOver() || isSeeMore); else elseIsSeeMore">
+                    {{comment}}
+                </ng-container>
+                <ng-template #elseIsSeeMore>
+                    {{comment | slice:0:220}}...
+                </ng-template>
+                <span class="see-more" *ngIf="isWordCountOver()" (click)="clickOpenDropDown()" [class.see-less]="isSeeMore">{{ isSeeMore ? 'แสดงน้อยลง' : 'ดูเพิ่มเติม'}}</span>
+            </div>
+        </div>
+        <div class="comment-vote-item-content-right">
+            <div class="comment-vote-item-content-right-like-dislike">
+                <div class="like">
+                    <div class="div-icon" [style.opacity]="!isLogin() || isUserLike === undefined || isUserLike === false ? '0.3' : '1'" [style.pointer-events]="!isLogin() ? 'none' : 'inherit'" (click)="likeVoteCommentClicked(voteId,voteCommentId)">
+                        <svg id="Bold" enable-background="new 0 0 24 24" height="15pt" viewBox="0 0 24 24" width="15pt" xmlns="http://www.w3.org/2000/svg" class="icon-like">
+                            <path
+                                d="m1.75 23h2.5c.965 0 1.75-.785 1.75-1.75v-11.5c0-.965-.785-1.75-1.75-1.75h-2.5c-.965 0-1.75.785-1.75 1.75v11.5c0 .965.785 1.75 1.75 1.75z" />
+                            <path
+                                d="m12.781.75c-1 0-1.5.5-1.5 3 0 2.376-2.301 4.288-3.781 5.273v12.388c1.601.741 4.806 1.839 9.781 1.839h1.6c1.95 0 3.61-1.4 3.94-3.32l1.12-6.5c.42-2.45-1.46-4.68-3.94-4.68h-4.72s.75-1.5.75-4c0-3-2.25-4-3.25-4z" />
+                        </svg>
+                    </div>
+                    <span class="like-total">{{likeTotal | shortNumber}}</span>
+                </div>
+                <div class="dislike">
+                    <div class="div-icon" [style.opacity]="!isLogin() || isUserLike === undefined || isUserLike === true ? '0.3' : '1'" [style.pointer-events]="!isLogin() ? 'none' : 'inherit'" (click)="dislikeVoteCommentClicked(voteId,voteCommentId)">
+                        <div class="check-login" *ngIf="!isLogin()"></div>
+                        <svg id="Bold" enable-background="new 0 0 24 24" height="15pt" viewBox="0 0 24 24" width="15pt" xmlns="http://www.w3.org/2000/svg" class="icon-dislike">
+                            <path
+                                d="m1.75 23h2.5c.965 0 1.75-.785 1.75-1.75v-11.5c0-.965-.785-1.75-1.75-1.75h-2.5c-.965 0-1.75.785-1.75 1.75v11.5c0 .965.785 1.75 1.75 1.75z" />
+                            <path
+                                d="m12.781.75c-1 0-1.5.5-1.5 3 0 2.376-2.301 4.288-3.781 5.273v12.388c1.601.741 4.806 1.839 9.781 1.839h1.6c1.95 0 3.61-1.4 3.94-3.32l1.12-6.5c.42-2.45-1.46-4.68-3.94-4.68h-4.72s.75-1.5.75-4c0-3-2.25-4-3.25-4z" />
+                        </svg>
+                    </div>
+                    <span class="dislike-total">{{dislikeTotal | shortNumber}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

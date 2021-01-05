@@ -1,0 +1,55 @@
+.newcon-proposal-comment-page {
+    position: relative;
+    @include font-size-9-200;
+    >.body {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: normal !important;
+        >.grid1 {
+            width: 30%;
+            height: auto;
+            padding: 0 0pt 0pt 25pt;
+            >h3 {
+                margin: 0;
+            }
+            >h5 {
+                margin: 0;
+            }
+            >.content {
+                width: 100%;
+                height: auto;
+                .topic-profile {
+                    margin-bottom: 10pt;
+                    .wrapper-profile-topic-left-div {
+                        display: block;
+                        .comment-created {
+                            text-align: left;
+                        }
+                    }
+                }
+            }
+        }
+        >.grid2 {
+            width: 70%;
+            height: auto;
+            padding: 15pt;
+            background-color: #f3f3f3;
+            min-width: 250px;
+            add-debate {
+                display: none;
+                margin-bottom: 15pt;
+            }
+        }
+        @media (max-width: $xlarge) {
+            >.grid1 {
+                display: none;
+            }
+            >.grid2 {
+                width: 100%;
+                add-debate {
+                    display: flex !important;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,151 @@
+.newcon-debate-user-page {
+    width: 100%;
+    height: auto;
+    >.debate-me {
+        height: auto;
+        margin-bottom: 50pt;
+        >.debate-head {
+            @include font-size-8-400;
+        }
+        >.debate-body {
+            margin-top: 20pt;
+        }
+    }
+    >.debate-all {
+        height: auto;
+        >.debate-head {
+            @include font-size-8-400;
+        }
+        >.debate-body {
+            margin-top: 20pt;
+        }
+        >.debate-edit {
+            width: 100%;
+        }
+    }
+    .wrapper-paginator-spinner,
+    .wrapper-paginator-comment-spinner {
+        @include font-size-9-400;
+    }
+}
+
+@media(max-width: $xxlarge){
+    .newcon-debate-user-page {
+
+        >.debate-me {
+
+            >.debate-head {
+            }
+            >.debate-body {
+
+            }
+        }
+        >.debate-all {
+
+            >.debate-head {
+
+            }
+            >.debate-body {
+
+            }
+            >.debate-edit {
+
+            }
+        }
+        .wrapper-paginator-spinner,
+        .wrapper-paginator-comment-spinner {
+
+        }
+    }
+}
+
+@media(max-width: $xlarge){
+    .newcon-debate-user-page {
+
+        >.debate-me {
+            margin-bottom: 40pt;
+
+            >.debate-head {
+            }
+            >.debate-body {
+
+            }
+        }
+        >.debate-all {
+
+            >.debate-head {
+
+            }
+            >.debate-body {
+
+            }
+            >.debate-edit {
+
+            }
+        }
+        .wrapper-paginator-spinner,
+        .wrapper-paginator-comment-spinner {
+
+        }
+    }
+}
+
+@media(max-width: $large){
+    .newcon-debate-user-page {
+
+        >.debate-me {
+
+            >.debate-head {
+            }
+            >.debate-body {
+                margin-top: 15pt;
+            }
+        }
+        >.debate-all {
+
+            >.debate-head {
+
+            }
+            >.debate-body {
+                margin-top: 15pt;
+            }
+            >.debate-edit {
+
+            }
+        }
+        .wrapper-paginator-spinner,
+        .wrapper-paginator-comment-spinner {
+
+        }
+    }
+}
+
+@media(max-width: $medium){
+    .newcon-debate-user-page {
+
+        >.debate-me {
+            margin-bottom: 30pt;
+            >.debate-head {
+            }
+            >.debate-body {
+
+            }
+        }
+        >.debate-all {
+
+            >.debate-head {
+
+            }
+            >.debate-body {
+
+            }
+            >.debate-edit {
+
+            }
+        }
+        .wrapper-paginator-spinner,
+        .wrapper-paginator-comment-spinner {
+
+        }
+    }
+}

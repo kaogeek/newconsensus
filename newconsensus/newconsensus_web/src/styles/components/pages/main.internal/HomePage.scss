@@ -1,0 +1,4049 @@
+.newcon-home-page {
+  position: relative;
+  width: 100%;
+  height: auto;
+  > .newcon-home-page-slider {
+    width: 100%;
+    height: auto;
+    > .swiper-container {
+      > .swiper-wrapper {
+        width: 100%;
+        > .swiper-slide {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          > .swiper-slide-img {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+          }
+        }
+      }
+      > .swiper-button-prev {
+        display: none;
+      }
+      > .swiper-button-next {
+        display: none;
+      }
+      > .swiper-pagination {
+      }
+      > .swiper-button-prev {
+      }
+      > .swiper-button-next {
+      }
+    }
+  }
+  > .newcon-home-page-body {
+    width: 100%;
+    height: auto;
+    .btn-list {
+      display: flex;
+      margin: auto;
+      max-width: 200pt;
+      .newcon-button {
+        background-color: $color-7 !important;
+      }
+    }
+    > .newcon-home-page-room {
+      width: 91%;
+      margin-left: auto;
+      margin-right: auto;
+      height: auto;
+      > .newcon-home-page-room-head {
+        padding-top: 20pt;
+        padding-left: 5.4%;
+        padding-right: 120pt;
+        padding-bottom: 70pt;
+        width: auto;
+        border-top-right-radius: 100pt;
+        background: $white;
+        margin-top: -95px;
+        margin-left: -5%;
+        position: relative;
+        z-index: 1;
+        display: table;
+        > .newcon-home-page-room-head-1 {
+          @include font-size-7-400;
+        }
+        > .newcon-home-page-room-head-2 {
+          margin-top: 1pt;
+          @include font-size-9-200;
+          color: $color-11;
+        }
+      }
+      > .newcon-home-page-room-body {
+        display: flex;
+        flex-direction: row;
+        padding-top: 3pt;
+        padding-bottom: 45pt;
+        > .wrapper-left {
+          display: flex;
+          flex-wrap: wrap;
+          position: relative;
+          width: 50%;
+          height: 100%;
+          > .paginater-none {
+            .mat-paginator-range-actions {
+              display: none;
+            }
+          }
+          > .room-all {
+            position: absolute;
+            top: -28px;
+            left: 10pt;
+            right: auto;
+            bottom: auto;
+            z-index: 1;
+            @include font-size-9-400;
+            cursor: pointer;
+            color: $back;
+            &:hover {
+              transform: scale(1.05, 1.05);
+              color: #59b2cc;
+            }
+            &:focus {
+              outline: none;
+            }
+          }
+          mat-paginator {
+            position: absolute;
+            top: -40px;
+            left: auto;
+            right: 0;
+            bottom: auto;
+            z-index: 1;
+            background: transparent;
+            > .mat-paginator-outer-container {
+              > .mat-paginator-container {
+                min-height: 40px;
+              }
+            }
+          }
+          .box {
+            width: calc(33.33% - 14px);
+            height: 110pt;
+            color: white;
+            text-align: center;
+            position: relative;
+            padding: 0 7px;
+            margin: 10px 0;
+            cursor: pointer;
+            &:focus {
+              outline: none;
+            }
+            > .box-inner {
+              width: 100%;
+              height: 100%;
+              border-radius: 10pt;
+              opacity: 0.95;
+              &:hover {
+                opacity: 1;
+                box-shadow: 3px 9px 8px -6px #c2c2cc;
+              }
+              &:focus {
+                outline: none;
+              }
+              .cr {
+                width: 40px;
+                height: 40px;
+                background-color: #7e7973;
+                border: white 3px solid;
+                color: white;
+                position: absolute;
+                top: -15px;
+                right: -2px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                a {
+                  position: unset;
+                }
+              }
+              a {
+                position: absolute;
+                top: auto;
+                left: 10%;
+                right: 10%;
+                bottom: 10%;
+                text-align: left;
+                @include font-size-9-300;
+                word-break: break-word;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                &:focus {
+                  outline: none;
+                }
+              }
+            }
+          }
+        }
+
+        > .vote-close {
+          width: 100% !important;
+
+          > .box {
+            width: calc(16.66% - 14px);
+          }
+        }
+
+        > .wrapper-right {
+          width: calc(50% - 10pt);
+          margin-left: 10pt;
+          height: 250pt;
+          > .box {
+            width: 100%;
+            height: 100%;
+            color: white;
+            position: relative;
+            cursor: pointer;
+            > .box-inner {
+              width: 100%;
+              height: 100%;
+              opacity: 0.95;
+              background: $bg-color1;
+              &:hover {
+                opacity: 1;
+                box-shadow: 3px 9px 8px -6px #c2c2cc;
+              }
+              > .wrapper-right-room {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: center;
+                height: 100%;
+                position: relative;
+                &:focus {
+                  outline: none;
+                }
+                > .wrapper-right-room-content {
+                  position: absolute;
+                  top: 10%;
+                  left: 5%;
+                  width: 50%;
+                  > .wrapper-right-room-content-head {
+                    color: $back;
+                    @include font-size-7-400;
+                  }
+                  > .wrapper-right-room-content-content {
+                    color: $color-11;
+                    margin-top: 1pt;
+                    @include font-size-9-200;
+                  }
+                }
+                > .image-room-vote {
+                  margin-right: 7%;
+                  width: 46%;
+                  height: auto;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    > .newcon-home-page-talk {
+      width: 100%;
+      height: auto;
+      background: $color-9;
+      > .newcon-home-page-talk-room {
+        width: 91%;
+        margin-left: auto;
+        margin-right: auto;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 45pt;
+        > .room-left-center {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: flex-start;
+          margin-bottom: 30pt;
+          > .newcon-home-page-talk-room-left {
+            width: calc(50% - 20pt);
+            padding-left: 10pt;
+            padding-right: 10pt;
+
+            > .newcon-home-page-talk-room-left-popular-talk {
+              width: 100%;
+              height: auto;
+              > .newcon-home-page-talk-room-left-popular-head {
+                margin-bottom: 10pt;
+                > .newcon-home-page-talk-room-left-popular-talk-head {
+                  @include font-size-7-400;
+                }
+                > .newcon-home-page-talk-room-left-popular-talk-content {
+                  margin-top: 1pt;
+                  @include font-size-10-200;
+                  padding-right: 15px;
+                  min-height: 40px;
+                  color: $color-11;
+                }
+              }
+              > .topic-profile-popular {
+                width: 100%;
+                height: 431pt;
+                topic-profile {
+                  .topic-profile-popular-talk {
+                    width: 100% !important;
+                    margin-top: 10px !important;
+                    margin-left: 0 !important;
+                    margin-right: 0 !important;
+                    margin-bottom: 10px !important;
+                    height: 80pt !important;
+                    .avatar {
+                      margin: 0 10pt 0 10pt !important;
+                    }
+                    > .wrapper-profile-topic {
+                      > .wrapper-topic {
+                        justify-content: space-between;
+                        > .topic-name {
+                          display: -webkit-box;
+                          -webkit-line-clamp: 1;
+                          -webkit-box-orient: vertical;
+                          overflow: hidden;
+                          padding-right: 20px;
+                        }
+                      }
+                      > .wrapper-profile {
+                        span {
+                          > .profile-name {
+                            @include font-size-10-500;
+                            margin-right: 20pt !important;
+                          }
+                          > .comment-created {
+                            @include font-size-10-100;
+                          }
+                        }
+                        > .wrapper-total-comment {
+                          @include font-size-10-500;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          > .newcon-home-page-talk-room-center {
+            width: calc(50% - 20pt);
+            padding-left: 10pt;
+            padding-right: 10pt;
+            &.max-width {
+              width: calc(100% - 20pt) !important;
+            }
+
+            > .newcon-home-page-talk-room-center-popular-talk {
+              width: 100%;
+              height: auto;
+              > .newcon-home-page-talk-room-center-popular-head {
+                margin-bottom: 10pt;
+                > .newcon-home-page-talk-room-center-popular-talk-head {
+                  @include font-size-7-400;
+                }
+                > .newcon-home-page-talk-room-center-popular-talk-content {
+                  margin-top: 1pt;
+                  @include font-size-10-200;
+                  padding-right: 15px;
+                  min-height: 40px;
+                  color: $color-11;
+                }
+              }
+              > .topic-profile-popular {
+                width: 100%;
+                // height: 431pt;
+                topic-profile {
+                  .topic-profile-popular-talk {
+                    width: 100% !important;
+                    margin-top: 10px !important;
+                    margin-left: 0 !important;
+                    margin-right: 0 !important;
+                    margin-bottom: 10px !important;
+                    height: 80pt !important;
+                    .avatar {
+                      margin: 0 10pt 0 10pt !important;
+                    }
+                    > .wrapper-profile-topic {
+                      > .wrapper-topic {
+                        justify-content: space-between;
+                        > .topic-name {
+                          display: -webkit-box;
+                          -webkit-line-clamp: 1;
+                          -webkit-box-orient: vertical;
+                          overflow: hidden;
+                          padding-right: 20px;
+                        }
+                      }
+                      > .wrapper-profile {
+                        span {
+                          > .profile-name {
+                            @include font-size-10-500;
+                            margin-right: 20pt !important;
+                          }
+                          > .comment-created {
+                            @include font-size-10-100;
+                          }
+                        }
+                        > .wrapper-total-comment {
+                          @include font-size-10-500;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        > .newcon-home-page-talk-room-right {
+          width: calc(415pt - 20pt);
+          padding-left: 10pt;
+          padding-right: 10pt;
+          min-width: calc(415pt - 20pt);
+
+          > .newcon-home-page-talk-room-right-popular-talk {
+            width: 100%;
+            height: auto;
+            > .newcon-home-page-talk-room-right-popular-head {
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-start;
+              margin-bottom: 10pt;
+              > .newcon-home-page-talk-room-right-popular-head-cop {
+                > .newcon-home-page-talk-room-right-popular-talk-head {
+                  @include font-size-7-400;
+                }
+                > .newcon-home-page-talk-room-right-popular-talk-content {
+                  margin-top: 1pt;
+                  @include font-size-10-200;
+                  padding-right: 15px;
+                  min-height: 40px;
+                  color: $color-11;
+                }
+              }
+              > .swiper-slider-cop {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                > .swiper-button-prev2 {
+                  position: static;
+                  margin-top: 0;
+                  width: 24pt;
+                  height: 24pt;
+                  background: $white !important;
+                  color: $back;
+                  border-radius: 50pt;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  margin-right: 3pt;
+                  cursor: pointer;
+                  &:focus {
+                    outline: none;
+                  }
+                  > .prev {
+                    width: 12pt;
+                    height: 12pt;
+                    transform: rotate(-180deg);
+                  }
+                }
+                > .swiper-button-next2 {
+                  position: static;
+                  margin-top: 0;
+                  width: 24pt;
+                  height: 24pt;
+                  background: $color-1 !important;
+                  color: $white;
+                  border-radius: 50pt;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  margin-left: 3pt;
+                  cursor: pointer;
+                  &:focus {
+                    outline: none;
+                  }
+                  > .next {
+                    width: 12pt;
+                    height: 12pt;
+                  }
+                }
+              }
+            }
+            > .topic-profile-popular {
+              position: relative;
+              width: 100%;
+              height: 431pt;
+              > .swiper-container {
+                height: 100%;
+                &:hover > .swiper-wrapper > .swiper-slide > .content {
+                  height: calc(100% - 40pt);
+                }
+                &:hover > .swiper-wrapper > .swiper-slide > .content > .content-head > .content-head-top {
+                  display: -webkit-box;
+                  -webkit-line-clamp: 5;
+                  -webkit-box-orient: vertical;
+                  overflow: hidden;
+                  @include font-size-7-300;
+                }
+                > .swiper-wrapper {
+                  > .swiper-slide {
+                    position: relative;
+                    > .img-vote {
+                      height: 100%;
+                      width: 100%;
+                      object-fit: cover;
+                    }
+                    > .content {
+                      position: absolute;
+                      top: auto;
+                      left: 0;
+                      right: 0;
+                      bottom: 0;
+                      background: rgb(24, 31, 55, 0.8);
+                      padding: 20pt;
+                      height: auto;
+                      display: flex;
+                      flex-direction: column;
+                      justify-content: space-between;
+                      align-items: stretch;
+                      // &:hover {
+                      //   height: calc(100% - 40pt);
+                      // }
+                      // &:hover .content-head > .content-head-top {
+                      //   display: -webkit-box;
+                      //   -webkit-line-clamp: 5;
+                      //   -webkit-box-orient: vertical;
+                      //   overflow: hidden;
+                      //   @include font-size-7-300;
+                      // }
+                      > .content-head {
+                        text-align: center;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        align-items: stretch;
+                        height: 100%;
+                        > .content-head-top {
+                          @include font-size-7-300;
+                          color: $white;
+                          word-break: break-word;
+                          display: -webkit-box;
+                          -webkit-line-clamp: 1;
+                          -webkit-box-orient: vertical;
+                          overflow: hidden;
+                        }
+                        > .content-data {
+                          @include font-size-10-200;
+                          color: $white;
+                        }
+                      }
+                      > .vote-persen {
+                        display: flex;
+                        margin-top: 20pt;
+                        > .vote-persen-left {
+                          width: 70%;
+                          display: flex;
+                          justify-content: center;
+                          align-items: center;
+                          margin-right: 25pt;
+                          > .newcon-vote-code-left-percent {
+                            height: 100%;
+                            text-align: right;
+                            width: 33.33%;
+                            > .newcon-vote-code-left-percent-count {
+                              display: block;
+                              @include font-size-8-400;
+                            }
+                            > .newcon-vote-code-left-percent-head {
+                              display: block;
+                              @include font-size-10-200;
+                            }
+                          }
+                        }
+                        > .vote-persen-right {
+                          width: 30%;
+                          display: flex;
+                          justify-content: flex-start;
+                          align-items: center;
+                          newcon-button {
+                            > .button-vote {
+                              display: inline !important;
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        mat-tab-group {
+          display: none;
+          width: 100%;
+          > .mat-tab-header {
+            > .mat-tab-header-pagination {
+              > .mat-tab-header-pagination-chevron {
+              }
+            }
+            > .mat-tab-label-container {
+              > .mat-tab-list {
+                > .mat-tab-labels {
+                  > .mat-tab-label {
+                    > .mat-tab-label-content {
+                      @include font-size-8-300;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          > .mat-tab-body-wrapper {
+            > .mat-tab-body {
+              overflow-y: hidden;
+              > .mat-tab-body-content {
+                overflow: hidden;
+                > .newcon-home-page-talk-room-left {
+                  width: calc(100% - 20pt);
+                  padding-left: 10pt;
+                  padding-right: 10pt;
+                  > .newcon-home-page-talk-room-left-popular-talk {
+                    width: 100%;
+                    height: auto;
+                    > .newcon-home-page-talk-room-left-popular-head {
+                      margin-bottom: 10pt;
+                      > .newcon-home-page-talk-room-left-popular-talk-head {
+                        @include font-size-7-400;
+                      }
+                      > .newcon-home-page-talk-room-left-popular-talk-content {
+                        margin-top: 1pt;
+                        @include font-size-10-200;
+                        padding-right: 15px;
+                        min-height: 40px;
+                        color: $color-11;
+                      }
+                    }
+                    > .topic-profile-popular {
+                      width: 100%;
+                      height: 460pt;
+                      topic-profile {
+                        .topic-profile-popular-talk {
+                          width: 100% !important;
+                          margin-top: 10px !important;
+                          margin-left: 0 !important;
+                          margin-right: 0 !important;
+                          margin-bottom: 10px !important;
+                          height: 80pt !important;
+                          .avatar {
+                            margin: 0 10pt 0 10pt !important;
+                          }
+                          > .wrapper-profile-topic {
+                            > .wrapper-topic {
+                              justify-content: space-between;
+                              > .topic-name {
+                                display: -webkit-box;
+                                -webkit-line-clamp: 1;
+                                -webkit-box-orient: vertical;
+                                overflow: hidden;
+                                padding-right: 20px;
+                              }
+                            }
+                            > .wrapper-profile {
+                              span {
+                                > .profile-name {
+                                  @include font-size-10-500;
+                                  margin-right: 20pt !important;
+                                }
+                                > .comment-created {
+                                  @include font-size-10-100;
+                                }
+                              }
+                              > .wrapper-total-comment {
+                                @include font-size-10-500;
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                > .newcon-home-page-talk-room-center {
+                  width: calc(100% - 20pt);
+                  padding-left: 10pt;
+                  padding-right: 10pt;
+                  > .newcon-home-page-talk-room-center-popular-talk {
+                    width: 100%;
+                    height: auto;
+                    > .newcon-home-page-talk-room-center-popular-head {
+                      margin-bottom: 10pt;
+                      > .newcon-home-page-talk-room-center-popular-talk-head {
+                        @include font-size-7-400;
+                      }
+                      > .newcon-home-page-talk-room-center-popular-talk-content {
+                        margin-top: 1pt;
+                        @include font-size-10-200;
+                        padding-right: 15px;
+                        min-height: 40px;
+                        color: $color-11;
+                      }
+                    }
+                    > .topic-profile-popular {
+                      width: 100%;
+                      height: 460pt;
+                      topic-profile {
+                        .topic-profile-popular-talk {
+                          width: 100% !important;
+                          margin-top: 10px !important;
+                          margin-left: 0 !important;
+                          margin-right: 0 !important;
+                          margin-bottom: 10px !important;
+                          height: 80pt !important;
+                          .avatar {
+                            margin: 0 10pt 0 10pt !important;
+                          }
+                          > .wrapper-profile-topic {
+                            > .wrapper-topic {
+                              justify-content: space-between;
+                              > .topic-name {
+                                display: -webkit-box;
+                                -webkit-line-clamp: 1;
+                                -webkit-box-orient: vertical;
+                                overflow: hidden;
+                                padding-right: 20px;
+                              }
+                            }
+                            > .wrapper-profile {
+                              span {
+                                > .profile-name {
+                                  @include font-size-10-500;
+                                  margin-right: 20pt !important;
+                                }
+                                > .comment-created {
+                                  @include font-size-10-100;
+                                }
+                              }
+                              > .wrapper-total-comment {
+                                @include font-size-10-500;
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                > .newcon-home-page-talk-room-right {
+                  width: calc(100% - 20pt);
+                  padding-left: 10pt;
+                  padding-right: 10pt;
+                  > .newcon-home-page-talk-room-right-popular-talk {
+                    width: 100%;
+                    height: auto;
+                    > .newcon-home-page-talk-room-right-popular-head {
+                      display: flex;
+                      justify-content: space-between;
+                      align-items: flex-start;
+                      margin-bottom: 10pt;
+                      > .newcon-home-page-talk-room-right-popular-head-cop {
+                        > .newcon-home-page-talk-room-right-popular-talk-head {
+                          @include font-size-7-400;
+                        }
+                        > .newcon-home-page-talk-room-right-popular-talk-content {
+                          margin-top: 1pt;
+                          @include font-size-10-200;
+                          padding-right: 15px;
+                          min-height: 40px;
+                          color: $color-11;
+                        }
+                      }
+                      > .swiper-slider-cop {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        > .swiper-button-prev2 {
+                          position: static;
+                          margin-top: 0;
+                          width: 24pt;
+                          height: 24pt;
+                          background: $white !important;
+                          color: $back;
+                          border-radius: 50pt;
+                          display: flex;
+                          justify-content: center;
+                          align-items: center;
+                          margin-right: 3pt;
+                          cursor: pointer;
+                          &:focus {
+                            outline: none;
+                          }
+                          > .prev {
+                            width: 12pt;
+                            height: 12pt;
+                            transform: rotate(-180deg);
+                          }
+                        }
+                        > .swiper-button-next2 {
+                          position: static;
+                          margin-top: 0;
+                          width: 24pt;
+                          height: 24pt;
+                          background: $color-1 !important;
+                          color: $white;
+                          border-radius: 50pt;
+                          display: flex;
+                          justify-content: center;
+                          align-items: center;
+                          margin-left: 3pt;
+                          cursor: pointer;
+                          &:focus {
+                            outline: none;
+                          }
+                          > .next {
+                            width: 12pt;
+                            height: 12pt;
+                          }
+                        }
+                      }
+                    }
+                    > .topic-profile-popular {
+                      position: relative;
+                      width: 100%;
+                      height: 460pt;
+                      > .swiper-container {
+                        height: 300pt;
+                        > .swiper-wrapper {
+                          > .swiper-slide {
+                            position: relative;
+                            > .img-vote {
+                              height: 100%;
+                              width: 100%;
+                              object-fit: cover;
+                            }
+                            > .content {
+                              position: absolute;
+                              top: auto;
+                              left: 0;
+                              right: 0;
+                              bottom: 0;
+                              background: rgb(24, 31, 55, 0.8);
+                              padding: 20pt;
+                              height: auto;
+                              display: flex;
+                              flex-direction: column;
+                              justify-content: space-between;
+                              align-items: stretch;
+                              &:hover {
+                                height: calc(100% - 40pt);
+                              }
+                              &:hover .content-head > .content-head-top {
+                                display: -webkit-box;
+                                -webkit-line-clamp: 5;
+                                -webkit-box-orient: vertical;
+                                overflow: hidden;
+                                @include font-size-7-300;
+                              }
+                              > .content-head {
+                                text-align: center;
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+                                align-items: stretch;
+                                height: 100%;
+                                > .content-head-top {
+                                  @include font-size-7-300;
+                                  color: $white;
+                                  word-break: break-word;
+                                  display: -webkit-box;
+                                  -webkit-line-clamp: 1;
+                                  -webkit-box-orient: vertical;
+                                  overflow: hidden;
+                                }
+                                > .content-data {
+                                  @include font-size-10-200;
+                                  color: $white;
+                                }
+                              }
+                              > .vote-persen {
+                                display: flex;
+                                margin-top: 20pt;
+                                > .vote-persen-left {
+                                  width: 70%;
+                                  display: flex;
+                                  justify-content: center;
+                                  align-items: center;
+                                  margin-right: 25pt;
+                                  > .newcon-vote-code-left-percent {
+                                    height: 100%;
+                                    text-align: right;
+                                    width: 33.33%;
+                                    > .newcon-vote-code-left-percent-count {
+                                      display: block;
+                                      @include font-size-8-400;
+                                    }
+                                    > .newcon-vote-code-left-percent-head {
+                                      display: block;
+                                      @include font-size-10-200;
+                                    }
+                                  }
+                                }
+                                > .vote-persen-right {
+                                  width: 30%;
+                                  display: flex;
+                                  justify-content: flex-start;
+                                  align-items: center;
+                                  newcon-button {
+                                    > .button-vote {
+                                      display: inline !important;
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      > .newcon-news-and-activities {
+        width: calc(91% - 20pt);
+        margin-left: auto;
+        margin-right: auto;
+        height: auto;
+        padding-left: 10pt;
+        padding-right: 10pt;
+        padding-top: 60pt;
+        > .newcon-news-and-activities-event-top {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          margin-bottom: 10pt;
+          > .newcon-news-and-activities-event {
+            > .newcon-news-and-activities-event-head {
+              @include font-size-7-400;
+            }
+            > .newcon-news-and-activities-event-content {
+              margin-top: 1pt;
+              @include font-size-10-200;
+              padding-right: 15px;
+              min-height: 40px;
+              color: $color-11;
+            }
+          }
+          > .newcon-news-and-activities-event-butt {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            > .swiper-button-prev3 {
+              position: static;
+              margin-top: 0;
+              width: 24pt;
+              height: 24pt;
+              background: $white !important;
+              color: $back;
+              border-radius: 50pt;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-right: 3pt;
+              cursor: pointer;
+              &:focus {
+                outline: none;
+              }
+              > .prev {
+                width: 12pt;
+                height: 12pt;
+                transform: rotate(-180deg);
+              }
+            }
+            > .swiper-button-next3 {
+              position: static;
+              margin-top: 0;
+              width: 24pt;
+              height: 24pt;
+              background: $color-1 !important;
+              color: $white;
+              border-radius: 50pt;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-left: 3pt;
+              cursor: pointer;
+              &:focus {
+                outline: none;
+              }
+              > .next {
+                width: 12pt;
+                height: 12pt;
+              }
+            }
+          }
+        }
+        > .newcon-news-and-activities-sliders {
+          box-shadow: 0px 8px 27px 2px #999;
+          > .swiper-container {
+            > .swiper-wrapper {
+              > .swiper-slide {
+                width: 100%;
+                max-height: 70vh;
+                > .img-news {
+                  width: 100%;
+                  height: auto !important;
+                  object-fit: cover;
+                }
+              }
+            }
+          }
+        }
+      }
+      > .newcon-interview-article {
+        width: calc(91% - 20pt);
+        margin-left: auto;
+        margin-right: auto;
+        height: auto;
+        padding-left: 10pt;
+        padding-right: 10pt;
+        padding-top: 60pt;
+        padding-bottom: 60pt;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        > .newcon-interview-article-left {
+          width: calc(50% - 15px);
+          height: auto;
+          margin-right: 15px;
+          > .newcon-interview-article-left-div {
+            > .newcon-interview-article-left-top {
+              margin-bottom: 10pt;
+              > .newcon-interview-article-left-head {
+                @include font-size-7-400;
+              }
+              > .newcon-interview-article-left-content {
+                margin-top: 1pt;
+                @include font-size-10-200;
+                padding-right: 15px;
+                min-height: 40px;
+                color: $color-11;
+              }
+            }
+            > .newcon-interview {
+              width: 100%;
+              height: auto;
+            }
+          }
+        }
+        > .newcon-interview-article-right {
+          width: calc(50% - 15px);
+          height: auto;
+          margin-left: 15px;
+          > .newcon-interview-article-right-div {
+            > .newcon-interview-article-right-top {
+              margin-bottom: 10pt;
+              > .newcon-interview-article-right-head {
+                @include font-size-7-400;
+              }
+              > .newcon-interview-article-right-content {
+                margin-top: 1pt;
+                @include font-size-10-200;
+                padding-right: 15px;
+                min-height: 40px;
+                color: $color-11;
+              }
+            }
+            > .newcon-article {
+              width: 100%;
+              height: auto;
+            }
+          }
+        }
+        mat-tab-group {
+          display: none;
+          width: 100%;
+          > .mat-tab-header {
+            > .mat-tab-header-pagination {
+              > .mat-tab-header-pagination-chevron {
+              }
+            }
+            > .mat-tab-label-container {
+              > .mat-tab-list {
+                > .mat-tab-labels {
+                  > .mat-tab-label {
+                    > .mat-tab-label-content {
+                      @include font-size-8-300;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          > .mat-tab-body-wrapper {
+            > .mat-tab-body {
+              overflow-y: hidden;
+              > .mat-tab-body-content {
+                overflow: hidden;
+                > .newcon-interview-article-left {
+                  width: calc(100% - 15px);
+                  height: auto;
+                  margin-right: 15px;
+                  > .newcon-interview-article-left-div {
+                    > .newcon-interview-article-left-top {
+                      margin-bottom: 10pt;
+                      > .newcon-interview-article-left-head {
+                        @include font-size-7-400;
+                      }
+                      > .newcon-interview-article-left-content {
+                        margin-top: 1pt;
+                        @include font-size-10-200;
+                        padding-right: 15px;
+                        min-height: 40px;
+                        color: $color-11;
+                      }
+                    }
+                    > .newcon-interview {
+                      width: 100%;
+                      height: auto;
+                    }
+                  }
+                }
+                > .newcon-interview-article-right {
+                  width: calc(100% - 15px);
+                  height: auto;
+                  margin-left: 15px;
+                  > .newcon-interview-article-right-div {
+                    > .newcon-interview-article-right-top {
+                      margin-bottom: 10pt;
+                      > .newcon-interview-article-right-head {
+                        @include font-size-7-400;
+                      }
+                      > .newcon-interview-article-right-content {
+                        margin-top: 1pt;
+                        @include font-size-10-200;
+                        padding-right: 15px;
+                        min-height: 40px;
+                        color: $color-11;
+                      }
+                    }
+                    > .newcon-article {
+                      width: 100%;
+                      height: auto;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    > .newcon-video {
+      width: 100%;
+      height: auto;
+      background: $white;
+      > .newcon-video-div {
+        width: calc(91% - 20pt);
+        margin-left: auto;
+        margin-right: auto;
+        height: auto;
+        padding-left: 10pt;
+        padding-right: 10pt;
+        padding-top: 60pt;
+        padding-bottom: 60pt;
+        > .newcon-video-top {
+          width: 100%;
+          margin-bottom: 10pt;
+          > .newcon-video-top-head {
+            @include font-size-7-400;
+          }
+          > .newcon-video-top-content {
+            margin-top: 1pt;
+            @include font-size-10-200;
+            padding-right: 15px;
+            min-height: 40px;
+            color: $color-11;
+          }
+        }
+        > .newcon-video-body {
+          width: 100%;
+          height: auto;
+          gallery {
+            width: 100%;
+            height: 44vw;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $xxlarge) {
+  .newcon-home-page {
+    > .newcon-home-page-slider {
+      > .swiper-container {
+        > .swiper-wrapper {
+          > .swiper-slide {
+            > .swiper-slide-img {
+              height: 80vh;
+            }
+          }
+        }
+        > .swiper-button-prev {
+        }
+        > .swiper-button-next {
+        }
+        > .swiper-pagination {
+          > .swiper-pagination-bullet {
+          }
+        }
+        > .swiper-button-prev {
+        }
+        > .swiper-button-next {
+        }
+      }
+    }
+    > .newcon-home-page-body {
+      > .newcon-home-page-room {
+        width: 92%;
+        > .newcon-home-page-room-head {
+          padding-right: 100pt;
+          padding-top: 15pt;
+          padding-bottom: 50pt;
+          margin-top: -80px;
+          > .newcon-home-page-room-head-1 {
+          }
+          > .newcon-home-page-room-head-2 {
+          }
+        }
+        > .newcon-home-page-room-body {
+          > .wrapper-left {
+            > .paginater-none {
+              .mat-paginator-range-actions {
+              }
+            }
+            > .room-all {
+              top: -30px;
+              &:hover {
+              }
+              &:focus {
+              }
+            }
+            mat-paginator {
+              > .mat-paginator-outer-container {
+                > .mat-paginator-container {
+                }
+              }
+            }
+            .box {
+              height: 100pt;
+              margin: 5px 0;
+              &:focus {
+              }
+              > .box-inner {
+                &:hover {
+                }
+                &:focus {
+                }
+                .cr {
+                  a {
+                  }
+                }
+                a {
+                  &:focus {
+                  }
+                }
+              }
+            }
+          }
+
+          > .vote-close {
+            > .box {
+              height: 90pt;
+            }
+          }
+
+          > .wrapper-right {
+            height: 215pt;
+            width: calc(50% - 5pt);
+            margin-left: 5pt;
+            > .box {
+              > .box-inner {
+                &:hover {
+                }
+                > .wrapper-right-room {
+                  &:focus {
+                  }
+                  > .wrapper-right-room-content {
+                    > .wrapper-right-room-content-head {
+                    }
+                    > .wrapper-right-room-content-content {
+                    }
+                  }
+                  > .image-room-vote {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      > .newcon-home-page-talk {
+        > .newcon-home-page-talk-room {
+          width: 92%;
+          padding-top: 40pt;
+          display: block;
+          > .room-left-center {
+            > .newcon-home-page-talk-room-left {
+              width: calc(50% - 12pt);
+              padding-left: 5pt;
+              padding-right: 7pt;
+              display: inline-block;
+              > .newcon-home-page-talk-room-left-popular-talk {
+                > .newcon-home-page-talk-room-left-popular-head {
+                  > .newcon-home-page-talk-room-left-popular-talk-head {
+                  }
+                  > .newcon-home-page-talk-room-left-popular-talk-content {
+                  }
+                }
+                > .topic-profile-popular {
+                  topic-profile {
+                    .topic-profile-popular-talk {
+                      .avatar {
+                      }
+                      > .wrapper-profile-topic {
+                        > .wrapper-topic {
+                          > .topic-name {
+                          }
+                        }
+                        > .wrapper-profile {
+                          span {
+                            > .profile-name {
+                            }
+                            > .comment-created {
+                            }
+                          }
+                          > .wrapper-total-comment {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            > .newcon-home-page-talk-room-center {
+              width: calc(50% - 12pt);
+              padding-left: 5pt;
+              padding-right: 7pt;
+              display: inline-block;
+              > .newcon-home-page-talk-room-center-popular-talk {
+                > .newcon-home-page-talk-room-center-popular-head {
+                  > .newcon-home-page-talk-room-center-popular-talk-head {
+                  }
+                  > .newcon-home-page-talk-room-center-popular-talk-content {
+                  }
+                }
+                > .topic-profile-popular {
+                  topic-profile {
+                    .topic-profile-popular-talk {
+                      .avatar {
+                      }
+                      > .wrapper-profile-topic {
+                        > .wrapper-topic {
+                          > .topic-name {
+                          }
+                        }
+                        > .wrapper-profile {
+                          span {
+                            > .profile-name {
+                            }
+                            > .comment-created {
+                            }
+                          }
+                          > .wrapper-total-comment {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          > .newcon-home-page-talk-room-right {
+            width: calc(100% - 12pt);
+            padding-top: 40pt;
+            padding-left: 7pt;
+            padding-right: 5pt;
+            min-width: unset;
+            > .newcon-home-page-talk-room-right-popular-talk {
+              > .newcon-home-page-talk-room-right-popular-head {
+                > .newcon-home-page-talk-room-right-popular-head-cop {
+                  > .newcon-home-page-talk-room-right-popular-talk-head {
+                  }
+                  > .newcon-home-page-talk-room-right-popular-talk-content {
+                  }
+                }
+                > .swiper-slider-cop {
+                  > .swiper-button-prev2 {
+                    &:focus {
+                    }
+                    > .prev {
+                    }
+                  }
+                  > .swiper-button-next2 {
+                    &:focus {
+                    }
+                    > .next {
+                    }
+                  }
+                }
+              }
+              > .topic-profile-popular {
+                > .swiper-container {
+                  > .swiper-wrapper {
+                    > .swiper-slide {
+                      > .img-vote {
+                      }
+                      > .content {
+                        padding: 15pt;
+                        &:hover {
+                          height: calc(100% - 30pt);
+                        }
+                        &:hover .content-head > .content-head-top {
+                        }
+                        > .content-head {
+                          > .content-head-top {
+                          }
+                          > .content-data {
+                          }
+                        }
+                        > .vote-persen {
+                          margin-top: 15pt;
+                          margin-left: auto;
+                          margin-right: auto;
+                          > .vote-persen-left {
+                            width: 280pt;
+                            > .newcon-vote-code-left-percent {
+                              > .newcon-vote-code-left-percent-count {
+                              }
+                              > .newcon-vote-code-left-percent-head {
+                              }
+                            }
+                          }
+                          > .vote-persen-right {
+                            newcon-button {
+                              > .button-vote {
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          mat-tab-group {
+            > .mat-tab-header {
+              > .mat-tab-header-pagination {
+                > .mat-tab-header-pagination-chevron {
+                }
+              }
+              > .mat-tab-label-container {
+                > .mat-tab-list {
+                  > .mat-tab-labels {
+                    > .mat-tab-label {
+                      > .mat-tab-label-content {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            > .mat-tab-body-wrapper {
+              > .mat-tab-body {
+                > .mat-tab-body-content {
+                  > .newcon-home-page-talk-room-left {
+                    width: calc(100% - 14pt);
+                    padding-left: 7pt;
+                    padding-right: 7pt;
+                    > .newcon-home-page-talk-room-left-popular-talk {
+                      > .newcon-home-page-talk-room-left-popular-head {
+                        > .newcon-home-page-talk-room-left-popular-talk-head {
+                        }
+                        > .newcon-home-page-talk-room-left-popular-talk-content {
+                        }
+                      }
+                      > .topic-profile-popular {
+                        topic-profile {
+                          .topic-profile-popular-talk {
+                            .avatar {
+                            }
+                            > .wrapper-profile-topic {
+                              > .wrapper-topic {
+                                > .topic-name {
+                                }
+                              }
+                              > .wrapper-profile {
+                                span {
+                                  > .profile-name {
+                                  }
+                                  > .comment-created {
+                                  }
+                                }
+                                > .wrapper-total-comment {
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                  > .newcon-home-page-talk-room-center {
+                    width: calc(100% - 14pt);
+                    padding-left: 7pt;
+                    padding-right: 7pt;
+                    > .newcon-home-page-talk-room-center-popular-talk {
+                      > .newcon-home-page-talk-room-center-popular-head {
+                        > .newcon-home-page-talk-room-center-popular-talk-head {
+                        }
+                        > .newcon-home-page-talk-room-center-popular-talk-content {
+                        }
+                      }
+                      > .topic-profile-popular {
+                        topic-profile {
+                          .topic-profile-popular-talk {
+                            .avatar {
+                            }
+                            > .wrapper-profile-topic {
+                              > .wrapper-topic {
+                                > .topic-name {
+                                }
+                              }
+                              > .wrapper-profile {
+                                span {
+                                  > .profile-name {
+                                  }
+                                  > .comment-created {
+                                  }
+                                }
+                                > .wrapper-total-comment {
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                  > .newcon-home-page-talk-room-right {
+                    width: calc(100% - 14pt);
+                    padding-top: 40pt;
+                    padding-left: 7pt;
+                    padding-right: 7pt;
+                    > .newcon-home-page-talk-room-right-popular-talk {
+                      > .newcon-home-page-talk-room-right-popular-head {
+                        > .newcon-home-page-talk-room-right-popular-head-cop {
+                          > .newcon-home-page-talk-room-right-popular-talk-head {
+                          }
+                          > .newcon-home-page-talk-room-right-popular-talk-content {
+                          }
+                        }
+                        > .swiper-slider-cop {
+                          > .swiper-button-prev2 {
+                            &:focus {
+                            }
+                            > .prev {
+                            }
+                          }
+                          > .swiper-button-next2 {
+                            &:focus {
+                            }
+                            > .next {
+                            }
+                          }
+                        }
+                      }
+                      > .topic-profile-popular {
+                        > .swiper-container {
+                          > .swiper-wrapper {
+                            > .swiper-slide {
+                              > .img-vote {
+                              }
+                              > .content {
+                                padding: 15pt;
+                                &:hover {
+                                  height: calc(100% - 30pt);
+                                }
+                                &:hover .content-head > .content-head-top {
+                                }
+                                > .content-head {
+                                  > .content-head-top {
+                                  }
+                                  > .content-data {
+                                  }
+                                }
+                                > .vote-persen {
+                                  margin-top: 15pt;
+                                  margin-left: auto;
+                                  margin-right: auto;
+                                  > .vote-persen-left {
+                                    width: 280pt;
+                                    > .newcon-vote-code-left-percent {
+                                      > .newcon-vote-code-left-percent-count {
+                                      }
+                                      > .newcon-vote-code-left-percent-head {
+                                      }
+                                    }
+                                  }
+                                  > .vote-persen-right {
+                                    newcon-button {
+                                      > .button-vote {
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        > .newcon-news-and-activities {
+          width: calc(92% - 10pt);
+          padding-top: 40pt;
+          padding-left: 5pt;
+          padding-right: 5pt;
+          > .newcon-news-and-activities-event-top {
+            > .newcon-news-and-activities-event {
+              > .newcon-news-and-activities-event-head {
+              }
+              > .newcon-news-and-activities-event-content {
+              }
+            }
+            > .newcon-news-and-activities-event-butt {
+              > .swiper-button-prev3 {
+                &:focus {
+                }
+                > .prev {
+                }
+              }
+              > .swiper-button-next3 {
+                &:focus {
+                }
+                > .next {
+                }
+              }
+            }
+          }
+          > .newcon-news-and-activities-sliders {
+            > .swiper-container {
+              > .swiper-wrapper {
+                > .swiper-slide {
+                  max-height: 60vh;
+                  > .img-news {
+                    height: 60vh;
+                  }
+                }
+              }
+            }
+          }
+        }
+        > .newcon-interview-article {
+          width: calc(92% - 10pt);
+          padding-top: 40pt;
+          padding-bottom: 40pt;
+          padding-left: 5pt;
+          padding-right: 5pt;
+          > .newcon-interview-article-left {
+            > .newcon-interview-article-left-div {
+              > .newcon-interview-article-left-top {
+                > .newcon-interview-article-left-head {
+                }
+                > .newcon-interview-article-left-content {
+                }
+              }
+              > .newcon-interview {
+              }
+            }
+          }
+          > .newcon-interview-article-right {
+            > .newcon-interview-article-right-div {
+              > .newcon-interview-article-right-top {
+                > .newcon-interview-article-right-head {
+                }
+                > .newcon-interview-article-right-content {
+                }
+              }
+              > .newcon-article {
+              }
+            }
+          }
+          mat-tab-group {
+            > .mat-tab-header {
+              > .mat-tab-header-pagination {
+                > .mat-tab-header-pagination-chevron {
+                }
+              }
+              > .mat-tab-label-container {
+                > .mat-tab-list {
+                  > .mat-tab-labels {
+                    > .mat-tab-label {
+                      > .mat-tab-label-content {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            > .mat-tab-body-wrapper {
+              > .mat-tab-body {
+                > .mat-tab-body-content {
+                  > .newcon-interview-article-left {
+                    > .newcon-interview-article-left-div {
+                      > .newcon-interview-article-left-top {
+                        > .newcon-interview-article-left-head {
+                        }
+                        > .newcon-interview-article-left-content {
+                        }
+                      }
+                      > .newcon-interview {
+                      }
+                    }
+                  }
+                  > .newcon-interview-article-right {
+                    > .newcon-interview-article-right-div {
+                      > .newcon-interview-article-right-top {
+                        > .newcon-interview-article-right-head {
+                        }
+                        > .newcon-interview-article-right-content {
+                        }
+                      }
+                      > .newcon-article {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      > .newcon-video {
+        > .newcon-video-div {
+          width: calc(92% - 10pt);
+          padding-left: 5pt;
+          padding-right: 5pt;
+          padding-top: 40pt;
+          padding-bottom: 40pt;
+          > .newcon-video-top {
+            > .newcon-video-top-head {
+            }
+            > .newcon-video-top-content {
+            }
+          }
+          > .newcon-video-body {
+            gallery {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $xlarge) {
+  .newcon-home-page {
+    > .newcon-home-page-slider {
+      > .swiper-container {
+        > .swiper-wrapper {
+          > .swiper-slide {
+            > .swiper-slide-img {
+              height: 65vh;
+            }
+          }
+        }
+        > .swiper-button-prev {
+        }
+        > .swiper-button-next {
+        }
+        > .swiper-pagination {
+          > .swiper-pagination-bullet {
+          }
+        }
+        > .swiper-button-prev {
+        }
+        > .swiper-button-next {
+        }
+      }
+    }
+    > .newcon-home-page-body {
+      > .newcon-home-page-room {
+        width: 93%;
+        > .newcon-home-page-room-head {
+          padding-right: 90pt;
+          padding-bottom: 45pt;
+          margin-top: -75px;
+          > .newcon-home-page-room-head-1 {
+          }
+          > .newcon-home-page-room-head-2 {
+          }
+        }
+        > .newcon-home-page-room-body {
+          padding-bottom: 40pt;
+          > .wrapper-left {
+            > .paginater-none {
+              .mat-paginator-range-actions {
+              }
+            }
+            > .room-all {
+              top: -28px;
+              &:hover {
+              }
+              &:focus {
+              }
+            }
+            mat-paginator {
+              > .mat-paginator-outer-container {
+                > .mat-paginator-container {
+                }
+              }
+            }
+            .box {
+              height: 80pt;
+              &:focus {
+              }
+              > .box-inner {
+                &:hover {
+                }
+                &:focus {
+                }
+                .cr {
+                  a {
+                  }
+                }
+                a {
+                  &:focus {
+                  }
+                }
+              }
+            }
+          }
+          > .vote-close {
+            > .box {
+            }
+          }
+
+          > .wrapper-right {
+            height: 175pt;
+            width: calc(50% - 5pt);
+            > .box {
+              > .box-inner {
+                &:hover {
+                }
+                > .wrapper-right-room {
+                  &:focus {
+                  }
+                  > .wrapper-right-room-content {
+                    > .wrapper-right-room-content-head {
+                    }
+                    > .wrapper-right-room-content-content {
+                    }
+                  }
+                  > .image-room-vote {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      > .newcon-home-page-talk {
+        > .newcon-home-page-talk-room {
+          width: 93%;
+          > .room-left-center {
+            > .newcon-home-page-talk-room-left {
+              > .newcon-home-page-talk-room-left-popular-talk {
+                > .newcon-home-page-talk-room-left-popular-head {
+                  > .newcon-home-page-talk-room-left-popular-talk-head {
+                  }
+                  > .newcon-home-page-talk-room-left-popular-talk-content {
+                  }
+                }
+                > .topic-profile-popular {
+                  height: 390pt;
+                  topic-profile {
+                    .topic-profile-popular-talk {
+                      height: 72pt !important;
+                      .avatar {
+                      }
+                      > .wrapper-profile-topic {
+                        > .wrapper-topic {
+                          > .topic-name {
+                          }
+                        }
+                        > .wrapper-profile {
+                          span {
+                            > .profile-name {
+                            }
+                            > .comment-created {
+                            }
+                          }
+                          > .wrapper-total-comment {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            > .newcon-home-page-talk-room-center {
+              > .newcon-home-page-talk-room-center-popular-talk {
+                > .newcon-home-page-talk-room-center-popular-head {
+                  > .newcon-home-page-talk-room-center-popular-talk-head {
+                  }
+                  > .newcon-home-page-talk-room-center-popular-talk-content {
+                  }
+                }
+                > .topic-profile-popular {
+                  // height: 390pt;
+                  topic-profile {
+                    .topic-profile-popular-talk {
+                      height: 72pt !important;
+                      .avatar {
+                      }
+                      > .wrapper-profile-topic {
+                        > .wrapper-topic {
+                          > .topic-name {
+                          }
+                        }
+                        > .wrapper-profile {
+                          span {
+                            > .profile-name {
+                            }
+                            > .comment-created {
+                            }
+                          }
+                          > .wrapper-total-comment {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          > .newcon-home-page-talk-room-right {
+            padding-top: 35pt;
+            > .newcon-home-page-talk-room-right-popular-talk {
+              > .newcon-home-page-talk-room-right-popular-head {
+                > .newcon-home-page-talk-room-right-popular-head-cop {
+                  > .newcon-home-page-talk-room-right-popular-talk-head {
+                  }
+                  > .newcon-home-page-talk-room-right-popular-talk-content {
+                  }
+                }
+                > .swiper-slider-cop {
+                  > .swiper-button-prev2 {
+                    &:focus {
+                    }
+                    > .prev {
+                    }
+                  }
+                  > .swiper-button-next2 {
+                    &:focus {
+                    }
+                    > .next {
+                    }
+                  }
+                }
+              }
+              > .topic-profile-popular {
+                height: 390pt;
+                > .swiper-container {
+                  > .swiper-wrapper {
+                    > .swiper-slide {
+                      > .img-vote {
+                      }
+                      > .content {
+                        &:hover {
+                        }
+                        &:hover .content-head > .content-head-top {
+                        }
+                        > .content-head {
+                          > .content-head-top {
+                          }
+                          > .content-data {
+                          }
+                        }
+                        > .vote-persen {
+                          > .vote-persen-left {
+                            > .newcon-vote-code-left-percent {
+                              > .newcon-vote-code-left-percent-count {
+                              }
+                              > .newcon-vote-code-left-percent-head {
+                              }
+                            }
+                          }
+                          > .vote-persen-right {
+                            newcon-button {
+                              > .button-vote {
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          mat-tab-group {
+            > .mat-tab-header {
+              > .mat-tab-header-pagination {
+                > .mat-tab-header-pagination-chevron {
+                }
+              }
+              > .mat-tab-label-container {
+                > .mat-tab-list {
+                  > .mat-tab-labels {
+                    > .mat-tab-label {
+                      > .mat-tab-label-content {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            > .mat-tab-body-wrapper {
+              > .mat-tab-body {
+                > .mat-tab-body-content {
+                  > .newcon-home-page-talk-room-left {
+                    > .newcon-home-page-talk-room-left-popular-talk {
+                      > .newcon-home-page-talk-room-left-popular-head {
+                        > .newcon-home-page-talk-room-left-popular-talk-head {
+                        }
+                        > .newcon-home-page-talk-room-left-popular-talk-content {
+                        }
+                      }
+                      > .topic-profile-popular {
+                        height: auto;
+                        topic-profile {
+                          .topic-profile-popular-talk {
+                            height: 72pt !important;
+                            .avatar {
+                            }
+                            > .wrapper-profile-topic {
+                              > .wrapper-topic {
+                                > .topic-name {
+                                }
+                              }
+                              > .wrapper-profile {
+                                span {
+                                  > .profile-name {
+                                  }
+                                  > .comment-created {
+                                  }
+                                }
+                                > .wrapper-total-comment {
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                  > .newcon-home-page-talk-room-center {
+                    > .newcon-home-page-talk-room-center-popular-talk {
+                      > .newcon-home-page-talk-room-center-popular-head {
+                        > .newcon-home-page-talk-room-center-popular-talk-head {
+                        }
+                        > .newcon-home-page-talk-room-center-popular-talk-content {
+                        }
+                      }
+                      > .topic-profile-popular {
+                        height: auto;
+                        topic-profile {
+                          .topic-profile-popular-talk {
+                            height: 72pt !important;
+                            .avatar {
+                            }
+                            > .wrapper-profile-topic {
+                              > .wrapper-topic {
+                                > .topic-name {
+                                }
+                              }
+                              > .wrapper-profile {
+                                span {
+                                  > .profile-name {
+                                  }
+                                  > .comment-created {
+                                  }
+                                }
+                                > .wrapper-total-comment {
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                  > .newcon-home-page-talk-room-right {
+                    padding-top: 20pt;
+                    > .newcon-home-page-talk-room-right-popular-talk {
+                      > .newcon-home-page-talk-room-right-popular-head {
+                        > .newcon-home-page-talk-room-right-popular-head-cop {
+                          > .newcon-home-page-talk-room-right-popular-talk-head {
+                          }
+                          > .newcon-home-page-talk-room-right-popular-talk-content {
+                          }
+                        }
+                        > .swiper-slider-cop {
+                          > .swiper-button-prev2 {
+                            &:focus {
+                            }
+                            > .prev {
+                            }
+                          }
+                          > .swiper-button-next2 {
+                            &:focus {
+                            }
+                            > .next {
+                            }
+                          }
+                        }
+                      }
+                      > .topic-profile-popular {
+                        height: 390pt;
+                        > .swiper-container {
+                          > .swiper-wrapper {
+                            > .swiper-slide {
+                              > .img-vote {
+                              }
+                              > .content {
+                                &:hover {
+                                }
+                                &:hover .content-head > .content-head-top {
+                                }
+                                > .content-head {
+                                  > .content-head-top {
+                                  }
+                                  > .content-data {
+                                  }
+                                }
+                                > .vote-persen {
+                                  > .vote-persen-left {
+                                    > .newcon-vote-code-left-percent {
+                                      > .newcon-vote-code-left-percent-count {
+                                      }
+                                      > .newcon-vote-code-left-percent-head {
+                                      }
+                                    }
+                                  }
+                                  > .vote-persen-right {
+                                    newcon-button {
+                                      > .button-vote {
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        > .newcon-news-and-activities {
+          width: calc(93% - 10pt);
+          padding-top: 35pt;
+          > .newcon-news-and-activities-event-top {
+            > .newcon-news-and-activities-event {
+              > .newcon-news-and-activities-event-head {
+              }
+              > .newcon-news-and-activities-event-content {
+              }
+            }
+            > .newcon-news-and-activities-event-butt {
+              > .swiper-button-prev3 {
+                &:focus {
+                }
+                > .prev {
+                }
+              }
+              > .swiper-button-next3 {
+                &:focus {
+                }
+                > .next {
+                }
+              }
+            }
+          }
+          > .newcon-news-and-activities-sliders {
+            > .swiper-container {
+              > .swiper-wrapper {
+                > .swiper-slide {
+                  max-height: 50vh;
+                  > .img-news {
+                    height: 50vh;
+                  }
+                }
+              }
+            }
+          }
+        }
+        > .newcon-interview-article {
+          width: calc(93% - 10pt);
+          padding-top: 35pt;
+          padding-bottom: 35pt;
+          > .newcon-interview-article-left {
+            > .newcon-interview-article-left-div {
+              > .newcon-interview-article-left-top {
+                > .newcon-interview-article-left-head {
+                }
+                > .newcon-interview-article-left-content {
+                }
+              }
+              > .newcon-interview {
+              }
+            }
+          }
+          > .newcon-interview-article-right {
+            > .newcon-interview-article-right-div {
+              > .newcon-interview-article-right-top {
+                > .newcon-interview-article-right-head {
+                }
+                > .newcon-interview-article-right-content {
+                }
+              }
+              > .newcon-article {
+              }
+            }
+          }
+          mat-tab-group {
+            > .mat-tab-header {
+              > .mat-tab-header-pagination {
+                > .mat-tab-header-pagination-chevron {
+                }
+              }
+              > .mat-tab-label-container {
+                > .mat-tab-list {
+                  > .mat-tab-labels {
+                    > .mat-tab-label {
+                      > .mat-tab-label-content {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            > .mat-tab-body-wrapper {
+              > .mat-tab-body {
+                > .mat-tab-body-content {
+                  > .newcon-interview-article-left {
+                    > .newcon-interview-article-left-div {
+                      > .newcon-interview-article-left-top {
+                        > .newcon-interview-article-left-head {
+                        }
+                        > .newcon-interview-article-left-content {
+                        }
+                      }
+                      > .newcon-interview {
+                      }
+                    }
+                  }
+                  > .newcon-interview-article-right {
+                    > .newcon-interview-article-right-div {
+                      > .newcon-interview-article-right-top {
+                        > .newcon-interview-article-right-head {
+                        }
+                        > .newcon-interview-article-right-content {
+                        }
+                      }
+                      > .newcon-article {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      > .newcon-video {
+        > .newcon-video-div {
+          width: calc(93% - 10pt);
+          padding-top: 35pt;
+          padding-bottom: 35pt;
+          > .newcon-video-top {
+            > .newcon-video-top-head {
+            }
+            > .newcon-video-top-content {
+            }
+          }
+          > .newcon-video-body {
+            gallery {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $large) {
+  .newcon-home-page {
+    > .newcon-home-page-slider {
+      > .swiper-container {
+        > .swiper-wrapper {
+          > .swiper-slide {
+            > .swiper-slide-img {
+              height: 520px;
+            }
+          }
+        }
+        > .swiper-button-prev {
+        }
+        > .swiper-button-next {
+        }
+        > .swiper-pagination {
+          > .swiper-pagination-bullet {
+          }
+        }
+        > .swiper-button-prev {
+        }
+        > .swiper-button-next {
+        }
+      }
+    }
+    > .newcon-home-page-body {
+      > .newcon-home-page-room {
+        width: 94%;
+        > .newcon-home-page-room-head {
+          padding: 15pt 0 25pt 5pt;
+          margin-top: 0;
+          margin-left: 0;
+          margin-bottom: 20pt;
+          > .newcon-home-page-room-head-1 {
+          }
+          > .newcon-home-page-room-head-2 {
+          }
+        }
+        > .newcon-home-page-room-body {
+          padding-bottom: 35pt;
+          flex-direction: column;
+          > .wrapper-left {
+            width: 100%;
+            > .paginater-none {
+              .mat-paginator-range-actions {
+              }
+            }
+            > .room-all {
+              &:hover {
+              }
+              &:focus {
+              }
+            }
+            mat-paginator {
+              > .mat-paginator-outer-container {
+                > .mat-paginator-container {
+                }
+              }
+            }
+            .box {
+              &:focus {
+              }
+              > .box-inner {
+                &:hover {
+                }
+                &:focus {
+                }
+                .cr {
+                  a {
+                  }
+                }
+                a {
+                  &:focus {
+                  }
+                }
+              }
+            }
+          }
+          > .vote-close {
+            > .box {
+            }
+          }
+
+          > .wrapper-right {
+            height: 195pt;
+            width: 100%;
+            margin-top: 10pt;
+            margin-left: 0;
+            > .box {
+              > .box-inner {
+                &:hover {
+                }
+                > .wrapper-right-room {
+                  &:focus {
+                  }
+                  > .wrapper-right-room-content {
+                    > .wrapper-right-room-content-head {
+                    }
+                    > .wrapper-right-room-content-content {
+                    }
+                  }
+                  > .image-room-vote {
+                    width: 36%;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      > .newcon-home-page-talk {
+        > .newcon-home-page-talk-room {
+          width: 94%;
+          > .room-left-center {
+            > .newcon-home-page-talk-room-left {
+              > .newcon-home-page-talk-room-left-popular-talk {
+                > .newcon-home-page-talk-room-left-popular-head {
+                  > .newcon-home-page-talk-room-left-popular-talk-head {
+                  }
+                  > .newcon-home-page-talk-room-left-popular-talk-content {
+                  }
+                }
+                > .topic-profile-popular {
+                  topic-profile {
+                    .topic-profile-popular-talk {
+                      .avatar {
+                      }
+                      > .wrapper-profile-topic {
+                        > .wrapper-topic {
+                          > .topic-name {
+                          }
+                        }
+                        > .wrapper-profile {
+                          span {
+                            > .profile-name {
+                            }
+                            > .comment-created {
+                            }
+                          }
+                          > .wrapper-total-comment {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            > .newcon-home-page-talk-room-center {
+              > .newcon-home-page-talk-room-center-popular-talk {
+                > .newcon-home-page-talk-room-center-popular-head {
+                  > .newcon-home-page-talk-room-center-popular-talk-head {
+                  }
+                  > .newcon-home-page-talk-room-center-popular-talk-content {
+                  }
+                }
+                > .topic-profile-popular {
+                  topic-profile {
+                    .topic-profile-popular-talk {
+                      .avatar {
+                      }
+                      > .wrapper-profile-topic {
+                        > .wrapper-topic {
+                          > .topic-name {
+                          }
+                        }
+                        > .wrapper-profile {
+                          span {
+                            > .profile-name {
+                            }
+                            > .comment-created {
+                            }
+                          }
+                          > .wrapper-total-comment {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          > .newcon-home-page-talk-room-right {
+            > .newcon-home-page-talk-room-right-popular-talk {
+              > .newcon-home-page-talk-room-right-popular-head {
+                > .newcon-home-page-talk-room-right-popular-head-cop {
+                  > .newcon-home-page-talk-room-right-popular-talk-head {
+                  }
+                  > .newcon-home-page-talk-room-right-popular-talk-content {
+                  }
+                }
+                > .swiper-slider-cop {
+                  > .swiper-button-prev2 {
+                    &:focus {
+                    }
+                    > .prev {
+                    }
+                  }
+                  > .swiper-button-next2 {
+                    &:focus {
+                    }
+                    > .next {
+                    }
+                  }
+                }
+              }
+              > .topic-profile-popular {
+                > .swiper-container {
+                  > .swiper-wrapper {
+                    > .swiper-slide {
+                      > .img-vote {
+                      }
+                      > .content {
+                        &:hover {
+                        }
+                        &:hover .content-head > .content-head-top {
+                        }
+                        > .content-head {
+                          > .content-head-top {
+                          }
+                          > .content-data {
+                          }
+                        }
+                        > .vote-persen {
+                          > .vote-persen-left {
+                            width: 240pt;
+                            > .newcon-vote-code-left-percent {
+                              > .newcon-vote-code-left-percent-count {
+                              }
+                              > .newcon-vote-code-left-percent-head {
+                              }
+                            }
+                          }
+                          > .vote-persen-right {
+                            newcon-button {
+                              > .button-vote {
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          mat-tab-group {
+            > .mat-tab-header {
+              > .mat-tab-header-pagination {
+                > .mat-tab-header-pagination-chevron {
+                }
+              }
+              > .mat-tab-label-container {
+                > .mat-tab-list {
+                  > .mat-tab-labels {
+                    > .mat-tab-label {
+                      > .mat-tab-label-content {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            > .mat-tab-body-wrapper {
+              > .mat-tab-body {
+                > .mat-tab-body-content {
+                  > .newcon-home-page-talk-room-left {
+                    display: block;
+                    padding-top: 30pt;
+                    > .newcon-home-page-talk-room-left-popular-talk {
+                      > .newcon-home-page-talk-room-left-popular-head {
+                        > .newcon-home-page-talk-room-left-popular-talk-head {
+                        }
+                        > .newcon-home-page-talk-room-left-popular-talk-content {
+                        }
+                      }
+                      > .topic-profile-popular {
+                        topic-profile {
+                          .topic-profile-popular-talk {
+                            .avatar {
+                            }
+                            > .wrapper-profile-topic {
+                              > .wrapper-topic {
+                                > .topic-name {
+                                }
+                              }
+                              > .wrapper-profile {
+                                span {
+                                  > .profile-name {
+                                  }
+                                  > .comment-created {
+                                  }
+                                }
+                                > .wrapper-total-comment {
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                  > .newcon-home-page-talk-room-center {
+                    display: block;
+                    padding-top: 30pt;
+                    > .newcon-home-page-talk-room-center-popular-talk {
+                      > .newcon-home-page-talk-room-center-popular-head {
+                        > .newcon-home-page-talk-room-center-popular-talk-head {
+                        }
+                        > .newcon-home-page-talk-room-center-popular-talk-content {
+                        }
+                      }
+                      > .topic-profile-popular {
+                        topic-profile {
+                          .topic-profile-popular-talk {
+                            .avatar {
+                            }
+                            > .wrapper-profile-topic {
+                              > .wrapper-topic {
+                                > .topic-name {
+                                }
+                              }
+                              > .wrapper-profile {
+                                span {
+                                  > .profile-name {
+                                  }
+                                  > .comment-created {
+                                  }
+                                }
+                                > .wrapper-total-comment {
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                  > .newcon-home-page-talk-room-right {
+                    width: calc(100% - 14pt);
+                    > .newcon-home-page-talk-room-right-popular-talk {
+                      > .newcon-home-page-talk-room-right-popular-head {
+                        > .newcon-home-page-talk-room-right-popular-head-cop {
+                          > .newcon-home-page-talk-room-right-popular-talk-head {
+                          }
+                          > .newcon-home-page-talk-room-right-popular-talk-content {
+                          }
+                        }
+                        > .swiper-slider-cop {
+                          > .swiper-button-prev2 {
+                            &:focus {
+                            }
+                            > .prev {
+                            }
+                          }
+                          > .swiper-button-next2 {
+                            &:focus {
+                            }
+                            > .next {
+                            }
+                          }
+                        }
+                      }
+                      > .topic-profile-popular {
+                        height: 390pt;
+                        > .swiper-container {
+                          > .swiper-wrapper {
+                            > .swiper-slide {
+                              > .img-vote {
+                              }
+                              > .content {
+                                &:hover {
+                                }
+                                &:hover .content-head > .content-head-top {
+                                }
+                                > .content-head {
+                                  > .content-head-top {
+                                  }
+                                  > .content-data {
+                                  }
+                                }
+                                > .vote-persen {
+                                  > .vote-persen-left {
+                                    width: 240pt;
+                                    > .newcon-vote-code-left-percent {
+                                      > .newcon-vote-code-left-percent-count {
+                                      }
+                                      > .newcon-vote-code-left-percent-head {
+                                      }
+                                    }
+                                  }
+                                  > .vote-persen-right {
+                                    newcon-button {
+                                      > .button-vote {
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        > .newcon-news-and-activities {
+          width: calc(94% - 10pt);
+          > .newcon-news-and-activities-event-top {
+            > .newcon-news-and-activities-event {
+              > .newcon-news-and-activities-event-head {
+              }
+              > .newcon-news-and-activities-event-content {
+              }
+            }
+            > .newcon-news-and-activities-event-butt {
+              > .swiper-button-prev3 {
+                &:focus {
+                }
+                > .prev {
+                }
+              }
+              > .swiper-button-next3 {
+                &:focus {
+                }
+                > .next {
+                }
+              }
+            }
+          }
+          > .newcon-news-and-activities-sliders {
+            > .swiper-container {
+              > .swiper-wrapper {
+                > .swiper-slide {
+                  max-height: 40vh;
+                  > .img-news {
+                    height: 40vh;
+                  }
+                }
+              }
+            }
+          }
+        }
+        > .newcon-interview-article {
+          width: calc(94% - 10pt);
+          > .newcon-interview-article-left {
+            > .newcon-interview-article-left-div {
+              > .newcon-interview-article-left-top {
+                > .newcon-interview-article-left-head {
+                }
+                > .newcon-interview-article-left-content {
+                }
+              }
+              > .newcon-interview {
+              }
+            }
+          }
+          > .newcon-interview-article-right {
+            > .newcon-interview-article-right-div {
+              > .newcon-interview-article-right-top {
+                > .newcon-interview-article-right-head {
+                }
+                > .newcon-interview-article-right-content {
+                }
+              }
+              > .newcon-article {
+              }
+            }
+          }
+          mat-tab-group {
+            > .mat-tab-header {
+              > .mat-tab-header-pagination {
+                > .mat-tab-header-pagination-chevron {
+                }
+              }
+              > .mat-tab-label-container {
+                > .mat-tab-list {
+                  > .mat-tab-labels {
+                    > .mat-tab-label {
+                      > .mat-tab-label-content {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            > .mat-tab-body-wrapper {
+              > .mat-tab-body {
+                > .mat-tab-body-content {
+                  > .newcon-interview-article-left {
+                    width: 100%;
+                    margin-right: 0;
+                    padding-top: 30pt;
+                    > .newcon-interview-article-left-div {
+                      > .newcon-interview-article-left-top {
+                        > .newcon-interview-article-left-head {
+                        }
+                        > .newcon-interview-article-left-content {
+                        }
+                      }
+                      > .newcon-interview {
+                      }
+                    }
+                  }
+                  > .newcon-interview-article-right {
+                    width: 100%;
+                    margin-right: 0;
+                    padding-top: 30pt;
+                    > .newcon-interview-article-right-div {
+                      > .newcon-interview-article-right-top {
+                        > .newcon-interview-article-right-head {
+                        }
+                        > .newcon-interview-article-right-content {
+                        }
+                      }
+                      > .newcon-article {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      > .newcon-video {
+        > .newcon-video-div {
+          width: calc(94% - 10pt);
+          padding-top: 30pt;
+          padding-bottom: 30pt;
+          > .newcon-video-top {
+            > .newcon-video-top-head {
+            }
+            > .newcon-video-top-content {
+            }
+          }
+          > .newcon-video-body {
+            gallery {
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $medium) {
+  .newcon-home-page {
+    > .newcon-home-page-slider {
+      > .swiper-container {
+        > .swiper-wrapper {
+          > .swiper-slide {
+            > .swiper-slide-img {
+              height: 340px;
+            }
+          }
+        }
+        > .swiper-button-prev {
+        }
+        > .swiper-button-next {
+        }
+        > .swiper-pagination {
+          > .swiper-pagination-bullet {
+          }
+        }
+        > .swiper-button-prev {
+        }
+        > .swiper-button-next {
+        }
+      }
+    }
+    > .newcon-home-page-body {
+      > .newcon-home-page-room {
+        width: 95%;
+        > .newcon-home-page-room-head {
+          padding: 15pt 0 25pt 2pt;
+          > .newcon-home-page-room-head-1 {
+          }
+          > .newcon-home-page-room-head-2 {
+          }
+        }
+        > .newcon-home-page-room-body {
+          padding-bottom: 20pt;
+          > .wrapper-left {
+            > .paginater-none {
+              .mat-paginator-range-actions {
+              }
+            }
+            > .room-all {
+              &:hover {
+              }
+              &:focus {
+              }
+            }
+            mat-paginator {
+              > .mat-paginator-outer-container {
+                > .mat-paginator-container {
+                }
+              }
+            }
+            .box {
+              margin: 2px 0;
+              padding: 0 2px;
+              width: calc(33.33% - 4px);
+              &:focus {
+              }
+              > .box-inner {
+                &:hover {
+                }
+                &:focus {
+                }
+                .cr {
+                  a {
+                  }
+                }
+                a {
+                  &:focus {
+                  }
+                }
+              }
+            }
+          }
+
+          > .vote-close {
+            > .box {
+            }
+          }
+          > .wrapper-right {
+            height: 140pt;
+            > .box {
+              > .box-inner {
+                &:hover {
+                }
+                > .wrapper-right-room {
+                  &:focus {
+                  }
+                  > .wrapper-right-room-content {
+                    > .wrapper-right-room-content-head {
+                    }
+                    > .wrapper-right-room-content-content {
+                    }
+                  }
+                  > .image-room-vote {
+                    width: 32%;
+                    min-width: 134pt;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      > .newcon-home-page-talk {
+        > .newcon-home-page-talk-room {
+          width: 95%;
+          padding-top: 0pt;
+          > .room-left-center {
+            > .newcon-home-page-talk-room-left {
+              display: none;
+              > .newcon-home-page-talk-room-left-popular-talk {
+                > .newcon-home-page-talk-room-left-popular-head {
+                  > .newcon-home-page-talk-room-left-popular-talk-head {
+                  }
+                  > .newcon-home-page-talk-room-left-popular-talk-content {
+                  }
+                }
+                > .topic-profile-popular {
+                  topic-profile {
+                    .topic-profile-popular-talk {
+                      .avatar {
+                      }
+                      > .wrapper-profile-topic {
+                        > .wrapper-topic {
+                          > .topic-name {
+                          }
+                        }
+                        > .wrapper-profile {
+                          span {
+                            > .profile-name {
+                            }
+                            > .comment-created {
+                            }
+                          }
+                          > .wrapper-total-comment {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            > .newcon-home-page-talk-room-center {
+              display: none;
+              > .newcon-home-page-talk-room-center-popular-talk {
+                > .newcon-home-page-talk-room-center-popular-head {
+                  > .newcon-home-page-talk-room-center-popular-talk-head {
+                  }
+                  > .newcon-home-page-talk-room-center-popular-talk-content {
+                  }
+                }
+                > .topic-profile-popular {
+                  topic-profile {
+                    .topic-profile-popular-talk {
+                      .avatar {
+                      }
+                      > .wrapper-profile-topic {
+                        > .wrapper-topic {
+                          > .topic-name {
+                          }
+                        }
+                        > .wrapper-profile {
+                          span {
+                            > .profile-name {
+                            }
+                            > .comment-created {
+                            }
+                          }
+                          > .wrapper-total-comment {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            > .newcon-home-page-talk-room-cente-max-width {
+              display: none;
+              > .newcon-home-page-talk-room-cente-max-width-popular-talk {
+                > .newcon-home-page-talk-room-cente-max-width-popular-head {
+                  > .newcon-home-page-talk-room-cente-max-width-popular-talk-head {
+                  }
+                  > .newcon-home-page-talk-room-cente-max-width-popular-talk-content {
+                  }
+                }
+                > .topic-profile-popular {
+                  topic-profile {
+                    .topic-profile-popular-talk {
+                      .avatar {
+                      }
+                      > .wrapper-profile-topic {
+                        > .wrapper-topic {
+                          > .topic-name {
+                          }
+                        }
+                        > .wrapper-profile {
+                          span {
+                            > .profile-name {
+                            }
+                            > .comment-created {
+                            }
+                          }
+                          > .wrapper-total-comment {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          > .newcon-home-page-talk-room-right {
+            display: none;
+            > .newcon-home-page-talk-room-right-popular-talk {
+              > .newcon-home-page-talk-room-right-popular-head {
+                > .newcon-home-page-talk-room-right-popular-head-cop {
+                  > .newcon-home-page-talk-room-right-popular-talk-head {
+                  }
+                  > .newcon-home-page-talk-room-right-popular-talk-content {
+                  }
+                }
+                > .swiper-slider-cop {
+                  > .swiper-button-prev2 {
+                    &:focus {
+                    }
+                    > .prev {
+                    }
+                  }
+                  > .swiper-button-next2 {
+                    &:focus {
+                    }
+                    > .next {
+                    }
+                  }
+                }
+              }
+              > .topic-profile-popular {
+                height: 280pt;
+                > .swiper-container {
+                  > .swiper-wrapper {
+                    > .swiper-slide {
+                      > .img-vote {
+                      }
+                      > .content {
+                        &:hover {
+                        }
+                        &:hover .content-head > .content-head-top {
+                        }
+                        > .content-head {
+                          > .content-head-top {
+                          }
+                          > .content-data {
+                          }
+                        }
+                        > .vote-persen {
+                          > .vote-persen-left {
+                            width: 180pt;
+                            > .newcon-vote-code-left-percent {
+                              > .newcon-vote-code-left-percent-count {
+                              }
+                              > .newcon-vote-code-left-percent-head {
+                              }
+                            }
+                          }
+                          > .vote-persen-right {
+                            newcon-button {
+                              > .button-vote {
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          mat-tab-group {
+            display: block;
+            > .mat-tab-header {
+              > .mat-tab-header-pagination {
+                > .mat-tab-header-pagination-chevron {
+                }
+              }
+              > .mat-tab-label-container {
+                > .mat-tab-list {
+                  > .mat-tab-labels {
+                    > .mat-tab-label {
+                      > .mat-tab-label-content {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            > .mat-tab-body-wrapper {
+              > .mat-tab-body {
+                > .mat-tab-body-content {
+                  > .newcon-home-page-talk-room-left {
+                    padding-top: 20pt;
+                    > .newcon-home-page-talk-room-left-popular-talk {
+                      > .newcon-home-page-talk-room-left-popular-head {
+                        > .newcon-home-page-talk-room-left-popular-talk-head {
+                        }
+                        > .newcon-home-page-talk-room-left-popular-talk-content {
+                        }
+                      }
+                      > .topic-profile-popular {
+                        topic-profile {
+                          .topic-profile-popular-talk {
+                            .avatar {
+                            }
+                            > .wrapper-profile-topic {
+                              > .wrapper-topic {
+                                > .topic-name {
+                                }
+                              }
+                              > .wrapper-profile {
+                                span {
+                                  > .profile-name {
+                                  }
+                                  > .comment-created {
+                                  }
+                                }
+                                > .wrapper-total-comment {
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                  > .newcon-home-page-talk-room-center {
+                    padding-top: 20pt;
+                    > .newcon-home-page-talk-room-center-popular-talk {
+                      > .newcon-home-page-talk-room-center-popular-head {
+                        > .newcon-home-page-talk-room-center-popular-talk-head {
+                        }
+                        > .newcon-home-page-talk-room-center-popular-talk-content {
+                        }
+                      }
+                      > .topic-profile-popular {
+                        topic-profile {
+                          .topic-profile-popular-talk {
+                            .avatar {
+                            }
+                            > .wrapper-profile-topic {
+                              > .wrapper-topic {
+                                > .topic-name {
+                                }
+                              }
+                              > .wrapper-profile {
+                                span {
+                                  > .profile-name {
+                                  }
+                                  > .comment-created {
+                                  }
+                                }
+                                > .wrapper-total-comment {
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                  > .newcon-home-page-talk-room-right {
+                    > .newcon-home-page-talk-room-right-popular-talk {
+                      > .newcon-home-page-talk-room-right-popular-head {
+                        > .newcon-home-page-talk-room-right-popular-head-cop {
+                          > .newcon-home-page-talk-room-right-popular-talk-head {
+                          }
+                          > .newcon-home-page-talk-room-right-popular-talk-content {
+                          }
+                        }
+                        > .swiper-slider-cop {
+                          > .swiper-button-prev2 {
+                            &:focus {
+                            }
+                            > .prev {
+                            }
+                          }
+                          > .swiper-button-next2 {
+                            &:focus {
+                            }
+                            > .next {
+                            }
+                          }
+                        }
+                      }
+                      > .topic-profile-popular {
+                        height: auto;
+                        > .swiper-container {
+                          > .swiper-wrapper {
+                            > .swiper-slide {
+                              > .img-vote {
+                              }
+                              > .content {
+                                &:hover {
+                                }
+                                &:hover .content-head > .content-head-top {
+                                }
+                                > .content-head {
+                                  > .content-head-top {
+                                  }
+                                  > .content-data {
+                                  }
+                                }
+                                > .vote-persen {
+                                  > .vote-persen-left {
+                                    width: 180pt;
+                                    > .newcon-vote-code-left-percent {
+                                      > .newcon-vote-code-left-percent-count {
+                                      }
+                                      > .newcon-vote-code-left-percent-head {
+                                      }
+                                    }
+                                  }
+                                  > .vote-persen-right {
+                                    newcon-button {
+                                      > .button-vote {
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        > .newcon-news-and-activities {
+          width: calc(95% - 10pt);
+          > .newcon-news-and-activities-event-top {
+            > .newcon-news-and-activities-event {
+              > .newcon-news-and-activities-event-head {
+              }
+              > .newcon-news-and-activities-event-content {
+              }
+            }
+            > .newcon-news-and-activities-event-butt {
+              > .swiper-button-prev3 {
+                &:focus {
+                }
+                > .prev {
+                }
+              }
+              > .swiper-button-next3 {
+                &:focus {
+                }
+                > .next {
+                }
+              }
+            }
+          }
+          > .newcon-news-and-activities-sliders {
+            > .swiper-container {
+              > .swiper-wrapper {
+                > .swiper-slide {
+                  max-height: 260px;
+                  > .img-news {
+                    height: 260px;
+                  }
+                }
+              }
+            }
+          }
+        }
+        > .newcon-interview-article {
+          width: calc(95% - 10pt);
+          > .newcon-interview-article-left {
+            display: none;
+            > .newcon-interview-article-left-div {
+              > .newcon-interview-article-left-top {
+                > .newcon-interview-article-left-head {
+                }
+                > .newcon-interview-article-left-content {
+                }
+              }
+              > .newcon-interview {
+              }
+            }
+          }
+          > .newcon-interview-article-right {
+            display: none;
+            > .newcon-interview-article-right-div {
+              > .newcon-interview-article-right-top {
+                > .newcon-interview-article-right-head {
+                }
+                > .newcon-interview-article-right-content {
+                }
+              }
+              > .newcon-article {
+              }
+            }
+          }
+          mat-tab-group {
+            display: block;
+            > .mat-tab-header {
+              > .mat-tab-header-pagination {
+                > .mat-tab-header-pagination-chevron {
+                }
+              }
+              > .mat-tab-label-container {
+                > .mat-tab-list {
+                  > .mat-tab-labels {
+                    > .mat-tab-label {
+                      > .mat-tab-label-content {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            > .mat-tab-body-wrapper {
+              > .mat-tab-body {
+                > .mat-tab-body-content {
+                  > .newcon-interview-article-left {
+                    padding-top: 20pt;
+                    > .newcon-interview-article-left-div {
+                      > .newcon-interview-article-left-top {
+                        > .newcon-interview-article-left-head {
+                        }
+                        > .newcon-interview-article-left-content {
+                        }
+                      }
+                      > .newcon-interview {
+                      }
+                    }
+                  }
+                  > .newcon-interview-article-right {
+                    padding-top: 20pt;
+                    margin-left: 0;
+                    > .newcon-interview-article-right-div {
+                      > .newcon-interview-article-right-top {
+                        > .newcon-interview-article-right-head {
+                        }
+                        > .newcon-interview-article-right-content {
+                        }
+                      }
+                      > .newcon-article {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      > .newcon-video {
+        > .newcon-video-div {
+          width: calc(95% - 10pt);
+          padding-top: 20pt;
+          padding-bottom: 20pt;
+          > .newcon-video-top {
+            > .newcon-video-top-head {
+            }
+            > .newcon-video-top-content {
+            }
+          }
+          > .newcon-video-body {
+            gallery {
+              height: 240pt;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $small) {
+  .newcon-home-page {
+    > .newcon-home-page-slider {
+      > .swiper-container {
+        > .swiper-wrapper {
+          > .swiper-slide {
+            > .swiper-slide-img {
+              height: 280px;
+            }
+          }
+        }
+        > .swiper-button-prev {
+        }
+        > .swiper-button-next {
+        }
+        > .swiper-pagination {
+          > .swiper-pagination-bullet {
+          }
+        }
+        > .swiper-button-prev {
+        }
+        > .swiper-button-next {
+        }
+      }
+    }
+    > .newcon-home-page-body {
+      > .newcon-home-page-room {
+        width: 96%;
+        > .newcon-home-page-room-head {
+          padding: 15pt 0;
+          width: 100%;
+          margin-left: auto;
+          margin-right: auto;
+          > .newcon-home-page-room-head-1 {
+          }
+          > .newcon-home-page-room-head-2 {
+          }
+        }
+        > .newcon-home-page-room-body {
+          > .wrapper-left {
+            > .paginater-none {
+              .mat-paginator-range-actions {
+              }
+            }
+            > .room-all {
+              &:hover {
+              }
+              &:focus {
+              }
+            }
+            mat-paginator {
+              > .mat-paginator-outer-container {
+                > .mat-paginator-container {
+                }
+              }
+            }
+            .box {
+              height: 70pt;
+              width: calc(50% - 6px);
+              padding: 0 3px;
+              margin: 3px 0;
+              &:focus {
+              }
+              > .box-inner {
+                &:hover {
+                }
+                &:focus {
+                }
+                .cr {
+                  a {
+                  }
+                }
+                a {
+                  &:focus {
+                  }
+                }
+              }
+            }
+          }
+
+          > .vote-close {
+            > .box {
+            }
+          }
+
+          > .wrapper-right {
+            height: auto;
+            > .box {
+              > .box-inner {
+                padding: 20pt 10pt;
+                width: calc(100% - 20pt);
+                &:hover {
+                }
+                > .wrapper-right-room {
+                  flex-direction: column;
+                  &:focus {
+                  }
+                  > .wrapper-right-room-content {
+                    width: calc(100% - 10%);
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    > .wrapper-right-room-content-head {
+                    }
+                    > .wrapper-right-room-content-content {
+                    }
+                  }
+                  > .image-room-vote {
+                    margin-top: 15pt;
+                    margin-right: 0;
+                    width: 180pt;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      > .newcon-home-page-talk {
+        > .newcon-home-page-talk-room {
+          width: 96%;
+          > .room-left-center {
+            > .newcon-home-page-talk-room-left {
+              > .newcon-home-page-talk-room-left-popular-talk {
+                > .newcon-home-page-talk-room-left-popular-head {
+                  > .newcon-home-page-talk-room-left-popular-talk-head {
+                  }
+                  > .newcon-home-page-talk-room-left-popular-talk-content {
+                  }
+                }
+                > .topic-profile-popular {
+                  topic-profile {
+                    .topic-profile-popular-talk {
+                      .avatar {
+                      }
+                      > .wrapper-profile-topic {
+                        > .wrapper-topic {
+                          > .topic-name {
+                          }
+                        }
+                        > .wrapper-profile {
+                          span {
+                            > .profile-name {
+                            }
+                            > .comment-created {
+                            }
+                          }
+                          > .wrapper-total-comment {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            > .newcon-home-page-talk-room-center {
+              > .newcon-home-page-talk-room-center-popular-talk {
+                > .newcon-home-page-talk-room-center-popular-head {
+                  > .newcon-home-page-talk-room-center-popular-talk-head {
+                  }
+                  > .newcon-home-page-talk-room-center-popular-talk-content {
+                  }
+                }
+                > .topic-profile-popular {
+                  topic-profile {
+                    .topic-profile-popular-talk {
+                      .avatar {
+                      }
+                      > .wrapper-profile-topic {
+                        > .wrapper-topic {
+                          > .topic-name {
+                          }
+                        }
+                        > .wrapper-profile {
+                          span {
+                            > .profile-name {
+                            }
+                            > .comment-created {
+                            }
+                          }
+                          > .wrapper-total-comment {
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          > .newcon-home-page-talk-room-right {
+            > .newcon-home-page-talk-room-right-popular-talk {
+              > .newcon-home-page-talk-room-right-popular-head {
+                > .newcon-home-page-talk-room-right-popular-head-cop {
+                  > .newcon-home-page-talk-room-right-popular-talk-head {
+                  }
+                  > .newcon-home-page-talk-room-right-popular-talk-content {
+                  }
+                }
+                > .swiper-slider-cop {
+                  > .swiper-button-prev2 {
+                    &:focus {
+                    }
+                    > .prev {
+                    }
+                  }
+                  > .swiper-button-next2 {
+                    &:focus {
+                    }
+                    > .next {
+                    }
+                  }
+                }
+              }
+              > .topic-profile-popular {
+                > .swiper-container {
+                  > .swiper-wrapper {
+                    > .swiper-slide {
+                      > .img-vote {
+                      }
+                      > .content {
+                        padding: 15pt 15pt 30pt 15pt;
+                        &:hover {
+                          height: calc(100% - 45pt);
+                        }
+                        &:hover .content-head > .content-head-top {
+                        }
+                        > .content-head {
+                          > .content-head-top {
+                          }
+                          > .content-data {
+                          }
+                        }
+                        > .vote-persen {
+                          margin-left: auto;
+                          margin-right: auto;
+                          flex-direction: column;
+                          width: 100%;
+                          justify-content: center;
+                          align-items: center;
+                          margin-top: 10pt;
+                          > .vote-persen-left {
+                            width: 100%;
+                            margin-right: auto;
+                            margin-left: auto;
+                            margin-bottom: 15pt;
+                            > .newcon-vote-code-left-percent {
+                              text-align: center;
+                              > .newcon-vote-code-left-percent-count {
+                              }
+                              > .newcon-vote-code-left-percent-head {
+                              }
+                            }
+                          }
+                          > .vote-persen-right {
+                            width: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            newcon-button {
+                              > .button-vote {
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          mat-tab-group {
+            display: block;
+            > .mat-tab-header {
+              > .mat-tab-header-pagination {
+                > .mat-tab-header-pagination-chevron {
+                }
+              }
+              > .mat-tab-label-container {
+                > .mat-tab-list {
+                  > .mat-tab-labels {
+                    > .mat-tab-label {
+                      > .mat-tab-label-content {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            > .mat-tab-body-wrapper {
+              > .mat-tab-body {
+                > .mat-tab-body-content {
+                  > .newcon-home-page-talk-room-left {
+                    > .newcon-home-page-talk-room-left-popular-talk {
+                      > .newcon-home-page-talk-room-left-popular-head {
+                        > .newcon-home-page-talk-room-left-popular-talk-head {
+                        }
+                        > .newcon-home-page-talk-room-left-popular-talk-content {
+                        }
+                      }
+                      > .topic-profile-popular {
+                        topic-profile {
+                          .topic-profile-popular-talk {
+                            .avatar {
+                            }
+                            > .wrapper-profile-topic {
+                              > .wrapper-topic {
+                                > .topic-name {
+                                }
+                              }
+                              > .wrapper-profile {
+                                span {
+                                  > .profile-name {
+                                  }
+                                  > .comment-created {
+                                  }
+                                }
+                                > .wrapper-total-comment {
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                  > .newcon-home-page-talk-room-center {
+                    > .newcon-home-page-talk-room-center-popular-talk {
+                      > .newcon-home-page-talk-room-center-popular-head {
+                        > .newcon-home-page-talk-room-center-popular-talk-head {
+                        }
+                        > .newcon-home-page-talk-room-center-popular-talk-content {
+                        }
+                      }
+                      > .topic-profile-popular {
+                        topic-profile {
+                          .topic-profile-popular-talk {
+                            .avatar {
+                            }
+                            > .wrapper-profile-topic {
+                              > .wrapper-topic {
+                                > .topic-name {
+                                }
+                              }
+                              > .wrapper-profile {
+                                span {
+                                  > .profile-name {
+                                  }
+                                  > .comment-created {
+                                  }
+                                }
+                                > .wrapper-total-comment {
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                  > .newcon-home-page-talk-room-right {
+                    > .newcon-home-page-talk-room-right-popular-talk {
+                      > .newcon-home-page-talk-room-right-popular-head {
+                        > .newcon-home-page-talk-room-right-popular-head-cop {
+                          > .newcon-home-page-talk-room-right-popular-talk-head {
+                          }
+                          > .newcon-home-page-talk-room-right-popular-talk-content {
+                          }
+                        }
+                        > .swiper-slider-cop {
+                          > .swiper-button-prev2 {
+                            &:focus {
+                            }
+                            > .prev {
+                            }
+                          }
+                          > .swiper-button-next2 {
+                            &:focus {
+                            }
+                            > .next {
+                            }
+                          }
+                        }
+                      }
+                      > .topic-profile-popular {
+                        > .swiper-container {
+                          > .swiper-wrapper {
+                            > .swiper-slide {
+                              > .img-vote {
+                              }
+                              > .content {
+                                padding: 15pt 15pt 30pt 15pt;
+                                &:hover {
+                                  height: calc(100% - 45pt);
+                                }
+                                &:hover .content-head > .content-head-top {
+                                }
+                                > .content-head {
+                                  > .content-head-top {
+                                  }
+                                  > .content-data {
+                                  }
+                                }
+                                > .vote-persen {
+                                  margin-left: auto;
+                                  margin-right: auto;
+                                  flex-direction: column;
+                                  width: 100%;
+                                  justify-content: center;
+                                  align-items: center;
+                                  margin-top: 10pt;
+                                  > .vote-persen-left {
+                                    width: 100%;
+                                    margin-right: auto;
+                                    margin-left: auto;
+                                    margin-bottom: 15pt;
+                                    > .newcon-vote-code-left-percent {
+                                      text-align: center;
+                                      > .newcon-vote-code-left-percent-count {
+                                      }
+                                      > .newcon-vote-code-left-percent-head {
+                                      }
+                                    }
+                                  }
+                                  > .vote-persen-right {
+                                    width: 100%;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    newcon-button {
+                                      > .button-vote {
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        > .newcon-news-and-activities {
+          width: calc(96% - 10pt);
+          > .newcon-news-and-activities-event-top {
+            > .newcon-news-and-activities-event {
+              > .newcon-news-and-activities-event-head {
+              }
+              > .newcon-news-and-activities-event-content {
+              }
+            }
+            > .newcon-news-and-activities-event-butt {
+              > .swiper-button-prev3 {
+                &:focus {
+                }
+                > .prev {
+                }
+              }
+              > .swiper-button-next3 {
+                &:focus {
+                }
+                > .next {
+                }
+              }
+            }
+          }
+          > .newcon-news-and-activities-sliders {
+            > .swiper-container {
+              > .swiper-wrapper {
+                > .swiper-slide {
+                  max-height: 200px;
+                  > .img-news {
+                    height: 200px;
+                  }
+                }
+              }
+            }
+          }
+        }
+        > .newcon-interview-article {
+          width: calc(96% - 10pt);
+          > .newcon-interview-article-left {
+            display: none;
+            > .newcon-interview-article-left-div {
+              > .newcon-interview-article-left-top {
+                > .newcon-interview-article-left-head {
+                }
+                > .newcon-interview-article-left-content {
+                }
+              }
+              > .newcon-interview {
+              }
+            }
+          }
+          > .newcon-interview-article-right {
+            display: none;
+            > .newcon-interview-article-right-div {
+              > .newcon-interview-article-right-top {
+                > .newcon-interview-article-right-head {
+                }
+                > .newcon-interview-article-right-content {
+                }
+              }
+              > .newcon-article {
+              }
+            }
+          }
+          mat-tab-group {
+            display: block;
+            > .mat-tab-header {
+              > .mat-tab-header-pagination {
+                > .mat-tab-header-pagination-chevron {
+                }
+              }
+              > .mat-tab-label-container {
+                > .mat-tab-list {
+                  > .mat-tab-labels {
+                    > .mat-tab-label {
+                      > .mat-tab-label-content {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            > .mat-tab-body-wrapper {
+              > .mat-tab-body {
+                > .mat-tab-body-content {
+                  > .newcon-interview-article-left {
+                    > .newcon-interview-article-left-div {
+                      > .newcon-interview-article-left-top {
+                        > .newcon-interview-article-left-head {
+                        }
+                        > .newcon-interview-article-left-content {
+                        }
+                      }
+                      > .newcon-interview {
+                      }
+                    }
+                  }
+                  > .newcon-interview-article-right {
+                    > .newcon-interview-article-right-div {
+                      > .newcon-interview-article-right-top {
+                        > .newcon-interview-article-right-head {
+                        }
+                        > .newcon-interview-article-right-content {
+                        }
+                      }
+                      > .newcon-article {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      > .newcon-video {
+        > .newcon-video-div {
+          width: calc(96% - 10pt);
+          > .newcon-video-top {
+            > .newcon-video-top-head {
+            }
+            > .newcon-video-top-content {
+            }
+          }
+          > .newcon-video-body {
+            gallery {
+              height: 230pt;
+            }
+          }
+        }
+      }
+    }
+  }
+}

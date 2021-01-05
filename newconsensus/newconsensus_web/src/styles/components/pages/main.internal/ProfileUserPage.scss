@@ -1,0 +1,696 @@
+.newcon-profile-user-page {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 65pt - 50pt - 34pt);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  > .newcon-profile-user-page-left {
+    position: relative;
+    z-index: 1;
+    background: $bg-color1;
+    width: 270pt;
+    height: 100%;
+    overflow-y: auto;
+    padding: 0 20pt;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 15px 0px;
+
+    &.active{
+
+    }
+
+    > .bar-left-icon {
+      position: fixed;
+      left: 0;
+      top: 50%;
+      bottom: 50%;
+      cursor: pointer;
+      font-size: 24pt;
+      background: $bg-color2;
+      width: 24pt;
+      height: 32pt;
+      border-radius: 0 10pt 10pt 0;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      transform: rotate(0deg);
+
+      &:hover {
+        background: $shadow-vote-vard-hover;
+      }
+
+      &.active{
+        left: 208pt;
+        transform: rotate(180deg);
+        border-radius: 10pt 0 0 10pt;
+      }
+    }
+
+    > .newcon-profile-user-page-left-div {
+      position: relative;
+      width: 100%;
+      height: auto;
+      > .newcon-profile-user {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40pt 0;
+        border-bottom: 1px solid $shadow-vote-vard;
+        > .image-profile {
+          width: 80pt;
+          height: 80pt;
+          border-radius: 50%;
+          margin-bottom: 15pt;
+        }
+        > .profile-name {
+          display: block;
+          @include font-size-8-400;
+        }
+        > .profile-email {
+          display: block;
+          @include font-size-9-200;
+        }
+        > .newcon-profile-user-position {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: stretch;
+          width: calc(100% - 30pt);
+          padding: 0 15pt;
+          margin-top: 25pt;
+          > .text-user-position {
+            width: 70pt;
+            @include font-size-9-300;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-right: 7pt;
+          }
+          > .user-position {
+            width: 100%;
+            > .button-position {
+              border-radius: 25pt;
+              @include font-size-9-300;
+              cursor: pointer;
+              padding: 5pt 15pt;
+              text-align: center;
+              width: calc(100% - 30pt);
+            }
+          }
+        }
+      }
+      > .total-amount {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        border-bottom: 1px solid $shadow-vote-vard;
+        padding: 20pt 0;
+        > .total-amount-col {
+          width: 33.33%;
+          > .total-div {
+            display: table;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            > .total-text {
+              @include font-size-7-300;
+              color: $back;
+            }
+            > .span-text {
+              display: block;
+              @include font-size-10-300;
+              color: $shadow-vote-vard-hover;
+            }
+          }
+        }
+      }
+      > .profile-user-page-list {
+        width: 100%;
+        padding-top: 10pt;
+        padding-bottom: 20pt;
+        > .newcon-profile-user-room {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 15pt;
+          > .comment-head {
+            @include font-size-9-300;
+            padding-right: 15pt;
+            cursor: pointer;
+            opacity: 1;
+            &.active {
+              color: $color-7;
+            }
+            &:hover {
+              opacity: 0.7;
+            }
+            &:focus {
+              outline: none;
+            }
+            &::selection {
+              background: transparent;
+            }
+          }
+          > .comment-total {
+            @include font-size-8-300;
+          }
+        }
+      }
+    }
+  }
+
+  > .newcon-profile-user-page-right {
+    background: $white;
+    width: calc(100% - 270pt - 60pt);
+    height: calc(100% - 60pt);
+    padding: 30pt;
+    overflow-y: auto;
+    newcon-edit-profile-user-page {
+      > .newcon-edit-profile-page {
+        width: 400pt;
+        height: 410pt;
+        margin-left: 200pt;
+
+        > .newcon-edit-profile-page-body {
+          > .newcon-edit-profile-page-body-register {
+            form {
+              > .form-group-div {
+                > .form-group {
+                  > .form-label {
+                  }
+                  > .form-col {
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $xxlarge) {
+  .newcon-profile-user-page {
+    height: calc(100vh - 60pt - 45pt - 33pt);
+    > .newcon-profile-user-page-left {
+      width: 250pt;
+      padding: 0 15pt;
+
+      &.active{
+
+      }
+
+      > .bar-left-icon {
+        &:hover {
+        }
+
+        &.active{
+
+        }
+      }
+
+      > .newcon-profile-user-page-left-div {
+        > .newcon-profile-user {
+          padding: 30pt 0;
+          > .image-profile {
+            width: 70pt;
+            height: 70pt;
+          }
+          > .profile-name {
+          }
+          > .profile-email {
+          }
+          > .newcon-profile-user-position {
+            > .text-user-position {
+            }
+            > .user-position {
+              > .button-position {
+              }
+            }
+          }
+        }
+        > .total-amount {
+          padding: 15pt 0;
+          > .total-amount-col {
+            > .total-div {
+              > .total-text {
+              }
+              > .span-text {
+              }
+            }
+          }
+        }
+        > .profile-user-page-list {
+          > .newcon-profile-user-room {
+            > .comment-head {
+              &.active {
+              }
+              &:hover {
+              }
+              &:focus {
+              }
+              &::selection {
+              }
+            }
+            > .comment-total {
+            }
+          }
+        }
+      }
+    }
+
+    > .newcon-profile-user-page-right {
+      width: calc(100% - 250pt - 60pt);
+      newcon-edit-profile-user-page {
+        > .newcon-edit-profile-page {
+          width: 390pt;
+          margin-left: 80pt;
+
+          > .newcon-edit-profile-page-body {
+            > .newcon-edit-profile-page-body-register {
+              form {
+                > .form-group-div {
+                  > .form-group {
+                    > .form-label {
+                    }
+                    > .form-col {
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $xlarge) {
+  .newcon-profile-user-page {
+    height: calc(100vh - 55pt - 40pt - 32pt);
+    > .newcon-profile-user-page-left {
+      width: 220pt;
+      padding: 0 8pt;
+
+      &.active{
+
+      }
+
+      > .bar-left-icon {
+        &:hover {
+        }
+
+        &.active{
+
+        }
+      }
+
+      > .newcon-profile-user-page-left-div {
+        > .newcon-profile-user {
+          > .image-profile {
+            width: 65pt;
+            height: 65pt;
+          }
+          > .profile-name {
+          }
+          > .profile-email {
+          }
+          > .newcon-profile-user-position {
+            > .text-user-position {
+            }
+            > .user-position {
+              > .button-position {
+              }
+            }
+          }
+        }
+        > .total-amount {
+          > .total-amount-col {
+            > .total-div {
+              > .total-text {
+              }
+              > .span-text {
+              }
+            }
+          }
+        }
+        > .profile-user-page-list {
+          > .newcon-profile-user-room {
+            > .comment-head {
+              &.active {
+              }
+              &:hover {
+              }
+              &:focus {
+              }
+              &::selection {
+              }
+            }
+            > .comment-total {
+            }
+          }
+        }
+      }
+    }
+
+    > .newcon-profile-user-page-right {
+      width: calc(100% - 220pt - 60pt);
+      newcon-edit-profile-user-page {
+        > .newcon-edit-profile-page {
+          > .newcon-edit-profile-page-body {
+            > .newcon-edit-profile-page-body-register {
+              form {
+                > .form-group-div {
+                  > .form-group {
+                    > .form-label {
+                      width: 85pt;
+                      max-width: 85pt;
+                      min-width: 85pt;
+                    }
+                    > .form-col {
+                      width: calc(100% - 85pt);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $large) {
+  .newcon-profile-user-page {
+    height: calc(100vh - 50pt - 40pt - 31pt);
+    > .newcon-profile-user-page-left {
+      width: 200pt;
+
+      &.active{
+
+      }
+
+      > .bar-left-icon {
+        &:hover {
+        }
+
+        &.active{
+
+        }
+      }
+
+      > .newcon-profile-user-page-left-div {
+        > .newcon-profile-user {
+          padding: 20pt 0;
+          > .image-profile {
+            width: 65pt;
+            height: 65pt;
+          }
+          > .profile-name {
+          }
+          > .profile-email {
+          }
+          > .newcon-profile-user-position {
+            > .text-user-position {
+            }
+            > .user-position {
+              > .button-position {
+              }
+            }
+          }
+        }
+        > .total-amount {
+          > .total-amount-col {
+            > .total-div {
+              > .total-text {
+              }
+              > .span-text {
+              }
+            }
+          }
+        }
+        > .profile-user-page-list {
+          > .newcon-profile-user-room {
+            > .comment-head {
+              &.active {
+              }
+              &:hover {
+              }
+              &:focus {
+              }
+              &::selection {
+              }
+            }
+            > .comment-total {
+            }
+          }
+        }
+      }
+    }
+
+    > .newcon-profile-user-page-right {
+      background: #fff;
+      width: calc(100% - 200pt - 30pt);
+      height: calc(100% - 30pt);
+      padding: 15pt;
+      newcon-edit-profile-user-page {
+        > .newcon-edit-profile-page {
+          width: 90%;
+          margin-left: auto;
+          margin-right: auto;
+          > .newcon-edit-profile-page-body {
+            > .newcon-edit-profile-page-body-register {
+              form {
+                > .form-group-div {
+                  > .form-group {
+                    > .form-label {
+                      width: 80pt;
+                      max-width: 80pt;
+                      min-width: 80pt;
+                    }
+                    > .form-col {
+                      width: calc(100% - 80pt);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $medium) {
+  .newcon-profile-user-page {
+    height: calc(100vh - 40pt - 35pt - 60pt);
+    > .newcon-profile-user-page-left {
+      position: fixed;
+      top: calc(40pt + 35pt);
+      left: -210pt;
+      bottom: 60pt;
+      z-index: 50;
+      width: 200pt;
+      height: auto;
+      padding: 0 4pt;
+
+      &.active{
+        left: 0;
+      }
+
+      > .bar-left-icon {
+        display: flex;
+        &:hover {
+        }
+
+        &.active{
+
+        }
+      }
+
+      > .newcon-profile-user-page-left-div {
+        > .newcon-profile-user {
+          > .image-profile {
+          }
+          > .profile-name {
+          }
+          > .profile-email {
+          }
+          > .newcon-profile-user-position {
+            > .text-user-position {
+            }
+            > .user-position {
+              > .button-position {
+              }
+            }
+          }
+        }
+        > .total-amount {
+          > .total-amount-col {
+            > .total-div {
+              > .total-text {
+              }
+              > .span-text {
+              }
+            }
+          }
+        }
+        > .profile-user-page-list {
+          padding-bottom: 15pt;
+          > .newcon-profile-user-room {
+            > .comment-head {
+              &.active {
+              }
+              &:hover {
+              }
+              &:focus {
+              }
+              &::selection {
+              }
+            }
+            > .comment-total {
+            }
+          }
+        }
+      }
+    }
+
+    > .newcon-profile-user-page-right {
+      width: calc(100% - 30pt);
+      height: calc(100% - 40pt);
+      padding: 20pt 15pt;
+      newcon-edit-profile-user-page {
+        > .newcon-edit-profile-page {
+          > .newcon-edit-profile-page-body {
+            > .newcon-edit-profile-page-body-register {
+              form {
+                > .form-group-div {
+                  > .form-group {
+                    > .form-label {
+                      width: 70pt;
+                      max-width: 70pt;
+                      min-width: 70pt;
+                    }
+                    > .form-col {
+                      width: calc(100% - 70pt);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $small) {
+  .newcon-profile-user-page {
+    height: calc(100vh - 40pt - 35pt - 55pt);
+    > .newcon-profile-user-page-left {
+      bottom: 55pt;
+
+      &.active{
+
+      }
+
+      > .bar-left-icon {
+        &:hover {
+        }
+
+        &.active{
+
+        }
+      }
+
+      > .newcon-profile-user-page-left-div {
+        > .newcon-profile-user {
+          > .image-profile {
+          }
+          > .profile-name {
+          }
+          > .profile-email {
+          }
+          > .newcon-profile-user-position {
+            > .text-user-position {
+            }
+            > .user-position {
+              > .button-position {
+              }
+            }
+          }
+        }
+        > .total-amount {
+          > .total-amount-col {
+            > .total-div {
+              > .total-text {
+              }
+              > .span-text {
+              }
+            }
+          }
+        }
+        > .profile-user-page-list {
+          padding-bottom: 10pt;
+          > .newcon-profile-user-room {
+            > .comment-head {
+              &.active {
+              }
+              &:hover {
+              }
+              &:focus {
+              }
+              &::selection {
+              }
+            }
+            > .comment-total {
+            }
+          }
+        }
+      }
+    }
+
+    > .newcon-profile-user-page-right {
+      newcon-edit-profile-user-page {
+        > .newcon-edit-profile-page {
+          > .newcon-edit-profile-page-body {
+            > .newcon-edit-profile-page-body-register {
+              form {
+                > .form-group-div {
+                  > .form-group {
+                    > .form-label {
+                      width: 65pt;
+                      max-width: 65pt;
+                      min-width: 65pt;
+                      margin-right: 10pt;
+                    }
+                    > .form-col {
+                      width: calc(100% - 65pt);
+                      > .gender-flex {
+                        > .div-gender {
+                        }
+                      }
+                      mat-form-field {
+                        width: calc(100% - 10pt);
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

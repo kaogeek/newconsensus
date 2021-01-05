@@ -1,0 +1,41 @@
+<div class="newcon-vote-page">
+    <div class="newcon-vote-head">
+        <div class="newcon-vote-head-content">
+            <div class="newcon-vote-head-content-one">
+                มาร่วมกันแสดงความคิดเห็น
+            </div>
+            <div class="newcon-vote-head-content-two">
+                ต่อรัฐธรรมนูญ ๒๕๖๐
+            </div>
+        </div>
+        <img src="../../../../assets/components/pages/VotePage/vote.png" alt="" class="img-vote-top">
+    </div>
+
+    <div class="newcon-vote-blog">
+        <div class="newcon-vote-blog-body">
+            <div class="newcon-vote-blog-head">
+                <div class="newcon-vote-blog-head-label">
+                    หัวข้อรับฟังความคิดเห็น
+                </div>
+                <div class="newcon-vote-blog-head-caption">
+                    มาร่วมกันแสดงความคิดเห็นต่อรัฐธรรมนูญ ๒๕๖๐
+                </div>
+            </div>
+            <div class="newcon-vote-blog-body-card">
+                <ng-container *ngIf="vote.length > 0; else elseTemplate">
+                    <vote-card *ngFor="let item of vote; first as isNewVote" [isNewVote]="isNewVote" [voteId]="item.id" [coverImage]="item.coverImage" [title]="item.title" [tagline]="item.tagline" [content]="item.description">
+                    </vote-card>
+                </ng-container>
+                <ng-template #elseTemplate>
+                    <div class="wrapper-center-none-list-content">
+                        ไม่พบข้อมูลรับฟัง
+                    </div>
+                </ng-template>
+            </div>
+
+
+            <mat-paginator #paginator [length]="(vote.length)" [pageSize]="pageSize" [hidePageSize]="true">
+            </mat-paginator>
+        </div>
+    </div>
+</div>

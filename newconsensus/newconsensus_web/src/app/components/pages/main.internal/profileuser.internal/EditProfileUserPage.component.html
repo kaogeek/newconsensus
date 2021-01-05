@@ -1,0 +1,97 @@
+<div class="newcon-edit-profile-page">
+    <div class="newcon-edit-profile-page-top">
+        <div class="newcon-edit-profile-page-top-head">
+            ข้อมูลส่วนตัว
+        </div>
+        <div class="newcon-edit-profile-page-top-content">
+            ข้อมูลพื้นฐานเกี่ยวกับตัวคุณ ผู้ใช้รายอื่นๆ อาจเห็นข้อมูลบางอย่างของคุณ...
+        </div>
+    </div>
+    <div class="newcon-edit-profile-page-body">
+        <div class="newcon-edit-profile-page-body-register">
+            <form #editProfile="ngForm" (ngSubmit)="onClickEdit(editProfile.value)">
+                <div class="form-group-div">
+                    <div class="form-group">
+                        <label for="myFilePicture" class="form-label">เลือกรูปโปรไฟล์ :</label>
+                        <ng-container *ngIf="imagesAvatar; else avatars">
+                            <div class="div-add-image" (click)="showDialogImage()">
+                                <img src="{{imagesAvatar}}" class="image-crop">
+                            </div>
+                        </ng-container>
+                        <ng-template #avatars>
+                            <div class="div-add-image" (click)="showDialogImage()">
+                                <i class="material-icons add-photo">
+                                    add_photo_alternate
+                                </i>
+                            </div>
+                        </ng-template>
+                    </div>
+                    <div class="form-group">
+                        <label for="displayName" class="form-label">ชื่อที่แสดง :</label>
+                        <div class="form-col">
+                            <input type="text" id="displayName" name="displayName" [(ngModel)]="resUser.displayName"
+                                #displayName="ngModel" placeholder="กรุณาตั้งชื่อบัญชีผู้ใช้" class="input-text"
+                                required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="male female LGBTQ unknown" class="form-label">เพศ :</label>
+                        <div class="form-col">
+                            <div class="gender-flex">
+                                <div class="div-gender">
+                                    <mat-radio-group [(ngModel)]="resUser.gender" [ngModelOptions]="{standalone: true}">
+                                        <mat-radio-button [value]="0">ชาย</mat-radio-button>
+                                        <mat-radio-button [value]="1">หญิง</mat-radio-button>
+                                        <!-- <mat-radio-button [value]="2">LGBTQ+</mat-radio-button> -->
+                                        <mat-radio-button [value]="-1">ไม่ระบุ</mat-radio-button>
+                                    </mat-radio-group>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="birthday" class="form-label">วัน เดือน ปี เกิด :</label>
+                        <div class="form-col">
+                            <mat-form-field>
+                                <input matInput [matDatepicker]="dp3" placeholder="" disabled id="birthday"
+                                    name="birthday" #birthday="ngModel" [(ngModel)]="resUser.birthday">
+                                <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+                                <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="postcode" class="form-label">รหัสไปรษณีย์ :</label>
+                        <div class="form-col">
+                            <admin-autocomp [facade]="postcodeFacade" [data]="resUser"
+                                [whereConditions]="whereConditions" [field]="'postcode'" [fieldValue]="'postcode'">
+                            </admin-autocomp>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">อีเมล์ :</label>
+                        <div class="form-col">
+                            <input type="email" id="email" name="email" [(ngModel)]="resUser.email"
+                                placeholder="อีเมล์ของคุณ" class="input-text" disable readonly>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="education" class="form-label">ระดับการศึกษา :</label>
+                        <div class="form-col">
+                            <autocomp-edication #education ></autocomp-edication>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="career" class="form-label">อาชีพ :</label>
+                        <div class="form-col">
+                            <!-- <input type="career" id="career" name="career" [(ngModel)]="resUser.career" placeholder="อาชีพของคุณ" class="input-text"> -->
+                            <autocomp-career #career></autocomp-career>
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" value="กดเพื่อส่งข้อมูล" class="input-submit">
+
+            </form>
+        </div>
+    </div>
+</div>

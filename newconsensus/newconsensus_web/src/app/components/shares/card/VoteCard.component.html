@@ -1,0 +1,20 @@
+<div class="content-card-left" [style.background-color]="(coverImage === null || coverImage === undefined || coverImage === '') ? '#279d90' : '' ">
+    <div class="content-card-position"></div>
+    <div class="content-card-new" *ngIf="isNewVote">
+        {{newVote}}
+    </div>
+    <img class="img-content-card" [src]="coverImage" *ngIf="coverImage !== null && coverImage !== undefined && coverImage !== '' ">
+</div>
+<div class="content-card-right">
+    <div class="content-card-right-content">
+        <span class="title-content-card" [ngStyle]="{'color': colorTitle}">{{title}}</span>
+        <span class="description-content-card" [ngStyle]="{'color': colorContent}">{{tagline}}</span>
+        <span class="content-content-card" [ngStyle]="{'color': colorContent}">{{content}}</span>
+    </div>
+    <div class="footer-vote-card">
+        <div class="time">
+            {{create}}
+        </div>
+        <newcon-button (click)="voteCardBtnClick(voteId)" [link]="'/main/vote/comment/'+voteId+'-'+title" [voteId]="voteId" [text]="textBtn" [isRadius]="false" [bgColor]="bgBtn"></newcon-button>
+    </div>
+</div>

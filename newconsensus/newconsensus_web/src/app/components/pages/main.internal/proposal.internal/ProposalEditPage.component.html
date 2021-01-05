@@ -1,0 +1,64 @@
+<div class="newcon-edit-proposal-page">
+    <div class="edit-h">
+        <span class="edit-head-one">แก้ไขข้อเสนอ</span>
+    </div>
+    <div class="edit-input">
+        <div class="input">
+
+            <mat-form-field appearance="outline">
+                <mat-label>หัวข้อข้อเสนอ</mat-label>
+                <input matInput type="text" placeholder="Title" [(ngModel)]="proposal.title">
+                <button mat-button *ngIf="proposal.title" matSuffix mat-icon-button aria-label="Clear" (click)="proposal.title=''">
+                    <mat-icon>close</mat-icon>
+                  </button>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>เลือกห้อง</mat-label>
+                <input matInput type="text" placeholder="ROOM ID" [(ngModel)]="proposal.roomId">
+                <button mat-button *ngIf="proposal.roomId" matSuffix mat-icon-button aria-label="Clear" (click)="proposal.roomId=''">
+                    <mat-icon>close</mat-icon>
+                  </button>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Youtube</mat-label>
+                <input matInput type="text" placeholder="Url" [(ngModel)]="proposal.videoUrl">
+                <button mat-button *ngIf="proposal.videoUrl" matSuffix mat-icon-button aria-label="Clear" (click)="proposal.videoUrl=''">
+                    <mat-icon>close</mat-icon>
+                  </button>
+            </mat-form-field>
+
+
+            <mat-form-field appearance="outline">
+                <mat-label>ภาพ</mat-label>
+                <input matInput type="text" placeholder="Url" [(ngModel)]="proposal.imageUrl">
+                <button mat-button *ngIf="proposal.imageUrl" matSuffix mat-icon-button aria-label="Clear" (click)="proposal.imageUrl=''">
+                    <mat-icon>close</mat-icon>
+                  </button>
+            </mat-form-field>
+
+            <div class="content-text">
+                <mat-form-field appearance="outline">
+                    <mat-label>เนื้อหา</mat-label>
+                    <textarea style="resize: none;height: 160pt;" matInput type="text" placeholder="Content" [(ngModel)]="proposal.content"></textarea>
+                </mat-form-field>
+            </div>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Tag</mat-label>
+                <input matInput type="text" placeholder="Content" [(ngModel)]="debateTag">
+                <button mat-button *ngIf="debateTag" matSuffix mat-icon-button aria-label="Clear" (click)="debateTag=''">
+                    <mat-icon>close</mat-icon>
+                  </button>
+            </mat-form-field>
+
+            <!-- <video src="{{proposal.videoUrl}}" audioplayer controls></video> -->
+
+            <div style="height: 30px;"></div>
+            <newcon-button [text]="'แก้ไขข้อเสนอ'" style=" width: 40%;
+            text-align: center !important;
+            padding: 10pt;"></newcon-button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="admin-partner-page">
+    <mat-drawer-container class="example-container" [hasBackdrop]="true">
+        <mat-drawer #drawer [mode]="'over'" [position]="'end'" [disableClose]="true">
+            <admin-form-component [data]="dataForm" [fields]="fields" [title]="'พันธมิตร'" (close)="clickCloseDrawer()" (save)="clickSave()"></admin-form-component>
+        </mat-drawer>
+        <mat-drawer-content>
+            <div class="main-content">
+                <admin-table-component #table [facade]="partnerFacade" [title]="'พันธมิตร'" [fieldTable]="fieldTable" [actions]="actions"
+                    (create)="clickCreateForm()" (edit)="clickEditForm($event)" (delete)="clickDelete($event)"></admin-table-component>
+            </div>
+        </mat-drawer-content>
+    </mat-drawer-container>
+</div>

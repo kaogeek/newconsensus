@@ -1,0 +1,3 @@
+<div [ngStyle]="{'height': videoForm.height, 'width': videoForm.width}"
+[ngClass] ="videoForm.class"
+[innerHTML]="getVideo() | safe: 'html'"></div>

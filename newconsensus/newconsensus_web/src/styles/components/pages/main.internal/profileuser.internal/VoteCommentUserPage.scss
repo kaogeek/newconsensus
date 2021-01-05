@@ -1,0 +1,135 @@
+.newcon-vote-comment-user-page {
+  width: 100%;
+  height: auto;
+
+  > .vote-comment-me {
+    height: auto;
+    margin-bottom: 50pt;
+
+    > .vote-comment-head {
+      @include font-size-8-400;
+    }
+
+    > .vote-comment-body {
+      margin-top: 20pt;
+    }
+  }
+
+  > .vote-comment-all {
+    height: auto;
+
+    > .vote-comment-head {
+      @include font-size-8-400;
+    }
+
+    > .vote-comment-body {
+      margin-top: 20pt;
+    }
+  }
+
+  .wrapper-paginator-spinner,
+  .wrapper-paginator-comment-spinner {
+    @include font-size-9-400;
+  }
+}
+
+@media (max-width: $xxlarge) {
+  .newcon-vote-comment-user-page {
+    > .vote-comment-me {
+      > .vote-comment-head {
+      }
+
+      > .vote-comment-body {
+      }
+    }
+
+    > .vote-comment-all {
+      > .vote-comment-head {
+      }
+
+      > .vote-comment-body {
+      }
+    }
+
+    .wrapper-paginator-spinner,
+    .wrapper-paginator-comment-spinner {
+    }
+  }
+}
+
+@media (max-width: $xlarge) {
+  .newcon-vote-comment-user-page {
+    > .vote-comment-me {
+      margin-bottom: 40pt;
+
+      > .vote-comment-head {
+      }
+
+      > .vote-comment-body {
+      }
+    }
+
+    > .vote-comment-all {
+      > .vote-comment-head {
+      }
+
+      > .vote-comment-body {
+      }
+    }
+
+    .wrapper-paginator-spinner,
+    .wrapper-paginator-comment-spinner {
+    }
+  }
+}
+
+@media (max-width: $large) {
+  .newcon-vote-comment-user-page {
+    > .vote-comment-me {
+      > .vote-comment-head {
+      }
+
+      > .vote-comment-body {
+        margin-top: 15pt;
+      }
+    }
+
+    > .vote-comment-all {
+      > .vote-comment-head {
+      }
+
+      > .vote-comment-body {
+        margin-top: 15pt;
+      }
+    }
+
+    .wrapper-paginator-spinner,
+    .wrapper-paginator-comment-spinner {
+    }
+  }
+}
+
+@media (max-width: $medium) {
+  .newcon-vote-comment-user-page {
+    > .vote-comment-me {
+      margin-bottom: 30pt;
+      > .vote-comment-head {
+      }
+
+      > .vote-comment-body {
+      }
+    }
+
+    > .vote-comment-all {
+      > .vote-comment-head {
+      }
+
+      > .vote-comment-body {
+      }
+    }
+
+    .wrapper-paginator-spinner,
+    .wrapper-paginator-comment-spinner {
+    }
+  }
+}

@@ -1,0 +1,18 @@
+@import "ActivitiesDetailPage.scss";
+@import "ActivitiesAllPage.scss";
+@import "ListPage.scss";
+@import "ContentMainPage.scss";
+@import "ContentPostPage.scss";
+
+.wrapper-header-content {
+    margin-bottom: 40pt;
+    >.title {            
+        @include font-size-7-400;
+    }
+    >.tagline {            
+        margin-top: 5pt;
+        @include font-size-10-200;
+        padding-right: 15px;
+        height: 40px;
+    }
+}

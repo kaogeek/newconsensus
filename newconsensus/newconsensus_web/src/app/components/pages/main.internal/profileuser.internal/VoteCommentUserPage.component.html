@@ -1,0 +1,12 @@
+<div class="newcon-vote-comment-user-page"> 
+    <div class="vote-comment-all">
+        <div class="vote-comment-head">
+            การแสดงความคิดเห็นของฉัน
+        </div>
+        <div class="vote-comment-body">
+            <newcon-paginator-card-comment [image]="userImage" [data]="resVoteComment" [isLoading]="isLoadingVote" [typeLink]="'vote'" (clickEditCardComment)="editCardVoteComment($event)" (clickDeleteCardComment)="deleteCardVoteComment($event)" (loadMoreComment)="searchVoteComment()"
+                [hidePageSize]="true" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions">
+            </newcon-paginator-card-comment>
+        </div>
+    </div>
+</div>

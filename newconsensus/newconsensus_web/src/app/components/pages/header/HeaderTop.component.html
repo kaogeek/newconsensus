@@ -1,0 +1,43 @@
+<div class="container-logo">
+    <div class="wrapper-show-vote-total">
+        <span class="label">ประชาชน</span>
+        <span class="vote-total" title="{{countPageuser}}">{{countPageuser | shortNumber}}</span>
+        <span class="label">คน</span>
+    </div>
+    <div class="scroll-logo">
+        <a class="menu-logo" *ngFor="let partner of partners" href="{{partner.link}}" target="_blank">
+            <img src="{{partner.logoUrl}}" alt="">
+        </a> 
+    </div>
+</div>
+<div class="wrapper-account" id="profile" [class.scroll-profile] = "menutopprofile">
+    <ng-container *ngIf="isLogin(); else elseProfile">
+        <div class="wrapper-account-profile">
+            <img [src]="getCurrentUserImage()" alt="Smiley face" class="image-profile"
+                [class.active]="isProfileActive()" [matMenuTriggerFor]="profileMenu">
+            <mat-menu #profileMenu="matMenu"  xPosition="before" class="div-profile">
+                <div class="popup-setting-profile" (click)="$event.stopPropagation()">
+                    <div class="popup-setting-profile-top">
+                        <img [src]="getCurrentUserImage()" alt="Smiley face" class="image-profile-dropdown">
+                        <div class="popup-setting-profile-top-div" *ngIf="profileUser !== undefined && profileUser !== null" >
+                            <span class="profile-name">{{profileUser.displayName}}</span>
+                            <span class="profile-email">{{profileUser.email}}</span>
+                            <newcon-button [text]="'จัดการบัญชี'" [link]="'/main/profile/edit'"
+                                [class]="'manage-accounts'" (click)="closeMenu()">
+                            </newcon-button>
+                        </div>
+                    </div>
+                    <div class="popup-setting-profile-bottom">
+                        <newcon-button [text]="'ออกจากระบบ'" (click)="clickLogout()" [class]="'manage-logout'">
+                        </newcon-button>
+                    </div>
+                </div>
+            </mat-menu>
+        </div>
+    </ng-container>
+    <ng-template #elseProfile>
+        <div class="butt-div-log">
+            <newcon-button [text]="'เข้าสู่ระบบ'" (click)="getLinkLogin()" [class]="'manage-logout-scroll'"></newcon-button>
+        </div>
+    </ng-template>
+</div>

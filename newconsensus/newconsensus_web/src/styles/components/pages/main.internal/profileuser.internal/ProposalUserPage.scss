@@ -1,0 +1,136 @@
+.newcon-proprsal-user-page {
+  width: 100%;
+  height: auto;
+
+  > .proprsal-me {
+    height: auto;
+    margin-bottom: 50pt;
+
+    > .proprsal-head {
+      @include font-size-8-400;
+    }
+
+    > .proprsal-body {
+      margin-top: 20pt;
+    }
+  }
+
+  > .proprsal-all {
+    height: auto;
+
+    > .proprsal-head {
+      @include font-size-8-400;
+    }
+
+    > .proprsal-body {
+      margin-top: 20pt;
+    }
+  }
+
+  .wrapper-paginator-spinner,
+  .wrapper-paginator-comment-spinner {
+    @include font-size-9-400;
+  }
+}
+
+@media (max-width: $xxlarge) {
+  .newcon-proprsal-user-page {
+    > .proprsal-me {
+      > .proprsal-head {
+      }
+
+      > .proprsal-body {
+      }
+    }
+
+    > .proprsal-all {
+      > .proprsal-head {
+      }
+
+      > .proprsal-body {
+      }
+    }
+
+    .wrapper-paginator-spinner,
+    .wrapper-paginator-comment-spinner {
+    }
+  }
+}
+
+@media (max-width: $xlarge) {
+  .newcon-proprsal-user-page {
+    > .proprsal-me {
+      margin-bottom: 40pt;
+
+      > .proprsal-head {
+      }
+
+      > .proprsal-body {
+      }
+    }
+
+    > .proprsal-all {
+      > .proprsal-head {
+      }
+
+      > .proprsal-body {
+      }
+    }
+
+    .wrapper-paginator-spinner,
+    .wrapper-paginator-comment-spinner {
+    }
+  }
+}
+
+@media (max-width: $large) {
+  .newcon-proprsal-user-page {
+    > .proprsal-me {
+      > .proprsal-head {
+      }
+
+      > .proprsal-body {
+        margin-top: 15pt;
+      }
+    }
+
+    > .proprsal-all {
+      > .proprsal-head {
+      }
+
+      > .proprsal-body {
+        margin-top: 15pt;
+      }
+    }
+
+    .wrapper-paginator-spinner,
+    .wrapper-paginator-comment-spinner {
+    }
+  }
+}
+
+@media (max-width: $medium) {
+  .newcon-proprsal-user-page {
+    > .proprsal-me {
+      margin-bottom: 30pt;
+
+      > .proprsal-head {
+      }
+
+      > .proprsal-body {
+      }
+    }
+
+    > .proprsal-all {
+      > .proprsal-head {
+      }
+
+      > .proprsal-body {
+      }
+    }
+
+    .wrapper-paginator-spinner,
+    .wrapper-paginator-comment-spinner {
+    }
+  }
+}

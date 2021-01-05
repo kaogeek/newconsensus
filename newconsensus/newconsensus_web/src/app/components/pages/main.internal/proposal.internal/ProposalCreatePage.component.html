@@ -1,0 +1,47 @@
+<div class="newcon-create-proposal-page" *ngIf="isLogin()">
+    <div class=" create-h ">
+        <span class="create-head-one ">สร้างข้อเสนอ</span>
+    </div>
+    <div class="create-input">
+        <div class="input ">
+
+            <mat-form-field class="example-full-width">
+                <input matInput placeholder="หัวข้อข้อเสนอ" [ngModel]="proposal.title" (ngModelChange)="proposal.title=$event">
+                <button mat-button *ngIf="proposal.title " matSuffix mat-icon-button aria-label="Clear " (click)="proposal.title='' ">
+                        <mat-icon>close</mat-icon>
+                      </button>
+            </mat-form-field>
+
+            <mat-label style="opacity: 0.5;">เลือกห้อง</mat-label>
+            <admin-autocomp class="admin-autocomp" #roomAutoComp [facade]="roomFacade" [whereConditions]="roomWhereConditions" [data]="selectedRoom" [field]="'id'" [fieldValue]="'id'"></admin-autocomp>
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Youtube</mat-label>
+                <input matInput type="text " placeholder="http://example.com " [(ngModel)]="proposal.videoUrl ">
+                <button mat-button *ngIf="proposal.videoUrl " matSuffix mat-icon-button aria-label="Clear " (click)="proposal.videoUrl='' ">
+                    <mat-icon>close</mat-icon>
+                  </button>
+            </mat-form-field>
+            <mat-form-field class="example-full-width">
+                <mat-label>ภาพ</mat-label>
+                <input matInput type="text " placeholder="http://example.com " [(ngModel)]="proposal.imageUrl ">
+                <button mat-button *ngIf="proposal.imageUrl " matSuffix mat-icon-button aria-label="Clear " (click)="proposal.imageUrl='' ">
+                    <mat-icon>close</mat-icon>
+                  </button>
+            </mat-form-field>
+
+            <multiple-select-autocomp [facade]="relateTagFacade" [data]="selectedRelateTag"  [field]="'name'" [fieldSearch]="'name'"></multiple-select-autocomp>
+
+            <!-- <mat-label style="opacity: 0.5;">อ้างอิงจากข้อเสนอ</mat-label>
+            <admin-autocomp class="admin-autocomp" #deabateAutoComp [facade]="debateFacade" [whereConditions]="debateWhereConditions" [data]="selectedDebate" [field]="'id'" [fieldValue]="'id'"></admin-autocomp> -->
+            
+            <div class="content-text">
+                <ckeditor matInput [editor]="Editor" [ngModel]="(proposal.content ? proposal.content : '')" (ngModelChange)="proposal.content=$event"></ckeditor>
+            </div>
+            
+        </div>
+        <div class="input sub_1">
+            <newcon-button [text]=" 'สร้างข้อเสนอ' " appDebounceClick (debounceClick)="onSubmitBtnClick() "></newcon-button>
+        </div>
+    </div>
+</div>

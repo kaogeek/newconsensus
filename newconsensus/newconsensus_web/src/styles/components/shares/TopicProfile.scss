@@ -1,0 +1,245 @@
+.topic-profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center; 
+    box-shadow: 1px 2px 4px -3px $shwdow-cards;
+    border: 0.1px solid #f1f1f1;
+    cursor: pointer;
+    transition: 0.3s;
+    height: 80pt !important;
+    &:focus {
+        outline: none;
+    }
+    &:hover {
+        box-shadow: 3px 9px 8px -6px $shwdow-cards;
+    }
+    // .avatar {
+    //     margin: 0 10pt;
+    //     width: 35pt;
+    //     height: 35pt;
+    //     max-width: 35pt;
+    //     max-height: 35pt;
+    //     min-width: 35pt;
+    //     min-height: 35pt;
+    //     border-radius: 50%;
+    //     border: 1px solid $bg-color1;
+    // }
+    >.wrapper-profile-topic {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: stretch;
+        >.wrapper-profile-topic-left {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            width: 100%;
+            >.topic-name {
+                @include font-size-8-400;
+                width: 100%;
+                margin-bottom: 5pt;
+                word-break: break-word;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+            >.wrapper-profile-topic-left-div {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+                @include font-size-10-400;
+                >.profile-name {
+                    margin-right: 10pt;
+                    color: $color-7;
+                    width: auto;
+                    word-break: break-word;
+                    display: flex;
+                    // display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    align-items: center;
+                    >.profile-official {
+                        width: 10pt;
+                        height: 10pt;
+                        margin-left: 5pt;
+                    }
+                }
+                >.comment-created {
+                    color: $secondary;
+                    width: auto;
+                    text-align: right;
+                }
+            }
+        }
+        >.wrapper-profile-topic-right {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-end;
+            padding-left: 10pt;
+            padding-right: 15pt;
+            width: calc(95pt - 35pt);
+            padding-top: 16pt;
+            >.icon {
+                display: flex;
+                justify-content: center;
+                margin-bottom: 1pt;
+                width: 25pt;
+                height: 25pt;
+                >.icon-fire {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            >.wrapper-total-comment {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                @include font-size-8-400;
+                >.icon-message {
+                    width: 15pt;
+                    height: 15pt;
+                    margin-right: 6pt;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $xxlarge) {
+    .topic-profile {
+        &:focus {}
+        &:hover {}
+        >.avatar {}
+        >.wrapper-profile-topic {
+            >.wrapper-profile-topic-left {
+                >.topic-name {}
+                >.wrapper-profile-topic-left-div {
+                    >.profile-name {}
+                    >.comment-created {}
+                }
+            }
+            >.wrapper-profile-topic-right {
+                padding-top: 12pt;
+                >.icon {
+                    >.icon-fire {}
+                }
+                >.wrapper-total-comment {
+                    >.icon-message {}
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $xlarge) {
+    .topic-profile {
+        height: 72pt !important;
+        &:focus {}
+        &:hover {}
+        >.avatar {}
+        >.wrapper-profile-topic {
+            >.wrapper-profile-topic-left {
+                >.topic-name {}
+                >.wrapper-profile-topic-left-div {
+                    >.profile-name {}
+                    >.comment-created {}
+                }
+            }
+            >.wrapper-profile-topic-right {
+                >.icon {
+                    >.icon-fire {}
+                }
+                >.wrapper-total-comment {
+                    >.icon-message {}
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $large) {
+    .topic-profile {
+        &:focus {}
+        &:hover {}
+        >.avatar {}
+        >.wrapper-profile-topic {
+            >.wrapper-profile-topic-left {
+                >.topic-name {}
+                >.wrapper-profile-topic-left-div {
+                    >.profile-name {}
+                    >.comment-created {}
+                }
+            }
+            >.wrapper-profile-topic-right {
+                >.icon {
+                    >.icon-fire {}
+                }
+                >.wrapper-total-comment {
+                    >.icon-message {}
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $medium) {
+    .topic-profile {
+        &:focus {}
+        &:hover {}
+        >.avatar {}
+        >.wrapper-profile-topic {
+            >.wrapper-profile-topic-left {
+                >.topic-name {}
+                >.wrapper-profile-topic-left-div {
+                    >.profile-name {}
+                    >.comment-created {}
+                }
+            }
+            >.wrapper-profile-topic-right {
+                >.icon {
+                    >.icon-fire {}
+                }
+                >.wrapper-total-comment {
+                    >.icon-message {}
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $small) {
+    .topic-profile {
+        &:focus {}
+        &:hover {}
+        >.avatar {}
+        >.wrapper-profile-topic {
+            >.wrapper-profile-topic-left {
+                >.topic-name {}
+                >.wrapper-profile-topic-left-div {
+                    flex-direction: column;
+                    align-items: unset;
+                    >.comment-created {
+                        text-align: left;
+                    }
+                }
+            }
+            >.wrapper-profile-topic-right {
+                >.icon {
+                    >.icon-fire {}
+                }
+                >.wrapper-total-comment {
+                    >.icon-message {}
+                }
+            }
+        }
+    }
+}

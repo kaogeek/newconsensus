@@ -1,0 +1,133 @@
+.newcon-create-proposal-page {
+  position: relative;
+  width: auto;
+  height: auto;
+  background-color: white;
+  box-shadow: 0px 1px 3px 0px #d3d3d4;
+  transition: 0.3s;
+  &:hover {
+    transition: 0.3s;
+    box-shadow: 0px 1px 8px 0px $shadow-vote-vard-hover;
+  }
+  > .create-h {
+    width: auto;
+    height: auto;
+    border-bottom: whitesmoke 2px solid;
+    padding: 30pt;
+    > .create-head-one {
+      @include font-size-7-400;
+    }
+  }
+  > .create-input {
+    width: auto;
+    height: auto;
+    border-bottom: whitesmoke 2px solid;
+    padding: 30pt;
+    > .input {
+      display: flex;
+      flex-direction: column;
+      @include font-size-8-400;
+      .admin-autocomp {
+        width: 100%;
+      }
+      > .text {
+        width: 20%;
+        @include font-size-8-400;
+      }
+      > .example-form {
+        width: 100%;
+      }
+      > .example-full-width {
+        width: 100%;
+      }
+      > .dialog-image-body {
+        padding: 10pt 0pt;
+        position: relative;
+        > .file-upload {
+          width: 100%;
+          margin-bottom: 5pt;
+          > .label-open-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60pt;
+            width: calc(100% - 2pt);
+            cursor: pointer;
+            border: 1px dashed $color-4;
+            background: transparent;
+            opacity: 0.8;
+            &:hover {
+              opacity: 1;
+              background: $bg-color1;
+            }
+            > .input-img[type="file"] {
+              display: none;
+            }
+          }
+        }
+      }
+      > .content-text {
+        width: 100%;
+        .mat-form-field {
+          display: inline-block;
+          position: relative;
+          text-align: left;
+          width: 100%;
+        }
+        .mat-form-field-appearance-outline .mat-form-field-flex {
+          padding: 0 0.75em 0 0.75em;
+          margin-top: -0.25em;
+          position: relative;
+          height: 200pt;
+        }
+      }
+      .mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
+      .mat-form-field-empty.mat-form-field-label {
+        @include font-size-8-400;
+      }
+      .mat-form-field-infix {
+        display: block;
+        position: relative;
+        flex: auto;
+        min-width: 0;
+        width: 100%;
+      }
+      .mat-form-field {
+        display: inline-block;
+        position: relative;
+        text-align: left;
+        width: 100%;
+      }
+    }
+
+    > .sub_1 {
+      align-items: flex-end;
+      margin-top: 30px;
+
+      newcon-button {
+        width: 170pt;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media (max-width: $small) {
+  .newcon-create-proposal-page {
+    .create-h {
+      padding: 25px 17px;
+    }
+    > .create-input {
+      padding: 17px;
+
+      > .sub_1 {
+        align-items: center;
+        margin-top: 25px;
+
+        newcon-button {
+          width: 140pt;
+        }
+      }
+    }
+  }
+}

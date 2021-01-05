@@ -1,0 +1,2224 @@
+.newcon-content-main-page {
+  position: relative;
+  width: 100%;
+  height: auto;
+
+  > .newcon-content-main-page-body {
+    width: 100%;
+    height: auto;
+    background: $bg-color1;
+
+    > .content-1 {
+      padding-top: 60pt;
+      padding-left: 5pt;
+      padding-right: 5pt;
+      width: calc(91% - 10pt);
+      margin: 0 auto;
+
+      > .content-1-top {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-content: center;
+        margin-bottom: 10pt;
+
+        > .content-1-top-left {
+          > .head {
+            > .head-head {
+              @include font-size-7-400;
+            }
+
+            > .head-content {
+              margin-top: 1pt;
+              @include font-size-9-200;
+              min-height: 40px;
+              color: $color-11;
+            }
+          }
+        }
+
+        > .content-1-top-right {
+          > .swiper-slider-cop {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            > .swiper-button-prev2 {
+              position: static;
+              margin-top: 0;
+              width: 24pt;
+              height: 24pt;
+              background: $white !important;
+              color: $back;
+              border-radius: 50pt;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-right: 3pt;
+              cursor: pointer;
+              &:focus {
+                outline: none;
+              }
+              > .prev {
+                width: 12pt;
+                height: 12pt;
+                transform: rotate(-180deg);
+              }
+            }
+            > .swiper-button-next2 {
+              position: static;
+              margin-top: 0;
+              width: 24pt;
+              height: 24pt;
+              background: $color-1 !important;
+              color: $white;
+              border-radius: 50pt;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              margin-left: 3pt;
+              cursor: pointer;
+              &:focus {
+                outline: none;
+              }
+              > .next {
+                width: 12pt;
+                height: 12pt;
+              }
+            }
+          }
+        }
+      }
+
+      > .content-1-body {
+        > .swiper-container {
+          > .swiper-wrapper {
+            > .swiper-slide {
+              width: 100%;
+              max-height: 70vh;
+              cursor: pointer;
+
+              &:focus {
+                outline: none;
+              }
+
+              .img-vote {
+                width: 100%; 
+              }
+
+               .content {
+                position: absolute;
+                top: auto;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: calc(100% - 30pt);
+                z-index: 1;
+                background: rgba(24, 31, 55, 0.8);
+                padding: 20pt 15pt;
+                word-break: break-word;
+                display: -webkit-box;
+                -webkit-line-clamp: 1;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+
+                > .content-head {
+                  text-align: center;
+
+                  > .content-head-top {
+                    @include font-size-5-300;
+                    color: $white;
+                    word-break: break-word;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                  }
+
+                  > .content-data {
+                    @include font-size-10-200;
+                    color: $white;
+                    word-break: break-word;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                  }
+                }
+              }
+            }
+          }
+
+          > .swiper-pagination {
+          }
+        }
+      }
+
+      newcon-button {
+        display: flex;
+        justify-content: center;
+        margin-top: 20pt;
+
+        > .newcon-button {
+          @include font-size-10-200;
+          padding: 6pt 20pt;
+        }
+      }
+    }
+
+    > .content-2 {
+      padding-top: 60pt;
+      padding-left: 5pt;
+      padding-right: 5pt;
+      padding-bottom: 60pt;
+      width: calc(91% - 10pt);
+      margin: 0 auto;
+
+      > .content-2-top {
+        margin-bottom: 10pt;
+
+        > .head {
+          > .head-head {
+            @include font-size-7-400;
+          }
+
+          > .head-content {
+            margin-top: 1pt;
+            @include font-size-9-200;
+            min-height: 40px;
+            color: $color-11;
+          }
+        }
+      }
+
+      > .content-2-body {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-top: -15px;
+
+        > .content-2-body-left {
+          width: calc(50% - 10pt);
+          margin-right: 10pt;
+
+          content-card {
+            > .newcon-interview-content {
+              width: 100%;
+              height: calc(570pt + 30px);
+
+              > .content-card-img {
+                height: 395pt !important;
+
+                > .content-card-img-back {
+                }
+
+                > .img-content-card {
+                }
+              }
+
+              > .wrapper-content-card {
+                width: calc(100% - 50px);
+                height: calc(100% - 395pt - 40px);
+
+                > .wrapper-content-card-content {
+                  > .title-content-card {
+                  }
+
+                  > .content-content-card {
+                  }
+                }
+
+                > .footer-content-card {
+                  a {
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        > .content-2-body-right {
+          width: calc(50% - 10pt);
+          margin-left: 10pt;
+        }
+      }
+
+      newcon-button {
+        display: flex;
+        justify-content: center;
+        margin-top: 20pt;
+
+        > .all-content {
+          @include font-size-10-200;
+          padding: 6pt 20pt;
+        }
+      }
+    }
+
+    > .div-content-3 {
+      background: $white;
+      width: 100%;
+      height: auto;
+
+      > .content-3 {
+        padding: 60pt 5pt;
+        width: calc(91% - 10pt);
+        margin: 0 auto;
+
+        > .content-3-top {
+          margin-bottom: 10pt;
+
+          > .head {
+            text-align: right;
+
+            > .head-head {
+              @include font-size-7-400;
+            }
+
+            > .head-content {
+              margin-top: 1pt;
+              @include font-size-9-200;
+              min-height: 40px;
+              color: $color-11;
+            }
+          }
+        }
+
+        > .content-3-body {
+          width: 100%;
+          height: auto;
+
+          gallery {
+            width: 100%;
+            height: 44vw;
+          }
+        }
+      }
+    }
+
+    > .content-4 {
+      padding: 60pt 5pt;
+      width: calc(91% - 5pt);
+      margin: 0 auto;
+
+      > .div-content-4 {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        > .div-content-4-left {
+          width: calc(50% - 15pt);
+          height: auto;
+          padding-right: 15pt;
+
+          > .newcon-interview-article-left-top {
+            margin-bottom: 10pt;
+
+            > .newcon-interview-article-left-head {
+              @include font-size-7-400;
+            }
+
+            > .newcon-interview-article-left-content {
+              margin-top: 1pt;
+              @include font-size-10-200;
+              padding-right: 15px;
+              min-height: 40px;
+              color: $color-11;
+            }
+          }
+
+          content-card {
+            > .newcon-interview-content {
+              > .content-card-img {
+                > .content-card-img-back {
+                }
+
+                > .img-content-card {
+                }
+              }
+
+              > .wrapper-content-card {
+                > .wrapper-content-card-content {
+                  > .title-content-card {
+                  }
+
+                  > .content-content-card {
+                  }
+                }
+
+                > .footer-content-card {
+                  a {
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        > .div-content-4-right {
+          width: calc(50% - 15pt);
+          height: auto;
+          padding-left: 15pt;
+
+          > .newcon-interview-article-right-top {
+            margin-bottom: 10pt;
+
+            > .newcon-interview-article-right-head {
+              @include font-size-7-400;
+            }
+
+            > .newcon-interview-article-right-content {
+              margin-top: 1pt;
+              @include font-size-10-200;
+              padding-right: 15px;
+              min-height: 40px;
+              color: $color-11;
+            }
+          }
+
+          content-card {
+            > .newcon-interview-content {
+              > .content-card-img {
+                > .content-card-img-back {
+                }
+
+                > .img-content-card {
+                }
+              }
+
+              > .wrapper-content-card {
+                > .wrapper-content-card-content {
+                  > .title-content-card {
+                  }
+
+                  > .content-content-card {
+                  }
+                }
+
+                > .footer-content-card {
+                  a {
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        mat-tab-group {
+          display: none;
+          width: 100%;
+
+          > .mat-tab-header {
+            > .mat-tab-header-pagination {
+              > .mat-tab-header-pagination-chevron {
+              }
+            }
+
+            > .mat-tab-label-container {
+              > .mat-tab-list {
+                > .mat-tab-labels {
+                  > .mat-tab-label {
+                    > .mat-tab-label-content {
+                      @include font-size-8-300;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          > .mat-tab-body-wrapper {
+            > .mat-tab-body {
+              overflow-y: hidden;
+
+              > .mat-tab-body-content {
+                overflow: hidden;
+
+                > .newcon-interview-article-left-top {
+                  margin-bottom: 10pt;
+
+                  > .newcon-interview-article-left-head {
+                    @include font-size-7-400;
+                  }
+
+                  > .newcon-interview-article-left-content {
+                    margin-top: 1pt;
+                    @include font-size-10-200;
+                    padding-right: 15px;
+                    min-height: 40px;
+                    color: $color-11;
+                  }
+                }
+
+                > .newcon-interview-article-right-top {
+                  margin-bottom: 10pt;
+
+                  > .newcon-interview-article-right-head {
+                    @include font-size-7-400;
+                  }
+
+                  > .newcon-interview-article-right-content {
+                    margin-top: 1pt;
+                    @include font-size-10-200;
+                    padding-right: 15px;
+                    min-height: 40px;
+                    color: $color-11;
+                  }
+                }
+
+                content-card {
+                  > .newcon-interview-content {
+                    > .content-card-img {
+                      > .content-card-img-back {
+                      }
+
+                      > .img-content-card {
+                      }
+                    }
+
+                    > .wrapper-content-card {
+                      > .wrapper-content-card-content {
+                        > .title-content-card {
+                        }
+
+                        > .content-content-card {
+                        }
+                      }
+
+                      > .footer-content-card {
+                        a {
+                        }
+                      }
+                    }
+                  }
+                }
+
+                newcon-button {
+                  display: flex;
+                  justify-content: center;
+                  margin-top: 15pt;
+
+                  > .wrapper-link-more {
+                    width: auto !important;
+                    margin: 0 auto;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      > .more {
+        display: flex;
+        flex-direction: row;
+
+        > .more-left {
+          width: 50%;
+
+          newcon-button {
+            display: flex;
+            justify-content: center;
+            margin-top: 10pt;
+
+            > .wrapper-link-more {
+              width: auto !important;
+              margin: 0 auto;
+            }
+          }
+        }
+
+        > .more-right {
+          width: 50%;
+
+          newcon-button {
+            display: flex;
+            justify-content: center;
+            margin-top: 10pt;
+
+            > .wrapper-link-more {
+              width: auto !important;
+              margin: 0 auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $xxlarge) {
+  .newcon-content-main-page {
+    > .newcon-content-main-page-body {
+      > .content-1 {
+        padding-top: 40pt;
+        width: calc(92% - 10pt);
+
+        > .content-1-top {
+          > .content-1-top-left {
+            > .head {
+              > .head-head {
+              }
+
+              > .head-content {
+              }
+            }
+          }
+
+          > .content-1-top-right {
+            > .swiper-slider-cop {
+              > .swiper-button-prev2 {
+                &:focus {
+                }
+                > .prev {
+                }
+              }
+              > .swiper-button-next2 {
+                &:focus {
+                }
+                > .next {
+                }
+              }
+            }
+          }
+        }
+
+        > .content-1-body {
+          > .swiper-container {
+            > .swiper-wrapper {
+              > .swiper-slide {
+                max-height: 60vh;
+
+                &:focus {
+                }
+
+                > .img-vote {
+                  height: 60vh;
+                }
+
+                > .content {
+                  > .content-head {
+                    > .content-head-top {
+                    }
+
+                    > .content-data {
+                    }
+                  }
+                }
+              }
+            }
+
+            > .swiper-pagination {
+            }
+          }
+        }
+
+        newcon-button {
+          > .newcon-button {
+          }
+        }
+      }
+
+      > .content-2 {
+        padding-top: 40pt;
+        padding-bottom: 40pt;
+        width: calc(92% - 10pt);
+
+        > .content-2-top {
+          > .head {
+            > .head-head {
+            }
+
+            > .head-content {
+            }
+          }
+        }
+
+        > .content-2-body {
+          > .content-2-body-left {
+            content-card {
+              > .newcon-interview-content {
+                height: calc(525pt + 30px);
+
+                > .content-card-img {
+                  height: 360pt !important;
+
+                  > .content-card-img-back {
+                  }
+
+                  > .img-content-card {
+                  }
+                }
+
+                > .wrapper-content-card {
+                  width: calc(100% - 50px);
+                  height: calc(100% - 360pt - 40px);
+
+                  > .wrapper-content-card-content {
+                    > .title-content-card {
+                    }
+
+                    > .content-content-card {
+                    }
+                  }
+
+                  > .footer-content-card {
+                    a {
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          > .content-2-body-right {
+          }
+        }
+
+        newcon-button {
+          > .all-content {
+          }
+        }
+      }
+
+      > .div-content-3 {
+        > .content-3 {
+          padding: 40pt 5pt;
+          width: calc(92% - 10pt);
+
+          > .content-3-top {
+            > .head {
+              > .head-head {
+              }
+
+              > .head-content {
+              }
+            }
+          }
+
+          > .content-3-body {
+            gallery {
+            }
+          }
+        }
+      }
+
+      > .content-4 {
+        padding: 40pt 5pt;
+        width: calc(92% - 10pt);
+
+        > .div-content-4 {
+          > .div-content-4-left {
+            > .newcon-interview-article-left-top {
+              > .newcon-interview-article-left-head {
+              }
+
+              > .newcon-interview-article-left-content {
+              }
+            }
+
+            content-card {
+              > .newcon-interview-content {
+                > .content-card-img {
+                  > .content-card-img-back {
+                  }
+
+                  > .img-content-card {
+                  }
+                }
+
+                > .wrapper-content-card {
+                  > .wrapper-content-card-content {
+                    > .title-content-card {
+                    }
+
+                    > .content-content-card {
+                    }
+                  }
+
+                  > .footer-content-card {
+                    a {
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          > .div-content-4-right {
+            > .newcon-interview-article-right-top {
+              > .newcon-interview-article-right-head {
+              }
+
+              > .newcon-interview-article-right-content {
+              }
+            }
+
+            content-card {
+              > .newcon-interview-content {
+                > .content-card-img {
+                  > .content-card-img-back {
+                  }
+
+                  > .img-content-card {
+                  }
+                }
+
+                > .wrapper-content-card {
+                  > .wrapper-content-card-content {
+                    > .title-content-card {
+                    }
+
+                    > .content-content-card {
+                    }
+                  }
+
+                  > .footer-content-card {
+                    a {
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          mat-tab-group {
+            > .mat-tab-header {
+              > .mat-tab-header-pagination {
+                > .mat-tab-header-pagination-chevron {
+                }
+              }
+
+              > .mat-tab-label-container {
+                > .mat-tab-list {
+                  > .mat-tab-labels {
+                    > .mat-tab-label {
+                      > .mat-tab-label-content {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            > .mat-tab-body-wrapper {
+              > .mat-tab-body {
+                > .mat-tab-body-content {
+                  > .newcon-interview-article-left-top {
+                    > .newcon-interview-article-left-head {
+                    }
+
+                    > .newcon-interview-article-left-content {
+                    }
+                  }
+
+                  > .newcon-interview-article-right-top {
+                    > .newcon-interview-article-right-head {
+                    }
+
+                    > .newcon-interview-article-right-content {
+                    }
+                  }
+
+                  content-card {
+                    > .newcon-interview-content {
+                      > .content-card-img {
+                        > .content-card-img-back {
+                        }
+
+                        > .img-content-card {
+                        }
+                      }
+
+                      > .wrapper-content-card {
+                        > .wrapper-content-card-content {
+                          > .title-content-card {
+                          }
+
+                          > .content-content-card {
+                          }
+                        }
+
+                        > .footer-content-card {
+                          a {
+                          }
+                        }
+                      }
+                    }
+                  }
+
+                  newcon-button {
+                    > .wrapper-link-more {
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        > .more {
+          > .more-left {
+            newcon-button {
+              > .wrapper-link-more {
+              }
+            }
+          }
+
+          > .more-right {
+            newcon-button {
+              > .wrapper-link-more {
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $xlarge) {
+  .newcon-content-main-page {
+    > .newcon-content-main-page-body {
+      > .content-1 {
+        padding-top: 35pt;
+        width: calc(93% - 10pt);
+
+        > .content-1-top {
+          > .content-1-top-left {
+            > .head {
+              > .head-head {
+              }
+
+              > .head-content {
+              }
+            }
+          }
+
+          > .content-1-top-right {
+            > .swiper-slider-cop {
+              > .swiper-button-prev2 {
+                &:focus {
+                }
+                > .prev {
+                }
+              }
+              > .swiper-button-next2 {
+                &:focus {
+                }
+                > .next {
+                }
+              }
+            }
+          }
+        }
+
+        > .content-1-body {
+          > .swiper-container {
+            > .swiper-wrapper {
+              > .swiper-slide {
+                max-height: 50vh;
+
+                &:focus {
+                }
+
+                > .img-vote {
+                  height: 50vh;
+                }
+
+                > .content {
+                  > .content-head {
+                    > .content-head-top {
+                    }
+
+                    > .content-data {
+                    }
+                  }
+                }
+              }
+            }
+
+            > .swiper-pagination {
+            }
+          }
+        }
+
+        newcon-button {
+          > .newcon-button {
+          }
+        }
+      }
+
+      > .content-2 {
+        padding-top: 35pt;
+        padding-bottom: 35pt;
+        width: calc(93% - 10pt);
+
+        > .content-2-top {
+          > .head {
+            > .head-head {
+            }
+
+            > .head-content {
+            }
+          }
+        }
+
+        > .content-2-body {
+          > .content-2-body-left {
+            content-card {
+              > .newcon-interview-content {
+                height: calc(480pt + 30px);
+
+                > .content-card-img {
+                  height: 330pt !important;
+
+                  > .content-card-img-back {
+                  }
+
+                  > .img-content-card {
+                  }
+                }
+
+                > .wrapper-content-card {
+                  width: calc(100% - 30px);
+                  height: calc(100% - 330pt - 20px);
+
+                  > .wrapper-content-card-content {
+                    > .title-content-card {
+                    }
+
+                    > .content-content-card {
+                    }
+                  }
+
+                  > .footer-content-card {
+                    a {
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          > .content-2-body-right {
+          }
+        }
+
+        newcon-button {
+          > .all-content {
+          }
+        }
+      }
+
+      > .div-content-3 {
+        > .content-3 {
+          padding: 35pt 5pt;
+          width: calc(93% - 10pt);
+
+          > .content-3-top {
+            > .head {
+              > .head-head {
+              }
+
+              > .head-content {
+              }
+            }
+          }
+
+          > .content-3-body {
+            gallery {
+            }
+          }
+        }
+      }
+
+      > .content-4 {
+        padding: 35pt 5pt;
+        width: calc(93% - 10pt);
+
+        > .div-content-4 {
+          > .div-content-4-left {
+            > .newcon-interview-article-left-top {
+              > .newcon-interview-article-left-head {
+              }
+
+              > .newcon-interview-article-left-content {
+              }
+            }
+
+            content-card {
+              > .newcon-interview-content {
+                > .content-card-img {
+                  > .content-card-img-back {
+                  }
+
+                  > .img-content-card {
+                  }
+                }
+
+                > .wrapper-content-card {
+                  > .wrapper-content-card-content {
+                    > .title-content-card {
+                    }
+
+                    > .content-content-card {
+                    }
+                  }
+
+                  > .footer-content-card {
+                    a {
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          > .div-content-4-right {
+            > .newcon-interview-article-right-top {
+              > .newcon-interview-article-right-head {
+              }
+
+              > .newcon-interview-article-right-content {
+              }
+            }
+
+            content-card {
+              > .newcon-interview-content {
+                > .content-card-img {
+                  > .content-card-img-back {
+                  }
+
+                  > .img-content-card {
+                  }
+                }
+
+                > .wrapper-content-card {
+                  > .wrapper-content-card-content {
+                    > .title-content-card {
+                    }
+
+                    > .content-content-card {
+                    }
+                  }
+
+                  > .footer-content-card {
+                    a {
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          mat-tab-group {
+            > .mat-tab-header {
+              > .mat-tab-header-pagination {
+                > .mat-tab-header-pagination-chevron {
+                }
+              }
+
+              > .mat-tab-label-container {
+                > .mat-tab-list {
+                  > .mat-tab-labels {
+                    > .mat-tab-label {
+                      > .mat-tab-label-content {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            > .mat-tab-body-wrapper {
+              > .mat-tab-body {
+                > .mat-tab-body-content {
+                  > .newcon-interview-article-left-top {
+                    > .newcon-interview-article-left-head {
+                    }
+
+                    > .newcon-interview-article-left-content {
+                    }
+                  }
+
+                  > .newcon-interview-article-right-top {
+                    > .newcon-interview-article-right-head {
+                    }
+
+                    > .newcon-interview-article-right-content {
+                    }
+                  }
+
+                  content-card {
+                    > .newcon-interview-content {
+                      > .content-card-img {
+                        > .content-card-img-back {
+                        }
+
+                        > .img-content-card {
+                        }
+                      }
+
+                      > .wrapper-content-card {
+                        > .wrapper-content-card-content {
+                          > .title-content-card {
+                          }
+
+                          > .content-content-card {
+                          }
+                        }
+
+                        > .footer-content-card {
+                          a {
+                          }
+                        }
+                      }
+                    }
+                  }
+
+                  newcon-button {
+                    > .wrapper-link-more {
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        > .more {
+          > .more-left {
+            newcon-button {
+              > .wrapper-link-more {
+              }
+            }
+          }
+
+          > .more-right {
+            newcon-button {
+              > .wrapper-link-more {
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $large) {
+  .newcon-content-main-page {
+    > .newcon-content-main-page-body {
+      > .content-1 {
+        width: calc(94% - 10pt);
+
+        > .content-1-top {
+          > .content-1-top-left {
+            > .head {
+              > .head-head {
+              }
+
+              > .head-content {
+              }
+            }
+          }
+
+          > .content-1-top-right {
+            > .swiper-slider-cop {
+              > .swiper-button-prev2 {
+                &:focus {
+                }
+                > .prev {
+                }
+              }
+              > .swiper-button-next2 {
+                &:focus {
+                }
+                > .next {
+                }
+              }
+            }
+          }
+        }
+
+        > .content-1-body {
+          > .swiper-container {
+            > .swiper-wrapper {
+              > .swiper-slide {
+                max-height: 40vh;
+
+                &:focus {
+                }
+
+                > .img-vote {
+                  height: 40vh;
+                }
+
+                > .content {
+                  > .content-head {
+                    > .content-head-top {
+                    }
+
+                    > .content-data {
+                    }
+                  }
+                }
+              }
+            }
+
+            > .swiper-pagination {
+            }
+          }
+        }
+
+        newcon-button {
+          > .newcon-button {
+          }
+        }
+      }
+
+      > .content-2 {
+        width: calc(94% - 10pt);
+
+        > .content-2-top {
+          > .head {
+            > .head-head {
+            }
+
+            > .head-content {
+            }
+          }
+        }
+
+        > .content-2-body {
+          > .content-2-body-left {
+            width: calc(50% - 5pt);
+            margin-right: 5pt;
+
+            content-card {
+              > .newcon-interview-content {
+                width: 100%;
+                height: calc(465pt + 20px);
+
+                > .content-card-img {
+                  height: 315pt !important;
+
+                  > .content-card-img-back {
+                  }
+
+                  > .img-content-card {
+                  }
+                }
+
+                > .wrapper-content-card {
+                  height: calc(100% - 315pt - 20px);
+
+                  > .wrapper-content-card-content {
+                    > .title-content-card {
+                    }
+
+                    > .content-content-card {
+                    }
+                  }
+
+                  > .footer-content-card {
+                    a {
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          > .content-2-body-right {
+            width: calc(50% - 5pt);
+            margin-left: 5pt;
+          }
+        }
+
+        newcon-button {
+          > .all-content {
+          }
+        }
+      }
+
+      > .div-content-3 {
+        > .content-3 {
+          width: calc(94% - 10pt);
+
+          > .content-3-top {
+            > .head {
+              > .head-head {
+              }
+
+              > .head-content {
+              }
+            }
+          }
+
+          > .content-3-body {
+            gallery {
+            }
+          }
+        }
+      }
+
+      > .content-4 {
+        padding: 30pt 5pt;
+        width: calc(94% - 10pt);
+
+        > .div-content-4 {
+          > .div-content-4-left {
+            > .newcon-interview-article-left-top {
+              > .newcon-interview-article-left-head {
+              }
+
+              > .newcon-interview-article-left-content {
+              }
+            }
+
+            content-card {
+              > .newcon-interview-content {
+                > .content-card-img {
+                  > .content-card-img-back {
+                  }
+
+                  > .img-content-card {
+                  }
+                }
+
+                > .wrapper-content-card {
+                  > .wrapper-content-card-content {
+                    > .title-content-card {
+                    }
+
+                    > .content-content-card {
+                    }
+                  }
+
+                  > .footer-content-card {
+                    a {
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          > .div-content-4-right {
+            > .newcon-interview-article-right-top {
+              > .newcon-interview-article-right-head {
+              }
+
+              > .newcon-interview-article-right-content {
+              }
+            }
+
+            content-card {
+              > .newcon-interview-content {
+                > .content-card-img {
+                  > .content-card-img-back {
+                  }
+
+                  > .img-content-card {
+                  }
+                }
+
+                > .wrapper-content-card {
+                  > .wrapper-content-card-content {
+                    > .title-content-card {
+                    }
+
+                    > .content-content-card {
+                    }
+                  }
+
+                  > .footer-content-card {
+                    a {
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          mat-tab-group {
+            > .mat-tab-header {
+              > .mat-tab-header-pagination {
+                > .mat-tab-header-pagination-chevron {
+                }
+              }
+
+              > .mat-tab-label-container {
+                > .mat-tab-list {
+                  > .mat-tab-labels {
+                    > .mat-tab-label {
+                      > .mat-tab-label-content {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            > .mat-tab-body-wrapper {
+              > .mat-tab-body {
+                > .mat-tab-body-content {
+                  > .newcon-interview-article-left-top {
+                    margin-top: 30pt;
+
+                    > .newcon-interview-article-left-head {
+                    }
+
+                    > .newcon-interview-article-left-content {
+                    }
+                  }
+
+                  > .newcon-interview-article-right-top {
+                    margin-top: 30pt;
+
+                    > .newcon-interview-article-right-head {
+                    }
+
+                    > .newcon-interview-article-right-content {
+                    }
+                  }
+
+                  content-card {
+                    > .newcon-interview-content {
+                      > .content-card-img {
+                        > .content-card-img-back {
+                        }
+
+                        > .img-content-card {
+                        }
+                      }
+
+                      > .wrapper-content-card {
+                        > .wrapper-content-card-content {
+                          > .title-content-card {
+                          }
+
+                          > .content-content-card {
+                          }
+                        }
+
+                        > .footer-content-card {
+                          a {
+                          }
+                        }
+                      }
+                    }
+                  }
+
+                  newcon-button {
+                    > .wrapper-link-more {
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        > .more {
+          > .more-left {
+            newcon-button {
+              > .wrapper-link-more {
+              }
+            }
+          }
+
+          > .more-right {
+            newcon-button {
+              > .wrapper-link-more {
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $medium) {
+  .newcon-content-main-page {
+    > .newcon-content-main-page-body {
+      > .content-1 {
+        width: calc(95% - 10pt);
+
+        > .content-1-top {
+          > .content-1-top-left {
+            > .head {
+              > .head-head {
+              }
+
+              > .head-content {
+              }
+            }
+          }
+
+          > .content-1-top-right {
+            > .swiper-slider-cop {
+              > .swiper-button-prev2 {
+                &:focus {
+                }
+                > .prev {
+                }
+              }
+              > .swiper-button-next2 {
+                &:focus {
+                }
+                > .next {
+                }
+              }
+            }
+          }
+        }
+
+        > .content-1-body {
+          > .swiper-container {
+            > .swiper-wrapper {
+              > .swiper-slide {
+                max-height: 260px;
+
+                &:focus {
+                }
+
+                > .img-vote {
+                  height: 260px;
+                }
+
+                > .content {
+                  > .content-head {
+                    > .content-head-top {
+                    }
+
+                    > .content-data {
+                    }
+                  }
+                }
+              }
+            }
+
+            > .swiper-pagination {
+            }
+          }
+        }
+
+        newcon-button {
+          margin-top: 15pt;
+
+          > .newcon-button {
+          }
+        }
+      }
+
+      > .content-2 {
+        width: calc(95% - 10pt);
+
+        > .content-2-top {
+          > .head {
+            > .head-head {
+            }
+
+            > .head-content {
+            }
+          }
+        }
+
+        > .content-2-body {
+          flex-direction: column;
+
+          > .content-2-body-left {
+            width: 100%;
+            margin: 0 auto;
+
+            content-card {
+              > .newcon-interview-content {
+                width: 100%;
+                height: calc(450pt + 20px);
+
+                > .content-card-img {
+                  height: 307pt !important;
+
+                  > .content-card-img-back {
+                  }
+
+                  > .img-content-card {
+                  }
+                }
+
+                > .wrapper-content-card {
+                  height: calc(100% - 307pt - 20px);
+
+                  > .wrapper-content-card-content {
+                    > .title-content-card {
+                    }
+
+                    > .content-content-card {
+                    }
+                  }
+
+                  > .footer-content-card {
+                    a {
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          > .content-2-body-right {
+            width: 100%;
+            margin: 0 auto;
+          }
+        }
+
+        newcon-button {
+          margin-top: 15pt;
+
+          > .all-content {
+          }
+        }
+      }
+
+      > .div-content-3 {
+        > .content-3 {
+          width: calc(95% - 10pt);
+
+          > .content-3-top {
+            > .head {
+              > .head-head {
+              }
+
+              > .head-content {
+              }
+            }
+          }
+
+          > .content-3-body {
+            gallery {
+              height: 240pt;
+            }
+          }
+        }
+      }
+
+      > .content-4 {
+        padding: 20pt 5pt;
+        width: calc(95% - 10pt);
+
+        > .div-content-4 {
+          > .div-content-4-left {
+            display: none;
+
+            > .newcon-interview-article-left-top {
+              > .newcon-interview-article-left-head {
+              }
+
+              > .newcon-interview-article-left-content {
+              }
+            }
+
+            content-card {
+              > .newcon-interview-content {
+                > .content-card-img {
+                  > .content-card-img-back {
+                  }
+
+                  > .img-content-card {
+                  }
+                }
+
+                > .wrapper-content-card {
+                  > .wrapper-content-card-content {
+                    > .title-content-card {
+                    }
+
+                    > .content-content-card {
+                    }
+                  }
+
+                  > .footer-content-card {
+                    a {
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          > .div-content-4-right {
+            display: none;
+
+            > .newcon-interview-article-right-top {
+              > .newcon-interview-article-right-head {
+              }
+
+              > .newcon-interview-article-right-content {
+              }
+            }
+
+            content-card {
+              > .newcon-interview-content {
+                > .content-card-img {
+                  > .content-card-img-back {
+                  }
+
+                  > .img-content-card {
+                  }
+                }
+
+                > .wrapper-content-card {
+                  > .wrapper-content-card-content {
+                    > .title-content-card {
+                    }
+
+                    > .content-content-card {
+                    }
+                  }
+
+                  > .footer-content-card {
+                    a {
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          mat-tab-group {
+            display: block;
+
+            > .mat-tab-header {
+              > .mat-tab-header-pagination {
+                > .mat-tab-header-pagination-chevron {
+                }
+              }
+
+              > .mat-tab-label-container {
+                > .mat-tab-list {
+                  > .mat-tab-labels {
+                    > .mat-tab-label {
+                      > .mat-tab-label-content {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            > .mat-tab-body-wrapper {
+              > .mat-tab-body {
+                > .mat-tab-body-content {
+                  > .newcon-interview-article-left-top {
+                    margin-top: 20pt;
+
+                    > .newcon-interview-article-left-head {
+                    }
+
+                    > .newcon-interview-article-left-content {
+                    }
+                  }
+
+                  > .newcon-interview-article-right-top {
+                    margin-top: 20pt;
+
+                    > .newcon-interview-article-right-head {
+                    }
+
+                    > .newcon-interview-article-right-content {
+                    }
+                  }
+
+                  content-card {
+                    > .newcon-interview-content {
+                      > .content-card-img {
+                        > .content-card-img-back {
+                        }
+
+                        > .img-content-card {
+                        }
+                      }
+
+                      > .wrapper-content-card {
+                        > .wrapper-content-card-content {
+                          > .title-content-card {
+                          }
+
+                          > .content-content-card {
+                          }
+                        }
+
+                        > .footer-content-card {
+                          a {
+                          }
+                        }
+                      }
+                    }
+                  }
+
+                  newcon-button {
+                    > .wrapper-link-more {
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        > .more {
+          display: none;
+
+          > .more-left {
+            newcon-button {
+              > .wrapper-link-more {
+              }
+            }
+          }
+
+          > .more-right {
+            newcon-button {
+              > .wrapper-link-more {
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $small) {
+  .newcon-content-main-page {
+    > .newcon-content-main-page-body {
+      > .content-1 {
+        width: calc(96% - 10pt);
+
+        > .content-1-top {
+          > .content-1-top-left {
+            > .head {
+              > .head-head {
+              }
+
+              > .head-content {
+              }
+            }
+          }
+
+          > .content-1-top-right {
+            > .swiper-slider-cop {
+              > .swiper-button-prev2 {
+                &:focus {
+                }
+                > .prev {
+                }
+              }
+              > .swiper-button-next2 {
+                &:focus {
+                }
+                > .next {
+                }
+              }
+            }
+          }
+        }
+
+        > .content-1-body {
+          > .swiper-container {
+            > .swiper-wrapper {
+              > .swiper-slide {
+                max-height: 200px;
+
+                &:focus {
+                }
+
+                > .img-vote {
+                  height: 200px;
+                }
+
+                > .content {
+                  padding: 15pt;
+                  width: calc(100% - 30pt);
+
+                  > .content-head {
+                    > .content-head-top {
+                    }
+
+                    > .content-data {
+                    }
+                  }
+                }
+              }
+            }
+
+            > .swiper-pagination {
+            }
+          }
+        }
+
+        newcon-button {
+          > .newcon-button {
+          }
+        }
+      }
+
+      > .content-2 {
+        width: calc(96% - 10pt);
+
+        > .content-2-top {
+          > .head {
+            > .head-head {
+            }
+
+            > .head-content {
+            }
+          }
+        }
+
+        > .content-2-body {
+          > .content-2-body-left {
+            content-card {
+              > .newcon-interview-content {
+                height: auto;
+
+                > .content-card-img {
+                  height: 155pt !important;
+
+                  > .content-card-img-back {
+                  }
+
+                  > .img-content-card {
+                  }
+                }
+
+                > .wrapper-content-card {
+                  height: auto;
+
+                  > .wrapper-content-card-content {
+                    > .title-content-card {
+                    }
+
+                    > .content-content-card {
+                    }
+                  }
+
+                  > .footer-content-card {
+                    a {
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          > .content-2-body-right {
+          }
+        }
+
+        newcon-button {
+          > .all-content {
+          }
+        }
+      }
+
+      > .div-content-3 {
+        > .content-3 {
+          width: calc(96% - 10pt);
+
+          > .content-3-top {
+            > .head {
+              > .head-head {
+              }
+
+              > .head-content {
+              }
+            }
+          }
+
+          > .content-3-body {
+            gallery {
+              height: 230pt;
+            }
+          }
+        }
+      }
+
+      > .content-4 {
+        width: calc(96% - 10pt);
+
+        > .div-content-4 {
+          > .div-content-4-left {
+            > .newcon-interview-article-left-top {
+              > .newcon-interview-article-left-head {
+              }
+
+              > .newcon-interview-article-left-content {
+              }
+            }
+
+            content-card {
+              > .newcon-interview-content {
+                > .content-card-img {
+                  > .content-card-img-back {
+                  }
+
+                  > .img-content-card {
+                  }
+                }
+
+                > .wrapper-content-card {
+                  > .wrapper-content-card-content {
+                    > .title-content-card {
+                    }
+
+                    > .content-content-card {
+                    }
+                  }
+
+                  > .footer-content-card {
+                    a {
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          > .div-content-4-right {
+            > .newcon-interview-article-right-top {
+              > .newcon-interview-article-right-head {
+              }
+
+              > .newcon-interview-article-right-content {
+              }
+            }
+
+            content-card {
+              > .newcon-interview-content {
+                > .content-card-img {
+                  > .content-card-img-back {
+                  }
+
+                  > .img-content-card {
+                  }
+                }
+
+                > .wrapper-content-card {
+                  > .wrapper-content-card-content {
+                    > .title-content-card {
+                    }
+
+                    > .content-content-card {
+                    }
+                  }
+
+                  > .footer-content-card {
+                    a {
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          mat-tab-group {
+            > .mat-tab-header {
+              > .mat-tab-header-pagination {
+                > .mat-tab-header-pagination-chevron {
+                }
+              }
+
+              > .mat-tab-label-container {
+                > .mat-tab-list {
+                  > .mat-tab-labels {
+                    > .mat-tab-label {
+                      > .mat-tab-label-content {
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            > .mat-tab-body-wrapper {
+              > .mat-tab-body {
+                > .mat-tab-body-content {
+                  > .newcon-interview-article-left-top {
+                    > .newcon-interview-article-left-head {
+                    }
+
+                    > .newcon-interview-article-left-content {
+                    }
+                  }
+
+                  > .newcon-interview-article-right-top {
+                    > .newcon-interview-article-right-head {
+                    }
+
+                    > .newcon-interview-article-right-content {
+                    }
+                  }
+
+                  content-card {
+                    > .newcon-interview-content {
+                      > .content-card-img {
+                        > .content-card-img-back {
+                        }
+
+                        > .img-content-card {
+                        }
+                      }
+
+                      > .wrapper-content-card {
+                        > .wrapper-content-card-content {
+                          > .title-content-card {
+                          }
+
+                          > .content-content-card {
+                          }
+                        }
+
+                        > .footer-content-card {
+                          a {
+                          }
+                        }
+                      }
+                    }
+                  }
+
+                  newcon-button {
+                    > .wrapper-link-more {
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        > .more {
+          > .more-left {
+            newcon-button {
+              > .wrapper-link-more {
+              }
+            }
+          }
+
+          > .more-right {
+            newcon-button {
+              > .wrapper-link-more {
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,337 @@
+<div class="newcon-vote-comment-post-page" *ngIf="vote.vote !== undefined">
+    <div class="newcon-vote-comment-img" *ngIf="vote.vote.coverImage" [ngStyle]="{'background-image': 'url('+vote.vote.coverImage+')'}">
+    </div>
+    <div class="newcon-vote-comment-content">
+        <div class="newcon-vote-code">
+            <div class="newcon-vote-code-left">
+                <div class="newcon-vote-code-left-number">
+                    รหัส <span>{{vote.vote.id | prefixNumber:5}}</span>
+                </div>
+            </div>
+            <div class="newcon-vote-code-right">
+                <!-- <div class="newcon-vote-code-right-percent">
+                    <span class="newcon-vote-code-right-percent-count" [ngStyle]="{'color': 'rgba(93,104,186,1)'}">
+                        {{vote.voteComment.agree.percent | number: '1.0-2'}}%
+                    </span>
+                    <span class="newcon-vote-code-right-percent-head">ไม่ควรแก้ไข</span>
+                </div>
+                <div class="newcon-vote-code-right-percent">
+                    <span class="newcon-vote-code-right-percent-count" [ngStyle]="{'color': 'rgba(239,91,109,1)'}">
+                        {{vote.voteComment.disagree.percent | number: '1.0-2'}}%
+                    </span>
+                    <span class="newcon-vote-code-right-percent-head">ควรทบทวนทั้งฉบับ</span>
+                </div>
+                <div class="newcon-vote-code-right-percent">
+                    <span class="newcon-vote-code-right-percent-count" [ngStyle]="{'color': 'rgba(38,136,152,1)'}">
+                        {{vote.voteComment.noComment.percent | number: '1.0-2'}}%
+                    </span>
+                    <span class="newcon-vote-code-right-percent-head">ควรแก้ไขบางประเด็น</span>
+                </div> -->
+            </div>
+        </div>
+        <div class="newcon-vote-comment-content-layout">
+            <div class="newcon-vote-comment-content-layout-head">
+                {{vote.vote.title}}
+            </div>
+            <div class="newcon-vote-comment-content-layout-tagline">
+                {{vote.vote.tagline}}
+            </div>
+            <div class="newcon-vote-comment-content-layout-div-video">
+                <ng-container *ngIf="vote.vote.videoUrl; else elsePreviewImage">
+                    <video-view [videoForm]="videoForm" [url]="vote.vote.videoUrl"> </video-view>
+                </ng-container>
+                <ng-template #elsePreviewImage>
+                    <img src="{{vote.vote.imageUrl}}" alt="" class="newcon-content-page-layout-img">
+                </ng-template>
+            </div>
+            <div class="newcon-vote-comment-content-layout-rich-content">
+                <span [innerHTML]="vote.vote.content"></span>
+                <div class="date-createddate">สร้างวันที่</div>
+                <div class="createddate">{{vote.vote.createdDate | date:'dd/MM/yyyy hh:mm:ss'}}</div>
+            </div>
+        </div>
+        <div class="newcon-vote-comment-content-layout-bottom">
+            <div class="newcon-vote-comment-content-layout-bottom-div">
+                <div class="newcon-vote-comment-content-layout-bottom-left">
+                    <div class="newcon-vote-comment-content-layout-bottom-left-head">
+                        ลิ้งค์ภายนอก :
+                    </div>
+                </div>
+                <div class="newcon-vote-comment-content-layout-bottom-right">
+                    <div class="newcon-vote-comment-content-layout-bottom-right-external-video">
+                        <ng-container *ngIf="vote.vote.link !== '' ; else elseTemplate">
+                            <a href="{{vote.vote.link}}" target="_blank" class="newcon-vote-comment-content-layout-bottom-right-external-video">
+                                {{vote.vote.link}}
+                            </a>
+                        </ng-container>
+                        <ng-template #elseTemplate>
+                            -
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+            <div class="newcon-vote-comment-content-layout-bottom-div">
+                <div class="newcon-vote-comment-content-layout-bottom-left">
+                    <div class="newcon-vote-comment-content-layout-bottom-left-head">
+                        แชร์ :
+                    </div>
+                </div>
+                <div class="newcon-vote-comment-content-layout-bottom-right">
+                    <div class="newcon-vote-comment-content-layout-bottom-right-share">
+                        <a href="{{linkUrl}}" target="_blank" class="share">
+                            <img src="https://image.flaticon.com/icons/svg/145/145802.svg" alt="{{vote.vote.title}}" class="icon">
+                        </a>
+                        <!-- twitter share -->
+                        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button share" data-show-count="false" target="_blank">
+                            <img src="https://image.flaticon.com/icons/svg/145/145812.svg" class="icon">
+                        </a>
+                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div>
+                </div>
+            </div>
+            <div class="newcon-vote-comment-content-layout-bottom-div">
+                <div class="newcon-vote-comment-content-layout-bottom-left">
+                    <div class="newcon-vote-comment-content-layout-bottom-left-head">
+                        ผู้สร้าง :
+                    </div>
+                </div>
+                <div class="newcon-vote-comment-content-layout-bottom-right">
+                    <div class="newcon-vote-comment-content-layout-bottom-right-create">
+                        <newcon-button [text]="vote.vote.createdByUsername ? vote.vote.createdByUsername : '-'">
+                        </newcon-button>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="isShowReference" class="newcon-vote-comment-content-layout-bottom-div tag-references">
+                <div class="newcon-vote-comment-content-layout-bottom-left">
+                    <div class="newcon-vote-comment-content-layout-bottom-left-head">
+                        อ้างอิง :
+                    </div>
+                </div>
+                <div class="newcon-vote-comment-content-layout-bottom-right">
+                    <div class="newcon-vote-comment-content-layout-bottom-right-References">
+
+                        <newcon-button [isDisable]="(vote.vote.proposal === undefined || vote.vote.proposal === null) || (vote.vote.proposal !== undefined && vote.vote.proposal !== null && (vote.vote.proposal.id === undefined || vote.vote.proposal.id === null))" [text]="((vote.vote.proposal === undefined || vote.vote.proposal === null) || (vote.vote.proposal !== undefined && vote.vote.proposal !== null && (vote.vote.proposal.id === undefined || vote.vote.proposal.id === null))) ? '-' : vote.vote.proposal.title"
+                            [link]="((vote.vote.proposal === undefined || vote.vote.proposal === null) || (vote.vote.proposal !== undefined && vote.vote.proposal !== null && (vote.vote.proposal.id === undefined || vote.vote.proposal.id === null))) ? '' : '/main/proposal/comment/post/'+vote.vote.proposal.id+'-'+vote.vote.proposal.title"
+                            [isNewTab]="true">
+                        </newcon-button>
+                    </div>
+                </div>
+            </div>
+            <div class="newcon-vote-comment-content-like-dislike">
+                <div class="newcon-vote-comment-content-like-dislike-left">
+                    <span [style.opacity]="!isLogin() || vote.isUserLike === undefined || vote.isUserLike === false ? '0.3' : '1'" [style.pointer-events]="!isLogin() ? 'none' : 'inherit'" class="btn-like" (click)="btnlikeVote()">
+                        <svg id="Bold" enable-background="new 0 0 24 24" height="15pt" viewBox="0 0 24 24" width="15pt" xmlns="http://www.w3.org/2000/svg">
+                            <path d="m1.75 23h2.5c.965 0 1.75-.785 1.75-1.75v-11.5c0-.965-.785-1.75-1.75-1.75h-2.5c-.965 0-1.75.785-1.75 1.75v11.5c0 .965.785 1.75 1.75 1.75z"
+                            />
+                            <path d="m12.781.75c-1 0-1.5.5-1.5 3 0 2.376-2.301 4.288-3.781 5.273v12.388c1.601.741 4.806 1.839 9.781 1.839h1.6c1.95 0 3.61-1.4 3.94-3.32l1.12-6.5c.42-2.45-1.46-4.68-3.94-4.68h-4.72s.75-1.5.75-4c0-3-2.25-4-3.25-4z"
+                            />
+                        </svg>
+                        <span class="like-total">{{vote.vote.likeCount | shortNumber}} ถูกใจ</span>
+                    </span>
+                </div>
+                <div class="newcon-vote-comment-content-like-dislike-right">
+                    <span [style.opacity]="!isLogin() || vote.isUserLike === undefined || vote.isUserLike === true ? '0.3' : '1'" [style.pointer-events]="!isLogin() ? 'none' : 'inherit'" class="btn-dislike" (click)="btnDislikeVote()">
+                        <svg id="Bold" enable-background="new 0 0 24 24" height="15pt" viewBox="0 0 24 24" width="15pt" xmlns="http://www.w3.org/2000/svg"
+                            style="transform: rotate(180deg);">
+                            <path d="m1.75 23h2.5c.965 0 1.75-.785 1.75-1.75v-11.5c0-.965-.785-1.75-1.75-1.75h-2.5c-.965 0-1.75.785-1.75 1.75v11.5c0 .965.785 1.75 1.75 1.75z"
+                            />
+                            <path d="m12.781.75c-1 0-1.5.5-1.5 3 0 2.376-2.301 4.288-3.781 5.273v12.388c1.601.741 4.806 1.839 9.781 1.839h1.6c1.95 0 3.61-1.4 3.94-3.32l1.12-6.5c.42-2.45-1.46-4.68-3.94-4.68h-4.72s.75-1.5.75-4c0-3-2.25-4-3.25-4z"
+                            />
+                        </svg>
+                        <span class="dislike-total">{{vote.vote.dislikeCount | shortNumber}} ไม่ถูกใจ</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="newcon-vote-and-comment">
+        <div class="newcon-vote-and-comment-head">
+            รับฟังความคิดเห็น
+        </div>
+        <div class="newcon-vote-and-comment-body">
+            <div class="newcon-vote-and-comment-body-left">
+                <div class="newcon-vote-and-comment-body-left-post">
+                    <div class="newcon-vote-and-comment-body-left-post-head">
+                        <div class="newcon-vote-and-comment-body-left-post-head-left" [ngStyle]="{'color': 'rgba(93,104,186,1)'}">
+                            ไม่ควรแก้ไข
+                        </div>
+                        <!-- <div class="newcon-vote-and-comment-body-left-post-head-right" [ngStyle]="{'color': 'rgba(93,104,186,1)'}">
+                            {{vote.voteComment.agree.percent | number: '1.0-2'}}%
+                        </div> -->
+                    </div>
+                    <form action="" id="formsub" method="post" class="form-post-comment" *ngIf="isLogin()">
+                        <div class="div-textarea-post-comment">
+                            <textarea name="agreeVoteComment" [(ngModel)]="agreeVoteComment" id="textarea" placeholder="แสดงความคิดเห็น ...." class="textarea-post-comment"></textarea>
+                        </div>
+                        <newcon-button-save [isLoading]="isVoteingAree" [isRadius]="false" [bgColor]="'rgba(0, 123, 255, 1)'" [text]="'รับฟัง & แสดงความคิดเห็น'" [class]="'button-submit-vote'" (click)="createAgreeVoteComment()"></newcon-button-save>
+                    </form>
+                </div>
+                <div *ngIf="isCommentApprove">
+                    <comment-vote-item [showAppove]="(item.approveUserId !== null) ? true : false" *ngFor="let item of agreeVoteComments; let i = index;" [class]="'comment-vote-item'" [height]="'auto'" [pageUser]="item.pageUser" [isUserLike]="item.isUserLike" [createdName]="(item.pageUser === undefined || item.pageUser === null) ? item.createdByUsername : (item.createdByUsername === undefined || item.createdByUsername === null) ? '-' : item.pageUser.displayName"
+                        [voteId]="item.voteId" [voteCommentId]="item.id" [comment]="item.comment" [create]="item.createdDate" [likeTotal]="item.likeCount" [dislikeTotal]="item.dislikeCount" [showSubMenu]="(userVoteComment !== undefined && userVoteComment.id === item.id) ? true : false"
+                        (likeVoteCommentBtnClicked)="likeVoteComment(item.id,i,1)" (dislikeVoteCommentBtnClicked)="dislikeVoteComment(item.id,i,1)" (deleteActionBtnClicked)="deleteVoteComment(item.id, i, 1)"></comment-vote-item>
+                </div>
+                <div *ngIf="!isCommentApprove">
+                    <comment-vote-item [showAppove]="true" *ngFor="let item of agreeVoteComments; let i = index;" [class]="'comment-vote-item'" [height]="'auto'" [pageUser]="item.pageUser" [isUserLike]="item.isUserLike" [createdName]="(item.pageUser === undefined || item.pageUser === null) ? item.createdByUsername : (item.createdByUsername === undefined || item.createdByUsername === null) ? '-' : item.pageUser.displayName"
+                        [voteId]="item.voteId" [voteCommentId]="item.id" [comment]="item.comment" [create]="item.createdDate" [likeTotal]="item.likeCount" [dislikeTotal]="item.dislikeCount" [showSubMenu]="(userVoteComment !== undefined && userVoteComment.id === item.id) ? true : false"
+                        (likeVoteCommentBtnClicked)="likeVoteComment(item.id,i,1)" (dislikeVoteCommentBtnClicked)="dislikeVoteComment(item.id,i,1)" (deleteActionBtnClicked)="deleteVoteComment(item.id, i, 1)"></comment-vote-item>
+                </div>
+            </div>
+            <div class="newcon-vote-and-comment-body-right">
+                <div class="newcon-vote-and-comment-body-right-post">
+                    <div class="newcon-vote-and-comment-body-right-post-head">
+                        <div class="newcon-vote-and-comment-body-right-post-head-left" [ngStyle]="{'color': 'rgba(38,136,152,1)'}">
+                            ควรแก้ไขบางประเด็น
+                        </div>
+                        <!-- <div class="newcon-vote-and-comment-body-right-post-head-right" [ngStyle]="{'color': 'rgba(38,136,152,1)'}">
+                            {{vote.voteComment.noComment.percent | number: '1.0-2'}}%
+                        </div> -->
+                    </div>
+                    <form action="" id="formsub" method="post" class="form-post-comment" *ngIf="isLogin()">
+                        <div class="div-textarea-post-comment">
+                            <textarea name="noVoteComment" [(ngModel)]="noVoteComment" id="textarea" placeholder="แสดงความคิดเห็น ...." class="textarea-post-comment"></textarea>
+                        </div>
+                        <newcon-button-save [isLoading]="isVoteingNocomment" [isRadius]="false" [bgColor]="'rgba(38,136,152,1)'" [text]="'รับฟัง & แสดงความคิดเห็น'" [class]="'button-submit-vote'" (click)="createNoVoteComment()"></newcon-button-save>
+                    </form>
+                </div>
+                <div *ngIf="isCommentApprove">
+                    <comment-vote-item [showAppove]="(item.approveUserId !== null) ? true : false" *ngFor="let item of noVoteComments; let i = index;" [class]="'comment-vote-item'" [height]="'auto'" [createdName]="(item.pageUser === undefined || item.pageUser === null) ? item.createdByUsername : (item.createdByUsername === undefined || item.createdByUsername === null) ? '-' : item.pageUser.displayName"
+                        [pageUser]="item.pageUser" [isUserLike]="item.isUserLike" [voteId]="item.voteId" [voteCommentId]="item.id" [comment]="item.comment" [create]="item.createdDate" [likeTotal]="item.likeCount" [dislikeTotal]="item.dislikeCount" [showSubMenu]="(userVoteComment !== undefined && userVoteComment.id === item.id) ? true : false"
+                        (likeVoteCommentBtnClicked)="likeVoteComment(item.id,i,0)" (dislikeVoteCommentBtnClicked)="dislikeVoteComment(item.id,i,0)" (deleteActionBtnClicked)="deleteVoteComment(item.id, i, 0)">
+                    </comment-vote-item>
+                </div>
+                <div *ngIf="!isCommentApprove">
+                    <comment-vote-item [showAppove]="true" *ngFor="let item of noVoteComments; let i = index;" [class]="'comment-vote-item'" [height]="'auto'" [createdName]="(item.pageUser === undefined || item.pageUser === null) ? item.createdByUsername : (item.createdByUsername === undefined || item.createdByUsername === null) ? '-' : item.pageUser.displayName"
+                        [pageUser]="item.pageUser" [isUserLike]="item.isUserLike" [voteId]="item.voteId" [voteCommentId]="item.id" [comment]="item.comment" [create]="item.createdDate" [likeTotal]="item.likeCount" [dislikeTotal]="item.dislikeCount" [showSubMenu]="(userVoteComment !== undefined && userVoteComment.id === item.id) ? true : false"
+                        (likeVoteCommentBtnClicked)="likeVoteComment(item.id,i,0)" (dislikeVoteCommentBtnClicked)="dislikeVoteComment(item.id,i,0)" (deleteActionBtnClicked)="deleteVoteComment(item.id, i, 0)">
+                    </comment-vote-item>
+                </div>
+            </div>
+            <div class="newcon-vote-and-comment-body-center">
+                <div class="newcon-vote-and-comment-body-center-post">
+                    <div class="newcon-vote-and-comment-body-center-post-head">
+                        <div class="newcon-vote-and-comment-body-center-post-head-left" [ngStyle]="{'color': 'rgba(239,91,109,1)'}">
+                            ควรทบทวนทั้งฉบับ
+                        </div>
+                        <!-- <div class="newcon-vote-and-comment-body-center-post-head-right" [ngStyle]="{'color': 'rgba(239,91,109,1)'}">
+                            {{vote.voteComment.disagree.percent | number: '1.0-2'}}%
+                        </div> -->
+                    </div>
+                    <form action="" id="formsub" method="post" class="form-post-comment" *ngIf="isLogin()">
+                        <div class="div-textarea-post-comment">
+                            <textarea name="disAgreeVoteComment" [(ngModel)]="disAgreeVoteComment" id="textarea" placeholder="แสดงความคิดเห็น ...." class="textarea-post-comment"></textarea>
+                        </div>
+                        <newcon-button-save [isLoading]="isVoteingDisaree" [isRadius]="false" [bgColor]="'rgba(239,91,109,1)'" [text]="'รับฟัง & แสดงความคิดเห็น'" [class]="'button-submit-vote'" (click)="createDisAgreeVoteComment()"></newcon-button-save>
+                    </form>
+                </div>
+                <div *ngIf="isCommentApprove">
+                    <comment-vote-item [showAppove]="(item.approveUserId !== null) ? true : false" *ngFor="let item of disAgreeVoteComments; let i = index;" [class]="'comment-vote-item'" [height]="'auto'" [pageUser]="item.pageUser" [isUserLike]="item.isUserLike" [createdName]="(item.pageUser === undefined || item.pageUser === null) ? item.createdByUsername : (item.createdByUsername === undefined || item.createdByUsername === null) ? '-' : item.pageUser.displayName"
+                        [voteId]="item.voteId" [voteCommentId]="item.id" [comment]="item.comment" [create]="item.createdDate" [likeTotal]="item.likeCount" [dislikeTotal]="item.dislikeCount" [showSubMenu]="(userVoteComment !== undefined && userVoteComment.id === item.id) ? true : false"
+                        (likeVoteCommentBtnClicked)="likeVoteComment(item.id,i,-1)" (dislikeVoteCommentBtnClicked)="dislikeVoteComment(item.id,i,-1)" (deleteActionBtnClicked)="deleteVoteComment(item.id, i, -1)"></comment-vote-item>
+                </div>
+                <div *ngIf="!isCommentApprove">
+                    <comment-vote-item [showAppove]="true" *ngFor="let item of disAgreeVoteComments; let i = index;" [class]="'comment-vote-item'" [height]="'auto'" [pageUser]="item.pageUser" [isUserLike]="item.isUserLike" [createdName]="(item.pageUser === undefined || item.pageUser === null) ? item.createdByUsername : (item.createdByUsername === undefined || item.createdByUsername === null) ? '-' : item.pageUser.displayName"
+                        [voteId]="item.voteId" [voteCommentId]="item.id" [comment]="item.comment" [create]="item.createdDate" [likeTotal]="item.likeCount" [dislikeTotal]="item.dislikeCount" [showSubMenu]="(userVoteComment !== undefined && userVoteComment.id === item.id) ? true : false"
+                        (likeVoteCommentBtnClicked)="likeVoteComment(item.id,i,-1)" (dislikeVoteCommentBtnClicked)="dislikeVoteComment(item.id,i,-1)" (deleteActionBtnClicked)="deleteVoteComment(item.id, i, -1)"></comment-vote-item>
+                </div>
+            </div>
+        </div>
+        <!-- ///////////////@medai//////////////// -->
+        <div class="newcon-vote-and-comment-body-media">
+            <mat-tab-group animationDuration="0ms" mat-align-tabs="center">
+                <mat-tab label="ไม่ควรแก้ไข">
+                    <div class="newcon-vote-and-comment-body-left">
+                        <div class="newcon-vote-and-comment-body-left-post">
+                            <div class="newcon-vote-and-comment-body-left-post-head">
+                                <div class="newcon-vote-and-comment-body-left-post-head-left" [ngStyle]="{'color': 'rgba(93,104,186,1)'}">
+                                    ไม่ควรแก้ไข
+                                </div>
+                                <!-- <div class="newcon-vote-and-comment-body-left-post-head-right" [ngStyle]="{'color': 'rgba(93,104,186,1)'}">
+                                    {{vote.voteComment.agree.percent | number: '1.0-2'}}%
+                                </div> -->
+                            </div>
+                            <form action="" id="formsub" method="post" class="form-post-comment" *ngIf="isLogin()">
+                                <div class="div-textarea-post-comment">
+                                    <textarea name="agreeVoteComment" [(ngModel)]="agreeVoteComment" id="textarea" placeholder="แสดงความคิดเห็น ...." class="textarea-post-comment"></textarea>
+                                </div>
+                                <newcon-button-save [isLoading]="isVoteingAree" [isRadius]="false" [bgColor]="'rgba(0, 123, 255, 1)'" [text]="'รับฟัง & แสดงความคิดเห็น'" [class]="'button-submit-vote'" (click)="createAgreeVoteComment()"></newcon-button-save>
+                            </form>
+                        </div>
+                        <div *ngIf="isCommentApprove">
+                            <comment-vote-item [showAppove]="(item.approveUserId !== null) ? true : false" *ngFor="let item of agreeVoteComments; let i = index;" [class]="'comment-vote-item'" [height]="'auto'" [pageUser]="item.pageUser" [isUserLike]="item.isUserLike" [createdName]="(item.pageUser === undefined || item.pageUser === null) ? item.createdByUsername : (item.createdByUsername === undefined || item.createdByUsername === null) ? '-' : item.pageUser.displayName"
+                                [voteId]="item.voteId" [voteCommentId]="item.id" [comment]="item.comment" [create]="item.createdDate" [likeTotal]="item.likeCount" [dislikeTotal]="item.dislikeCount" [showSubMenu]="(userVoteComment !== undefined && userVoteComment.id === item.id) ? true : false"
+                                (likeVoteCommentBtnClicked)="likeVoteComment(item.id,i,1)" (dislikeVoteCommentBtnClicked)="dislikeVoteComment(item.id,i,1)" (deleteActionBtnClicked)="deleteVoteComment(item.id, i, 1)"></comment-vote-item>
+                        </div>
+                        <div *ngIf="!isCommentApprove">
+                            <comment-vote-item [showAppove]="true" *ngFor="let item of agreeVoteComments; let i = index;" [class]="'comment-vote-item'" [height]="'auto'" [pageUser]="item.pageUser" [isUserLike]="item.isUserLike" [createdName]="(item.pageUser === undefined || item.pageUser === null) ? item.createdByUsername : (item.createdByUsername === undefined || item.createdByUsername === null) ? '-' : item.pageUser.displayName"
+                                [voteId]="item.voteId" [voteCommentId]="item.id" [comment]="item.comment" [create]="item.createdDate" [likeTotal]="item.likeCount" [dislikeTotal]="item.dislikeCount" [showSubMenu]="(userVoteComment !== undefined && userVoteComment.id === item.id) ? true : false"
+                                (likeVoteCommentBtnClicked)="likeVoteComment(item.id,i,1)" (dislikeVoteCommentBtnClicked)="dislikeVoteComment(item.id,i,1)" (deleteActionBtnClicked)="deleteVoteComment(item.id, i, 1)"></comment-vote-item>
+                        </div>
+                    </div>
+                </mat-tab>
+                <mat-tab label="ควรแก้ไขบางประเด็น">
+                    <div class="newcon-vote-and-comment-body-right">
+                        <div class="newcon-vote-and-comment-body-right-post">
+                            <div class="newcon-vote-and-comment-body-right-post-head">
+                                <div class="newcon-vote-and-comment-body-right-post-head-left" [ngStyle]="{'color': 'rgba(38,136,152,1)'}">
+                                    ควรแก้ไขบางประเด็น
+                                </div>
+                                <!-- <div class="newcon-vote-and-comment-body-right-post-head-right" [ngStyle]="{'color': 'rgba(38,136,152,1)'}">
+                                    {{vote.voteComment.noComment.percent | number: '1.0-2'}}%
+                                </div> -->
+                            </div>
+                            <form action="" id="formsub" method="post" class="form-post-comment" *ngIf="isLogin()">
+                                <div class="div-textarea-post-comment">
+                                    <textarea name="noVoteComment" [(ngModel)]="noVoteComment" id="textarea" placeholder="แสดงความคิดเห็น ...." class="textarea-post-comment"></textarea>
+                                </div>
+                                <newcon-button-save [isLoading]="isVoteingNocomment" [isRadius]="false" [bgColor]="'rgba(38,136,152,1)'" [text]="'รับฟัง & แสดงความคิดเห็น'" [class]="'button-submit-vote'" (click)="createNoVoteComment()"></newcon-button-save>
+                            </form>
+                        </div>
+                        <div *ngIf="isCommentApprove">
+                            <comment-vote-item [showAppove]="(item.approveUserId !== null) ? true : false" *ngFor="let item of noVoteComments; let i = index;" [class]="'comment-vote-item'" [height]="'auto'" [createdName]="(item.pageUser === undefined || item.pageUser === null) ? item.createdByUsername : (item.createdByUsername === undefined || item.createdByUsername === null) ? '-' : item.pageUser.displayName"
+                                [pageUser]="item.pageUser" [isUserLike]="item.isUserLike" [voteId]="item.voteId" [voteCommentId]="item.id" [comment]="item.comment" [create]="item.createdDate" [likeTotal]="item.likeCount" [dislikeTotal]="item.dislikeCount"
+                                [showSubMenu]="(userVoteComment !== undefined && userVoteComment.id === item.id) ? true : false" (likeVoteCommentBtnClicked)="likeVoteComment(item.id,i,0)" (dislikeVoteCommentBtnClicked)="dislikeVoteComment(item.id,i,0)" (deleteActionBtnClicked)="deleteVoteComment(item.id, i, 0)"></comment-vote-item>
+                        </div>
+                        <div *ngIf="!isCommentApprove">
+                            <comment-vote-item [showAppove]="true" *ngFor="let item of noVoteComments; let i = index;" [class]="'comment-vote-item'" [height]="'auto'" [createdName]="(item.pageUser === undefined || item.pageUser === null) ? item.createdByUsername : (item.createdByUsername === undefined || item.createdByUsername === null) ? '-' : item.pageUser.displayName"
+                                [pageUser]="item.pageUser" [isUserLike]="item.isUserLike" [voteId]="item.voteId" [voteCommentId]="item.id" [comment]="item.comment" [create]="item.createdDate" [likeTotal]="item.likeCount" [dislikeTotal]="item.dislikeCount"
+                                [showSubMenu]="(userVoteComment !== undefined && userVoteComment.id === item.id) ? true : false" (likeVoteCommentBtnClicked)="likeVoteComment(item.id,i,0)" (dislikeVoteCommentBtnClicked)="dislikeVoteComment(item.id,i,0)" (deleteActionBtnClicked)="deleteVoteComment(item.id, i, 0)"></comment-vote-item>
+                        </div>
+                    </div>
+                </mat-tab>
+                <mat-tab label="ควรทบทวนทั้งฉบับ">
+                    <div class="newcon-vote-and-comment-body-center">
+                        <div class="newcon-vote-and-comment-body-center-post">
+                            <div class="newcon-vote-and-comment-body-center-post-head">
+                                <div class="newcon-vote-and-comment-body-center-post-head-left" [ngStyle]="{'color': 'rgba(239,91,109,1)'}">
+                                    ควรทบทวนทั้งฉบับ
+                                </div>
+                                <!-- <div class="newcon-vote-and-comment-body-center-post-head-right" [ngStyle]="{'color': 'rgba(239,91,109,1)'}">
+                                    {{vote.voteComment.disagree.percent | number: '1.0-2'}}%
+                                </div> -->
+                            </div>
+                            <form action="" id="formsub" method="post" class="form-post-comment" *ngIf="isLogin()">
+                                <div class="div-textarea-post-comment">
+                                    <textarea name="disAgreeVoteComment" [(ngModel)]="disAgreeVoteComment" id="textarea" placeholder="แสดงความคิดเห็น ...." class="textarea-post-comment"></textarea>
+                                </div>
+                                <newcon-button-save [isLoading]="isVoteingDisaree" [isRadius]="false" [bgColor]="'rgba(239,91,109,1)'" [text]="'รับฟัง & แสดงความคิดเห็น'" [class]="'button-submit-vote'" (click)="createDisAgreeVoteComment()"></newcon-button-save>
+                            </form>
+                        </div>
+                        <div *ngIf="isCommentApprove">
+                            <comment-vote-item [showAppove]="(item.approveUserId !== null) ? true : false" *ngFor="let item of disAgreeVoteComments; let i = index;" [class]="'comment-vote-item'" [height]="'auto'" [pageUser]="item.pageUser" [isUserLike]="item.isUserLike" [createdName]="(item.pageUser === undefined || item.pageUser === null) ? item.createdByUsername : (item.createdByUsername === undefined || item.createdByUsername === null) ? '-' : item.pageUser.displayName"
+                                [voteId]="item.voteId" [voteCommentId]="item.id" [comment]="item.comment" [create]="item.createdDate" [likeTotal]="item.likeCount" [dislikeTotal]="item.dislikeCount" [showSubMenu]="(userVoteComment !== undefined && userVoteComment.id === item.id) ? true : false"
+                                (likeVoteCommentBtnClicked)="likeVoteComment(item.id,i,-1)" (dislikeVoteCommentBtnClicked)="dislikeVoteComment(item.id,i,-1)" (deleteActionBtnClicked)="deleteVoteComment(item.id, i, -1)"></comment-vote-item>
+                        </div>
+                        <div *ngIf="!isCommentApprove">
+                            <comment-vote-item [showAppove]="true" *ngFor="let item of disAgreeVoteComments; let i = index;" [class]="'comment-vote-item'" [height]="'auto'" [pageUser]="item.pageUser" [isUserLike]="item.isUserLike" [createdName]="(item.pageUser === undefined || item.pageUser === null) ? item.createdByUsername : (item.createdByUsername === undefined || item.createdByUsername === null) ? '-' : item.pageUser.displayName"
+                                [voteId]="item.voteId" [voteCommentId]="item.id" [comment]="item.comment" [create]="item.createdDate" [likeTotal]="item.likeCount" [dislikeTotal]="item.dislikeCount" [showSubMenu]="(userVoteComment !== undefined && userVoteComment.id === item.id) ? true : false"
+                                (likeVoteCommentBtnClicked)="likeVoteComment(item.id,i,-1)" (dislikeVoteCommentBtnClicked)="dislikeVoteComment(item.id,i,-1)" (deleteActionBtnClicked)="deleteVoteComment(item.id, i, -1)"></comment-vote-item>
+                        </div>
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+        <!-- ///////////////@medai//////////////// -->
+    </div>
+</div>

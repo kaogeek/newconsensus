@@ -1,0 +1,47 @@
+.room-button {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    overflow: initial;
+    border-radius: 6pt;
+    transition: 0.3s;
+    background-color: $color-7;
+    color: $white;
+    width: 185pt;
+    height: 95pt;
+    @include font-size-9-200;
+    cursor: pointer;
+    opacity: 0.3;
+    &.active {
+        opacity: 1 !important;
+    }
+    &:focus {
+        outline: none;
+    }
+    &:hover {
+        opacity: 1 !important; 
+    }
+    >span {
+        white-space: nowrap;
+        width: 90%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    >.room-button-cr {
+        position: absolute;
+        top: -8%;
+        right: -6%;
+        border-radius: 50%;
+        padding: 4% 7%;
+        border: white 2px solid;
+        background-color: $color-7;
+        @include font-size-8-200;
+    }
+    >.room-button-text {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+    }
+}

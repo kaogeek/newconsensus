@@ -1,0 +1,9 @@
+<ng-container *ngIf="isLoadingMore; else elseLoadMore">
+    <mat-spinner class="loading-more"></mat-spinner>
+</ng-container>
+<ng-template #elseLoadMore>
+    <ng-container *ngIf="isShowLoadMore">
+        <div class="newcon-button-load-more" (click)="onClickLoadMore()">
+            ดูเพิ่มเติม</div>
+    </ng-container>
+</ng-template>

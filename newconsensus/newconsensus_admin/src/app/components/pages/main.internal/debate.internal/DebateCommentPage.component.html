@@ -1,0 +1,5 @@
+<div class="admin-tag-page">
+    <div class="main-content">
+        <admin-table-component #table [facade]="debateCommentFacade" [title]="'ความคิดเห็นกระทู้พูดคุย'" [fieldTable]="fieldTable" [actions]="actions" (edit)="clickEditForm($event)" (approve)="clickApprove($event)" (delete)="clickDelete($event)" (back)="clickBack()"></admin-table-component>
+    </div>
+</div>

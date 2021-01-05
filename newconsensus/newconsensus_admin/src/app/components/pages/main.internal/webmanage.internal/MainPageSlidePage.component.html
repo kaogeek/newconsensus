@@ -1,0 +1,115 @@
+<div class="admin-pageslide-page">
+    <mat-drawer-container class="example-container" [hasBackdrop]="true">
+        <mat-drawer #drawer [mode]="'over'" [position]="'end'" [disableClose]="true">
+            <!-- <admin-form-component [data]="dataForm" [fields]="fields" [title]="'ภาพสไลด์หน้าแรก'" (close)="clickCloseDrawer()" (save)="clickSave()"></admin-form-component> -->
+            <div class="form-admin">
+                <div class="wrapper">
+                    <div class="form-header">
+                        <h5 class="title">ภาพสไลด์หน้าแรก</h5>
+                    </div>
+                    <div class="form-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <textarea class="form-control" placeholder="http://example.com" [(ngModel)]="dataForm.imageUrl" [ngModelOptions]="{standalone: true}"></textarea>
+                                        <div *ngIf="dataForm.imageUrl.trim() === '' && submitted" class="alert alert-danger" style="margin-top: 5pt;">
+                                            กรุณาใส่รูปภาพ
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="wrapper-action">
+                        <button mat-raised-button class="btn-close" (click)="clickCloseDrawer()">ปิด</button>
+                        <button mat-raised-button class="btn-delete" *ngIf="dataForm.id" (click)="clickDelete()">ลบ</button>
+                        <button mat-raised-button class="btn-save" (click)="clickSave()">บันทึก</button>
+                    </div>
+                </div>
+            </div>
+        </mat-drawer>
+        <mat-drawer-content>
+            <div class="main-content">
+                <div class="title">ภาพสไลด์หน้าแรก</div>
+                <div class="wrapper-slide" cdkDropListGroup>
+                    <div class="wrapper-slide-active">
+                        <h4>
+                            ใช้งานอยู่
+                            <div class="wrapper-btn">
+                                <button *ngIf="isPreview()" mat-raised-button class="btn-preview" (click)="clickPreview()">
+                                    {{ isShowPreview ? 'ปิดตัวอย่าง' : 'แสดงตัวอย่าง'}}
+                                </button>
+                                <button *ngIf="isEditOrdering()" mat-raised-button class="btn-edit-ordering" (click)="clickSaveOrdering()">บันทึกลำดับ</button>
+                            </div>
+                        </h4>
+
+                        <ng-container *ngIf="!isShowPreview; else elsePreview">
+                            <div class="wraper-list" cdkDropList [cdkDropListData]="slideActive" (cdkDropListDropped)="dropSlide($event)">
+                                <div class="row-slide-active" *ngFor="let slide of slideActive; let index = index;" cdkDrag>
+                                    <span class="label-order">{{index+1}}</span>
+                                    <img class="image" [src]="slide.imageUrl" [alt]="slide.imageUrl">
+                                    <button mat-raised-button class="btn-edit" (click)="clickEditForm(slide, true)">แก้ไข</button>
+                                    <img *cdkDragPreview class="preview-image" [src]="slide.imageUrl" [alt]="slide.imageUrl">
+                                </div>
+                            </div>
+                        </ng-container>
+                        <ng-template #elsePreview>
+                            <div class="swiper-container" [swiper]="config">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide" *ngFor="let slide of slideActive">
+                                        <img src="{{slide.imageUrl}}" alt="" class="swiper-slide-img">
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination"></div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                            </div>
+                        </ng-template>
+                    </div>
+                    <div class="wrapper-slide-list">
+                        <h4>
+                            คลังสไลด์
+                            <button mat-raised-button class="btn-create" (click)="clickCreateForm()">เพิ่มข้อมูล</button>
+                        </h4>
+    
+                        <div class="wraper-list" cdkDropList [cdkDropListData]="slideList" (cdkDropListDropped)="dropSlide($event)">
+                            <div class="slide-list" *ngFor="let slide of slideList; let index = index;" cdkDrag>
+                                <img class="image" [src]="slide.imageUrl" [alt]="slide.imageUrl">
+                                <button mat-raised-button class="btn-edit" (click)="clickEditForm(slide, false)">แก้ไข</button>
+                                <img *cdkDragPreview class="preview-image" [src]="slide.imageUrl" [alt]="slide.imageUrl">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-drawer-content>
+    </mat-drawer-container>
+</div>
+
+<style>
+    .cdk-drag-preview {
+        max-width: 200pt;
+        box-sizing: border-box;
+        border-radius: 4px;
+        box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+        0 8px 10px 1px rgba(0, 0, 0, 0.14),
+        0 3px 14px 2px rgba(0, 0, 0, 0.12);
+    }
+
+    .cdk-drag-placeholder {
+        opacity: 0;
+    }
+
+    .cdk-drag-animating {
+        transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+    }
+
+    .example-box:last-child {
+        border: none;
+    }
+
+    .wrapper-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+        transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+    }
+</style>

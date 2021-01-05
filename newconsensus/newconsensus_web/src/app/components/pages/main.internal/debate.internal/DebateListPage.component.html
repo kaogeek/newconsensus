@@ -1,0 +1,52 @@
+<div class="newcon-list-debate-page">
+    <div class="newcon-vote-head">
+        <div class="newcon-vote-head-content">
+            <div class="newcon-vote-head-content-one">
+                เปิดอิสระในการแสดงความคิดเห็น
+            </div>
+            <div class="newcon-vote-head-content-two">
+                รับฟังความคิดเห็นรัฐธรรมนูญ ๒๕๖๐
+            </div>
+            <div class="newcon-vote-head-content-two" style="display: flex;flex-direction: column;align-items: center;">
+                <ng-container *ngIf="isLogin(); else elseIsLogin">
+                    <newcon-button [link]="'/main/debate/comment/create'" [bgColor]="'#407cff'" [text]="' + สร้างกระทู้พูดคุย'" [class]="'bottom-debate'"></newcon-button>
+                </ng-container>
+                <ng-template #elseIsLogin>
+                    <newcon-button (click)="clickIsLogin()" [bgColor]="'#407cff'" [text]="' + สร้างกระทู้พูดคุย'" [class]="'bottom-debate'"></newcon-button>
+                </ng-template>
+            </div>
+        </div>
+        <img src="../../../../assets/components/pages/DebatePage/debate.png" alt="" class="img-vote-top">
+    </div>
+    <div class="body">
+
+        <div class="all">
+            <div class="autpost">
+                <div style="padding-top: 30px;">
+                    <h1 class="wrapper-breadcrumb">
+                        <a [routerLink]="'/main/debate'">บอร์ดพูดคุย</a> >
+                        <span>{{getTopicHeaderLabel()}}</span>
+                    </h1>
+                    <h4 style="width: 100%">มาร่วมกันแสดงความคิดเห็นต่อรัฐธรรมนูญ ๒๕๖๐</h4>
+                </div>
+                <div style="height:auto;margin-top:30px;">
+                    <ng-container *ngIf="debate.length > 0; else elseTemplate">
+                        <topic-profile [pageUser]="item.pageUser" style="margin: 0px 15px;" [link]="'/main/debate/comment/post/'+item.id+'-'+item.title" [param]="{mode: mode, page: p}" [name]="(item.pageUser === undefined || item.pageUser === null) ?  item.createdByUsername : item.pageUser.displayName"
+                            *ngFor="let item of debate | paginate: { id: 'server', itemsPerPage: searchLimit, currentPage: p, totalItems: total }" [topic]="item.title" [hot]="item.hotScore > showHot" [create]="item.createdDate | date:'dd/MM/yyyy hh:mm:ss'"
+                            [countComment]="item.commentCount"></topic-profile><br>
+                    </ng-container>
+                    <ng-template #elseTemplate>
+                        <div class="wrapper-center-none-list-content">
+                            ไม่พบข้อมูลกระทู้พูดคุย
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="has-text-centered" style="margin: auto;">
+            <newcon-pagination-comment (pageChange)="getDebate($event)" [itemsPerPage]="searchLimit" [currentPage]="p"></newcon-pagination-comment>
+        </div>
+    </div>
+</div>

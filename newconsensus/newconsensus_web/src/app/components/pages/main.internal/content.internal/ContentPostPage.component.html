@@ -1,0 +1,80 @@
+<div class="newcon-content-post-page" *ngIf="contentPost !== undefined">
+    <div class="newcon-content-post-page-img" *ngIf="contentPost.coverImage" [ngStyle]="{'background-image': 'url('+contentPost.coverImage+')'}"></div>
+    <div class="newcon-content-post-page-div">
+        <div class="newcon-content-head">
+            <newcon-button class="newcon-content-head-text-line" [text]="'คลังความรู้'" [link]="'/main/content'"></newcon-button>
+            <newcon-button class="newcon-content-head-text-line-next" [text]="' > '"></newcon-button>
+            <newcon-button *ngIf="isAllpost" class="newcon-content-head-text-line" [text]="'คอนเทนต์ล่าสุด'" [link]="'/main/content/list'" [param]="{mode: 'all'}"></newcon-button>
+            <newcon-button *ngIf="isArticle" class="newcon-content-head-text-line" [text]="'บทสัมภาษณ์'" [link]="'/main/content/list'" [param]="{mode: 'interview'}"></newcon-button>
+            <newcon-button *ngIf="isContent" class="newcon-content-head-text-line" [text]="'บทความ'" [link]="'/main/content/list'" [param]="{mode: 'articles'}"></newcon-button>
+            <newcon-button class="newcon-content-head-text-line-next" [text]="' > '"></newcon-button>
+            <newcon-button class="newcon-content-head-text-line-content" [text]="contentPost.title "></newcon-button>
+            <div class="head-content">
+                {{contentPost.title}}
+            </div>
+        </div>
+        <div class="newcon-content-laout">
+            <ng-container *ngIf="contentPost.videoUrl; else elsePreviewImage">
+                <video-view [videoForm]="videoForm" [url]="contentPost.videoUrl" class="newcon-content-page-layout-video"> </video-view>
+            </ng-container>
+            <ng-template #elsePreviewImage>
+                <img *ngFor="let image of contentPost.pageImages" src="{{image.imageUrl}}" alt="" class="newcon-content-page-layout-img">
+            </ng-template>
+            <div class="layout-rich-content">
+                <span [innerHTML]="contentPost.content"></span>
+                <div class="date-createddate">สร้างวันที่</div>
+                <div class="createddate">{{contentPost.createdDate | date:'dd/MM/yyyy HH:mm:ss'}}</div>
+            </div>
+        </div>
+        <div class="layout-bottom-div">
+            <div class="layout-bottom-div-left">
+                <div class="left-head">
+                    ลิ้งค์ภายนอก :
+                </div>
+            </div>
+            <div class="layout-bottom-div-right">
+                <div class="right-laout-external-video">
+                    <ng-container *ngIf="contentPost.link !== null ; else elseTemplate">
+                        <a href="{{contentPost.link}}" target="_blank" class="video">{{contentPost.link}}</a>
+                    </ng-container>
+                    <ng-template #elseTemplate>
+                        -
+                    </ng-template>
+
+                </div>
+            </div>
+        </div>
+        <div class="layout-bottom-div">
+            <div class="layout-bottom-div-left">
+                <div class="left-head">
+                    แชร์ :
+                </div>
+            </div>
+            <div class="layout-bottom-div-right">
+                <div class="right-laout-share">
+                    <a href="{{linkUrl}}" target="_blank" class="share">
+                        <img src="https://image.flaticon.com/icons/svg/145/145802.svg" alt="Facebook icon" class="icon">
+                    </a>
+                    <!-- twitter share -->
+                    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button share" data-show-count="false" target="_blank">
+                        <img src="https://image.flaticon.com/icons/svg/145/145812.svg" alt="Twitter icon" class="icon">
+                    </a>
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                </div>
+            </div>
+        </div>
+        <div class="layout-bottom-div">
+            <div class="layout-bottom-div-left">
+                <div class="left-head">
+                    ผู้สร้าง :
+                </div>
+            </div>
+            <div class="layout-bottom-div-right">
+                <div class="right-laout-create">
+                    <newcon-button [text]="(contentPost.user === undefined || contentPost.user === null ) ? contentPost.createdByUsername : (contentPost.createdByUsername === undefined || contentPost.createdByUsername === null) ? '-' : contentPost.user.firstName + ' ' + contentPost.user.lastName ">
+                    </newcon-button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<div class="admin-tag-page">
+    <mat-drawer-container class="example-container" [hasBackdrop]="true">
+        <mat-drawer #drawer style="width: 100%;" [mode]="'over'" [position]="'end'" [disableClose]="true">
+            <div class="wrapper-preview-form">
+                <div class="wrapper-preview">
+                    <div class="wrapper-activity">
+                        <div class="wrapper-header-content">
+                            <div class="title">
+                                ข่าวสารและกิจกรรม
+                            </div>
+                            <div class="tagline">
+                                Scientia Potentia Est : Knowledge is Power
+                                <br> {{dataForm.placeName}}
+                            </div>
+                        </div>
+                        <ng-container *ngIf="fieldRadios[0].fieldSelect === 'coverVideoUrl'; else elsePreviewImage">
+                            <admin-video-view [videoForm]="videoForm" [url]="dataForm.videoUrl"></admin-video-view>
+                        </ng-container>
+                        <ng-template #elsePreviewImage>
+                            <img src="{{dataForm.coverImageUrl}}" alt="" class="wrapper-image-video">
+                        </ng-template>
+                        <div class="wrapper-title-content">
+                            <span class="title">{{dataForm.title}}</span>
+                            <div class="content" [innerHTML]="dataForm.content"></div>
+                        </div>
+                    </div>
+                    <iframe class="wrapper-map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3876.154348943891!2d100.404806!3d13.7091!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDQyJzMyLjgiTiAxMDDCsDI0JzI1LjIiRQ!5e0!3m2!1sth!2sth!4v1573193142239!5m2!1sth!2sth"
+                        allowfullscreen=""></iframe>
+                </div>
+                <admin-form-component [data]="dataForm" [fieldRadios]="fieldRadios" [fields]="fields" [title]="'ข่าวสารและกิจกรรม'" (close)="clickCloseDrawer()"
+                    (save)="clickSave()"></admin-form-component>
+            </div>
+        </mat-drawer>
+        <mat-drawer-content>
+            <div class="main-content">
+                <admin-table-component #table [facade]="activityNewsFacade" [title]="'ข่าวสารและกิจกรรม'" [fieldTable]="fieldTable" [actions]="actions"
+                    (create)="clickCreateForm()" (edit)="clickEditForm($event)" (delete)="clickDelete($event)"></admin-table-component>
+            </div>
+        </mat-drawer-content>
+    </mat-drawer-container>
+</div>

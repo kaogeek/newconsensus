@@ -1,0 +1,23 @@
+<div class="newcon-content-activities-page">
+    <div class="detail-content">
+        <div class="detail-header-content">
+            <div class="title">
+                ข่าวสารและกิจกรรม
+            </div>
+            <div class="tagline">
+                ข่าวสารและกิจกรรมล่าสุดของเว็บ
+                <br> {{activitiesData.placeName}}
+            </div>
+        </div>
+        <img src="{{activitiesData.coverImageUrl}}" alt="" class="image">
+        <div class="detail-title-content">
+            <span class="title">{{activitiesData.title}}</span>
+            <span class="content" [innerHTML]="activitiesData.content"></span>
+        </div>
+    </div>
+    <div class="div-map">
+        <iframe class="detail-map"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3874.7356200198296!2d100.51483251541588!3d13.794804790319633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29bf1c8e071c1%3A0xda0e4c7bd949537a!2z4Liq4Lix4Lib4Lib4Liy4Lii4Liw4Liq4Lig4Liy4Liq4LiW4Liy4LiZ!5e0!3m2!1sth!2sth!4v1582786027277!5m2!1sth!2sth"
+            allowfullscreen=""></iframe>
+    </div>
+</div>

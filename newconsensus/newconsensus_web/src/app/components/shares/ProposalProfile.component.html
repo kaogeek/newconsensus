@@ -1,0 +1,24 @@
+<div class="proposal-profile" [ngStyle]="{'background-color': bgColor, 'width': width, 'height': height}"
+    [ngClass]="class">
+    <img class="avatar" src="../../../assets/components/pages/icons8-female-profile-128.png" alt="">
+    <div class="wrapper-profile-all">
+        <div class="wrapper-profile-proposal">
+            <div class="wrapper-proposal">
+                {{proposal}}
+            </div>
+            <div class="wrapper-profile">
+                <span>
+                    <div class="profile-name">
+                        {{name}}
+                    </div>
+                    <div class="comment-created">
+                        {{create}}
+                    </div>
+                </span>
+            </div>
+        </div>
+        <div class="wrapper-proposal-support">
+                <supporter-bar [supported]="supported" [max]="max"></supporter-bar>
+        </div>
+    </div>
+</div>

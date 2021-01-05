@@ -1,0 +1,24 @@
+<div class="newcon-debate-user-page" >
+    <div class="debate-me" [ngStyle]="{'display': dataEditDebate ? 'none' : 'block'}">
+        <div class="debate-head">
+            บอร์ดพูดคุยของฉัน
+        </div>
+        <div class="debate-body">
+            <newcon-paginator-card [isLoading]="isLoadingDebate" [data]="resDebate" (loadMore)="searchDebate()" [pageSize]="pageSize" [isDebateLink]="true" [pageSizeOptions]="pageSizeOptions" [hidePageSize]="true" (clickEditCard)="editCardDebate($event)"></newcon-paginator-card>
+        </div>
+    </div>
+
+    <div class="debate-all" [ngStyle]="{'display': dataEditDebate ? 'none' : 'block'}">
+        <div class="debate-head">
+            คอมเม้นกระทู้อื่นๆ
+        </div>
+        <div class="debate-body">
+            <newcon-paginator-card-comment [typeLink]="'debate'" [isLoading]="isLoadingDebate" [image]="userImage" [data]="resDebateComment" (clickEditCardComment)="editCardDebateComment($event)" (clickDeleteCardComment)="deleteCardDebateComment($event)" (loadMoreComment)="searchDebate()"
+                [hidePageSize]="true" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions">
+            </newcon-paginator-card-comment>
+        </div>
+    </div>
+    <ng-container *ngIf="dataEditDebate">
+        <newcon-user-debate-edit [data]="dataEditDebate" (clickBack)="dataEditDebate = undefined" (clickEditDebate)="saveEditDebate($event)"></newcon-user-debate-edit>
+    </ng-container>
+</div> 

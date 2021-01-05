@@ -1,0 +1,391 @@
+.user-comment {
+  width: 100%;
+  height: 80pt !important;
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: stretch;
+  box-shadow: 0px 1px 3px 0px $shadow-vote-vard;
+  border: 1px solid $shadow-vote-vard;
+  cursor: pointer;
+  opacity: 0.95;
+  transform: scale(1, 1);
+  background: $white;
+  border-radius: 3pt;
+  margin-bottom: 7pt;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    opacity: 1;
+    box-shadow: 0px 1px 3px 0px $shadow-vote-vard-hover;
+  }
+  &:active {
+    opacity: 1;
+    transform: scale(1.01, 1.01);
+  }
+  > .user-comment-left {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 15pt;
+    text-decoration: unset !important;
+    color: unset !important;
+    &:focus {
+      outline: none;
+    }
+    > .avatar {
+      width: 35pt;
+      height: 35pt;
+      border-radius: 50%;
+      margin-right: 10pt;
+      border: 1px solid $bg-color1;
+    }
+    > .div-profile {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      > .topic-name {
+        @include font-size-8-400;
+        word-break: break-word;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        margin-bottom: 5pt;
+      }
+      > .topic-div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        > .profile-name {
+          @include font-size-10-400;
+          color: $color-7;
+          margin-right: 15pt;
+          word-break: break-word;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+        > .date {
+          @include font-size-10-400;
+          color: $secondary;
+          width: 110pt;
+          text-align: right;
+        }
+      }
+    }
+  }
+  > .user-comment-right {
+    width: auto;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    > .user-comment-right-div {
+      width: auto;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      > .icon-star {
+        color: $goldenrod;
+      }
+      span {
+        @include font-size-10-400;
+      }
+    }
+    > .div-icon {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin: 0 10pt;
+      > .icon {
+        font-size: 20pt;
+        cursor: pointer;
+        opacity: 0.7;
+        padding: 10pt;
+        &::selection {
+          background: transparent;
+        }
+        &:hover {
+          opacity: 1;
+        }
+        &:focus {
+          outline: none;
+        }
+      }
+      > .icon-edit {
+        color: $back;
+        &:active {
+          color: $blue;
+        }
+      }
+      > .icon-delete {
+        color: $back;
+        &:active {
+          color: $danger;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $xxlarge) {
+  .user-comment {
+    height: 78pt !important;
+    &:focus {
+    }
+    &:hover {
+    }
+    &:active {
+    }
+    > .user-comment-left {
+      &:focus {
+      }
+      > .avatar {
+      }
+      > .div-profile {
+        > .topic-name {
+        }
+        > .topic-div {
+          > .profile-name {
+          }
+          > .date {
+          }
+        }
+      }
+    }
+    > .user-comment-right {
+      > .user-comment-right-div {
+        > .icon-star {
+        }
+        span {
+        }
+      }
+      > .div-icon {
+        > .icon {
+          &::selection {
+          }
+          &:hover {
+          }
+          &:focus {
+          }
+        }
+        > .icon-edit {
+          &:active {
+          }
+        }
+        > .icon-delete {
+          &:active {
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $xlarge) {
+  .user-comment {
+    height: 75pt !important;
+    &:focus {
+    }
+    &:hover {
+    }
+    &:active {
+    }
+    > .user-comment-left {
+      &:focus {
+      }
+      > .avatar {
+      }
+      > .div-profile {
+        > .topic-name {
+        }
+        > .topic-div {
+          > .profile-name {
+          }
+          > .date {
+          }
+        }
+      }
+    }
+    > .user-comment-right {
+      > .user-comment-right-div {
+        > .icon-star {
+        }
+        span {
+        }
+      }
+      > .div-icon {
+        > .icon {
+          &::selection {
+          }
+          &:hover {
+          }
+          &:focus {
+          }
+        }
+        > .icon-edit {
+          &:active {
+          }
+        }
+        > .icon-delete {
+          &:active {
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $large) {
+  .user-comment {
+    height: 70pt !important;
+    > .user-comment-left {
+      padding: 0 9pt;
+      &:focus {
+      }
+      > .avatar {
+        margin-right: 9pt;
+      }
+    }
+    > .user-comment-right {
+      margin: 0px 7pt;
+      > .user-comment-right-div {
+        > .icon-star {
+        }
+        span {
+        }
+      }
+      > .div-icon {
+        margin-left: 10pt;
+        margin-right: 0;
+        > .icon {
+          font-size: 16pt;
+          padding: 5pt;
+          &::selection {
+          }
+          &:hover {
+          }
+          &:focus {
+          }
+        }
+        > .icon-edit {
+          &:active {
+          }
+        }
+        > .icon-delete {
+          &:active {
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $medium) {
+  .user-comment {
+    height: 65pt !important;
+    > .user-comment-left {
+      padding: 0 7pt;
+      &:focus {
+      }
+      > .avatar {
+        margin-right: 7pt;
+      }
+    }
+    > .user-comment-right {
+      margin: 0px 5pt;
+      > .user-comment-right-div {
+        > .icon-star {
+        }
+        span {
+        }
+      }
+      > .div-icon {
+        > .icon {
+          &::selection {
+          }
+          &:hover {
+          }
+          &:focus {
+          }
+        }
+        > .icon-edit {
+          &:active {
+          }
+        }
+        > .icon-delete {
+          &:active {
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $small) {
+  .user-comment {
+    height: auto !important;
+    flex-direction: column;
+    > .user-comment-left {
+      width: calc(100% - 14pt);
+      padding: 5pt 7pt;
+      &:focus {
+      }
+      > .avatar {
+      }
+    }
+    > .user-comment-right {
+      margin: 5pt 7pt;
+      justify-content: space-between;
+      > .user-comment-right-div {
+        > .icon-star {
+        }
+        span {
+        }
+      }
+      > .div-icon {
+        > .icon {
+          &::selection {
+          }
+          &:hover {
+          }
+          &:focus {
+          }
+        }
+        > .icon-edit {
+          &:active {
+          }
+        }
+        > .icon-delete {
+          &:active {
+          }
+        }
+      }
+    }
+  }
+}
+
+.teb {
+  width: 10px;
+  height: 100%;
+  background-color: #279d90;
+}
+
+.display {
+  display: none;
+}

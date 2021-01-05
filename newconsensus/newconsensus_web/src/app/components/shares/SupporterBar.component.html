@@ -1,0 +1,7 @@
+<div class="supporter-bar" [ngStyle]="{'color': color}" [ngClass]="class">
+    <mat-progress-bar [value]="getValue()">
+    </mat-progress-bar>
+    <span class="label-support">
+        {{supported+" / "+max}}
+    </span>
+</div>

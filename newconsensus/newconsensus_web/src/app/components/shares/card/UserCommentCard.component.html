@@ -1,0 +1,35 @@
+<div class="user-comment" [ngStyle]="{'background-color': bgContent, 'width': width, 'height': height}" [ngClass]="class">
+    <div class="teb" [class.display]="!isVoteTab" [ngStyle]="{'background-color': colorTab}"></div>
+        <a class="user-comment-left" [href]="link" target="_blank">
+        <img src="{{!pageUserInfo.getUserImage(data.pageUser) ? imageUser : pageUserInfo.getUserImage(data.pageUser)}}" alt="" class="avatar">
+        <div class="div-profile">
+            <div class="topic-name">
+                <span [innerHTML]="data.comment"></span>
+            </div>
+            <div class="topic-div">
+                <div class="profile-name">
+                    {{data.pageUser.displayName}}
+                </div>
+                <div class="date">
+                    <span>{{data.createdDate | date:'dd/MM/yyyy HH:mm:ss'}}</span>
+                </div>
+            </div>
+        </div>
+        </a>
+    <div class="user-comment-right">
+        <div class="user-comment-right-div">
+            <i class="material-icons icon-star">
+                star
+            </i>
+            <span>{{data.likeCount}}</span>
+        </div>
+        <div class="div-icon">
+            <i class="material-icons icon icon-edit" (click)="clickEditCardComment.emit(data)">
+                edit
+            </i>
+            <i class="material-icons icon icon-delete" (click)="clickDeleteCardComment.emit(data)">
+                delete
+            </i>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="user-post-card" [ngStyle]="{'background-color': bgContent, 'width': width, 'height': height}" [ngClass]="class">   
+        <a class="user-post-card-left" [href]="link" target="_blank">
+            <div class="topic-name">
+                <span [innerHTML]="data.title"></span>
+            </div>
+            <div class="topic-div">
+                <div class="date">
+                    <span>{{data.createdDate | date:'dd/MM/yyyy HH:mm:ss'}}</span>
+                </div>
+                <div class="total-comment">
+                    <i class="material-icons icon-star">
+                        star
+                    </i>
+                    <span>{{data.commentCount}}</span>
+                </div>
+            </div>
+        </a>
+
+    <div class="user-post-card-right">
+        <i class="material-icons icon icon-edit" *ngIf="isEdit" (click)="clickEditCard.emit(data)">
+            edit
+        </i>
+        <i class="material-icons icon icon-delete" (click)="clickDeleteCard.emit(data)">
+            delete
+        </i>
+    </div>
+</div>

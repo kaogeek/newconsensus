@@ -1,0 +1,30 @@
+<div class="newcon-create-debate-page" *ngIf="isLogin()">
+    <div class="create-h">
+        <span class="create-head-one">สร้างกระทู้พูดคุย</span>
+    </div>
+    <div class="create-input">
+        <div class="input">
+            <mat-form-field>
+                <mat-label>หัวข้อกระทู้</mat-label>
+                <input matInput type="text" placeholder="Title" [ngModel]="title" (ngModelChange)="title=$event">
+                <button mat-button *ngIf="title" matSuffix mat-icon-button aria-label="Clear" (click)="title=''">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+
+            <multiple-select-autocomp [facade]="relateTagFacade" [data]="selectedRelateTag" [field]="'name'"
+                [fieldSearch]="'name'"></multiple-select-autocomp>
+
+            <div class="content-text">
+                <ckeditor style="height: 60pt;" matInput [editor]="Editor" [ngModel]="(content ? content : '')"
+                    (ngModelChange)="content=$event"></ckeditor>
+            </div>
+
+        </div>
+        <div class="input" style="align-items: flex-end;">
+            <newcon-button class="debate-dm" [text]="'สร้างกระทู้พูดคุย'"
+                style="width:170pt;text-align:center;margin-top: 20px;" (click)="createDebate()">
+            </newcon-button>
+        </div>
+    </div>
+</div>

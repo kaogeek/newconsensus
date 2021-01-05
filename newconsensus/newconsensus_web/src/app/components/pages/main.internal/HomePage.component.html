@@ -1,0 +1,584 @@
+<div class="newcon-home-page">
+    <div class="newcon-home-page-slider">
+        <div class="swiper-container" *ngIf="slides !== undefined && slides.length > 0" [swiper]="config" [(index)]="index">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" *ngFor="let slide of slides">
+                    <img src="{{slide}}" alt="" class="swiper-slide-img">
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+    <div class="newcon-home-page-body">
+        <div class="newcon-home-page-room">
+            <div class="newcon-home-page-room-head">
+                <div class="newcon-home-page-room-head-1">
+                    ห้องสำหรับข้อเสนอรัฐธรรมนูญ
+                </div>
+                <div class="newcon-home-page-room-head-2">
+                    สร้างข้อเสนอได้ที่นี่
+                </div>
+            </div>
+            <div class="newcon-home-page-room-body user-select-none">
+                <div class="wrapper-left" [class.vote-close]="!isShowVote">
+                    <div class="room-all" [routerLink]="'/main/proposal'">ห้องทั้งหมด</div>
+                    <mat-paginator #paginator [class.paginater-none]="room.length <= 6" [length]="(room.length)" [pageSize]="pageSize" [hidePageSize]="true">
+                    </mat-paginator>
+                    <ng-container *ngFor="let newconrooms of room; let index = index">
+                        <div class="box" *ngIf="isShow(index)" [routerLink]="newconrooms.routerLink ? newconrooms.routerLink : 'proposal/room/'+newconrooms.id+'-'+newconrooms.name">
+                            <div class="box-inner" [style.backgroundColor]="newconrooms.color">
+                                <a>{{newconrooms.name}}<br></a>
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+                <div *ngIf="isShowVote" class="wrapper-right">
+                    <div class="box">
+                        <div class="box-inner">
+                            <div class="wrapper-right-room" [routerLink]="'/main/vote'">
+                                <div class="wrapper-right-room-content">
+                                    <div class="wrapper-right-room-content-head">
+                                        ห้องสำหรับรับฟังความคิดเห็น
+                                    </div>
+                                    <div class="wrapper-right-room-content-content">
+                                        อนาคตประเทศไทยในมือคุณ
+                                    </div>
+                                </div>
+                                <img src="../../../../assets/components/pages/main.internal/HomePage/roomvote.png" alt="" class="image-room-vote">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="newcon-home-page-talk">
+            <div class="newcon-home-page-talk-room">
+                <div class="room-left-center">
+                    <div *ngIf="isShowDebate" class="newcon-home-page-talk-room-left">
+                        <div class="newcon-home-page-talk-room-left-popular-talk">
+                            <div class="newcon-home-page-talk-room-left-popular-head">
+                                <div class="newcon-home-page-talk-room-left-popular-talk-head">
+                                    บอร์ดพูดคุย
+                                </div>
+                                <div class="newcon-home-page-talk-room-left-popular-talk-content">
+                                    กระทู้ 5 อันดับที่มีผู้คนเข้าดูและเข้าคอมเม้น มากที่สุดในตอนนี้
+                                </div>
+                            </div>
+                            <div class="topic-profile-popular" id="topic-profile-popular-1">
+                                <ng-container *ngIf="resDebateHot.length > 0; else resDebateHotlist">
+                                    <topic-profile [pageUser]="item.pageUser" [link]="'/main/debate/comment/post/'+item.id+'-'+item.title" *ngFor="let item of resDebateHot" [param]="{mode: 'hot'}" [name]="(item.pageUser === undefined || item.pageUser === null) ?  item.createdByUsername : item.pageUser.displayName"
+                                        [topic]="item.title" [create]="item.createdDate | date:'dd/MM/yyyy'" [countComment]="item.commentCount" [class]="'topic-profile-popular-talk'" [hot]="true">
+                                    </topic-profile><br>
+                                    <newcon-button class="btn-list" [link]="'/main/debate/hot'" [param]="{page:1}" [text]="'กระทู้พูดคุยยอดนิยมเพิ่มเติม'"></newcon-button>
+                                </ng-container>
+                                <ng-template #resDebateHotlist>
+                                    <div class="wrapper-center-none-list-content" [ngStyle]="{'height': getHeightNoneListresDebateHot()}">
+                                        ไม่พบข้อมูลบอร์ดพูดคุยยอดนิยม
+                                    </div>
+                                </ng-template>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="newcon-home-page-talk-room-center" [class.max-width]="!isShowDebate">
+                        <div class="newcon-home-page-talk-room-center-popular-talk">
+                            <div class="newcon-home-page-talk-room-center-popular-head">
+                                <div class="newcon-home-page-talk-room-center-popular-talk-head">
+                                    ข้อเสนอรัฐธรรมนูญ
+                                </div>
+                                <div class="newcon-home-page-talk-room-center-popular-talk-content">
+                                    ข้อเสนอ 5 อันดับที่มีผู้คนเข้าดูและเข้าคอมเม้น มากที่สุดในตอนนี้
+                                </div>
+                            </div>
+                            <div class="topic-profile-popular" id="topic-profile-popular-2">
+                                <ng-container *ngIf="resProposalHot.length > 0; else resProposalHotlist">
+                                    <topic-profile [pageUser]="item.pageUser" [link]="'/main/proposal/comment/post/'+item.id+'-'+item.title" [param]="{mode: 'hot', room: roomId}" [topic]="item.title" [name]="(item.pageUser) ? item.pageUser.displayName : '-'" [countComment]="item.commentCount"
+                                        [create]="item.createdDate | date:'dd/MM/yyyy'" *ngFor="let item of resProposalHot" [class]="'topic-profile-popular-talk'" [hot]="true">
+                                    </topic-profile><br>
+                                    <newcon-button class="btn-list" [link]="'/main/proposal/hot'" [param]="{page:1}" [text]="'ข้อเสนอยอดนิยมเพิ่มเติม'"></newcon-button>
+                                </ng-container>
+                                <ng-template #resProposalHotlist>
+                                    <div class="wrapper-center-none-list-content" [ngStyle]="{'height': getHeightNoneListresProposalHot()}">
+                                        ไม่พบข้อมูลข้อเสนอรัฐธรรมนูญยอดนิยม
+                                    </div>
+                                </ng-template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="isShowVote" class="newcon-home-page-talk-room-right">
+                    <div class="newcon-home-page-talk-room-right-popular-talk">
+                        <div class="newcon-home-page-talk-room-right-popular-head">
+                            <div class="newcon-home-page-talk-room-right-popular-head-cop">
+                                <div class="newcon-home-page-talk-room-right-popular-talk-head">
+                                    รับฟังความคิดเห็นรัฐธรรมนูญ
+                                </div>
+                                <div class="newcon-home-page-talk-room-right-popular-talk-content">
+                                    หัวข้อการรับฟังรัฐธรรมนูญที่เปิดอยู่
+                                </div>
+                            </div>
+                            <div class="swiper-slider-cop">
+                                <div class="swiper-button-prev2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 477.175 477.175" style="enable-background:new 0 0 477.175 477.175;" xml:space="preserve" width="512" height="512"
+                                        class="prev">
+                                        <g>
+                                            <g>
+                                                <path
+                                                    d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5   c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z   "
+                                                    data-original="#000000" class=""></path>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="swiper-button-next2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 477.175 477.175" style="enable-background:new 0 0 477.175 477.175;" xml:space="preserve" width="512" height="512"
+                                        class="next">
+                                        <g>
+                                            <g>
+                                                <path
+                                                    d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5   c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z   "
+                                                    data-original="#000000" class="" style="fill:#FFFFFF"
+                                                    data-old_color="#000000"></path>
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="topic-profile-popular" id="topic-profile-popular-3">
+                            <ng-container *ngIf="resVoteHot.length > 0; else resVote">
+                                <div class="swiper-container" *ngIf="resVoteHot !== undefined && resVoteHot.length > 0" [swiper]="config2" (mouseenter)="isStopSwiper(true)" (mouseleave)="isStopSwiper(false)">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide" *ngFor="let item of resVoteHot">
+                                            <img src="{{item.coverImage}}" alt="" class="img-vote">
+                                            <div class="content">
+                                                <div class="content-head">
+                                                    <div class="content-head-top">
+                                                        {{item.title}}
+                                                    </div>
+                                                    <div class="content-data">
+                                                        {{item.createdDate | date}}
+                                                    </div>
+                                                </div>
+                                                <div class="vote-persen">
+                                                    <div class="vote-persen-left">
+                                                        <!-- <div class="newcon-vote-code-left-percent">
+                                                            <span class="newcon-vote-code-left-percent-count" [ngStyle]="{'color': 'rgba(40,161,148,1)'}">{{item.agreePercent
+                                                                | number : '1.2-2'}} %
+                                                            </span>
+                                                            <span class="newcon-vote-code-left-percent-head" [ngStyle]="{'color': 'rgba(40,161,148,1)'}">เห็นด้วย</span>
+                                                        </div>
+                                                        <div class="newcon-vote-code-left-percent">
+                                                            <span class="newcon-vote-code-left-percent-count" [ngStyle]="{'color': 'rgba(249,113,84,1)'}">{{item.disagreePercent
+                                                                | number : '1.2-2'}} %
+                                                            </span>
+                                                            <span class="newcon-vote-code-left-percent-head" [ngStyle]="{'color': 'rgba(249,113,84,1)'}">ไม่เห็นด้วย</span>
+                                                        </div>
+                                                        <div class="newcon-vote-code-left-percent">
+                                                            <span class="newcon-vote-code-left-percent-count" [ngStyle]="{'color': 'rgba(102,207,234,1)'}">{{item.noCommentPercent
+                                                                | number : '1.2-2'}} %
+                                                            </span>
+                                                            <span class="newcon-vote-code-left-percent-head" [ngStyle]="{'color': 'rgba(102,207,234,1)'}">ไม่ออกเสียง</span>
+                                                        </div> -->
+                                                    </div>
+                                                    <div class="vote-persen-right">
+                                                        <newcon-button [class]="'button-vote'" [text]="'รับฟังที่นี่'" [link]="'/main/vote/comment/'+item.id+'-'+item.title" [bgColor]="'#279d90'"></newcon-button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                            </ng-container>
+                            <ng-template #resVote>
+                                <div class="wrapper-center-none-list-content" [ngStyle]="{'height': getHeightNoneListresVote()}">
+                                    ไม่พบข้อมูลรับฟัง
+                                </div>
+                            </ng-template>
+                        </div>
+                    </div>
+                </div>
+
+                <mat-tab-group animationDuration="0ms" mat-align-tabs="center">
+                    <mat-tab label="บอร์ดพูดคุย" *ngIf="isShowDebate">
+                        <div class="newcon-home-page-talk-room-left">
+                            <div class="newcon-home-page-talk-room-left-popular-talk">
+                                <div class="newcon-home-page-talk-room-left-popular-head">
+                                    <div class="newcon-home-page-talk-room-left-popular-talk-head">
+                                        บอร์ดพูดคุย
+                                    </div>
+                                    <div class="newcon-home-page-talk-room-left-popular-talk-content">
+                                        กระทู้พูดคุยยอดนิยม
+                                    </div>
+                                </div>
+                                <div class="topic-profile-popular" id="topic-profile-popular-1">
+                                    <ng-container *ngIf="resDebateHot.length > 0; else resDebateHotlist">
+                                        <topic-profile [pageUser]="item.pageUser" [link]="'/main/debate/comment/post/'+item.id+'-'+item.title" *ngFor="let item of resDebateHot" [param]="{mode: 'hot'}" [name]="(item.pageUser === undefined || item.pageUser === null) ?  item.createdByUsername : item.pageUser.displayName"
+                                            [topic]="item.title" [create]="item.createdDate | date:'dd/MM/yyyy'" [countComment]="item.commentCount" [class]="'topic-profile-popular-talk'" [hot]="true">
+                                        </topic-profile><br>
+                                        <newcon-button class="btn-list" [link]="'/main/debate/hot'" [param]="{page:1}" [text]="'กระทู้พูดคุยยอดนิยมเพิ่มเติม'"></newcon-button>
+                                    </ng-container>
+                                    <ng-template #resDebateHotlist>
+                                        <div class="wrapper-center-none-list-content" [ngStyle]="{'height': getHeightNoneListresDebateHot()}">
+                                            ไม่พบข้อมูลบอร์ดพูดคุยยอดนิยม
+                                        </div>
+                                    </ng-template>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-tab>
+                    <mat-tab label="ข้อเสนอรัฐธรรมนูญ">
+                        <div class="newcon-home-page-talk-room-center">
+                            <div class="newcon-home-page-talk-room-center-popular-talk">
+                                <div class="newcon-home-page-talk-room-center-popular-head">
+                                    <div class="newcon-home-page-talk-room-center-popular-talk-head">
+                                        ข้อเสนอรัฐธรรมนูญ
+                                    </div>
+                                    <div class="newcon-home-page-talk-room-center-popular-talk-content">
+                                        ข้อเสนอยอดนิยม
+                                    </div>
+                                </div>
+                                <div class="topic-profile-popular" id="topic-profile-popular-2">
+                                    <ng-container *ngIf="resProposalHot.length > 0; else resProposalHotlist">
+                                        <topic-profile [pageUser]="item.pageUser" [link]="'/main/proposal/comment/post/'+item.id+'-'+item.title" [param]="{mode: 'hot', room: roomId}" [topic]="item.title" [name]="(item.pageUser) ? item.pageUser.displayName : '-'" [countComment]="item.commentCount"
+                                            [create]="item.createdDate | date:'dd/MM/yyyy'" *ngFor="let item of resProposalHot" [class]="'topic-profile-popular-talk'" [hot]="true">
+                                        </topic-profile><br>
+                                        <newcon-button class="btn-list" [link]="'/main/proposal/hot'" [param]="{page:1}" [text]="'ข้อเสนอยอดนิยมเพิ่มเติม'"></newcon-button>
+                                    </ng-container>
+                                    <ng-template #resProposalHotlist>
+                                        <div class="wrapper-center-none-list-content" [ngStyle]="{'height': getHeightNoneListresProposalHot()}">
+                                            ไม่พบข้อมูลข้อเสนอรัฐธรรมนูญยอดนิยม
+                                        </div>
+                                    </ng-template>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-tab>
+                    <mat-tab label="รับฟังความคิดเห็นรัฐธรรมนูญ" *ngIf="isShowVote">
+                        <div class="newcon-home-page-talk-room-right">
+                            <div class="newcon-home-page-talk-room-right-popular-talk">
+                                <div class="newcon-home-page-talk-room-right-popular-head">
+                                    <div class="newcon-home-page-talk-room-right-popular-head-cop">
+                                        <div class="newcon-home-page-talk-room-right-popular-talk-head">
+                                            รับฟังความคิดเห็นรัฐธรรมนูญ
+                                        </div>
+                                        <div class="newcon-home-page-talk-room-right-popular-talk-content">
+                                            หัวข้อการรับฟังรัฐธรรมนูญที่เปิดโหวดอยู่
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slider-cop">
+                                        <div class="swiper-button-prev2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 477.175 477.175" style="enable-background:new 0 0 477.175 477.175;" xml:space="preserve" width="512" height="512"
+                                                class="prev">
+                                                <g>
+                                                    <g>
+                                                        <path
+                                                            d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5   c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z   "
+                                                            data-original="#000000" class=""></path>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                        <div class="swiper-button-next2">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 477.175 477.175" style="enable-background:new 0 0 477.175 477.175;" xml:space="preserve" width="512" height="512"
+                                                class="next">
+                                                <g>
+                                                    <g>
+                                                        <path
+                                                            d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5   c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z   "
+                                                            data-original="#000000" class="" style="fill:#FFFFFF"
+                                                            data-old_color="#000000"></path>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="topic-profile-popular">
+                                    <ng-container *ngIf="resVoteHot.length > 0; else resVote">
+                                        <div class="swiper-container" *ngIf="resVoteHot !== undefined && resVoteHot.length > 0" [swiper]="config2" (mouseenter)="isStopSwiper(true)" (mouseleave)="isStopSwiper(false)">
+                                            <div class="swiper-wrapper">
+                                                <div class="swiper-slide" *ngFor="let item of resVoteHot">
+                                                    <img src="{{item.coverImage}}" alt="" class="img-vote">
+                                                    <div class="content">
+                                                        <div class="content-head">
+                                                            <div class="content-head-top">
+                                                                {{item.title}}
+                                                            </div>
+                                                            <div class="content-data">
+                                                                {{item.createdDate | date}}
+                                                            </div>
+                                                        </div>
+                                                        <div class="vote-persen">
+                                                            <div class="vote-persen-left">
+                                                                <!-- <div class="newcon-vote-code-left-percent">
+                                                                    <span class="newcon-vote-code-left-percent-count" [ngStyle]="{'color': 'rgba(40,161,148,1)'}">{{item.agreePercent
+                                                                        | number : '1.2-2'}} %
+                                                                    </span>
+                                                                    <span class="newcon-vote-code-left-percent-head" [ngStyle]="{'color': 'rgba(40,161,148,1)'}">เห็นด้วย</span>
+                                                                </div>
+                                                                <div class="newcon-vote-code-left-percent">
+                                                                    <span class="newcon-vote-code-left-percent-count" [ngStyle]="{'color': 'rgba(249,113,84,1)'}">{{item.disagreePercent
+                                                                        | number : '1.2-2'}} %
+                                                                    </span>
+                                                                    <span class="newcon-vote-code-left-percent-head" [ngStyle]="{'color': 'rgba(249,113,84,1)'}">ไม่เห็นด้วย</span>
+                                                                </div>
+                                                                <div class="newcon-vote-code-left-percent">
+                                                                    <span class="newcon-vote-code-left-percent-count" [ngStyle]="{'color': 'rgba(102,207,234,1)'}">{{item.noCommentPercent
+                                                                        | number : '1.2-2'}} %
+                                                                    </span>
+                                                                    <span class="newcon-vote-code-left-percent-head" [ngStyle]="{'color': 'rgba(102,207,234,1)'}">ไม่ออกเสียง</span>
+                                                                </div> -->
+                                                            </div>
+                                                            <div class="vote-persen-right">
+                                                                <newcon-button [class]="'button-vote'" [text]="'รับฟังที่นี่'" [link]="'/main/vote/comment/'+item.id+'-'+item.title" [bgColor]="'#279d90'"></newcon-button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-pagination"></div>
+                                        </div>
+                                    </ng-container>
+                                    <ng-template #resVote>
+                                        <div class="wrapper-center-none-list-content" [ngStyle]="{'height': getHeightNoneListresVote()}">
+                                            ไม่พบข้อมูลรับฟัง
+                                        </div>
+                                    </ng-template>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-tab>
+                </mat-tab-group>
+
+            </div>
+            <div class="newcon-news-and-activities">
+                <div class="newcon-news-and-activities-event-top">
+                    <div class="newcon-news-and-activities-event">
+                        <div class="newcon-news-and-activities-event-head">
+                            ข่าวสารและกิจกรรมล่าสุด
+                        </div>
+                        <div class="newcon-news-and-activities-event-content">
+                            ข่าวสารและกิจกรรมล่าสุดของเว็บ
+                        </div>
+                    </div>
+                    <div class="newcon-news-and-activities-event-butt">
+                        <div class="swiper-button-prev3">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 477.175 477.175" style="enable-background:new 0 0 477.175 477.175;" xml:space="preserve" width="512" height="512"
+                                class="prev">
+                                <g>
+                                    <g>
+                                        <path
+                                            d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5   c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z   "
+                                            data-original="#000000" class=""></path>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                        <div class="swiper-button-next3">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 477.175 477.175" style="enable-background:new 0 0 477.175 477.175;" xml:space="preserve" width="512" height="512"
+                                class="next">
+                                <g>
+                                    <g>
+                                        <path
+                                            d="M360.731,229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1,0s-5.3,13.8,0,19.1l215.5,215.5l-215.5,215.5   c-5.3,5.3-5.3,13.8,0,19.1c2.6,2.6,6.1,4,9.5,4c3.4,0,6.9-1.3,9.5-4l225.1-225.1C365.931,242.875,365.931,234.275,360.731,229.075z   "
+                                            data-original="#000000" class="" style="fill:#FFFFFF"
+                                            data-old_color="#000000"></path>
+                                    </g>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="newcon-news-and-activities-sliders" id="newcon-news-and-activities-sliders">
+                    <ng-container *ngIf="imageUrl.length > 0; else activities">
+                        <div class="swiper-container" *ngIf="imageUrl !== undefined && imageUrl.length > 0" [swiper]="config3">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide" *ngFor="let image of imageUrl">
+                                    <img src="{{image}}" alt="" class="img-news">
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </ng-container>
+                    <ng-template #activities>
+                        <div class="wrapper-center-none-list-content" [ngStyle]="{'height': getHeightNoneListactivities()}">
+                            ไม่พบข้อมูลข่าวสารและกิจกรรมล่าสุด
+                        </div>
+                    </ng-template>
+                </div>
+            </div>
+            <div class="newcon-interview-article">
+                <div *ngIf="isShowinterview" class="newcon-interview-article-left">
+                    <div class="newcon-interview-article-left-div">
+                        <div class="newcon-interview-article-left-top">
+                            <div class="newcon-interview-article-left-head">
+                                บทสัมภาษณ์
+                            </div>
+                            <div class="newcon-interview-article-left-content">
+                                เราได้รวบรวมบทสัมภาษณ์ใหม่ๆ ไว้ที่นี่
+                            </div>
+                        </div>
+                        <div class="newcon-interview" id="contentInterview">
+                            <ng-container *ngIf="contentInterview.length > 0 ; else elseInterview">
+                                <content-card [images]="interview.cover_image" [title]="interview.title" *ngFor="let interview of contentInterview" [content]="interview.description" [width]="'100%'" [height]="''" [colorLink]="'rgba(38,128,235,1)'" [class]="'newcon-article-content'"
+                                    [link]="'/main/content/postpage/'+interview.id+'-'+interview.title" [isAll]="true" [textLink]="'อ่านต่อ...'" [create]="interview.created_date | date:'dd/MM/yyyy hh:mm:ss'">
+                                </content-card><br>
+                                <newcon-button class="btn-list" [link]="'/main/content/list'" [param]="{mode:'interview'}" [text]="'ดูบทสัมภาษณ์เพิ่มเติม'"></newcon-button>
+                            </ng-container>
+                            <ng-template #elseInterview>
+                                <div class="wrapper-center-none-list-content" [ngStyle]="{'height': getHeightNoneListInterView()}">
+                                    ไม่พบข้อมูลบทสัมภาษณ์
+                                </div>
+                            </ng-template>
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="isShowarchive" class="newcon-interview-article-right">
+                    <div class="newcon-interview-article-right-div">
+                        <div class="newcon-interview-article-right-top">
+                            <div class="newcon-interview-article-right-head">
+                                บทความ
+                            </div>
+                            <div class="newcon-interview-article-right-content">
+                                ข่าวสารและบทความต่างๆ ไว้ที่นี่
+                            </div>
+                        </div>
+                        <div class="newcon-article" id="contentArticles">
+                            <ng-container *ngIf="contentArticles.length > 0; else elseArticles">
+                                <content-card [images]="content.cover_image" [title]="content.title" *ngFor="let content of contentArticles" [content]="content.description" [width]="'100%'" [height]="''" [colorLink]="'rgba(38,128,235,1)'" [class]="'newcon-article-content'" [link]="'/main/content/postpage/'+content.id+'-'+content.title"
+                                    [textLink]="'อ่านต่อ...'" [isAll]="true" [create]="content.created_date | date:'dd/MM/yyyy hh:mm:ss'">
+                                </content-card><br>
+                                <newcon-button class="btn-list" [link]="'/main/content/list'" [param]="{mode:'articles'}" [text]="'ดูบทความเพิ่มเติม'"></newcon-button>
+                            </ng-container>
+                            <ng-template #elseArticles>
+                                <div class="wrapper-center-none-list-content" [ngStyle]="{'height': getHeightNoneListArticles()}">
+                                    ไม่พบข้อมูลบทความ
+                                </div>
+                            </ng-template>
+                        </div>
+                    </div>
+                </div>
+                <mat-tab-group animationDuration="0ms" mat-align-tabs="center">
+                    <mat-tab *ngIf="isShowinterview" label="บทสัมภาษณ์">
+                        <div class="newcon-interview-article-left">
+                            <div class="newcon-interview-article-left-div">
+                                <div class="newcon-interview-article-left-top">
+                                    <div class="newcon-interview-article-left-head">
+                                        บทสัมภาษณ์
+                                    </div>
+                                    <div class="newcon-interview-article-left-content">
+                                        เราได้รวบรวมบทสัมภาษณ์ใหม่ๆ ไว้ที่นี่
+                                    </div>
+                                </div>
+                                <div class="newcon-interview">
+                                    <ng-container *ngIf="contentInterview.length > 0; else elseInterview1">
+                                        <content-card [images]="interview.cover_image" [title]="interview.title" *ngFor="let interview of contentInterview" [content]="interview.description" [width]="'100%'" [height]="''" [colorLink]="'rgba(38,128,235,1)'" [class]="'newcon-article-content'"
+                                            [link]="'/main/content/postpage/'+interview.id+'-'+interview.title" [textLink]="'อ่านต่อ...'" [create]="interview.created_date | date:'dd/MM/yyyy hh:mm:ss'" [isAll]="true">
+                                        </content-card><br>
+                                        <newcon-button class="btn-list" [link]="'/main/content/list'" [param]="{mode:'interview'}" [text]="'ดูบทสัมภาษณ์เพิ่มเติม'">
+                                        </newcon-button>
+                                    </ng-container>
+                                    <ng-template #elseInterview1>
+                                        <div class="wrapper-center-none-list-content" [ngStyle]="{'height': getHeightNoneListInterView()}">
+                                            ไม่พบข้อมูลบทสัมภาษณ์
+                                        </div>
+                                    </ng-template>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-tab>
+                    <mat-tab *ngIf="isShowarchive" label="บทความ">
+                        <div class="newcon-interview-article-right">
+                            <div class="newcon-interview-article-right-div">
+                                <div class="newcon-interview-article-right-top">
+                                    <div class="newcon-interview-article-right-head">
+                                        บทความ
+                                    </div>
+                                    <div class="newcon-interview-article-right-content">
+                                        ข่าวสารและบทความต่างๆ ไว้ที่นี่
+                                    </div>
+                                </div>
+                                <div class="newcon-article">
+                                    <ng-container *ngIf="contentArticles.length > 0; else elseArticles1">
+                                        <content-card [images]="content.cover_image" [title]="content.title" *ngFor="let content of contentArticles" [content]="content.description" [width]="'100%'" [height]="''" [colorLink]="'rgba(38,128,235,1)'" [class]="'newcon-article-content'" [link]="'/main/content/postpage/'+content.id+'-'+content.title"
+                                            [textLink]="'อ่านต่อ...'" [create]="content.created_date | date:'dd/MM/yyyy hh:mm:ss'" [isAll]="true">
+                                        </content-card><br>
+                                        <newcon-button class="btn-list" [link]="'/main/content/list'" [param]="{mode:'articles'}" [text]="'ดูบทความเพิ่มเติม'"></newcon-button>
+                                    </ng-container>
+                                    <ng-template #elseArticles1>
+                                        <div class="wrapper-center-none-list-content" [ngStyle]="{'height': getHeightNoneListArticles()}">
+                                            ไม่พบข้อมูลบทความ
+                                        </div>
+                                    </ng-template>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-tab>
+                </mat-tab-group>
+            </div>
+        </div>
+        <div *ngIf="isShowclip" class="newcon-video">
+            <div class="newcon-video-div">
+                <div class="newcon-video-top">
+                    <div class="newcon-video-top-head">
+                        ถ่ายทอดสด และคลิป อื่นๆ
+                    </div>
+                    <div class="newcon-video-top-content">
+                        คุณสามารถชมถ่ายทอดสด และคลิปต่างๆได้ที่นี่
+                    </div>
+                </div>
+                <div class="newcon-video-body" id="newcon-video-body">
+                    <ng-container *ngIf="mainVideo.length > 0; else newconvideo">
+                        <gallery id="mixedExample" [thumbTemplate]="thumbTemplate" [itemTemplate]="itemTemplate">
+                        </gallery>
+
+                        <!-- Add custom template to thumbnails -->
+                        <ng-template #thumbTemplate let-type="type">
+                            <span *ngIf="type === 'youtube'" class="item-type">
+                                <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                            </span>
+                            <span *ngIf="type === 'video'" class="item-type">
+                                <i class="fa fa-video-camera" aria-hidden="true"></i>
+                            </span>
+                        </ng-template>
+
+                        <!-- Add custom template to image items -->
+                        <ng-template #itemTemplate let-index="index" let-type="type" let-data="data" let-currIndex="currIndex">
+                            <span *ngIf="type === 'image' && index === currIndex" [@slideAnimation] class="item-text">
+                                {{data?.title}}
+                            </span>
+                        </ng-template>
+                    </ng-container>
+                    <ng-template #newconvideo>
+                        <div class="wrapper-center-none-list-content" [ngStyle]="{'height': getHeightNoneListArticles()}">
+                            ไม่พบข้อมูลคลิปอื่นๆ
+                        </div>
+                    </ng-template>
+
+                    <!-- <gallery id="mixedExample" [thumbTemplate]="thumbTemplate" [itemTemplate]="itemTemplate"></gallery>
+
+                     Add custom template to thumbnails
+                    <ng-template #thumbTemplate let-type="type">
+                        <span *ngIf="type === 'youtube'" class="item-type">
+                            <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                        </span>
+                        <span *ngIf="type === 'video'" class="item-type">
+                            <i class="fa fa-video-camera" aria-hidden="true"></i>
+                        </span>
+                    </ng-template>
+
+                    Add custom template to image items
+                    <ng-template #itemTemplate let-index="index" let-type="type" let-data="data"
+                        let-currIndex="currIndex">
+                        <span *ngIf="type === 'image' && index === currIndex" [@slideAnimation] class="item-text">
+                            {{data?.title}}
+                        </span>
+                    </ng-template> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

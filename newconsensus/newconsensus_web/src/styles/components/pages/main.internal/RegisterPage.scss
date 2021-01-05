@@ -1,0 +1,514 @@
+.newcon-register-page {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 65pt - 50pt - 34pt);
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    background: $white;
+    overflow-y: auto;
+    >.cops {
+        width: auto;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: calc(450pt + 30pt + 30pt);
+        >.newcon-register-page-body {
+            height: 450pt;
+            min-height: 450pt;
+            width: 760pt;
+            margin: 30pt 0pt;
+            box-shadow: 0px 5px 20px 0px #d3d3d4;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: stretch;
+            >.newcon-register-page-body-left {
+                width: 40%;
+                height: 100%;
+                background-size: cover;
+                background-position: 50% 50%;
+                position: relative;
+                >.newcon-register-page-body-left-drop-color {
+                    width: 100%;
+                    height: 100%;
+                    background: rgb(0, 0, 0, 0.5);
+                }
+            }
+            >.newcon-register-page-body-right {
+                width: calc(60% - 100pt);
+                height: calc(100% - 80pt);
+                padding: 40pt 50pt;
+                overflow-y: auto;
+                >.newcon-register-page-body-right-div {
+                    width: 100%;
+                    height: auto;
+                    >.newcon-register-page-body-right-div-top {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        align-items: flex-end;
+                        width: 100%;
+                        height: 65pt;
+                        text-align: end;
+                        >.newcon-register-page-body-right-div-top-head {
+                            @include font-size-7-400;
+                        }
+                        >.newcon-register-page-body-right-div-top-content {
+                            margin-top: 5pt;
+                            @include font-size-10-200;
+                        }
+                    }
+                    >.newcon-register-page-body-right-div-body {
+                        width: 100%;
+                        height: calc(100% - 65pt - 15pt);
+                        margin-top: 15pt;
+                        >.newcon-register-page-body-right-div-body-register {
+                            height: auto;
+                            form {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+                                align-items: stretch;
+                                height: auto;
+                                >.form-group-div {
+                                    >.form-group {
+                                        display: flex;
+                                        justify-content: flex-start;
+                                        align-items: center;
+                                        width: 100%;
+                                        margin-bottom: 7pt;
+                                        height: 35pt;
+                                        >.form-label {
+                                            @include font-size-9-300;
+                                            width: 95pt;
+                                            max-width: 95pt;
+                                            min-width: 95pt;
+                                            padding-top: calc(0.375rem + 1px);
+                                            padding-bottom: calc(0.375rem + 1px);
+                                            line-height: 1.5;
+                                            text-align: right;
+                                            margin-right: 20pt;
+                                        }
+                                        >.div-add-image {
+                                            cursor: pointer;
+                                            width: 45pt;
+                                            height: 35pt;
+                                            border: 0.5px dashed $shadow-vote-vard;
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+                                            position: relative;
+                                            >.image-crop {
+                                                position: absolute;
+                                                top: 1pt;
+                                                left: 1pt;
+                                                right: 1pt;
+                                                bottom: 1pt;
+                                                width: calc(35pt - 4pt);
+                                                height: calc(35pt - 4pt);
+                                                margin: 0 5pt;
+                                                border-radius: 50%;
+                                                border: 1pt solid $white;
+                                            }
+                                            >.add-photo {
+                                                font-size: 24pt;
+                                            }
+                                        }
+                                        >.form-col {
+                                            width: calc(100% - 95pt - 10pt);
+                                            position: relative;
+                                            >.input-text {
+                                                display: block;
+                                                width: calc(100% - 15pt);
+                                                height: 20pt;
+                                                padding: 2pt 7pt;
+                                                background-color: $white;
+                                                background-clip: padding-box;
+                                                border: 1px solid #ced4da;
+                                                border-radius: 0.25rem;
+                                                @include font-size-9-200;
+                                                transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+                                            }
+                                            >.gender-flex {
+                                                display: flex;
+                                                flex-wrap: wrap;
+                                                >.div-gender {
+                                                    display: flex;
+                                                    flex-direction: row;
+                                                    justify-content: flex-start;
+                                                    align-items: center;
+                                                    width: 100%;
+                                                    mat-radio-group {
+                                                        display: flex;
+                                                        flex-direction: row;
+                                                        justify-content: flex-start;
+                                                        flex-wrap: wrap;
+                                                        align-items: center;
+                                                        align-content: center;
+                                                        width: 100%;
+                                                        mat-radio-button {
+                                                            margin-right: 0pt;
+                                                            margin-left: 0pt;
+                                                            width: 70px;
+                                                            >.mat-radio-label {
+                                                                >.mat-radio-container {
+                                                                    width: 16px;
+                                                                    height: 16px;
+                                                                    >.mat-radio-outer-circle {
+                                                                        border: 1px solid $back;
+                                                                        width: 16px;
+                                                                        height: 16px;
+                                                                    }
+                                                                    >.mat-radio-inner-circle {
+                                                                        background-color: $back;
+                                                                        width: 16px;
+                                                                        height: 16px;
+                                                                    }
+                                                                    >.mat-radio-ripple {
+                                                                        >.mat-ripple-element {
+                                                                            background: transparent;
+                                                                        }
+                                                                    }
+                                                                }
+                                                                >.mat-radio-label-content {
+                                                                    @include font-size-9-200;
+                                                                    padding-left: 5px;
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            mat-form-field {
+                                                @include font-size-9-200;
+                                                width: 100%;
+                                            }
+                                        }
+                                    }
+                                }
+                                >.input-submit[type="submit"] {
+                                    width: auto;
+                                    background-color: $baendcolor;
+                                    color: $white;
+                                    padding: 6pt 20pt;
+                                    border: none;
+                                    border-radius: 50px;
+                                    cursor: pointer;
+                                    opacity: 0.95;
+                                    @include font-size-10-300;
+                                    margin-left: auto;
+                                    margin-right: 0px;
+                                    margin-bottom: 20px;
+                                    margin-top: 10pt;
+                                    &:hover {
+                                        opacity: 1;
+                                    }
+                                    &:focus {
+                                        outline: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $xxlarge) {
+    .newcon-register-page {
+        height: calc(100vh - 60pt - 45pt - 33pt);
+        >.cops {
+            min-height: calc(390pt + 20pt + 20pt);
+            >.newcon-register-page-body {
+                height: 390pt;
+                min-height: 390pt;
+                width: 660pt;
+                margin: 20pt 0pt;
+                >.newcon-register-page-body-left {
+                    >.newcon-register-page-body-left-drop-color {}
+                }
+                >.newcon-register-page-body-right {
+                    width: calc(60% - 60pt);
+                    height: calc(100% - 40pt);
+                    padding: 20pt 30pt;
+                    >.newcon-register-page-body-right-div {
+                        >.newcon-register-page-body-right-div-top {
+                            height: 60pt;
+                            >.newcon-register-page-body-right-div-top-head {}
+                            >.newcon-register-page-body-right-div-top-content {}
+                        }
+                        >.newcon-register-page-body-right-div-body {
+                            width: 100%;
+                            height: calc(100% - 60pt - 10pt);
+                            margin-top: 10pt;
+                            >.newcon-register-page-body-right-div-body-register {
+                                form {
+                                    >.form-group-div {
+                                        >.form-group {
+                                            margin-bottom: 5pt;
+                                            >.form-label {}
+                                            >.div-add-image {
+                                                >.image-crop {}
+                                                >.add-photo {}
+                                            }
+                                            >.form-col {
+                                                >.input-text {}
+                                                >.gender-flex {
+                                                    >.div-gender {}
+                                                }
+                                                mat-form-field {}
+                                            }
+                                        }
+                                    }
+                                    >.input-submit[type="submit"] {}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $xlarge) {
+    .newcon-register-page {
+        height: calc(100vh - 55pt - 40pt - 32pt);
+        >.cops {
+            min-height: calc(380pt + 20pt + 20pt);
+            >.newcon-register-page-body {
+                height: 380pt;
+                min-height: 380pt;
+                width: 600pt;
+                >.newcon-register-page-body-left {
+                    >.newcon-register-page-body-left-drop-color {}
+                }
+                >.newcon-register-page-body-right {
+                    >.newcon-register-page-body-right-div {
+                        >.newcon-register-page-body-right-div-top {
+                            >.newcon-register-page-body-right-div-top-head {}
+                            >.newcon-register-page-body-right-div-top-content {}
+                        }
+                        >.newcon-register-page-body-right-div-body {
+                            >.newcon-register-page-body-right-div-body-register {
+                                form {
+                                    >.form-group-div {
+                                        >.form-group {
+                                            >.form-label {}
+                                            >.div-add-image {
+                                                >.image-crop {}
+                                                >.add-photo {}
+                                            }
+                                            >.form-col {
+                                                >.input-text {}
+                                                >.gender-flex {
+                                                    >.div-gender {}
+                                                }
+                                                mat-form-field {}
+                                            }
+                                        }
+                                    }
+                                    >.input-submit[type="submit"] {}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $large) {
+    .newcon-register-page {
+        // height: calc(100vh - 50pt - 40pt - 31pt);
+        height: auto;
+        >.cops {
+            min-height: unset;
+            margin-top: 0;
+            >.newcon-register-page-body {
+                height: auto;
+                width: 80vw;
+                >.newcon-register-page-body-left {
+                    display: none;
+                    >.newcon-register-page-body-left-drop-color {}
+                }
+                >.newcon-register-page-body-right {
+                    width: calc(100% - 40pt);
+                    height: auto;
+                    overflow: hidden;
+                    padding: 20pt;
+                    >.newcon-register-page-body-right-div {
+                        >.newcon-register-page-body-right-div-top {
+                            height: 60pt;
+                            >.newcon-register-page-body-right-div-top-head {}
+                            >.newcon-register-page-body-right-div-top-content {
+                                height: auto;
+                            }
+                        }
+                        >.newcon-register-page-body-right-div-body {
+                            height: auto;
+                            >.newcon-register-page-body-right-div-body-register {
+                                form {
+                                    height: auto;
+                                    >.form-group-div {
+                                        >.form-group {
+                                            margin-bottom: 5pt;
+                                            height: auto;
+                                            >.form-label {
+                                                width: 85pt;
+                                                max-width: 85pt;
+                                                min-width: 85pt;
+                                                padding-top: calc(0.3rem + 1px);
+                                                padding-bottom: calc(0.3rem + 1px);
+                                                margin-right: 10pt;
+                                                height: auto;
+                                            }
+                                            >.div-add-image {
+                                                width: 42pt;
+                                                height: 32pt;
+                                                >.image-crop {
+                                                    width: calc(32pt - 4pt);
+                                                    height: calc(32pt - 4pt);
+                                                }
+                                                >.add-photo {}
+                                            }
+                                            >.form-col {
+                                                >.input-text {}
+                                                >.gender-flex {
+                                                    >.div-gender {}
+                                                }
+                                                mat-form-field {}
+                                            }
+                                        }
+                                    }
+                                    >.input-submit[type="submit"] {}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $medium) {
+    .newcon-register-page {
+        // height: calc(100vh - 40pt - 35pt - 60pt);
+        >.cops {
+            >.newcon-register-page-body {
+                width: 90vw;
+                >.newcon-register-page-body-left {
+                    >.newcon-register-page-body-left-drop-color {}
+                }
+                >.newcon-register-page-body-right {
+                    width: calc(100% - 40pt);
+                    padding: 20pt;
+                    >.newcon-register-page-body-right-div {
+                        >.newcon-register-page-body-right-div-top {
+                            align-items: flex-start;
+                            width: 100%;
+                            height: 60pt;
+                            text-align: left;
+                            >.newcon-register-page-body-right-div-top-head {}
+                            >.newcon-register-page-body-right-div-top-content {}
+                        }
+                        >.newcon-register-page-body-right-div-body {
+                            >.newcon-register-page-body-right-div-body-register {
+                                form {
+                                    >.form-group-div {
+                                        >.form-group {
+                                            margin-bottom: 5pt;
+                                            >.form-label {
+                                                width: 70pt;
+                                                max-width: 70pt;
+                                                min-width: 70pt;
+                                            }
+                                            >.div-add-image {
+                                                >.image-crop {}
+                                                >.add-photo {}
+                                            }
+                                            >.form-col {
+                                                width: calc(100% - 70pt - 10pt);
+                                                >.input-text {}
+                                                >.gender-flex {
+                                                    >.div-gender {}
+                                                }
+                                                mat-form-field {}
+                                            }
+                                        }
+                                    }
+                                    >.input-submit[type="submit"] {}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $small) {
+    .newcon-register-page {
+        // height: calc(100vh - 40pt - 35pt - 55pt);
+        >.cops {
+            //   min-height: calc(390pt + 10pt + 10pt);
+            >.newcon-register-page-body {
+                width: 91vw;
+                margin: 10pt 0pt;
+                >.newcon-register-page-body-left {
+                    >.newcon-register-page-body-left-drop-color {
+                        width: 100%;
+                        height: 100%;
+                        background: rgb(0, 0, 0, 0.5);
+                    }
+                }
+                >.newcon-register-page-body-right {
+                    width: calc(100% - 20pt);
+                    height: calc(100% - 20pt);
+                    padding: 10pt;
+                    >.newcon-register-page-body-right-div {
+                        >.newcon-register-page-body-right-div-top {
+                            >.newcon-register-page-body-right-div-top-head {}
+                            >.newcon-register-page-body-right-div-top-content {}
+                        }
+                        >.newcon-register-page-body-right-div-body {
+                            >.newcon-register-page-body-right-div-body-register {
+                                form {
+                                    >.form-group-div {
+                                        >.form-group {
+                                            >.form-label {
+                                                width: 65pt;
+                                                max-width: 65pt;
+                                                min-width: 65pt;
+                                            }
+                                            >.div-add-image {
+                                                >.image-crop {}
+                                                >.add-photo {}
+                                            }
+                                            >.form-col {
+                                                width: calc(100% - 65pt - 10pt);
+                                                >.input-text {}
+                                                >.gender-flex {
+                                                    >.div-gender {}
+                                                }
+                                                mat-form-field {}
+                                            }
+                                        }
+                                    }
+                                    >.input-submit[type="submit"] {}
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,77 @@
+<div class="newcon-profile-user-page">
+    <div class="newcon-profile-user-page-left" [class.active]="isProfileMenu">
+        <i class="material-icons bar-left-icon" (click)="clickprofilemenu()" [class.active]="isProfileMenu">
+            arrow_forward_ios
+        </i>
+        <div class="newcon-profile-user-page-left-div">
+            <div class="newcon-profile-user">
+                <img [src]="getCurrentUserImage()" alt="" class="image-profile">
+                <ng-container *ngIf="profileUser">
+                    <span class="profile-name"
+                        *ngIf="profileUser.displayName !== undefined && profileUser.displayName !== null">{{profileUser.displayName }}</span>
+                    <span class="profile-email">{{profileUser.email}}</span>
+                </ng-container>
+                <!-- <div class="newcon-profile-user-position">
+                    <div class="text-user-position">
+                        ตำแหน่ง
+                    </div>
+                    <div class="user-position">
+                        <div class="button-position" [ngStyle]="{'color': '#FFFFFF' , 'background' : '#279d90'}">
+                            คนธรรมดา
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <div class="total-amount" *ngIf="profileUser">
+                <div class="total-amount-col">
+                    <div class="total-div">
+                        <span class="total-text">Lv. </span> 
+                        <span class="total-text"
+                            *ngIf="profileUser.level !== undefined && profileUser.level !== null">{{profileUser.level}}</span>
+                        <span class="span-text">ระดับ</span>
+                    </div>
+                </div>
+                <div class="total-amount-col">
+                    <div class="total-div" title="{{data}}">
+                        <span class="total-text">{{profileUser.currentExp | shortNumber}}</span>
+                        <span class="span-text">EXP</span>
+                    </div>
+                </div>
+                <!-- <div class="total-amount-col">
+                    <div class="total-div" title="{{data}}">
+                        <span class="total-text">{{getAllCount() | shortNumber}}</span>
+                        <span class="span-text">กระทู้</span>
+                    </div>
+                </div> -->
+            </div>
+            <div class="profile-user-page-list">
+                <p class="newcon-profile-user-room">
+                    <span class="comment-head" [routerLink]="'/main/profile/edit'"
+                        [routerLinkActive]="['active']">ข้อมูลส่วนตัว</span>
+                    <span class="comment-total"></span>
+                </p>
+                <p class="newcon-profile-user-room" *ngIf="isShowDebate">
+                    <span class="comment-head" [routerLink]="'/main/profile/debateuser'"
+                        [routerLinkActive]="['active']">บอร์ดพูดคุย</span>
+                    <span class="comment-total" title="{{debateCount}}">{{debateCount | shortNumber}}</span>
+                </p>
+                <p class="newcon-profile-user-room">
+                    <!-- <span class="comment-head" [routerLink]="'/main/profile/proposaluser'"
+                        [routerLinkActive]="['active']">การข้อเสนอรัฐธรรมนูญ</span>
+                    <span class="comment-total" title="{{proposalCount}}">{{proposalCount | shortNumber}}</span> -->
+                    <span class="comment-head" [routerLink]="'/main/profile/proposaluser'"
+                        [routerLinkActive]="['active']">การรับฟังความคิดเห็น</span>
+                    <span class="comment-total" title="{{proposalCount}}">{{proposalCount | shortNumber}}</span>
+                </p>
+                <p class="newcon-profile-user-room" *ngIf="isShowVote">
+                    <span class="comment-head" [routerLink]="'/main/profile/votecommentuser'"
+                        [routerLinkActive]="['active']">การแสดงความคิดเห็น</span>
+                    <span class="comment-total" title="{{voteCount}}">{{voteCount | shortNumber}}</span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="newcon-profile-user-page-right">
+        <router-outlet></router-outlet>
+    </div>
+</div>

@@ -1,0 +1,254 @@
+.newcon-vote-page {
+  position: relative;
+  > .newcon-vote-head {
+    width: 100%;
+    background: linear-gradient(0deg, $bg-color2 50%, $white 50%);
+    position: relative;
+    > .newcon-vote-head-content {
+      position: absolute;
+      top: 5vw;
+      left: 0;
+      right: 0;
+      bottom: auto;
+      margin: auto;
+      text-align: center;
+      padding-left: 10%;
+      padding-right: 10%;
+      > .newcon-vote-head-content-one {
+        @include font-size-6-400;
+      }
+      > .newcon-vote-head-content-two {
+        @include font-size-4-400;
+      }
+    }
+    > .img-vote-top {
+      width: 100%;
+    }
+  }
+  > .newcon-vote-blog {
+    height: auto;
+    width: 100%;
+    background: $bg-color2;
+
+    > .newcon-vote-blog-body {
+      width: 91%;
+      margin: auto;
+      padding: 60pt 0;
+      > .newcon-vote-blog-head {
+        padding: 0 10px;
+        margin-bottom: 10pt;
+
+        > .newcon-vote-blog-head-label {
+          @include font-size-7-400;
+        }
+        > .newcon-vote-blog-head-caption {
+          margin-top: 1pt;
+          min-height: 40px;
+          @include font-size-10-200;
+          color: $color-11;
+        }
+      }
+      > .newcon-vote-blog-body-card {
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        align-content: flex-start;
+      }
+
+      > .mat-paginator {
+        background: transparent !important;
+        margin-top: 15pt;
+      }
+    }
+  }
+}
+
+@media (max-width: $xxlarge) {
+  .newcon-vote-page {
+    > .newcon-vote-head {
+      > .newcon-vote-head-content {
+        top: 7vw;
+        > .newcon-vote-head-content-one {
+        }
+        > .newcon-vote-head-content-two {
+        }
+      }
+      > .img-vote-top {
+        margin-top: 50pt;
+      }
+    }
+    > .newcon-vote-blog {
+      > .newcon-vote-blog-body {
+        width: 92%;
+        padding: 40pt 0;
+        > .newcon-vote-blog-head {
+
+          > .newcon-vote-blog-head-label {
+          }
+          > .newcon-vote-blog-head-caption {
+          }
+        }
+        > .newcon-vote-blog-body-card {
+        }
+
+        > .mat-paginator {
+          margin-top: 13pt;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $xlarge) {
+  .newcon-vote-page {
+    > .newcon-vote-head {
+      > .newcon-vote-head-content {
+        top: 9vw;
+        > .newcon-vote-head-content-one {
+        }
+        > .newcon-vote-head-content-two {
+        }
+      }
+      > .img-vote-top {
+        margin-top: 100pt;
+      }
+    }
+    > .newcon-vote-blog {
+      > .newcon-vote-blog-body {
+        width: 93%;
+        padding: 35pt 0;
+
+        > .newcon-vote-blog-head {
+          
+          > .newcon-vote-blog-head-label {
+          }
+          > .newcon-vote-blog-head-caption {
+          }
+        }
+        > .newcon-vote-blog-body-card {
+        }
+
+        > .mat-paginator {
+          margin-top: 11pt;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $large) {
+  .newcon-vote-page {
+    > .newcon-vote-head {
+      > .newcon-vote-head-content {
+        > .newcon-vote-head-content-one {
+        }
+        > .newcon-vote-head-content-two {
+        }
+      }
+      > .img-vote-top {
+        margin-top: 130pt;
+      }
+    }
+    > .newcon-vote-blog {
+      > .newcon-vote-blog-body {
+        width: 94%;
+        padding: 30pt 0;
+
+        > .newcon-vote-blog-head {
+
+          > .newcon-vote-blog-head-label {
+          }
+          > .newcon-vote-blog-head-caption {
+          }
+        }
+        > .newcon-vote-blog-body-card {
+        }
+
+        > .mat-paginator {
+          margin-top: 9pt;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $medium) {
+  .newcon-vote-page {
+    > .newcon-vote-head {
+      background: linear-gradient(0deg, $bg-color2 5%, $white 0%);
+      > .newcon-vote-head-content {
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        margin: auto;
+        padding-top: 50pt;
+        padding-left: 7%;
+        padding-right: 7%;
+        > .newcon-vote-head-content-one {
+        }
+        > .newcon-vote-head-content-two {
+        }
+      }
+      > .img-vote-top {
+        margin-top: auto;
+      }
+    }
+    > .newcon-vote-blog {
+      > .newcon-vote-blog-body {
+        width: 95%;
+        padding: 20pt 0;
+
+        > .newcon-vote-blog-head {
+          
+          > .newcon-vote-blog-head-label {
+          }
+          > .newcon-vote-blog-head-caption {
+          }
+        }
+        > .newcon-vote-blog-body-card {
+        }
+
+        > .mat-paginator {
+          margin-top: 7pt;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $small) {
+  .newcon-vote-page {
+    > .newcon-vote-head {
+      > .newcon-vote-head-content {
+        > .newcon-vote-head-content-one {
+        }
+        > .newcon-vote-head-content-two {
+        }
+      }
+      > .img-vote-top {
+      }
+    }
+    > .newcon-vote-blog {
+      > .newcon-vote-blog-body {
+        width: 96%;
+
+        > .newcon-vote-blog-head {
+          > .newcon-vote-blog-head-label {
+          }
+          > .newcon-vote-blog-head-caption {
+          }
+        }
+        > .newcon-vote-blog-body-card {
+        }
+
+        > .mat-paginator {
+        }
+      }
+    }
+  }
+}

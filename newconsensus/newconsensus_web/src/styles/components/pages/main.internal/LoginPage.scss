@@ -1,0 +1,610 @@
+.newcon-login-page {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 65pt - 50pt - 34pt);
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  background: $white;
+  overflow-y: auto;
+  > .cops {
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(450pt + 30pt + 30pt);
+    > .newcon-login-page-body {
+      height: 450pt;
+      min-height: 450pt;
+      width: 760pt;
+      margin: 30pt 0pt;
+      box-shadow: 0px 5px 20px 0px #d3d3d4;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: stretch;
+      > .newcon-login-page-body-left {
+        width: 40%;
+        height: 100%;
+        background-size: cover;
+        background-position: 50% 50%;
+        position: relative;
+        > .newcon-login-page-body-left-drop-color {
+          width: 100%;
+          height: 100%;
+          background: rgb(0, 0, 0, 0.5);
+        }
+      }
+      > .newcon-login-page-body-right {
+        width: calc(60% - 100pt);
+        height: calc(100% - 80pt);
+        padding: 40pt 50pt;
+        > .newcon-login-page-body-right-div {
+          width: 100%;
+          height: 100%;
+          > .newcon-login-page-body-right-div-top {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-end;
+            width: 100%;
+            height: 65pt;
+            text-align: end;
+            > .newcon-login-page-body-right-div-top-head {
+              @include font-size-7-400;
+            }
+            > .newcon-login-page-body-right-div-top-content {
+              margin-top: 5pt;
+              @include font-size-10-200;
+            }
+          }
+          > .newcon-login-page-body-right-div-body {
+            width: 100%;
+            height: calc(100% - 65pt - 15pt);
+            margin-top: 15pt;
+            > .newcon-login-page-body-right-div-body-login {
+              > .newcon-login-page-body-right-div-body-login-title {
+                @include font-size-8-300;
+              }
+              > .newcon-login-page-body-right-div-body-login-to {
+                margin-top: 15pt;
+
+                > .butt-login {
+                  position: relative;
+                  overflow: hidden;
+                  width: 100%;
+                  height: 34pt;
+                  cursor: pointer;
+                  opacity: 0.95;
+                  border-radius: 5px;
+                  &:hover {
+                    opacity: 1;
+                  }
+                }
+
+                > .regis_2 {
+                  background-color:#EFEFEF !important;
+                  margin-top: 10px;
+
+                  &:focus{
+                    outline: none;
+                  }
+
+                  >.butt-facebook-right{
+
+                    >.title{
+                      color: $back !important;
+                    }
+                  }
+                }
+
+                > .butt-facebook {
+                  background: #4267b2;
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: flex-start;
+                  align-items: center;
+                  > .butt-facebook-left {
+                    width: 34pt;
+                    height: 34pt;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    > .icon-facebook {
+                      width: 23pt;
+                      height: 23pt;
+                    }
+                  }
+                  > .butt-facebook-right {
+                    width: calc(100% - 34pt - 5pt);
+                    padding: 0 5pt;
+                    > .title {
+                      color: $white;
+                      @include font-size-9-300;
+                      display: -webkit-box;
+                      -webkit-line-clamp: 1;
+                      -webkit-box-orient: vertical;
+                      overflow: hidden;
+                      &::selection {
+                        background: transparent;
+                      }
+                    }
+                  }
+                }
+                > .butt-email {
+                  background: #313f40;
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: flex-start;
+                  align-items: center;
+                  > .butt-facebook-left {
+                    width: 34pt;
+                    height: 34pt;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    > .icon-facebook {
+                      width: 23pt;
+                      height: 23pt;
+                    }
+                  }
+                  > .butt-facebook-right {
+                    width: calc(100% - 34pt - 5pt);
+                    padding: 0 5pt;
+                    > .title {
+                      color: $white;
+                      @include font-size-9-300;
+                      display: -webkit-box;
+                      -webkit-line-clamp: 1;
+                      -webkit-box-orient: vertical;
+                      overflow: hidden;
+                      &::selection {
+                        background: transparent;
+                      }
+                    }
+                  }
+                }
+                > .butt-login-button {
+                  background: #bd081c;
+                  display: flex;
+                  -webkit-box-orient: horizontal;
+                  -webkit-box-direction: normal;
+                  flex-direction: row;
+                  justify-content: center;
+                  align-items: center;
+                  > .butt-facebook-left {
+                    width: 34pt;
+                    height: 34pt;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    > .icon-facebook {
+                      width: 23pt;
+                      height: 23pt;
+                    }
+                  }
+                  > .butt-facebook-right {
+                    width: auto;
+                    padding: 0 5pt;
+                    > .title {
+                      color: $white;
+                      @include font-size-9-300;
+                      display: -webkit-box;
+                      -webkit-line-clamp: 1;
+                      -webkit-box-orient: vertical;
+                      overflow: hidden;
+                      &::selection {
+                        background: transparent;
+                      }
+                    }
+                  }
+                }
+                > .or {
+                  background: #b3321b00;
+                  display: flex;
+                  -webkit-box-orient: horizontal;
+                  -webkit-box-direction: normal;
+                  flex-direction: row;
+                  justify-content: center;
+                  align-items: center;
+                  cursor: default;
+                  > .butt-facebook-left {
+                    width: 34pt;
+                    height: 34pt;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    > .icon-facebook {
+                      width: 23pt;
+                      height: 23pt;
+                    }
+                  }
+                  > .butt-facebook-right {
+                    width: auto;
+                    padding: 0 5pt;
+                    > .title {
+                      color: rgb(0, 0, 0);
+                      @include font-size-9-300;
+                      display: -webkit-box;
+                      -webkit-line-clamp: 1;
+                      -webkit-box-orient: vertical;
+                      overflow: hidden;
+                      &::selection {
+                        background: transparent;
+                      }
+                    }
+                    > .title-tran {
+                      color: rgba(48, 48, 48, 0.555);
+                      @include font-size-9-300;
+                      display: -webkit-box;
+                      -webkit-line-clamp: 1;
+                      -webkit-box-orient: vertical;
+                      overflow: hidden;
+                      &::selection {
+                        background: transparent;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .active {
+    background-color: red($color: #000000);
+    height: auto !important;
+    -webkit-transition: background-color 2s ease-out;
+    -moz-transition: background-color 2s ease-out;
+    -o-transition: background-color 2s ease-out;
+    transition: background-color 2s ease-out;
+  }
+  .active-on {
+    background-color: red($color: #000000);
+    height: auto !important;
+    -webkit-transition: background-color 2s ease-out;
+    -moz-transition: background-color 2s ease-out;
+    -o-transition: background-color 2s ease-out;
+    transition: background-color 2s ease-out;
+  }
+  .title {
+    color: rgb(0, 0, 0);
+    @include font-size-9-300;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    &::selection {
+      background: transparent;
+    }
+  }
+}
+
+@media (max-width: $xxlarge) {
+  .newcon-login-page {
+    min-height: auto;
+    height: calc(100vh - 60pt - 45pt - 33pt);
+    > .cops {
+      min-height: calc(390pt + 20pt + 20pt);
+      > .newcon-login-page-body {
+        height: 390pt;
+        min-height: 390pt;
+        width: 660pt;
+        margin: 20pt 0pt;
+        > .newcon-login-page-body-left {
+          > .newcon-login-page-body-left-drop-color {
+          }
+        }
+        > .newcon-login-page-body-right {
+          width: calc(60% - 60pt);
+          height: calc(100% - 40pt);
+          padding: 20pt 30pt;
+          > .newcon-login-page-body-right-div {
+            > .newcon-login-page-body-right-div-top {
+              height: 60pt;
+              > .newcon-login-page-body-right-div-top-head {
+              }
+              > .newcon-login-page-body-right-div-top-content {
+              }
+            }
+            > .newcon-login-page-body-right-div-body {
+              height: calc(100% - 60pt - 10pt);
+              margin-top: 10pt;
+              > .newcon-login-page-body-right-div-body-login {
+                > .newcon-login-page-body-right-div-body-login-title {
+                }
+                > .newcon-login-page-body-right-div-body-login-to {
+                  > .butt-login {
+                    height: 32pt;
+                    &:hover {
+                    }
+                  }
+
+                  > .regis_2 {
+
+                    &:focus{
+
+                    }
+                  }
+
+                  > .butt-facebook {
+                    > .butt-facebook-left {
+                      width: 32pt;
+                      height: 32pt;
+                      > .icon-facebook {
+                        width: 21pt;
+                        height: 21pt;
+                      }
+                    }
+                    > .butt-facebook-right {
+                      width: calc(100% - 32pt - 5pt);
+                      > .title {
+                        &::selection {
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $xlarge) {
+  .newcon-login-page {
+    height: calc(100vh - 55pt - 40pt - 32pt);
+    > .cops {
+      min-height: calc(380pt + 20pt + 20pt);
+      > .newcon-login-page-body {
+        height: 380pt;
+        min-height: 380pt;
+        width: 600pt;
+        > .newcon-login-page-body-left {
+          > .newcon-login-page-body-left-drop-color {
+          }
+        }
+        > .newcon-login-page-body-right {
+          > .newcon-login-page-body-right-div {
+            > .newcon-login-page-body-right-div-top {
+              > .newcon-login-page-body-right-div-top-head {
+              }
+              > .newcon-login-page-body-right-div-top-content {
+              }
+            }
+            > .newcon-login-page-body-right-div-body {
+              > .newcon-login-page-body-right-div-body-login {
+                > .newcon-login-page-body-right-div-body-login-title {
+                }
+                > .newcon-login-page-body-right-div-body-login-to {
+                  > .butt-login {
+                    height: 30pt;
+                    &:hover {
+                    }
+                  }
+
+                  > .regis_2 {
+
+                    &:focus{
+
+                    }
+                  }
+
+                  > .butt-facebook {
+                    > .butt-facebook-left {
+                      width: 30pt;
+                      height: 30pt;
+                      > .icon-facebook {
+                      }
+                    }
+                    > .butt-facebook-right {
+                      width: calc(100% - 30pt - 5pt);
+                      > .title {
+                        &::selection {
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $large) {
+  .newcon-login-page {
+    height: calc(100vh - 50pt - 40pt - 31pt);
+    > .cops {
+      > .newcon-login-page-body {
+        width: 80vw;
+        > .newcon-login-page-body-left {
+          > .newcon-login-page-body-left-drop-color {
+          }
+        }
+        > .newcon-login-page-body-right {
+          > .newcon-login-page-body-right-div {
+            > .newcon-login-page-body-right-div-top {
+              > .newcon-login-page-body-right-div-top-head {
+              }
+              > .newcon-login-page-body-right-div-top-content {
+              }
+            }
+            > .newcon-login-page-body-right-div-body {
+              > .newcon-login-page-body-right-div-body-login {
+                > .newcon-login-page-body-right-div-body-login-title {
+                }
+                > .newcon-login-page-body-right-div-body-login-to {
+                  > .butt-login {
+                    height: 28pt;
+                    &:hover {
+                    }
+                  }
+
+                  > .regis_2 {
+
+                    &:focus{
+
+                    }
+                  }
+
+                  > .butt-facebook {
+                    > .butt-facebook-left {
+                      width: 28pt;
+                      height: 28pt;
+                      > .icon-facebook {
+                        width: 19pt;
+                        height: 19pt;
+                      }
+                    }
+                    > .butt-facebook-right {
+                      width: calc(100% - 28pt - 5pt);
+                      > .title {
+                        &::selection {
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $medium) {
+  .newcon-login-page {
+    height: calc(100vh - 40pt - 35pt - 60pt);
+    > .cops {
+      > .newcon-login-page-body {
+        width: 90vw;
+        > .newcon-login-page-body-left {
+          display: none;
+          > .newcon-login-page-body-left-drop-color {
+          }
+        }
+        > .newcon-login-page-body-right {
+          width: calc(100% - 40pt);
+          padding: 20pt;
+          > .newcon-login-page-body-right-div {
+            > .newcon-login-page-body-right-div-top {
+              height: 60pt;
+              text-align: left;
+              > .newcon-login-page-body-right-div-top-head {
+              }
+              > .newcon-login-page-body-right-div-top-content {
+              }
+            }
+            > .newcon-login-page-body-right-div-body {
+              > .newcon-login-page-body-right-div-body-login {
+                > .newcon-login-page-body-right-div-body-login-title {
+                }
+                > .newcon-login-page-body-right-div-body-login-to {
+                  > .butt-login {
+                    &:hover {
+                    }
+                  }
+
+                  > .regis_2 {
+
+                    &:focus{
+
+                    }
+                  }
+
+                  > .butt-facebook {
+                    > .butt-facebook-left {
+                      > .icon-facebook {
+                      }
+                    }
+                    > .butt-facebook-right {
+                      > .title {
+                        &::selection {
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $small) {
+  .newcon-login-page {
+    height: calc(100vh - 40pt - 35pt - 55pt);
+    > .cops {
+      min-height: calc(390pt + 10pt + 10pt);
+      > .newcon-login-page-body {
+        width: 91vw;
+        margin: 10pt 0pt;
+        > .newcon-login-page-body-left {
+          > .newcon-login-page-body-left-drop-color {
+          }
+        }
+        > .newcon-login-page-body-right {
+          width: calc(100% - 20pt);
+          height: calc(260pt - 20pt);
+          padding: 10pt;
+          > .newcon-login-page-body-right-div {
+            > .newcon-login-page-body-right-div-top {
+              > .newcon-login-page-body-right-div-top-head {
+              }
+              > .newcon-login-page-body-right-div-top-content {
+              }
+            }
+            > .newcon-login-page-body-right-div-body {
+              margin-top: 20pt;
+              > .newcon-login-page-body-right-div-body-login {
+                > .newcon-login-page-body-right-div-body-login-title {
+                }
+                > .newcon-login-page-body-right-div-body-login-to {
+                  > .butt-login {
+                    &:hover {
+                    }
+                  }
+
+                  > .regis_2 {
+
+                    &:focus{
+
+                    }
+                  }
+
+                  > .butt-facebook {
+                    > .butt-facebook-left {
+                      > .icon-facebook {
+                      }
+                    }
+                    > .butt-facebook-right {
+                      > .title {
+                        &::selection {
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

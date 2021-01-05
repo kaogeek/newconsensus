@@ -1,0 +1,135 @@
+<div class="newcon-register-email-page">
+    <div class="cops">
+        <div class="newcon-register-email-page-body">
+            <div class="newcon-register-email-page-body-left" [ngStyle]="{'background-image': 'url(../../../../assets/components/pages/main.internal/RegisterPage/Democracy-monument.png)'}">
+                <div class="newcon-register-email-page-body-left-drop-color"></div>
+            </div>
+            <div class="newcon-register-email-page-body-right">
+                <div class="newcon-register-email-page-body-right-div">
+                    <div class="newcon-register-email-page-body-right-div-top">
+                        <div class="newcon-register-email-page-body-right-div-top-head">
+                            ร่วมแสดงความคิดเห็นกับเรา
+                        </div>
+                        <div class="newcon-register-email-page-body-right-div-top-content">
+                            มาร่วมกันแสดงความคิดเห็นต่อรัฐธรรมนูญ ๒๕๖๐
+                        </div>
+                    </div>
+                    <div class="newcon-register-email-page-body-right-div-body">
+                        <div class="newcon-register-email-page-body-right-div-body-register">
+                            <form #registeremail="ngForm" (ngSubmit)="onClickregister(registeremail.value)">
+                                <div class="form-group-div">
+                                    <div class="form-group">
+                                        <label for="myFilePicture" class="form-label">เลือกรูปโปรไฟล์ :</label>
+                                        <ng-container *ngIf="imagesAvatar; else avatars">
+                                            <div class="div-add-image" (click)="showDialogImage()">
+                                                <img src="{{imagesAvatar.image}}" class="image-crop">
+                                            </div>
+                                        </ng-container>
+                                        <ng-template #avatars>
+                                            <div class="div-add-image" (click)="showDialogImage()">
+                                                <i class="material-icons add-photo">
+                                                    add_photo_alternate
+                                                </i>
+                                            </div>
+                                        </ng-template>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="firstName" class="form-label">ชื่อ :</label>
+                                        <div class="form-col">
+                                            <input type="text" id="firstName" name="firstName" placeholder="กรุณากรอกชื่อ" class="input-text" required ngModel #firstName="ngModel">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lastName" class="form-label">นามสกุล :</label>
+                                        <div class="form-col">
+                                            <input type="text" id="lastName" name="lastName" placeholder="กรุณากรอกนามสกุล" class="input-text" required ngModel #lastName="ngModel">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="displayName" class="form-label">ชื่อที่แสดง :</label>
+                                        <div class="form-col">
+                                            <input type="text" id="displayName" name="displayName" placeholder="กรุณาตั้งชื่อที่จะแสดง" class="input-text" required ngModel #displayName="ngModel">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="identification" class="form-label">รหัสบัตรประชาชน :</label>
+                                        <div class="form-col">
+                                            <input type="text" id="identification" name="identification" maxlength="13" placeholder="กรุณากรอกรหัสบัตรประชาชน" class="input-text" required ngModel #identification="ngModel">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="password" class="form-label">รหัสผ่าน :</label>
+                                        <div class="form-col">
+                                            <input type="password" id="password" name="password" placeholder="รหัสผ่าน" class="input-text" required ngModel #password="ngModel">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="confirmpasswd" class="form-label">ยืนยันรหัสผ่าน :</label>
+                                        <div class="form-col">
+                                            <input type="password" id="confirmpasswd" name="confirmpasswd" placeholder="ยืนยันรหัสผ่าน" class="input-text" required ngModel #confirmpasswd="ngModel">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">อีเมล์ :</label>
+                                        <div class="form-col">
+                                            <input type="email" id="email" name="email" placeholder="อีเมล์ของคุณ" class="input-text" ngModel #email="ngModel">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="male female LGBTQ unknown" class="form-label">เพศ :</label>
+                                        <div class="form-col">
+                                            <div class="gender-flex">
+                                                <div class="div-gender">
+                                                    <mat-radio-group class="custom-control-input" [(ngModel)]="result.gender" [ngModelOptions]="{standalone: true}">
+                                                        <mat-radio-button [value]="0">ชาย</mat-radio-button>
+                                                        <mat-radio-button [value]="1">หญิง</mat-radio-button>
+                                                        <mat-radio-button [value]="-1">ไม่ระบุ</mat-radio-button>
+                                                    </mat-radio-group>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="birthday" class="form-label">วัน/เดือน ปี เกิด :</label>
+                                        <div class="form-col">
+                                            <mat-form-field>
+                                                <input matInput [matDatepicker]="dp3" placeholder="" id="birthday" name="birthday" [min]="minDate" [max]="maxDate" ngModel #birthday="ngModel" required>
+                                                <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+                                                <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+                                            </mat-form-field>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="postcode" class="form-label">รหัสไปรษณีย์ :</label>
+                                        <div class="form-col">
+                                            <admin-autocomp [facade]="postcodeFacade" [whereConditions]="whereConditions" [data]="result" [field]="'postcode'" [fieldValue]="'postcode'"></admin-autocomp>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="education" class="form-label">ระดับการศึกษา :</label>
+                                        <div class="form-col">
+                                            <autocomp-edication #education></autocomp-edication>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="career" class="form-label">อาชีพ :</label>
+                                        <div class="form-col">
+                                            <autocomp-career #career></autocomp-career>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <input type="submit" value="กดเพื่อส่งข้อมูล" class="input-submit">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

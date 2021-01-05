@@ -1,0 +1,46 @@
+<div class="admin-tag-page">
+    <mat-drawer-container class="example-container" [hasBackdrop]="true">
+        <mat-drawer #drawerComment style="width: 100%;" [mode]="'over'" [position]="'end'" [disableClose]="true">
+            <admin-proposalcomment-page #proposalComment (back)="clickProposalCommentBack()"></admin-proposalcomment-page>
+        </mat-drawer>
+        <mat-drawer-content>
+            <mat-drawer-container class="example-container" [hasBackdrop]="true">
+                <mat-drawer #drawer [mode]="'over'" [position]="'end'" [disableClose]="true">
+                    <div class="form-admin">
+                        <div class="wrapper">
+                            <div class="form-header">
+                                <h5 class="title">ตั้งลำดับกระทู้รับรองที่แนะนำ</h5>
+                            </div>
+                            <div class="form-body">
+                                <form>
+                                    <div class="row" *ngFor="let data of dataPin; let index = index">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <admin-autocomp [facade]="proposalFacade" [title]="'ลำดับที่ '+data.pinOrdering" [data]="data" [field]="'proposalId'" [whereConditionsPlus]="getWhereConditions()"></admin-autocomp>
+                                                <div *ngIf="!data.proposalId && submitted" class="alert alert-danger" style="margin-top: 5pt;">
+                                                    กรุณาเลือกกระทู้รับรอง
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="wrapper-action">
+                                <button mat-raised-button class="btn-close" (click)="clickCloseDrawer()">ปิด</button>
+                                <button mat-raised-button class="btn-save" (click)="clickSavePin()">บันทึก</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <admin-form-component [data]="dataForm" [fields]="fields" [title]="'กระทู้รับรอง'" (close)="clickCloseDrawer()" (save)="clickSave()"></admin-form-component> -->
+                </mat-drawer>
+                <mat-drawer-content>
+                    <div class="main-content">
+                        <admin-table-component #table [facade]="proposalFacade" [title]="'กระทู้รับรอง'" [fieldTable]="fieldTable" [actions]="actions"
+                            (approve)="clickApprove($event)" (create)="clickPinProposal()" (edit)="clickEditForm($event)" (delete)="clickDelete($event)"
+                            (comment)="clickComment($event)"></admin-table-component>
+                    </div>
+                </mat-drawer-content>
+            </mat-drawer-container>
+        </mat-drawer-content>
+    </mat-drawer-container>
+</div>

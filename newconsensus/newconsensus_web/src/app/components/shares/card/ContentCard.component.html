@@ -1,0 +1,20 @@
+<div class="content-card" [ngStyle]="{'background-color': bgContent, 'width': width, 'height': height}" [ngClass]="class" [class.image-header]="isImageHeader">
+    <div class="content-card-img" [style.background-color]="(images === null || images === undefined ) ? '#279d90' : '' ">
+        <div class="content-card-img-back">
+        </div>
+        <img class="img-content-card" [src]="images" *ngIf="images !== null && images !== undefined ">
+    </div>
+    <div class="wrapper-content-card">
+        <div class="wrapper-content-card-content">
+            <div class="title-content-card" [ngStyle]="{'color': colorTitle}">{{title}}</div>
+            <div class="content-content-card" [ngStyle]="{'color': colorContent}">{{content}}</div>
+        </div>
+        <div class="footer-content-card">
+            <a [routerLink]="link" *ngIf="isAll" (click)="setParamAllpost()" [ngStyle]="{'color': colorLink}">{{textLink}}</a>
+            <a [routerLink]="link" *ngIf="isAllpost" (click)="setParamAllpost()" [ngStyle]="{'color': colorLink}">{{textLink}}</a>
+            <a [routerLink]="link" *ngIf="isArticle" (click)="setParamArticle()" [ngStyle]="{'color': colorLink}">{{textLink}}</a>
+            <a [routerLink]="link" *ngIf="isContent" (click)="setParamContent()" [ngStyle]="{'color': colorLink}">{{textLink}}</a>
+            <div class="created">{{create}}</div>
+        </div>
+    </div>
+</div>

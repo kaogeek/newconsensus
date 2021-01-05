@@ -1,0 +1,7 @@
+<div class="newcon-button-save" [class.loading]="isLoading" [class.radius]="isRadius" [ngStyle]="{'background-color': bgColor, 'color': color}" [ngClass]="class"
+    matRipple>
+    <mat-spinner *ngIf="isLoading"></mat-spinner> 
+    <span class="label">
+        {{text}}
+    </span>
+</div> 
