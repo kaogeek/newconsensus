@@ -1,13 +1,10 @@
 /*
- * NewConsensus API
- * version 2.0.0
- * http://api.NewConsensus.com
- *
- * Copyright (c) 2019 NewConsensus
- * Author NewConsensus <admin@newconsensus.com>
- * Licensed under the MIT license.
+ * @license NewConsensus Platform v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: chalucks <chaluck.s@absolute.co.th>, shiorin <junsuda.s@absolute.co.th>
  */
-
+ 
 import * as Faker from 'faker';
 import { define } from 'typeorm-seeding';
 import { User } from '../../api/models/User';

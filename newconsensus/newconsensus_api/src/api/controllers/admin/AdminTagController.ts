@@ -1,3 +1,10 @@
+/*
+ * @license NewConsensus Platform v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: chalucks <chaluck.s@absolute.co.th>, shiorin <junsuda.s@absolute.co.th>
+ */
+
 import { JsonController, Authorized, Get, Res, Post, Body, Param, Put, Delete, Req } from 'routing-controllers';
 import { TagService } from '../../services/TagService';
 import { CreateTagRequest } from '../requests/CreateTagRequest';

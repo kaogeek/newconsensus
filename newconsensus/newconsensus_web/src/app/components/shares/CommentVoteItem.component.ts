@@ -1,3 +1,10 @@
+/*
+ * @license NewConsensus Platform v0.1
+ * (c) 2020-2021 KaoGeek. http://kaogeek.dev
+ * License: MIT. https://opensource.org/licenses/MIT
+ * Author: chalucks <chaluck.s@absolute.co.th>, shiorin <junsuda.s@absolute.co.th>
+ */
+ 
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { AbstractPage } from '../pages/AbstractPage';
 import { AuthenManager, PageUserInfo } from '../../services/services';
