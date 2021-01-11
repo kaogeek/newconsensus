@@ -1,6 +1,7 @@
 MIT License
 
 Copyright (c) 2017 Creative Tim (www.creative-tim.com)
+Copyright (c) 2020-2021 KaoGeek. http://kaogeek.dev
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

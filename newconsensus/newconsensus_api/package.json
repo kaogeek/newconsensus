@@ -33,7 +33,7 @@
     "description": "NewConsensus RESTFUL API Document",
     "title": "NewConsensus RESTFUL API Document"
   },
-  "author": "Piccosoft",
+  "author": "KaoGeek",
   "dependencies": {
     "@types/express-ejs-layouts": "^2.3.1",
     "@types/express-session": "^1.15.12",
