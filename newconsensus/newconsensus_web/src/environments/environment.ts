@@ -4,11 +4,8 @@
 
 export const environment = {
   production: false,
-  facebookAppId: 768184130301933, // default is 768184130301933
-  // apiBaseURL: "https://api.newconsensus.in.th/api"
-  // apiBaseURL: 'https://localhost:9001/api'
-  // apiBaseURL: "https://10.1.1.28:9001/api"
-  apiBaseURL: "https://10.1.0.22:9001/api"
+  facebookAppId: 'facebookAppId',
+  apiBaseURL: "https://localhost:9001/api"
 };
 
 /*
